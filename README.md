@@ -6,7 +6,7 @@
 
 Jackie Cheung
 
-[Jackie](https://github.com/jackcheung56)
+[GitHub](https://github.com/jackcheung56)
 
 TaeVon Lewis
 
@@ -16,7 +16,7 @@ William Hunter Long
 
 [GitHub](https://github.com/whlong1)
 *** 
-=======
+
 ---
 
 
