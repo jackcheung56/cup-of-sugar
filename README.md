@@ -4,12 +4,16 @@
 
 ### By: Group
 
+name
 
 [GitHub](https://github.com/jackcheung56)
+
+name
 
 [GitHub](https://github.com/lewist13)
 
 William Hunter Long
+
 [GitHub](https://github.com/whlong1)
 *** 
 
@@ -93,7 +97,7 @@ With Cup of Sugar...
 
 ### Credits
 
-names here
+William Hunter Long
 
 
 
