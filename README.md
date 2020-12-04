@@ -5,13 +5,14 @@
 ### By: Group
 
 
-[GitHub](https://github.com/jackcheung56)
+Jackie Cheung
+[Jackie](https://github.com/jackcheung56)
+TaeVon Lewis
+[TaeVon](https://github.com/lewist13)
+Hunter Long
+[Hunter](https://github.com/whlong1)
 
-[GitHub](https://github.com/lewist13)
-
-William Hunter Long
-[GitHub](https://github.com/whlong1)
-*** 
+---
 
 ### Overview
 
@@ -23,8 +24,7 @@ Cup of Sugar is ....
 
 • Users can...
 
-
-***
+---
 
 ### Technologies Used
 
@@ -35,66 +35,54 @@ Cup of Sugar is ....
 • SQL?
 • ???
 
-***
+---
 
 ### Wireframes
 
 Mockups
 ![mockup](https://i.imgur.com/D9rOI29.png)
 
-
-***
+---
 
 ### Getting Started
 
-To get started, please install React, Express, Node... 
-You can track the progress of Cup of Sugar [here](https://trello.com/b/9QrnqQ1j/phasmophobia). 
+To get started, please install React, Express, Node...
+You can track the progress of Cup of Sugar [here](https://trello.com/b/BRWvHTLO/cup-of-sugar).
 
-
-
-***
+---
 
 ### User Stories
 
 With Cup of Sugar...
 
-***
+---
+
 ### Full Entity Relationship Diagram
 
 ![Full Entity Relationship Diagram](link)
 
-***
+---
 
 ### Component Hierarchy Diagram
 
 ![Component Hierarchy Diagram](link)
 
-
-
-***
+---
 
 ### Code Snippet
 
 ![Code]()
 
-
-
-***
-
+---
 
 ### Stretch Goals
 
 • Add...
 
-
-
-
-***
+---
 
 ### Credits
 
-names here
-
-
-
-
+[Jackie Cheung](https://www.linkedin.com/in/jackiecheung/)
+[Hunter Long](https://www.linkedin.com/in/william-hunter-long/)
+[TaeVon Lewis](https://www.linkedin.com/in/taevonlewis/)
