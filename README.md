@@ -4,15 +4,21 @@
 
 ### By: Group
 
-
 Jackie Cheung
-[Jackie](https://github.com/jackcheung56)
-TaeVon Lewis
-[TaeVon](https://github.com/lewist13)
-Hunter Long
-[Hunter](https://github.com/whlong1)
 
+[Jackie](https://github.com/jackcheung56)
+
+TaeVon Lewis
+
+[GitHub](https://github.com/lewist13)
+
+William Hunter Long
+
+[GitHub](https://github.com/whlong1)
+*** 
+=======
 ---
+
 
 ### Overview
 
@@ -26,14 +32,27 @@ Cup of Sugar is ....
 
 ---
 
+
+### Getting Started
+
+To get started, please install React, Express, Node... 
+You can track the progress of Cup of Sugar [here](https://trello.com/b/BRWvHTLO/cup-of-sugar). 
+
+***
+
+### User Stories
+
+With Cup of Sugar...
+
+***
+
 ### Technologies Used
 
 • React
 • Express
 • Node
 • HTML/CSS/JavaScript
-• SQL?
-• ???
+• PostgreSQL
 
 ---
 
@@ -44,22 +63,9 @@ Mockups
 
 ---
 
-### Getting Started
-
-To get started, please install React, Express, Node...
-You can track the progress of Cup of Sugar [here](https://trello.com/b/BRWvHTLO/cup-of-sugar).
-
----
-
-### User Stories
-
-With Cup of Sugar...
-
----
-
 ### Full Entity Relationship Diagram
 
-![Full Entity Relationship Diagram](link)
+![Cup of Sugar ERD](https://i.imgur.com/23xQIsN.png)
 
 ---
 
@@ -69,11 +75,6 @@ With Cup of Sugar...
 
 ---
 
-### Code Snippet
-
-![Code]()
-
----
 
 ### Stretch Goals
 
@@ -83,6 +84,14 @@ With Cup of Sugar...
 
 ### Credits
 
-[Jackie Cheung](https://www.linkedin.com/in/jackiecheung/)
-[Hunter Long](https://www.linkedin.com/in/william-hunter-long/)
-[TaeVon Lewis](https://www.linkedin.com/in/taevonlewis/)
+
+[Jackie Cheung LinkedIn](https://www.linkedin.com/in/jackiecheung/)
+
+[Hunter Long LinkedIn](https://www.linkedin.com/in/william-hunter-long/)
+
+[TaeVon Lewis LinkedIn](https://www.linkedin.com/in/taevonlewis/)
+
+
+
+
+
