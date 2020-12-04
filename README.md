@@ -17,9 +17,6 @@ William Hunter Long
 [GitHub](https://github.com/whlong1)
 *** 
 
----
-
-
 ### Overview
 
 Cup of Sugar is ....
