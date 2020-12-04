@@ -55,8 +55,8 @@ With Cup of Sugar...
 
 ### Wireframes
 
-Mockups
-![mockup](https://i.imgur.com/D9rOI29.png)
+User Profile
+![mockup](https://i.imgur.com/AoIOBCh.png)
 
 ---
 
@@ -87,7 +87,6 @@ Mockups
 [Hunter Long LinkedIn](https://www.linkedin.com/in/william-hunter-long/)
 
 [TaeVon Lewis LinkedIn](https://www.linkedin.com/in/taevonlewis/)
-
 
 
 
