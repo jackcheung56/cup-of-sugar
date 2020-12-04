@@ -6,7 +6,7 @@
 
 Jackie Cheung
 
-[GitHub](https://github.com/jackcheung56)
+[Jackie](https://github.com/jackcheung56)
 
 TaeVon Lewis
 
@@ -16,6 +16,9 @@ William Hunter Long
 
 [GitHub](https://github.com/whlong1)
 *** 
+=======
+---
+
 
 ### Overview
 
@@ -27,8 +30,7 @@ Cup of Sugar is ....
 
 • Users can...
 
-
-***
+---
 
 
 ### Getting Started
@@ -52,42 +54,36 @@ With Cup of Sugar...
 • HTML/CSS/JavaScript
 • PostgreSQL
 
-***
+---
 
 ### Wireframes
 
 Mockups
 ![mockup](https://i.imgur.com/D9rOI29.png)
 
-
-***
+---
 
 ### Full Entity Relationship Diagram
 
 ![Cup of Sugar ERD](https://i.imgur.com/23xQIsN.png)
 
-***
+---
 
 ### Component Hierarchy Diagram
 
 ![Component Hierarchy Diagram](link)
 
-
-
-***
-
+---
 
 
 ### Stretch Goals
 
 • Add...
 
-
-
-
-***
+---
 
 ### Credits
+
 
 [Jackie Cheung LinkedIn](https://www.linkedin.com/in/jackiecheung/)
 
