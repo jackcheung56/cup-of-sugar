@@ -4,19 +4,11 @@
 
 ### By: Group
 
-name
-
 Jackie Cheung
-[Jackie](https://github.com/jackcheung56)
+
+[GitHub](https://github.com/jackcheung56)
 
 TaeVon Lewis
-[TaeVon](https://github.com/lewist13)
-
-Hunter Long
-
-[Hunter](https://github.com/whlong1)
-
-name
 
 [GitHub](https://github.com/lewist13)
 
@@ -37,40 +29,40 @@ Cup of Sugar is ....
 
 ---
 
+
+### Getting Started
+
+To get started, please install React, Express, Node... 
+You can track the progress of Cup of Sugar [here](https://trello.com/b/BRWvHTLO/cup-of-sugar). 
+
+***
+
+### User Stories
+
+With Cup of Sugar...
+
+***
+
 ### Technologies Used
 
 • React
 • Express
 • Node
 • HTML/CSS/JavaScript
-• SQL?
-• ???
+• PostgreSQL
 
 ---
 
 ### Wireframes
 
-Mockups
-![mockup](https://i.imgur.com/D9rOI29.png)
-
----
-
-### Getting Started
-
-To get started, please install React, Express, Node...
-You can track the progress of Cup of Sugar [here](https://trello.com/b/BRWvHTLO/cup-of-sugar).
-
----
-
-### User Stories
-
-With Cup of Sugar...
+User Profile
+![mockup](https://i.imgur.com/AoIOBCh.png)
 
 ---
 
 ### Full Entity Relationship Diagram
 
-![Full Entity Relationship Diagram](link)
+![Cup of Sugar ERD](https://i.imgur.com/23xQIsN.png)
 
 ---
 
@@ -80,11 +72,6 @@ With Cup of Sugar...
 
 ---
 
-### Code Snippet
-
-![Code]()
-
----
 
 ### Stretch Goals
 
@@ -94,14 +81,13 @@ With Cup of Sugar...
 
 ### Credits
 
-<<<<<<< HEAD
-William Hunter Long
+
+[Jackie Cheung LinkedIn](https://www.linkedin.com/in/jackiecheung/)
+
+[Hunter Long LinkedIn](https://www.linkedin.com/in/william-hunter-long/)
+
+[TaeVon Lewis LinkedIn](https://www.linkedin.com/in/taevonlewis/)
 
 
 
 
-=======
-[Jackie Cheung](https://www.linkedin.com/in/jackiecheung/)
-[Hunter Long](https://www.linkedin.com/in/william-hunter-long/)
-[TaeVon Lewis](https://www.linkedin.com/in/taevonlewis/)
->>>>>>> 3aec5697a44429df9b33f7174036b2e713f6f0e0
