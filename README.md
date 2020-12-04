@@ -39,7 +39,7 @@ You can track the progress of Cup of Sugar [here](https://trello.com/b/BRWvHTLO/
 
 ### User Stories
 
-With Cup of Sugar...
+With Cup of Sugar users can...
 
 ***
 
@@ -62,7 +62,7 @@ User Profile
 
 ### Full Entity Relationship Diagram
 
-![Cup of Sugar ERD](https://i.imgur.com/23xQIsN.png)
+![Cup of Sugar ERD](https://i.imgur.com/IPuCKwr.png)
 
 ---
 
