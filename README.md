@@ -1,18 +1,19 @@
-<<<<<<< HEAD
-# cup of sugar
-=======
 # Cup of Sugar
 
 ## December 4, 2020
 
 ### By: Group
 
+Jackie Cheung
 
 [GitHub](https://github.com/jackcheung56)
+
+TaeVon Lewis
 
 [GitHub](https://github.com/lewist13)
 
 William Hunter Long
+
 [GitHub](https://github.com/whlong1)
 *** 
 
@@ -29,14 +30,27 @@ Cup of Sugar is ....
 
 ***
 
+
+### Getting Started
+
+To get started, please install React, Express, Node... 
+You can track the progress of Cup of Sugar [here](https://trello.com/b/BRWvHTLO/cup-of-sugar). 
+
+***
+
+### User Stories
+
+With Cup of Sugar...
+
+***
+
 ### Technologies Used
 
 • React
 • Express
 • Node
 • HTML/CSS/JavaScript
-• SQL?
-• ???
+• PostgreSQL
 
 ***
 
@@ -48,23 +62,9 @@ Mockups
 
 ***
 
-### Getting Started
-
-To get started, please install React, Express, Node... 
-You can track the progress of Cup of Sugar [here](https://trello.com/b/9QrnqQ1j/phasmophobia). 
-
-
-
-***
-
-### User Stories
-
-With Cup of Sugar...
-
-***
 ### Full Entity Relationship Diagram
 
-![Full Entity Relationship Diagram](link)
+![Cup of Sugar ERD](https://i.imgur.com/23xQIsN.png)
 
 ***
 
@@ -76,13 +76,6 @@ With Cup of Sugar...
 
 ***
 
-### Code Snippet
-
-![Code]()
-
-
-
-***
 
 
 ### Stretch Goals
@@ -96,9 +89,13 @@ With Cup of Sugar...
 
 ### Credits
 
-names here
+[Jackie Cheung LinkedIn](https://www.linkedin.com/in/jackiecheung/)
+
+[Hunter Long LinkedIn](https://www.linkedin.com/in/william-hunter-long/)
+
+[TaeVon Lewis LinkedIn](https://www.linkedin.com/in/taevonlewis/)
 
 
 
 
->>>>>>> 205d354c88174c0d91314ec524b3046cc01969d5
+
