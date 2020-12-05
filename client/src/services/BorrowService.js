@@ -1,8 +1,8 @@
 import ApiClient from "./ApiClient";
 
-export const _GetBorrowed = async () => {
+export const _GetBorrows = async () => {
   try {
-    const response = await ApiClient.get("/borrowed");
+    const response = await ApiClient.get("/borrows");
     console.log("BORROWED ITEMS HERE", response.data);
     return response.data;
   } catch (error) {
