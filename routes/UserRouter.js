@@ -11,7 +11,6 @@ Router.get('/:user_id', controller.GetUserById)
 // http://localhost:3001/api/users/1
 
 
-
 Router.post('/add', controller.CreateUser)
 // http://localhost:3001/api/users/add
 

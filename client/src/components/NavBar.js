@@ -1,14 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import '../styles/Nav.css';
+
 function Navbar() {
     return (
         <nav>
-            <div>
-                <h2>cup of sugar</h2>
-                <ul>
+            <div className="navbox">
+                <ul className="nav-links">
                     <Link to ='/'>
                         <ul>Home</ul>
+                    </Link>
+
+                    <Link to ='/items/all'>
+                        <ul>Browse</ul>
                     </Link>
 
                     <Link to ='/signup'>
@@ -21,10 +26,6 @@ function Navbar() {
 
                     <Link to ='/'>
                         <ul>Sign Out</ul>
-                    </Link>
-
-                    <Link to ='/browse'>
-                        <ul>Browse</ul>
                     </Link>
                 </ul>
             </div>
