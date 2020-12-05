@@ -10,6 +10,27 @@ const GetUsers = async (req, res) => {
       throw error
     }
   }
+
+
+  //under construction
+
+  const GetUserById = async (request, response) => {
+    try{
+        const {user_id} = request.params
+        const data = await User.findById(user_id).populate([
+            {
+                path: 'users',
+                model: 'user'
+            }
+        ])
+        response.send(data)
+    }
+    catch (error) {
+        throw error
+    }
+}
+
+//under construction
   
 
 
