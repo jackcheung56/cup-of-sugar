@@ -7,7 +7,7 @@ const GetBorrows = async (req, res) => {
   } catch (error) {
     throw error;
   }
-
+}
  
   const CreateBorrow = async (req, res) => {
     try {
@@ -18,7 +18,7 @@ const GetBorrows = async (req, res) => {
       throw error
     }
   }
-};
+
 
 const UpdateBorrow = async (req, res) => {
   try {
