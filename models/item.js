@@ -8,27 +8,21 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       // define association here
-      console.log(DataTypes)
-
+      
       Item.belongsTo(models.User, {
         foreignKey: 'owner_id',
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       })
 
-
       Item.belongsToMany(models.User, {
-
         as: 'a',
-
         through: models.Borrow,
-        foreignKey: 'item_id',
+        foreignKey: 'user_id',
 
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       })
-
-
       // end association here
     }
   };

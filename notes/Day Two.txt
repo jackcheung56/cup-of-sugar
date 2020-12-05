@@ -9,7 +9,7 @@ Hunter-Saturday Dec. 5
 
     Insomnia Model:
     {
-        "name": "Chris Farley",
+        "name": "Camel Casing",
         "email": "chris@email.com",
         "passwordDigest": "password",
         "area": 15,
@@ -41,5 +41,11 @@ Hunter-Saturday Dec. 5
 • Agenda for Saturday
     run raw SQL joins
     troubleshoot Item update
+
+
+
+    SQL JOIN TEST:
+
+    SELECT name, title FROM users JOIN borrows ON users.id = borrows.user_id JOIN items ON borrows.item_id = items.id;
 
 

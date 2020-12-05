@@ -14,18 +14,15 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE'
       })
 
-
       User.belongsToMany(models.Item,{
-        
         as: 'b',
 
         through: models.Borrow,
-        foreignKey:'user_id',
+        foreignKey:'item_id',
 
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       })
-
       // end association here
     }
   };

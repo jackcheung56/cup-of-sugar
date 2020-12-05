@@ -15,8 +15,9 @@ const GetBorrows = async (req, res) => {
 
   const CreateBorrow = async (req, res) => {
     try {
-      const borrow = await Borrow.create(req.body)
-      res.send(borrow)
+      const borrow = await Borrow.create(req.body, {returning: ['id']})
+      console.log('here', borrow.id)
+      res.send({borrow: borrow.id})
     } catch (error) {
       throw error
     }
