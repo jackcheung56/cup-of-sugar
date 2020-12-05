@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Navbar from "./NavBar";
 import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
-import SignOut from "../pages/SignOut";
+import SignUp from "../pages/SignUp";
 
 function Router() {
   const [email, setEmail] = useState("");
@@ -20,6 +20,14 @@ function Router() {
             password={password}
             setPassword={setPassword}
           ></SignIn>
+          <Route exact path="signup">
+            <SignUp
+              email={email}
+              setEmail={setEmail}
+              password={password}
+              setPassword={setPassword}
+            ></SignUp>
+          </Route>
         </Route>
       </Switch>
     </div>
