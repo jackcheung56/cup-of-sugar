@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Navbar from "./NavBar";
 import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
+import SignOut from "../pages/SignOut";
 
 function Router() {
   const [email, setEmail] = useState("");
