@@ -21,6 +21,7 @@ function Router() {
 
       <Switch>
 
+
         <Route exact path='/'><Home></Home></Route>
 
         <Route path='/items/all'><Browse></Browse></Route>
@@ -30,6 +31,7 @@ function Router() {
         <Route path='/signup'><SignUp></SignUp></Route>
 
         <Route path='/users/:user_id'><Profile></Profile></Route>
+
 
       </Switch>
     </div>

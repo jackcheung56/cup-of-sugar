@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { _CreateUser } from '../services/UserService'
+import React from "react";
+import { Link } from "react-router-dom";
+import { _CreateUser } from "../services/UserService";
 
 function SignUp() {
     return (
@@ -17,3 +17,4 @@ function SignUp() {
 }
 
 export default SignUp;
+
