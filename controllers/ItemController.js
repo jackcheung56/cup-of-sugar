@@ -11,6 +11,18 @@ const GetItems = async (req, res) => {
       throw error
     }
   }
+
+
+
+  const GetItemById = async (req, res) => {
+    try {
+      let itemId = parseInt(req.params.item_id)
+      let item = await Item.findByPk(itemId)
+      res.send(item)
+    } catch (error) {
+      throw error
+    }
+  }
   
 
 
@@ -69,4 +81,5 @@ const DeleteItem = async (req, res) => {
   UpdateItem,
   GetItems,
   CreateItem,
+  GetItemById
 }

@@ -7,6 +7,11 @@ Router.get('/all', controller.GetUsers)
 // http://localhost:3001/api/users/all
 
 
+Router.get('/:user_id', controller.GetUserById)
+// http://localhost:3001/api/users/1
+
+
+
 Router.post('/add', controller.CreateUser)
 // http://localhost:3001/api/users/add
 
@@ -21,3 +26,5 @@ Router.delete('/delete/:user_id', controller.DeleteUser)
 
 
 module.exports = Router
+
+

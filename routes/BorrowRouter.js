@@ -8,6 +8,10 @@ Router.get('/all', controller.GetBorrows)
 // http://localhost:3001/api/borrows/all
 
 
+Router.get('/:borrow_id', controller.GetBorrowById)
+// http://localhost:3001/api/borrows/1
+
+
 Router.post('/add', controller.CreateBorrow)
 // http://localhost:3001/api/borrows/add
 
@@ -22,3 +26,5 @@ Router.delete('/delete/:borrow_id', controller.DeleteBorrow)
 
 
 module.exports = Router
+
+
