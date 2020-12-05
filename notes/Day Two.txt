@@ -1,0 +1,45 @@
+Hunter-Saturday Dec. 5
+
+
+• Completed Controllers/Routes
+
+• TESTING NEEDED
+
+• Successfully Tested full crud on USERS.    No issues
+
+    Insomnia Model:
+    {
+        "name": "Chris Farley",
+        "email": "chris@email.com",
+        "passwordDigest": "password",
+        "area": 15,
+        "rating": 60
+    }
+
+• Successfully Tested full crud on ITEMS.   !One Issue!
+    possible revision needed on Item model-> put/update cannot properly alter is_borrowed BOOLEAN with Insomnia
+
+    Insomnia Model:
+    {
+        "title": "Test",
+        "isBorrowed": "f",
+        "category": "Fitness",
+        "ownerId": 1
+    }
+
+
+• Successfully Tested full crud on BORROWS.  No issues
+
+    Insomnia Model:
+    {
+        "user_id": 3,
+        "item_id": 1,
+        "status": "Returned"
+    }
+
+
+• Agenda for Saturday
+    run raw SQL joins
+    troubleshoot Item update
+
+
