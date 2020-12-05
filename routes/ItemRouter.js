@@ -8,6 +8,10 @@ Router.get('/all', controller.GetItems)
 // http://localhost:3001/api/items/all
 
 
+Router.get('/:item_id', controller.GetItemById)
+// http://localhost:3001/api/items/1
+
+
 Router.post('/add', controller.CreateItem)
 // http://localhost:3001/api/items/add
 

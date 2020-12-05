@@ -12,28 +12,20 @@ const GetUsers = async (req, res) => {
   }
 
 
-  //under construction
 
-  const GetUserById = async (request, response) => {
-    try{
-        const {user_id} = request.params
-        const data = await User.findById(user_id).populate([
-            {
-                path: 'users',
-                model: 'user'
-            }
-        ])
-        response.send(data)
-    }
-    catch (error) {
-        throw error
-    }
-}
 
-//under construction
+  const GetUserById = async (req, res) => {
+    try {
+      let userId = parseInt(req.params.user_id)
+      let user = await User.findByPk(userId)
+      res.send(user)
+    } catch (error) {
+      throw error
+    }
+  }
+
+
   
-
-
   const CreateUser = async (req, res) => {
     try {
       const user = await User.create(req.body)
@@ -86,5 +78,6 @@ const DeleteUser = async (req, res) => {
   DeleteUser,
   UpdateUser,
   GetUsers,
-  CreateUser
+  CreateUser,
+  GetUserById
 }

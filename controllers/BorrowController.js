@@ -20,6 +20,19 @@ const GetBorrows = async (req, res) => {
   }
 
 
+  const GetBorrowById = async (req, res) => {
+    try {
+      let borrowId = parseInt(req.params.borrow_id)
+      let borrow = await Borrow.findByPk(borrowId)
+      res.send(borrow)
+    } catch (error) {
+      throw error
+    }
+  }
+
+  
+
+
 const UpdateBorrow = async (req, res) => {
   try {
     let borrowId = parseInt(req.params.borrow_id);
@@ -58,4 +71,5 @@ module.exports = {
   UpdateBorrow,
   GetBorrows,
   CreateBorrow,
+  GetBorrowById
 };
