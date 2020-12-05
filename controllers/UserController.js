@@ -16,6 +16,7 @@ const GetUsers = async (req, res) => {
   const CreateUser = async (req, res) => {
     try {
       const user = await User.create(req.body)
+      console.log(user.id)
       res.send(user)
     } catch (error) {
       throw error
