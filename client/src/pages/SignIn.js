@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function SignIn(email, password) {
   console.log(email, password);
   return (
-    <form>
-      <div>
+    <div>
+      <form>
         <input placeholder="Enter Email" name="email" type="email" value="" />
         <input
           placeholder="Enter Password"
@@ -16,8 +16,8 @@ function SignIn(email, password) {
         <button>
           <Link to="/login">Login</Link>
         </button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 

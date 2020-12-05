@@ -9,7 +9,11 @@ function Navbar() {
             <div className="navbox">
                 <ul className="nav-links">
                     <Link to ='/'>
-                        <ul>cup of sugar</ul>
+                        <ul>Home</ul>
+                    </Link>
+
+                    <Link to ='/items/all'>
+                        <ul>Browse</ul>
                     </Link>
 
                     <Link to ='/signup'>
@@ -22,10 +26,6 @@ function Navbar() {
 
                     <Link to ='/'>
                         <ul>Sign Out</ul>
-                    </Link>
-
-                    <Link to ='/browse'>
-                        <ul>Browse</ul>
                     </Link>
                 </ul>
             </div>

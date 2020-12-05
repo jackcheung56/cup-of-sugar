@@ -8,26 +8,21 @@ html {
   
   
   .nav-links{
-    width: 50%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    color: #222326;
   }
   
   
   .navbox{
-      background-color: #222326;
+      background-color: white;
   }
   
   
   
   .block{
-    margin-top: 250px;
-    width: 50%;
     display: flex;
-    margin-left: 330px;
     justify-content: center;
     align-items: center;
     list-style: none;
@@ -38,21 +33,9 @@ html {
   a {
     width: 605px;
     justify-content: center;
-    min-width: 30%;
     list-style: none;
     text-decoration: none;
     color: #222326;
   }
-  
-  .list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  
-  
-  }
-  
-  
-  
+
   
