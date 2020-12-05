@@ -20,7 +20,7 @@ function Router() {
             password={password}
             setPassword={setPassword}
           ></SignIn>
-          <Route exact path="signup">
+          <Route exact path="/signup">
             <SignUp
               email={email}
               setEmail={setEmail}
