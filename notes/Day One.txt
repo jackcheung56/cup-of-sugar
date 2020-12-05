@@ -1,0 +1,62 @@
+Hunter-Friday Dec. 4
+
+• Set up server
+
+    add script to package.json
+        "start": "node app.js"
+
+    Run npm start
+    Drop following into insomnia 'get'
+    http://localhost:3001/
+
+    Server Response:
+    "message": "Server Works"
+
+
+• Created Database
+
+    ran:
+    npx sequelize-cli db:create
+
+    To run SQL commands use:
+    psql sugar_development
+
+
+• Building Back end models (1) USER
+
+
+    1. Create Model ->    npx sequelize-cli model:generate --name User --attributes name:string,email:string,passwordDigest:string,area:integer,rating:integer
+
+    2. add tableName to model
+
+    3. set field of camelcased attribute on model
+
+    4. set field of camelcased attribute on migration
+
+    5. change table name to lowercase/plural on migration (2 spots, top and bottom)
+
+    6. Run->    npx sequelize-cli db:migrate
+
+    7. Confirm table information ->    psql sugar_development
+
+
+
+• Building Back end models (2) ITEM
+
+    npx sequelize-cli model:generate --name Item --attributes title:string,isBorrowed:boolean,category:string,ownerId:integer
+
+
+• Building Back end models (3) BORROW
+
+    npx sequelize-cli model:generate --name Borrow --attributes userId:integer,itemId:integer,status:enum
+
+    *** set up association on previous files
+
+
+• *** Watch out for cascade (update & delete). Might delete user when item is deleted. Edit model if required ***
+
+
+
+
+
+
