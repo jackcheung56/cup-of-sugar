@@ -9,3 +9,12 @@ export const _CreateUser = async (formData) => {
     throw error;
   }
 };
+
+export const _GetUser = async (user_id) => {
+  try{
+    const response = await ApiClient.get(`/users/${user_id}`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
