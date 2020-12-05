@@ -1,1 +1,27 @@
-Notes file for status of docus
+Hunter-Friday Dec. 4
+
+• Set up server
+
+    add script to package.json
+        "start": "node app.js"
+
+    Run npm start
+    Drop following into insomnia 'get'
+    http://localhost:3001/
+
+    Server Response:
+    "message": "Server Works"
+
+
+• Created Database
+
+    ran:
+    npx sequelize-cli db:create
+
+    To run SQL commands use:
+    psql sugar_development
+
+
+
+
+
