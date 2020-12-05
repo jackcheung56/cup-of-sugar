@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import '../styles/Nav.css';
+
 function Navbar() {
     return (
         <nav>
-            <div>
-                <h2>cup of sugar</h2>
-                <ul>
+            <div className="navbox">
+                <ul className="nav-links">
                     <Link to ='/'>
-                        <ul>Home</ul>
+                        <ul>cup of sugar</ul>
                     </Link>
 
                     <Link to ='/signup'>
