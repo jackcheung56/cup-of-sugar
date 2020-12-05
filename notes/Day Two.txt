@@ -11,18 +11,18 @@ Hunter-Saturday Dec. 5
     {
         "name": "Chris Farley",
         "email": "chris@email.com",
-        "password_digest": "password",
+        "passwordDigest": "password",
         "area": 15,
         "rating": 60
     }
 
-• Successfully Tested full crud on ITEMS.   One Issue
+• Successfully Tested full crud on ITEMS.   !One Issue!
     possible revision needed on Item model-> put/update cannot properly alter is_borrowed BOOLEAN with Insomnia
 
     Insomnia Model:
     {
         "title": "Test",
-        "is_borrowed": "f",
+        "isBorrowed": "f",
         "category": "Fitness",
         "ownerId": 1
     }
@@ -33,10 +33,13 @@ Hunter-Saturday Dec. 5
     Insomnia Model:
     {
         "user_id": 3,
-        "item_id": 1
+        "item_id": 1,
+        "status": "Returned"
     }
 
 
-
+• Agenda for Saturday
+    run raw SQL joins
+    troubleshoot Item update
 
 

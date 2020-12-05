@@ -57,26 +57,6 @@ Hunter-Friday Dec. 4
 
 
 
-*** NOTE FOR BACK END ***
-
-when creating/updating data with insomnia, always use snakecase
-
-INCORRECT EXAMPLE:
-
-{
-"elementId" : 2,
-"exampleId" : 5
-}
-
-
-CORRECT EXAMPLE:
-
-{
-"element_id" : 2,
-"example_id" : 5
-}
-
-
 
 
 

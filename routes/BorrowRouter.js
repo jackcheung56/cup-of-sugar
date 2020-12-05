@@ -5,11 +5,11 @@ const controller = require('../controllers/BorrowController')
 //Routes go here
 
 Router.get('/all', controller.GetBorrows)
-// http://localhost:3001/api/borrows/add
+// http://localhost:3001/api/borrows/all
 
 
 Router.post('/add', controller.CreateBorrow)
-// http://localhost:3001/api/borrows/all
+// http://localhost:3001/api/borrows/add
 
 
 Router.put('/update/:borrow_id', controller.UpdateBorrow)
