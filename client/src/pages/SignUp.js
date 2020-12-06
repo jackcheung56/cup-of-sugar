@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { _CreateUser } from "../services/UserService";
+// import { _CreateUser } from "../services/UserService";
 
 function SignUp() {
     return (
