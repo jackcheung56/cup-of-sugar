@@ -1,27 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom'
 import { __GetItems } from '../services/ItemService'
 import ItemCard from '../components/ItemCard'
 
 function Browse(props) {
+    //Check to see if the data is being passed as props
+    console.log(props)
     
     const itemList = props.item
-    // console.log('BROWSE', props, item)
-    console.log('PROPS', props)
-    let history = props.history
+    const history = useHistory()
+    //Fun fact: this is the same as writing "const history = props.history" (i think...)
     
-
-    
-    //Check to see if the data is being passed as props
-    // console.log('Browse Page', item)
-    // console.log('ItemList', itemList)
-
-    console.log(props)
-    // props.history.state = {target:props.item}
-    // console.log(props.history.state)
-
-
 
     return (
         <div>
@@ -33,11 +22,6 @@ function Browse(props) {
                         key={item._id}
                         title={item.title}
                         onClick={() => history.push(`/items/${item.id}`, item={item})} 
-                       
-
-                        //make sure you are using the correct path(* see router)
-                        
-
                         //model attributes end here
                     />
                 ))}
