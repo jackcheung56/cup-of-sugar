@@ -15,7 +15,11 @@ import Profile from "../pages/Profile";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import BrowsePage from "../pages/BrowsePage";
-import ItemDetails from "../pages/ItemDetails";
+
+import AddItemPage from "../pages/AddItemPage";
+
+import ItemDetailsPage from "../pages/ItemDetailsPage";
+
 
 function Router(props) {
 
@@ -63,15 +67,20 @@ function Router(props) {
 
         <Route exact path='/'><Home></Home></Route>
 
-        <Route path="/items/all" component={() => (<BrowsePage item={item} setItem={setItem} history={history}></BrowsePage>)} />
+        <Route exact path="/items/all" component={() => (<BrowsePage item={item} setItem={setItem} history={history}></BrowsePage>)} />
 
-        <Route path="/items/:item_id" render={(props) => <ItemDetails location={props.location}></ItemDetails>} />
+        <Route path='/users/:user_id'><Profile borrow={borrow} setBorrow={setBorrow} user={user} setUser={setUser} history={history}></Profile></Route>
+
+        <Route exact path='/items/add'><AddItemPage></AddItemPage></Route>
 
         <Route path="/signin" component={() => (<SignIn user={user} setUser={setUser} history={history}></SignIn>)} />
 
         <Route path='/signup'><SignUp></SignUp></Route>
 
-        <Route path='/users/:user_id'><Profile borrow={borrow} setBorrow={setBorrow} user={user} setUser={setUser} history={history}></Profile></Route>
+        <Route path="/items/:item_id" render={(props) => <ItemDetailsPage location={props.location}></ItemDetailsPage>} />
+
+
+        
 
       </Switch>
 

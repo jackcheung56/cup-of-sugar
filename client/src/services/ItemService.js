@@ -19,14 +19,14 @@ export const __GetItemById = async (item_id) => {
   }
 }
 
-// export const __CreateItem = async (formData) => {
-//   try{
-//     const response = await ApiClient.post('/items/add', formData)
-//     return response.data
-//   } catch (error) {
-//     throw error
-//   }
-// }
+export const __CreateItem = async (formData) => {
+  try{
+    const response = await ApiClient.post('/items/add', formData)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
 
 // export const __UpdateItem = async (formData, item_id) => {
 //   try{

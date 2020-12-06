@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom';
 import { __GetItems } from '../services/ItemService'
 import { __GetBorrows } from '../services/BorrowService'
@@ -35,6 +36,22 @@ function Profile(props) {
     }
   }
 
+
+  const handleClick = async (event) => {
+    event.preventDefault()
+    try {
+      //
+      history.push(`/items/add`)
+      //push user id as an object with the path
+      //
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
+
+
   useEffect(() => {
     getUserBorrows()
     getUserItems()
@@ -48,8 +65,12 @@ function Profile(props) {
       <div className="profilePage">
 
         <div className="itemListU">
+
           <h4>your items</h4>
-          <buttom>add item</buttom>
+          {/* <Link to={redirect}><button>add item</button></Link> */}
+          <button onClick={handleClick}>Add Item</button>
+
+
           {userItems.map((item) => (
             <ItemCard
               //model attributes go here

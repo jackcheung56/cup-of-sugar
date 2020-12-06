@@ -9,6 +9,8 @@ const ItemCard = ({ onClick, title}) => (
         </div>
         <div>
             <h3>{title}</h3>
+            <p>Category: Sports</p>
+            <p>Condition: Good</p>
         </div>
     </div>
 )
