@@ -9,6 +9,9 @@ function Navbar(props) {
     return (
         <nav>
             <div className="navbox">
+
+                <p>hello user</p>
+                
                 <ul className="nav-links">
                     <Link to='/'>
                         <li>Home</li>

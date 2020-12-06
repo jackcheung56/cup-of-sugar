@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../styles/Form.css';
 import { __CreateItem } from '../services/ItemService'
 import FormInput from '../components/FormInput'
@@ -6,20 +6,19 @@ import FormInput from '../components/FormInput'
 const AddItemPage = () => {
   const [newItem, setNewItem] = useState({})
 
-console.log(newItem.title)
+  console.log(newItem)
 
 
   const handleChange = ({ target }) => {
-    setNewItem({ [target.name]: target.value })
+    setNewItem({ ...newItem, [target.name]: target.value})
+    console.log('TARGET VALUE', target.value)
   }
-
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
       console.log('Check State Before Call', newItem)
-      let post = await __CreateItem()
-      console.log('IT WORKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', post)
+      let post = await __CreateItem(newItem)
 
       // this.props.history.push(`/users/${user.id}`)
 
@@ -27,7 +26,6 @@ console.log(newItem.title)
       console.log(error)
     }
   }
-
 
   return (
     <div>
@@ -40,6 +38,7 @@ console.log(newItem.title)
           value={newItem.title}
           onChange={handleChange}
         />
+
         <FormInput
           placeholder="category"
           name="category"
@@ -52,7 +51,6 @@ console.log(newItem.title)
       </form>
 
     </div>
-
 
   )
 }
