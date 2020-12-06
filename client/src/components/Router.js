@@ -71,7 +71,7 @@ function Router(props) {
 
         <Route path='/signup'><SignUp></SignUp></Route>
 
-        <Route path='/users/:user_id'><Profile borrow={borrow} setBorrow={setBorrow} user={user} setUser={setUser}></Profile></Route>
+        <Route path='/users/:user_id'><Profile borrow={borrow} setBorrow={setBorrow} user={user} setUser={setUser} history={history}></Profile></Route>
 
       </Switch>
 

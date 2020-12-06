@@ -1,50 +1,88 @@
 import React, { useState, useEffect } from 'react'
-// import { useHistory } from 'react-router-dom';
-// import { __GetItems } from '../services/ItemService'
+import { useHistory } from 'react-router-dom';
+import { __GetItems } from '../services/ItemService'
 import { __GetBorrows } from '../services/BorrowService'
 import BorrowCard from '../components/BorrowCard'
+import ItemCard from '../components/ItemCard'
+
+import '../styles/Profile.css';
 
 function Profile(props) {
-    // console.log(props)
-    const [userBorrow, setUserBorrow] = useState([])
 
-    // const history = useHistory()
+  const [userBorrows, setUserBorrows] = useState([])
+  const [userItems, setUserItems] = useState([])
+  const history = useHistory()
 
-    const getUserBorrows = async () => {
-        try {
-          const data = await __GetBorrows()
-          setUserBorrow(data)
-        } catch (error) {
-          console.log(error)
-        }
-      }
+  console.log('User items', userItems)
+  console.log('User Borrows', userBorrows)
 
-      useEffect(() => {
-        getUserBorrows()
-      }, [])
-    
-  
-      return (
-        <div>
-            <h1>Profile</h1>
-            <div className="borrowList">
-                {userBorrow.map((borrow) => (
-                    <BorrowCard
-                        //model attributes go here
-                        key={borrow._id}
-                        name={borrow._id}
-                        //check status-if true-> push to edit borrow
-                        // onClick={() => history.push(`/borrows/${borrow.id}`, borrow={borrow})} 
 
-                        //Maybe use:
-                        //const response = await ApiClient.put(`/borrows/update/${borrow_id}`, formData)
+  const getUserBorrows = async () => {
+    try {
+      const data = await __GetBorrows()
+      setUserBorrows(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
-                        //model attributes end here
-                    />
-                ))}
-            </div>
+  const getUserItems = async () => {
+    try {
+      const data = await __GetItems()
+      setUserItems(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getUserBorrows()
+    getUserItems()
+  }, [])
+
+
+  return (
+    <div>
+
+      <h1>Your Profile</h1>
+      <div className="profilePage">
+
+        <div className="itemListU">
+          <h4>your items</h4>
+          <buttom>add item</buttom>
+          {userItems.map((item) => (
+            <ItemCard
+              //model attributes go here
+              key={item._id}
+              title={item.title}
+              onClick={() => history.push(`/items/${item.id}`, item = { item })}
+            //model attributes end here
+            />
+          ))}
         </div>
-    );
+
+        <div className="borrowListU">
+
+          <h4>items you have borrowed</h4>
+          {userBorrows.map((borrow) => (
+            <BorrowCard
+              //model attributes go here
+              key={borrow._id}
+              name={borrow._id}
+            //check status-if true-> push to edit borrow
+            // onClick={() => history.push(`/borrows/${borrow.id}`, borrow={borrow})} 
+
+            //Maybe use:
+            //const response = await ApiClient.put(`/borrows/update/${borrow_id}`, formData)
+
+            //model attributes end here
+            />
+          ))}
+        </div>
+      </div>
+
+    </div>
+  );
 }
 
 export default Profile;
