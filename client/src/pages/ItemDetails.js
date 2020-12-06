@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { __GetItemById } from '../services/ItemService'
 
 function ItemDetails(props) {
@@ -7,7 +7,9 @@ function ItemDetails(props) {
     //we are passing props to item details from the BrowsePage
     //what we need to run the getDetails function is an id
     //drill down into the data until you find the info needed
-    console.log('ID', props.location.state.item.id)
+
+
+    // console.log('ID', props.location.state.item.id)
     
 
     const pathName = props.location.state.item.id

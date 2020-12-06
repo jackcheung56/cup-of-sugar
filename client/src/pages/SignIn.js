@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
-import { __GetUser } from '../services/UserService'
+// import { __GetUser } from '../services/UserService'
 
 const SignIn = ({ user, setUser }) => {
   console.log('Sign In Props', user)
 
-  const [inputText, setInputText] = useState('')
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

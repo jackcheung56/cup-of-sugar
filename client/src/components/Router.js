@@ -4,8 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 //Services
 import { __GetItems } from '../services/ItemService'
-import { __GetUser } from '../services/UserService'
-
+// import { __GetUser } from '../services/UserService'
 
 //Components
 import Navbar from "./NavBar";
@@ -15,10 +14,8 @@ import Home from "../pages/Home";
 import Profile from "../pages/Profile";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
-import Browse from "../pages/Browse";
+import BrowsePage from "../pages/BrowsePage";
 import ItemDetails from "../pages/ItemDetails";
-
-
 
 function Router(props) {
 
@@ -57,7 +54,6 @@ function Router(props) {
   }, [])
 
   
-
   return (
     <div>
 
@@ -67,7 +63,7 @@ function Router(props) {
 
         <Route exact path='/'><Home></Home></Route>
 
-        <Route path="/items/all" component={() => (<Browse item={item} setItem={setItem} history={history}></Browse>)} />
+        <Route path="/items/all" component={() => (<BrowsePage item={item} setItem={setItem} history={history}></BrowsePage>)} />
 
         <Route path="/items/:item_id" render={(props) => <ItemDetails location={props.location}></ItemDetails>} />
 

@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom';
-import { __GetItems } from '../services/ItemService'
+// import { useHistory } from 'react-router-dom';
+// import { __GetItems } from '../services/ItemService'
 import { __GetBorrows } from '../services/BorrowService'
 import BorrowCard from '../components/BorrowCard'
 
 function Profile(props) {
-    console.log(props)
+    // console.log(props)
     const [userBorrow, setUserBorrow] = useState([])
 
-    const history = useHistory()
+    // const history = useHistory()
 
     const getUserBorrows = async () => {
         try {
           const data = await __GetBorrows()
-          console.log('PROFILE', data)
           setUserBorrow(data)
         } catch (error) {
           console.log(error)
@@ -24,8 +23,7 @@ function Profile(props) {
         getUserBorrows()
       }, [])
     
-    
-
+  
       return (
         <div>
             <h1>Profile</h1>

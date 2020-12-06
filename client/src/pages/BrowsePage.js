@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom';
-import { __GetItems } from '../services/ItemService'
+// import { __GetItems } from '../services/ItemService'
 import ItemCard from '../components/ItemCard'
 
-function Browse(props) {
+function BrowsePage(props) {
     //Check to see if the data is being passed as props
     console.log(props)
     
@@ -30,7 +30,7 @@ function Browse(props) {
     );
 }
 
-export default Browse;
+export default BrowsePage;
 
 
 
