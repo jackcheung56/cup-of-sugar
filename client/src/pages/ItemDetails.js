@@ -24,15 +24,12 @@ function ItemDetails({item}) {
 
 
 
-
-
-
-
-
-
     return (
-        <div>
+        <div className="detailsPage">
             <h1>Item Details</h1>
+            <div className="detailsContainer">
+                <h1>{detail.title}</h1>
+            </div>
         </div>
     );
 }
