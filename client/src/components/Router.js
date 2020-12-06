@@ -11,6 +11,7 @@ import Profile from "../pages/Profile";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import Browse from "../pages/Browse";
+import ItemDetails from "../pages/ItemDetails";
 
 function Router() {
 
@@ -31,6 +32,8 @@ function Router() {
         <Route path='/signup'><SignUp></SignUp></Route>
 
         <Route path='/users/:user_id'><Profile></Profile></Route>
+
+        <Route path='/items/:item_id'><ItemDetails></ItemDetails></Route>
 
 
       </Switch>
