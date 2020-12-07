@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-// import { __GetUser } from '../services/UserService'
+import { __LoginUser } from "../services/UserService";
+import NavBar from "../components/NavBar";
 
 const SignIn = ({ user, setUser }) => {
   console.log("Sign In Props", user);
@@ -38,7 +39,7 @@ const SignIn = ({ user, setUser }) => {
   };
 
   return (
-    <form>
+    <form onSubmit={loginHandler}>
       <div className="block">
         <input
           placeholder="Enter Email"
@@ -53,6 +54,7 @@ const SignIn = ({ user, setUser }) => {
           type="text"
         ></input>
         <button onClick={loginHandler}>Login</button>
+        {auth.formError ? <p>You can not sign in.</p> : <p></p>}
       </div>
     </form>
   );
