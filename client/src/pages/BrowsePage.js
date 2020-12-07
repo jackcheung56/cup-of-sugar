@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import { useHistory } from 'react-router-dom';
 import ItemCard from '../components/ItemCard'
 
 function BrowsePage(props) {
     //Check to see if the data is being passed as props
+
+    // useEffect(() => {
+    //     setItem(item)
+    //     console.log('Check State', item)
+    //   }, [])
+
     console.log(props)
     
     const itemList = props.item

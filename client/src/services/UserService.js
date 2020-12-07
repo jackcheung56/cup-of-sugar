@@ -19,6 +19,19 @@ export const __GetUser = async (user_id) => {
   }
 }
 
+
+export const __GetAllUsers = async (user_id) => {
+  try{
+    const response = await ApiClient.get(`/users/all`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+
+
+
+
 export const __GetUserByEmail = async (user_email) => {
   try{
     const response = await ApiClient.get(`/users/${user_email}`)

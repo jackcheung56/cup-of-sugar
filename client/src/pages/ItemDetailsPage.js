@@ -32,13 +32,11 @@ function ItemDetailsPage(props) {
 
 
 
-
-    console.log('IDP', detail.id)
-
-
     return (
         <div className="detailsPage">
             <Link to={{pathname: `/items/update/${detail.id}`, detail: {detail}}}><button>Edit</button></Link>
+
+            <Link to={{pathname: `/items/delete/${detail.id}`, detail: {detail}}}><button>Delete</button></Link>
 
 
 

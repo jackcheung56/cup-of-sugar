@@ -3,7 +3,7 @@ import ApiClient from "./ApiClient";
 export const __GetItems = async () => {
   try {
     const response = await ApiClient.get("/items/all");
-    console.log("SERVICE", response.data);
+    // console.log("SERVICE", response.data);
     return response.data;
   } catch (error) {
     throw error;
@@ -37,11 +37,11 @@ export const __UpdateItem = async (formData, item_id) => {
   }
 }
 
-// export const __DeleteItem = async (item_id) => {
-//   try{
-//     const response = await ApiClient.delete(`/items/delete/${item_id}`)
-//     return response
-//   } catch (error) {
-//     throw error
-//   }
-// }
+export const __DeleteItem = async (item_id) => {
+  try{
+    const response = await ApiClient.delete(`/items/delete/${item_id}`)
+    return response
+  } catch (error) {
+    throw error
+  }
+}

@@ -15,11 +15,16 @@ import Profile from "../pages/Profile";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import BrowsePage from "../pages/BrowsePage";
+import UserList from "../pages/UserList";
 
 import AddItemPage from "../pages/AddItemPage";
 import EditItemPage from "../pages/EditItemPage";
+import DeleteItemPage from "../pages/DeleteItemPage";
+
 
 import ItemDetailsPage from "../pages/ItemDetailsPage";
+
+
 
 
 function Router(props) {
@@ -43,20 +48,12 @@ function Router(props) {
     }
   }
 
-  // const getUser = async () => {
-  //   try {
-  //     const data = await __GetUser()
-  //     console.log('ROUTER', data)
-  //     setUser(data)
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
-
   useEffect(() => {
     getAllItems()
     // getUser()
   }, [])
+
+
 
   
   return (
@@ -66,7 +63,11 @@ function Router(props) {
 
       <Switch>
 
-        <Route exact path='/'><Home></Home></Route>
+        {/* <Route exact path='/'><Home></Home></Route> */}
+
+        <Route exact path='/'><Home item={item} setItem={setItem} ></Home></Route>
+
+        <Route exact path='/users/all'><UserList></UserList></Route>
 
         <Route exact path="/items/all" component={() => (<BrowsePage item={item} setItem={setItem} history={history}></BrowsePage>)} />
 
@@ -74,10 +75,13 @@ function Router(props) {
 
         <Route exact path='/items/add'><AddItemPage></AddItemPage></Route>
 
-        {/* <Route exact path='/items/update/:item_id'><EditItemPage></EditItemPage></Route> */}
-
+        <Route path='/items/delete/:item_id' render={(props) => <DeleteItemPage {...props}/>} />
 
         <Route exact path='/items/update/:item_id' render={(props) => <EditItemPage {...props}/>} />
+
+
+
+  \
 
         
 
@@ -85,7 +89,7 @@ function Router(props) {
 
         <Route path='/signup'><SignUp></SignUp></Route>
 
-        <Route path="/items/:item_id" render={(props) => <ItemDetailsPage location={props.location}></ItemDetailsPage>} />
+        <Route exact path="/items/:item_id" render={(props) => <ItemDetailsPage location={props.location}></ItemDetailsPage>} />
 
 
         
@@ -97,3 +101,4 @@ function Router(props) {
 }
 
 export default Router;
+

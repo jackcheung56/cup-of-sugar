@@ -7,12 +7,12 @@ import { useHistory } from 'react-router-dom';
 import FormInput from '../components/FormInput'
 
 const EditItemPage = (props) => {
+  // console.log('data', data)
+  // console.log('id', callId)
+  // console.log(props)
 
   const data = props.history.location.detail.detail
   const callId = props.history.location.detail.detail.id
-  console.log('data', data)
-  console.log('id', callId)
-  console.log(props)
   const [editItem, setEditItem] = useState({})
 
   
@@ -25,8 +25,7 @@ const EditItemPage = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      console.log('Check State Before Call', editItem)
-      const put = await __UpdateItem(editItem, callId)
+      const update = await __UpdateItem(editItem, callId)
 
       props.history.goBack()
 
