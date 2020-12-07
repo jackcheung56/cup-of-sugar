@@ -5,10 +5,10 @@ import { useHistory } from "react-router-dom";
 //Services
 import { __GetItems } from "../services/ItemService";
 // import { __GetUser } from '../services/UserService'
-
+import { __CheckSession } from "../services/UserService";
 //Components
 import Navbar from "./NavBar";
-
+import ProtectedRoute from "./ProtectedRoute";
 //Pages
 import Home from "../pages/Home";
 import Profile from "../pages/Profile";
@@ -23,7 +23,6 @@ import DeleteItemPage from "../pages/DeleteItemPage";
 
 import ItemDetailsPage from "../pages/ItemDetailsPage";
 import { verify } from "jsonwebtoken";
-import { __CheckSession } from "../services/UserService";
 
 function Router(props) {
   //State
