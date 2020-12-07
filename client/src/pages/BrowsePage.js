@@ -1,6 +1,5 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
-// import { __GetItems } from '../services/ItemService'
 import ItemCard from '../components/ItemCard'
 
 function BrowsePage(props) {

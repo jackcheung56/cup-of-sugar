@@ -28,14 +28,14 @@ export const __CreateItem = async (formData) => {
   }
 }
 
-// export const __UpdateItem = async (formData, item_id) => {
-//   try{
-//     const response = await ApiClient.put(`/items/update/${item_id}`, formData)
-//     return response.data
-//   } catch (error) {
-//     throw error
-//   }
-// }
+export const __UpdateItem = async (formData, item_id) => {
+  try{
+    const response = await ApiClient.put(`/items/update/${item_id}`, formData)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
 
 // export const __DeleteItem = async (item_id) => {
 //   try{

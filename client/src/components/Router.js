@@ -17,6 +17,7 @@ import SignUp from "../pages/SignUp";
 import BrowsePage from "../pages/BrowsePage";
 
 import AddItemPage from "../pages/AddItemPage";
+import EditItemPage from "../pages/EditItemPage";
 
 import ItemDetailsPage from "../pages/ItemDetailsPage";
 
@@ -72,6 +73,13 @@ function Router(props) {
         <Route path='/users/:user_id'><Profile borrow={borrow} setBorrow={setBorrow} user={user} setUser={setUser} history={history}></Profile></Route>
 
         <Route exact path='/items/add'><AddItemPage></AddItemPage></Route>
+
+        {/* <Route exact path='/items/update/:item_id'><EditItemPage></EditItemPage></Route> */}
+
+
+        <Route exact path='/items/update/:item_id' render={(props) => <EditItemPage {...props}/>} />
+
+        
 
         <Route path="/signin" component={() => (<SignIn user={user} setUser={setUser} history={history}></SignIn>)} />
 

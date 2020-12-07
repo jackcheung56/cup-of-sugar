@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
 import '../styles/Form.css';
 import { __CreateItem } from '../services/ItemService'
+import { useHistory } from 'react-router-dom';
 import FormInput from '../components/FormInput'
 
 const AddItemPage = () => {
   const [newItem, setNewItem] = useState({})
+  const history = useHistory()
 
   console.log(newItem)
 
 
   const handleChange = ({ target }) => {
     setNewItem({ ...newItem, [target.name]: target.value})
-    console.log('TARGET VALUE', target.value)
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      console.log('Check State Before Call', newItem)
-      let post = await __CreateItem(newItem)
-
-      // this.props.history.push(`/users/${user.id}`)
+      const post = await __CreateItem(newItem)
+      
+      history.push(`/users/:user_id`)
 
     } catch (error) {
       console.log(error)

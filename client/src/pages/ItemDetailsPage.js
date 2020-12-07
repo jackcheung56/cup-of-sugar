@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-// import { useHistory } from 'react-router-dom';
 import { __GetItemById } from '../services/ItemService'
+import { Link } from 'react-router-dom'
 
 function ItemDetailsPage(props) {
     //Basic template
@@ -10,11 +10,11 @@ function ItemDetailsPage(props) {
 
     // console.log('ID', props.location.state.item.id)
 
-    
+
 
     const detailRoute = props.location.state.item.id
     const [detail, setDetail] = useState({})
-    
+
 
     const getDetails = async () => {
         try {
@@ -30,11 +30,22 @@ function ItemDetailsPage(props) {
         getDetails()
     }, [])
 
+
+
+
+    console.log('IDP', detail.id)
+
+
     return (
         <div className="detailsPage">
+            <Link to={{pathname: `/items/update/${detail.id}`, detail: {detail}}}><button>Edit</button></Link>
+
+
+
             <h1>Item Details</h1>
             <div className="detailsContainer">
                 <h1>{detail.title}</h1>
+
             </div>
         </div>
     );
