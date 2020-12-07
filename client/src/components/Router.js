@@ -11,6 +11,7 @@ import Navbar from "./NavBar";
 
 //Pages
 import Home from "../pages/Home";
+import LandingPage from "../pages/LandingPage";
 import Profile from "../pages/Profile";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
@@ -50,7 +51,6 @@ function Router(props) {
 
   useEffect(() => {
     getAllItems()
-    // getUser()
   }, [])
 
 
@@ -62,7 +62,7 @@ function Router(props) {
 
       <Switch>
 
-        {/* <Route exact path='/'><Home></Home></Route> */}
+      <Route exact path='/landing'><LandingPage></LandingPage></Route>
 
         <Route exact path='/'><Home item={item} setItem={setItem} ></Home></Route>
 
@@ -77,12 +77,6 @@ function Router(props) {
         <Route path='/items/delete/:item_id' render={(props) => <DeleteItemPage {...props}/>} />
 
         <Route exact path='/items/update/:item_id' render={(props) => <EditItemPage {...props}/>} />
-
-
-
-  \
-
-        
 
         <Route path="/signin" component={() => (<SignIn user={user} setUser={setUser} history={history}></SignIn>)} />
 

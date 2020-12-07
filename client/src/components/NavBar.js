@@ -5,15 +5,21 @@ import '../styles/Nav.css';
 
 function Navbar(props) {
     // console.log('nav', props)
-    
+
 
     return (
         <nav>
             <div className="navbox">
 
                 <p>hello user</p>
-                
+
                 <ul className="nav-links">
+
+                    <Link to='/landing'>
+                        <li>Landing</li>
+                    </Link>
+
+
                     <Link to='/'>
                         <li>Home</li>
                     </Link>
