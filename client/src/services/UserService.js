@@ -37,6 +37,15 @@ export const __GetUserByEmail = async (user_email) => {
   }
 };
 
+export const __CheckSession = async () => {
+  try {
+    const res = await ApiClient.get("/users/refresh/session");
+    console.log("DATA HERE", res.data);
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const __LoginUser = async (userData) => {
   try {
     const res = await ApiClient.post("/users/login", userData);
