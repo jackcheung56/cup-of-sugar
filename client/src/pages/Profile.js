@@ -103,8 +103,9 @@ function Profile(props) {
           {userBorrows.map((borrow) => (
             <BorrowCard
               //model attributes go here
-              key={borrow._id}
-              name={borrow._id}
+              key={borrow.id}
+              name={borrow.itemId}
+              status={borrow.status}
             //check status-if true-> push to edit borrow
             // onClick={() => history.push(`/borrows/${borrow.id}`, borrow={borrow})} 
 

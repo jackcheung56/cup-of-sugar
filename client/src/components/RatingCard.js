@@ -1,14 +1,17 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import '../styles/Card.css'
 
 const RatingCard = ({ onClick, name, rating}) => {
+    const [rate, setRating] = useState('\u2615')
+    
     return (
-    <div className="card" onClick={onClick}>
+    <div className="card">
         <div>
-            <h2>User's Rating</h2>
-            <h3>Name: {name}</h3>
+            <h3>{name}'s Rating</h3>
             <h4>Rating: {rating}</h4>
         </div>
+        <div>{rate}</div>
+        <button onClick = {() => setRating(rate + '\u2615')}>Rate Me!</button>
     </div>
     )}
 
