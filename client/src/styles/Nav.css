@@ -16,7 +16,7 @@ html {
   
   
   .navbox{
-      background-color: white;
+    background-color: transparent;
   }
   
   
@@ -35,7 +35,9 @@ html {
     justify-content: center;
     list-style: none;
     text-decoration: none;
-    color: #222326;
+    color: white;
+    opacity: 0.25;
+
   }
 
   
