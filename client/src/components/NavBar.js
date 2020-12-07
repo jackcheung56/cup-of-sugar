@@ -5,6 +5,7 @@ import '../styles/Nav.css';
 
 function Navbar(props) {
     // console.log('nav', props)
+    
 
     return (
         <nav>
