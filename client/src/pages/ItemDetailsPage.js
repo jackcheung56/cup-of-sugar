@@ -3,12 +3,7 @@ import { __GetItemById } from '../services/ItemService'
 import { Link } from 'react-router-dom'
 
 function ItemDetailsPage(props) {
-    //Basic template
-    //we are passing props to item details from the BrowsePage
-    //what we need to run the getDetails function is an id
-    //drill down into the data until you find the info needed
-
-    // console.log('ID', props.location.state.item.id)
+    console.log('IDP PROPS', props)
 
 
 
