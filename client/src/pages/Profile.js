@@ -24,6 +24,7 @@ function Profile(props) {
     } catch (error) {
       console.log(error)
     }
+    
   }
 
   const getUserItems = async () => {
