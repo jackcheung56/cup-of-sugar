@@ -44,8 +44,34 @@ Hunter-Saturday Dec. 5
 
 
 
-    SQL JOIN TEST:
+SQL JOIN TEST:
 
-    SELECT name, title FROM users JOIN borrows ON users.id = borrows.user_id JOIN items ON borrows.item_id = items.id;
+SELECT name, title FROM users JOIN borrows ON users.id = borrows.user_id JOIN items ON borrows.item_id = items.id;
+    Works
+
+
+• Connecting the front end to the back end (GUIDE)
+
+    1. Now that Jackie has built out our services, lets test one out. 
+        go to the service file of your choice (item service for example)
+        select a service you want to test (__GetItems). 
+        add a console log below the Api call that tracks the response
+        label the console log indicating that this is from services
+
+    2. Import the service into the page where it will be used.
+        create a new function (getAllItems) that uses this service as you would an API call.
+        console log the response
+        label the console log indicating that this is from the page
+        place the getAllItems function in useEffect.
+        useEffect is basically replacing component didmount. 'run this when the page loads'
+
+    3. Look at the data in the console. Is the correct data getting to (1) services and then (2) the page?
+
+    4. Once you have the data you need, import any necessary components. 
+        Within the return of the page where render will happen, plug in the model attributes
+        of your choice into the html. Test it out with 1 simple attribute first. Does it display on the page?
+
+    
+    
 
 

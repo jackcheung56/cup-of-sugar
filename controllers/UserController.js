@@ -24,7 +24,6 @@ const GetUsers = async (req, res) => {
     }
   }
 
-
   
   const CreateUser = async (req, res) => {
     try {
@@ -79,5 +78,5 @@ const DeleteUser = async (req, res) => {
   UpdateUser,
   GetUsers,
   CreateUser,
-  GetUserById
+  GetUserById,
 }

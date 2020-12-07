@@ -1,0 +1,12 @@
+Hunter-Saturday Dec. 6
+
+Pending Additions
+
+
+The easiest path towards full CRUD will be from our user profile page
+
+A user profile page will display items (GET)
+From here a user will be able to add items (POST)
+For each item, a user can edit the item status (PUT)
+And a user can also remove items from their inventory (DELETE)
+

@@ -3,29 +3,43 @@ import { Link } from 'react-router-dom'
 
 import '../styles/Nav.css';
 
-function Navbar() {
+function Navbar(props) {
+    // console.log('nav', props)
+    
+
     return (
         <nav>
             <div className="navbox">
+
+                <p>hello user</p>
+                
                 <ul className="nav-links">
-                    <Link to ='/'>
-                        <ul>Home</ul>
+                    <Link to='/'>
+                        <li>Home</li>
                     </Link>
 
-                    <Link to ='/items/all'>
-                        <ul>Browse</ul>
+                    <Link to='/users/all'>
+                        <li>User</li>
                     </Link>
 
-                    <Link to ='/signup'>
-                        <ul>Sign Up</ul>
+                    <Link to='/items/all'>
+                        <li>Browse</li>
                     </Link>
 
-                    <Link to ='/signin'>
-                        <ul>Sign In</ul>
+                    <Link to='/users/:user_id'>
+                        <li>Profile</li>
                     </Link>
 
-                    <Link to ='/'>
-                        <ul>Sign Out</ul>
+                    <Link to='/signup'>
+                        <li>Sign Up</li>
+                    </Link>
+
+                    <Link to='/signin'>
+                        <li>Sign In</li>
+                    </Link>
+
+                    <Link to='/'>
+                        <li>Sign Out</li>
                     </Link>
                 </ul>
             </div>
@@ -34,3 +48,4 @@ function Navbar() {
 }
 
 export default Navbar
+
