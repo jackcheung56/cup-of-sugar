@@ -4,14 +4,21 @@ import { Link } from 'react-router-dom'
 import '../styles/Nav.css';
 
 function Navbar(props) {
-    console.log('nav', props)
+    // console.log('nav', props)
 
     return (
         <nav>
             <div className="navbox">
+
+                <p>hello user</p>
+                
                 <ul className="nav-links">
                     <Link to='/'>
                         <li>Home</li>
+                    </Link>
+
+                    <Link to='/users/all'>
+                        <li>User</li>
                     </Link>
 
                     <Link to='/items/all'>
