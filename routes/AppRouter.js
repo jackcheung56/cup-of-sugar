@@ -1,11 +1,10 @@
 const Router = require("express").Router();
-const Auth = require("./AuthRouter");
 
 const UserRouter = require("./UserRouter");
 const ItemRouter = require("./ItemRouter");
 const BorrowRouter = require("./BorrowRouter");
 
-Router.use("/auth", AuthRouter);
+Router.use("/auth", UserRouter);
 Router.use("/users", UserRouter);
 Router.use("/items", ItemRouter);
 Router.use("/borrows", BorrowRouter);
