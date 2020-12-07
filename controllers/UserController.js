@@ -1,5 +1,9 @@
 const { User } = require("../models");
-const { hashPassword, passwordValid, createToken } = require("../middleware");
+const {
+  hashPassword,
+  passwordValid,
+  createToken,
+} = require("../middleware/JSON");
 
 const GetUsers = async (req, res) => {
   try {

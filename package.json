@@ -8,12 +8,9 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jackcheung56/cup-of-sugar.git"
-  },
+  "repository": "git+https://github.com/jackcheung56/cup-of-sugar.git",
   "keywords": [],
-  "author": "",
+  "author": "lewist13 <lewistpro@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jackcheung56/cup-of-sugar/issues"
