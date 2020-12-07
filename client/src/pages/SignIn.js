@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { __LoginUser } from "../services/UserService";
-import NavBar from "../components/NavBar";
+// import NavBar from "../components/NavBar";
 
-const SignIn = ({ user, setUser }) => {
-  console.log("Sign In Props", user);
+const SignIn = ({ authenticated, currentUser, props }) => {
+  console.log("Sign In Props", props.user);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,15 +22,15 @@ const SignIn = ({ user, setUser }) => {
   const loginHandler = (event) => {
     event.preventDefault();
     try {
-      setUser({
+      props.setUser({
         email: { email },
         password: { password },
       });
-      console.log("login test", user);
+      console.log("login test", props.user);
       setEmail("");
       setPassword("");
       // history.push(`/users/${user.id}`, user={user})
-      toggleAuthenticated(true, setUser.user, () =>
+      props.toggleAuthenticated(true, props.setUser.user, () =>
         history.push("/users/:user_id")
       );
     } catch (error) {
@@ -38,8 +38,9 @@ const SignIn = ({ user, setUser }) => {
     }
   };
 
-  return (
+  return !authenticated && !currentUser ? (
     <form onSubmit={loginHandler}>
+      <h1>Sign In</h1>
       <div className="block">
         <input
           placeholder="Enter Email"
@@ -54,9 +55,10 @@ const SignIn = ({ user, setUser }) => {
           type="text"
         ></input>
         <button onClick={loginHandler}>Login</button>
-        {auth.formError ? <p>You can not sign in.</p> : <p></p>}
       </div>
     </form>
+  ) : (
+    <h1>You're alradyt signed in</h1>
   );
 };
 

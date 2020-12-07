@@ -22,7 +22,6 @@ import EditItemPage from "../pages/EditItemPage";
 import DeleteItemPage from "../pages/DeleteItemPage";
 
 import ItemDetailsPage from "../pages/ItemDetailsPage";
-import { verify } from "jsonwebtoken";
 
 function Router(props) {
   //State
@@ -30,12 +29,11 @@ function Router(props) {
   const [user, setUser] = useState({});
   const [borrow, setBorrow] = useState([]);
   const history = useHistory();
-  const [auth, setAuth] = useState({
-    authenticated: false,
-    currentUser: null,
-    pageLoading: true,
-  });
+  // give each data it's on state
 
+  const [authenticated, setAuthenticated] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [pageLoading, setPageLoading] = useState(false);
   //Functions
 
   const getAllItems = async () => {
@@ -52,7 +50,7 @@ function Router(props) {
     getAllItems();
     // getUser()
     verifyTokenValid();
-    setAuth({ pageLoading: false });
+    setPageLoading(false);
     toggleAuthenticated();
   }, []);
 
@@ -62,53 +60,35 @@ function Router(props) {
       try {
         const session = await __CheckSession();
         console.log("SESSION HERE", session);
-        setAuth(
-          {
-            currentUser: session.user,
-            authenticated: true,
-          },
-          () => history.push("/users/:user_id")
-        );
+        setAuthenticated(true);
+        setCurrentUser(session.user);
+        props.history.push("/users/:user_id");
       } catch (error) {
-        setAuth({
-          currentUser: null,
-          authenticated: false,
-        });
+        setCurrentUser(null);
+        setAuthenticated(false);
         localStorage.clear();
       }
     }
   };
 
   const toggleAuthenticated = (value, user, done) => {
-    setAuth(
-      {
-        authenticated: value,
-        currentUser: user,
-      },
-      () => done()
-    );
+    setAuthenticated(value);
+    setCurrentUser(user);
   };
 
   return (
     <div>
-      {auth.pageLoading ? (
+      {pageLoading ? (
         <h3>*</h3>
       ) : (
         <Switch>
           <Navbar user={user}></Navbar>
-          {/* <Route exact path='/'><Home></Home></Route> */}
           <Route
-            authenticated={auth.authenticated}
+            authenticated={authenticated}
             exact
             path="/"
             component={(props) => (
-              <Home
-                {...props}
-                currentUser={auth.currentUser}
-                authenticated={auth.authenticated}
-                item={item}
-                setItem={setItem}
-              ></Home>
+              <Home {...props} item={item} setItem={setItem}></Home>
             )}
           />
 
@@ -151,7 +131,7 @@ function Router(props) {
             path="/signin"
             component={(props) => (
               <SignIn
-                toggleAuthenticated={auth.toggleAuthenticated}
+                toggleAuthenticated={toggleAuthenticated}
                 user={user}
                 setUser={setUser}
                 history={history}
