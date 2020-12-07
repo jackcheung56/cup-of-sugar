@@ -1,8 +1,8 @@
 import React from 'react'
 import '../styles/Card.css'
 
-const BorrowCard = ({ onClick, key, status}) => (
-
+const BorrowCard = ({ onClick, key, status}) => {
+return (
     <div className="card" onClick={onClick}>
         <div>
             {/* <img src={image}></img> */}
@@ -14,7 +14,7 @@ const BorrowCard = ({ onClick, key, status}) => (
         </div>
     </div>
 )
-
+}
 export default BorrowCard
 
 

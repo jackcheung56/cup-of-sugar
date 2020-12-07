@@ -46,8 +46,23 @@ Jackie-Monday Dec. 7
 User Journey (Borrowing Items)
 Simpler Approach
 
+1) From ItemDetailsPage - click REQUEST BORROW
+    available props on ItemDetailsPage:
+        id
+        owner_id
+        title
+    Borrows Model:
+    userId: INTEGER,
+    itemId: INTEGER,
+    ownerId: INTEGER,
+    isAccepted: BOOLEAN,
+    timeLimit: STRING,
+    dateAccepted: new Date()
 
-
+2) The REQUEST BORROW sends the borrow request to user's message page where user can either accept or reject the request
+    Maybe a boolean in the borrows model where 
+    isAccepted: true; that means the user has accepted the request and then it puts the borrowcard in the person who is borrowing and the lender's profile page. 
+    isAccepted: false; the lender has rejected the request and removes the request from messages. 
     
 
 
