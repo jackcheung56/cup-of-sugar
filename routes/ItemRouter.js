@@ -11,6 +11,9 @@ Router.get('/all', controller.GetItems)
 Router.get('/:item_id', controller.GetItemById)
 // http://localhost:3001/api/items/1
 
+Router.get('/sort/:category', controller.GetItemsByCategory)
+// http://localhost:3001/api/items/sort/Appliances
+
 
 Router.post('/add', controller.CreateItem)
 // http://localhost:3001/api/items/add
@@ -26,3 +29,6 @@ Router.delete('/delete/:item_id', controller.DeleteItem)
 Router.get('/owner/:owner_id', controller.GetItemByOwner)
 
 module.exports = Router
+
+
+
