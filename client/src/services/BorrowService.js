@@ -44,3 +44,12 @@ export const __DeleteBorrow = async (borrow_id) => {
     throw error
   }
 }
+
+export const __GetBorrowByUserId = async (user_id) => {
+  try{
+    const response = await ApiClient.get(`/borrows/get/${user_id}`)
+    return response
+  } catch (error){
+    throw error
+  }
+}
