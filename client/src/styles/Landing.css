@@ -2,6 +2,8 @@ body{
     background: rgb(16,17,20);
     background: linear-gradient(0deg, rgba(16,17,20,1) 0%, rgba(32,34,40,1) 100%);
     color: white;
+
+
 }
 
 /* body{
@@ -53,7 +55,4 @@ body{
     width:100%;
 }
 
-/* svg{
-    display: block;
-} */
 
