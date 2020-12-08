@@ -9,6 +9,7 @@ import { __CheckSession } from "../services/UserService";
 //Components
 import Navbar from "./NavBar";
 import ProtectedRoute from "./ProtectedRoute";
+import Messenger from "./Messenger";
 //Pages
 import Home from "../pages/Home";
 import LandingPage from "../pages/LandingPage";
@@ -38,7 +39,7 @@ function Router(props) {
   const [currentUser, setCurrentUser] = useState(null);
   const [pageLoading, setPageLoading] = useState(false);
   //Functions
-  
+
   const getAllItems = async () => {
     try {
       const data = await __GetItems();
@@ -78,8 +79,6 @@ function Router(props) {
     setCurrentUser(user);
   };
 
-
-
   return (
     <div>
       <Navbar
@@ -91,10 +90,21 @@ function Router(props) {
         <h3>*</h3>
       ) : (
         <Switch>
+          <Route path="/dms">
+            <Messenger />
+          </Route>
+          <Route exact path="/">
+            <LandingPage></LandingPage>
+          </Route>
 
-          <Route exact path='/'><LandingPage></LandingPage></Route>
-
-          <Route authenticated={authenticated} exact path="/home" component={(props) => (<Home {...props} item={item} setItem={setItem}></Home>)}/>
+          <Route
+            authenticated={authenticated}
+            exact
+            path="/home"
+            component={(props) => (
+              <Home {...props} item={item} setItem={setItem}></Home>
+            )}
+          />
 
           <Route exact path="/users/all">
             <UserList></UserList>
@@ -161,7 +171,6 @@ function Router(props) {
           />
         </Switch>
       )}
-
     </div>
   );
 }
