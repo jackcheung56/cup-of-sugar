@@ -3,32 +3,31 @@ import { useHistory } from "react-router-dom";
 import { __LoginUser } from "../services/UserService";
 // import NavBar from "../components/NavBar";
 
-const SignIn = ({ authenticated, currentUser, props }) => {
-  console.log("Sign In Props", props.user);
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+const SignIn = (props) => {
+  // console.log("Sign In Props", props.user);
+  const [tempEmail, setTempEmail] = useState("");
+  const [tempPassword, setTempPassword] = useState("");
   const history = useHistory();
 
   const emailInput = (event) => {
-    setEmail(event.target.value);
+    event.preventDefault();
+    setTempEmail(event.target.value);
   };
 
   const passwordInput = (event) => {
-    setPassword(event.target.value);
+    setTempPassword(event.target.value);
   };
 
   const loginHandler = (event) => {
     event.preventDefault();
     try {
       props.setUser({
-        email: { email },
-        password: { password },
+        // email: { email },
+        // password: { password },
       });
       console.log("login test", props.user);
-      setEmail("");
-      setPassword("");
+      props.setEmail(tempEmail);
+      props.setPassword(tempPassword);
       // history.push(`/users/${user.id}`, user={user})
       props.toggleAuthenticated(true, props.setUser.user, () =>
         history.push("/users/:user_id")
@@ -38,19 +37,21 @@ const SignIn = ({ authenticated, currentUser, props }) => {
     }
   };
 
-  return !authenticated && !currentUser ? (
+  return !props.authenticated && !props.currentUser ? (
     <form onSubmit={loginHandler}>
       <h1>Sign In</h1>
       <div className="block">
         <input
           placeholder="Enter Email"
-          value={email}
+          name="email"
+          value={tempEmail}
           onChange={emailInput}
           type="text"
         ></input>
         <input
           placeholder="Enter Password"
-          value={password}
+          name="password"
+          value={tempPassword}
           onChange={passwordInput}
           type="text"
         ></input>

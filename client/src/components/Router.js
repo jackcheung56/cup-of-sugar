@@ -27,6 +27,8 @@ function Router(props) {
   //State
   const [item, setItem] = useState([]);
   const [user, setUser] = useState({});
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [borrow, setBorrow] = useState([]);
   const history = useHistory();
   // give each data it's on state
@@ -70,7 +72,7 @@ function Router(props) {
       }
     }
   };
-
+  console.log("ROUTER HERE", email, password);
   const toggleAuthenticated = (value, user, done) => {
     setAuthenticated(value);
     setCurrentUser(user);
@@ -78,11 +80,11 @@ function Router(props) {
 
   return (
     <div>
+      <Navbar user={user}></Navbar>
       {pageLoading ? (
         <h3>*</h3>
       ) : (
         <Switch>
-          <Navbar user={user}></Navbar>
           <Route
             authenticated={authenticated}
             exact
@@ -133,6 +135,10 @@ function Router(props) {
               <SignIn
                 toggleAuthenticated={toggleAuthenticated}
                 user={user}
+                email={email}
+                password={password}
+                setEmail={setEmail}
+                setPassword={setPassword}
                 setUser={setUser}
                 history={history}
                 {...props}
