@@ -1,0 +1,20 @@
+  
+  .visible {
+    color:  white;
+  }
+  
+  .invisible{
+    color: transparent;
+  }
+  
+  .reqGone {
+      color: black;
+  }
+
+  .reqVis{
+    background-color: transparent;
+    border-style: none;
+    color: transparent;
+    border: 0;
+  }
+  

@@ -1,16 +1,17 @@
 import React from 'react'
 import '../styles/Card.css'
 
-const ItemCard = ({ onClick, title}) => {
+const ItemCard = ({ onClick, title, image, condition, category, description}) => {
     return (
     <div className="card" onClick={onClick}>
         <div>
-            {/* <img src={image}></img> */}
+            <img src={image}></img>
         </div>
         <div>
-            <h3>{title}</h3>
-            <p>Category: Sports</p>
-            <p>Condition: Good</p>
+            <h4>{title}</h4>
+            <p>Condition: {condition}</p>
+            <p>Category: {category}</p>
+            <p>Description: {description}</p>
         </div>
     </div>
     )
