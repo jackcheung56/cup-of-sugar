@@ -7,6 +7,7 @@ function SignUp(props) {
   const [name, setName] = useState("");
   const [tempEmail, setTempEmail] = useState("");
   const [tempPassword, setTempPassword] = useState("");
+  const history = useHistory();
 
   const emailInput = (event) => {
     event.preventDefault();
@@ -28,12 +29,12 @@ function SignUp(props) {
       email: tempEmail,
       password: tempPassword,
     };
-
     props.setUser(newUser);
     try {
       await __CreateUser(newUser);
       console.log(newUser);
-      //   history.push("/signin");
+      
+      history.push("/login");
     } catch (error) {
       throw error;
     }

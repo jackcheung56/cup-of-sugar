@@ -3,7 +3,6 @@ import ApiClient from "./ApiClient";
 export const __GetItems = async () => {
   try {
     const response = await ApiClient.get("/items/all");
-    // console.log("SERVICE", response.data);
     return response.data;
   } catch (error) {
     throw error;

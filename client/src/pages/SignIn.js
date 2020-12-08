@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { __LoginUser } from "../services/UserService";
-// import NavBar from "../components/NavBar";
+
 
 const SignIn = (props) => {
   console.log("Props", props);
   const [tempEmail, setTempEmail] = useState("");
   const [tempPassword, setTempPassword] = useState("");
-  // const history = useHistory();
+
 
   const emailInput = (event) => {
     event.preventDefault();
@@ -26,14 +25,7 @@ const SignIn = (props) => {
         email: tempEmail,
         password: tempPassword,
       };
-      // props.setUser({
-      //   // email: { tempEmail },
-      //   // password: { tempPassword },
-      // });
 
-      // props.setEmail(tempEmail);
-      // props.setPassword(tempPassword);
-      // props.setUser(props.user);
       console.log(tempPassword, tempEmail);
       const signIn = await __LoginUser(userInfo);
       props.toggleAuthenticated(true, signIn.user.id);
