@@ -127,6 +127,7 @@ function Router(props) {
               user={user}
               setUser={setUser}
               history={history}
+              currentUser={currentUser}
             ></Profile>
           </Route>
           <Route exact path="/items/add">

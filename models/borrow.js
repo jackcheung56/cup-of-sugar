@@ -32,7 +32,11 @@ module.exports = (sequelize, DataTypes) => {
     duration: DataTypes.STRING,
     accepted: DataTypes.BOOLEAN,
     photo: DataTypes.STRING,
-    contact: DataTypes.STRING
+    info: DataTypes.STRING,
+    contactId: {
+      type: DataTypes.INTEGER,
+      field: 'contact_id'
+    },
   }, {
     sequelize,
     modelName: 'Borrow',

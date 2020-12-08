@@ -47,7 +47,7 @@ function NavBar({ authenticated, currentUser, className }) {
             <li>Browse</li>
           </Link>
 
-          <Link to="/users/:user_id">
+          <Link to="/users/:owner_id">
             <li>Profile</li>
           </Link>
 

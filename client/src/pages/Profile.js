@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
-import { __GetItems } from '../services/ItemService'
+import { __GetItemByOwner } from '../services/ItemService'
 import { __GetBorrows } from '../services/BorrowService'
 import {__GetUser} from '../services/UserService'
 import BorrowCard from '../components/BorrowCard'
@@ -10,11 +10,12 @@ import RatingCard from '../components/RatingCard'
 import '../styles/Profile.css';
 
 function Profile(props) {
-
+//console.log(props.currentUser.id)
   const [userBorrows, setUserBorrows] = useState([])
   const [userItems, setUserItems] = useState([])
   const [userInfo, setUserInfo] = useState([]) 
   const history = useHistory()
+  const sorting = props.currentUser.id
 
   console.log('User items', userItems)
   console.log('User Borrows', userBorrows)
@@ -33,8 +34,9 @@ function Profile(props) {
 
   const getUserItems = async () => {
     try {
-      const data = await __GetItems()
-      setUserItems(data)
+      const data = await __GetItemByOwner(sorting)
+      console.log(data)
+      setUserItems(data.data)
     } catch (error) {
       console.log(error)
     }
@@ -42,7 +44,7 @@ function Profile(props) {
 
   const getUserData = async () => {
     try{
-      const data = await __GetUser(1)
+      const data = await __GetUser()
       console.log("user data:", data)
       setUserInfo([data])
     } catch (error) {
@@ -89,7 +91,7 @@ function Profile(props) {
           {userItems.map((item) => (
             <ItemCard
               //model attributes go here
-              key={item.id}
+              key={item.ownerId}
               title={item.title}
               onClick={() => history.push(`/items/${item.id}`, item = { item })}
             //model attributes end here
