@@ -2,17 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from 'react-router-dom';
 import ItemCard from '../components/ItemCard'
 import { __GetItems } from "../services/ItemService";
+import { __GetItemsByCategory} from "../services/ItemService";
 
 function BrowsePage(props) {
 
     console.log('BP PROPS', props)
 
-     const [browseItems, setBrowseItems] = useState([])
+    const [browseItems, setBrowseItems] = useState([])
     console.log(props)
     
     const getBrowseItems = async () => {
         try{
             const data = await __GetItems()
+            console.log(data)
             setBrowseItems(data)
         } catch (error) {
             throw error
@@ -20,14 +22,93 @@ function BrowsePage(props) {
     }
 
     const sortAppliances = async () => {
-        setBrowseItems()
         try{
-            // const category = await __GetItems()
-            // setBrowseItems(category)
+            const category = await __GetItemsByCategory('Appliances')
+            const foo = category.data
+            setBrowseItems(foo)
+            console.log(browseItems)
         } catch (error) {
             throw error
         }
     }
+
+    const sortFitness = async () => {
+        try{
+            const category = await __GetItemsByCategory('Fitness')
+            const foo = category.data
+            setBrowseItems(foo)
+            console.log(browseItems)
+        } catch (error) {
+            throw error
+        }
+    }
+
+    const sortClothing = async () => {
+        try{
+            const category = await __GetItemsByCategory('Clothing')
+            const foo = category.data
+            setBrowseItems(foo)
+            console.log(browseItems)
+        } catch (error) {
+            throw error
+        }
+    }
+
+    const sortEntertainment = async () => {
+        try{
+            const category = await __GetItemsByCategory('Entertainment')
+            const foo = category.data
+            setBrowseItems(foo)
+            console.log(browseItems)
+        } catch (error) {
+            throw error
+        }
+    }
+
+    const sortBooks = async () => {
+        try{
+            const category = await __GetItemsByCategory('Books')
+            const foo = category.data
+            setBrowseItems(foo)
+            console.log(browseItems)
+        } catch (error) {
+            throw error
+        }
+    }
+
+    const sortTools = async () => {
+        try{
+            const category = await __GetItemsByCategory('Tools')
+            const foo = category.data
+            setBrowseItems(foo)
+            console.log(browseItems)
+        } catch (error) {
+            throw error
+        }
+    }
+
+    const sortInstruments = async () => {
+        try{
+            const category = await __GetItemsByCategory('Instruments')
+            const foo = category.data
+            setBrowseItems(foo)
+            console.log(browseItems)
+        } catch (error) {
+            throw error
+        }
+    }
+
+    const sortPantry = async () => {
+        try{
+            const category = await __GetItemsByCategory('Pantry')
+            const foo = category.data
+            setBrowseItems(foo)
+            console.log(browseItems)
+        } catch (error) {
+            throw error
+        }
+    }
+
 
     useEffect(() => {
         getBrowseItems()
@@ -41,8 +122,15 @@ function BrowsePage(props) {
     return (
         <div>
             <div className="catButtons">
+                <button onClick={getBrowseItems}>All</button>
                 <button onClick={sortAppliances}>Appliances</button>
-                <button>Fitness</button>
+                <button onClick={sortFitness}>Fitness</button>
+                <button onClick={sortClothing}>Clothing</button>
+                <button onClick={sortEntertainment}>Entertainment</button>
+                <button onClick={sortBooks}>Books</button>
+                <button onClick={sortTools}>Tools</button>
+                <button onClick={sortInstruments}>Instruments</button>
+                <button onClick={sortPantry}>Pantry</button>
             </div>
 
 

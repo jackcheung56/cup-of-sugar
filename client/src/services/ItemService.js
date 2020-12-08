@@ -53,3 +53,14 @@ export const __GetItemByOwner = async (owner_id) => {
     throw error
   }
 }
+
+//========
+
+export const __GetItemsByCategory = async (category) => {
+  try{
+    const response = await ApiClient.get(`/items/sort/${category}`)
+    return response
+  } catch (error) {
+    throw error
+  }
+}

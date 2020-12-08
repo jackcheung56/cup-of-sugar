@@ -5,4 +5,16 @@ BROWSE PAGE
     make buttons to tag with a category
 
 
+List
+
+fitness
+appliances
+clothing
+
+Entertainment
+Books
+Tools
+
+Instruments
+Pantry
 
