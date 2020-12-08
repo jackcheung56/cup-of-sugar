@@ -23,6 +23,6 @@ Router.put('/update/:item_id', controller.UpdateItem)
 Router.delete('/delete/:item_id', controller.DeleteItem)
 // http://localhost:3001/api/items/delete/2
 
-
+Router.get('/owner/:owner_id', controller.GetItemByOwner)
 
 module.exports = Router

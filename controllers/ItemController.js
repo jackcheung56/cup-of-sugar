@@ -2,6 +2,15 @@ const { Item } = require('../models')
 const { Op, literal, fn, col } = require('sequelize')
 
 
+const GetItemByOwner = async (req, res) => {
+  try{
+    let id = parseInt(req.params.owner_id)
+    let owner = await Item.findAll({where: { ownerId: id }})
+    res.send(owner)
+  } catch (error) {
+    throw error
+  }
+}
 
 const GetItems = async (req, res) => {
     try {
@@ -81,5 +90,6 @@ const DeleteItem = async (req, res) => {
   UpdateItem,
   GetItems,
   CreateItem,
-  GetItemById
+  GetItemById,
+  GetItemByOwner
 }
