@@ -19,7 +19,6 @@ function Navbar(props) {
                         <li>Landing</li>
                     </Link>
 
-
                     <Link to='/'>
                         <li>Home</li>
                     </Link>
