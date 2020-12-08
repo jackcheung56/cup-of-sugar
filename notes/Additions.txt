@@ -37,7 +37,7 @@ function stringer(arr) {
     STEPS:
 
     A) add request borrow button and form to item details page
-    
+
     B) form takes in duration. on click CREATE BORROW
 
     C) borrow state is set as:
@@ -53,6 +53,13 @@ function stringer(arr) {
         Logic:
         since item details... has the ownerid... and thats where the borrow is created
         pass the ownerid directly into a field in the borrow called contact owner_id
+
+        owner has a notifications component
+            there is a function in there that runs GET ALL BORROWS WHERE contact id = X
+            when the borrow is made by the requester from the item details page
+                we actually have access to the owner id in items
+                    so we set contact id to =  owner id
+                        and when it is made, it will populate in the owners notifcations
 
     E) owner clicks on notifications
         from notifications it would run an update on BORROWS

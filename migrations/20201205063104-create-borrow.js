@@ -36,8 +36,12 @@ module.exports = {
       photo: {
         type: Sequelize.STRING
       },
-      contact: {
+      info: {
         type: Sequelize.STRING
+      },
+      contactId: {
+        type: Sequelize.INTEGER,
+        field: 'contact_id'
       },
       createdAt: {
         allowNull: false,
