@@ -28,7 +28,11 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    status: DataTypes.ENUM('Returned', 'Active', 'Overdue')
+    status: DataTypes.ENUM('Returned', 'Active', 'Overdue'),
+    duration: DataTypes.STRING,
+    accepted: DataTypes.BOOLEAN,
+    photo: DataTypes.STRING,
+    contact: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Borrow',

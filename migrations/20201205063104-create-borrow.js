@@ -27,6 +27,18 @@ module.exports = {
       status: {
         type: Sequelize.ENUM('Returned', 'Active', 'Overdue')
       },
+      duration: {
+        type: Sequelize.STRING
+      },
+      accepted: {
+        type: Sequelize.BOOLEAN
+      },
+      photo: {
+        type: Sequelize.STRING
+      },
+      contact: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

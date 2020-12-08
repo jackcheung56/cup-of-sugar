@@ -41,8 +41,10 @@ module.exports = (sequelize, DataTypes) => {
         field: "password_digest",
         allowNull: false,
       },
-      area: DataTypes.INTEGER,
+      area: DataTypes.STRING,
       rating: DataTypes.INTEGER,
+      phone: DataTypes.STRING,
+      picture: DataTypes.STRING
     },
     {
       sequelize,
