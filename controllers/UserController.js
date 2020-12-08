@@ -3,7 +3,7 @@ const {
   hashPassword,
   passwordValid,
   createToken,
-} = require("../middleware/JSON");
+} = require("../middleware/index");
 
 const GetUsers = async (req, res) => {
   try {
