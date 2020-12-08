@@ -44,3 +44,12 @@ export const __DeleteItem = async (item_id) => {
     throw error
   }
 }
+
+export const __GetItemByOwner = async (owner_id) => {
+  try{
+    const response = await ApiClient.get(`/items/owner/${owner_id}`)
+    return response
+  } catch (error) {
+    throw error
+  }
+}
