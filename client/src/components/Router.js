@@ -38,9 +38,7 @@ function Router(props) {
   const [currentUser, setCurrentUser] = useState(null);
   const [pageLoading, setPageLoading] = useState(false);
   //Functions
-  console.log(authenticated);
-  console.log(currentUser);
-  console.log("USER", user);
+  
   const getAllItems = async () => {
     try {
       const data = await __GetItems();
@@ -64,7 +62,6 @@ function Router(props) {
     if (token) {
       try {
         const session = await __CheckSession();
-        console.log("SESSION HERE", session);
         setAuthenticated(true);
         setCurrentUser(session.user);
         props.history.push("/users/:user_id");
@@ -75,12 +72,14 @@ function Router(props) {
       }
     }
   };
-  console.log("ROUTER HERE", email, password);
+
   const toggleAuthenticated = (value, user, done) => {
     setAuthenticated(value);
     setCurrentUser(user);
   };
-  console.log(authenticated, currentUser);
+
+
+
   return (
     <div>
       <Navbar
@@ -92,15 +91,10 @@ function Router(props) {
         <h3>*</h3>
       ) : (
         <Switch>
-          <Route exact path='/landing'><LandingPage></LandingPage></Route>
-          <Route
-            authenticated={authenticated}
-            exact
-            path="/"
-            component={(props) => (
-              <Home {...props} item={item} setItem={setItem}></Home>
-            )}
-          />
+
+          <Route exact path='/'><LandingPage></LandingPage></Route>
+
+          <Route authenticated={authenticated} exact path="/home" component={(props) => (<Home {...props} item={item} setItem={setItem}></Home>)}/>
 
           <Route exact path="/users/all">
             <UserList></UserList>
@@ -138,7 +132,7 @@ function Router(props) {
             render={(props) => <EditItemPage {...props} />}
           />
           <Route
-            path="/signin"
+            path="/login"
             component={(props) => (
               <SignIn
                 setAuthenticated={setAuthenticated}
