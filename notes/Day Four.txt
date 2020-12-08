@@ -1,0 +1,69 @@
+Hunter-Monday Dec. 7
+
+User Journey (Borrowing Items)
+
+1) From ItemDetailsPage - click REQUEST BORROW
+    available props on ItemDetailsPage:
+        id
+        owner_id
+        title
+
+2) Creates a request
+    request model attributes:
+
+        A. recipientId -> will enable the request to appear in a userInbox
+            can be set equal to owner_id
+
+        B. listingId (itemId) -> track item 
+            can be set equal to the pk of item
+
+        C. senderId -> ? 
+            need auth? (enter manually for now)
+            create an input field that can take in the required ID
+
+        D. body -> message to the user
+
+        E. dor -> proposed date of return
+
+3) Recipient Inbox Page - Found in User Profile
+    Gets requests by userId
+
+        A. Displays requests in state
+        B. Maps through Request Cards
+        C. Each card has a confirm or reject button
+        D. Confirm will CREATE a BORROW
+            borrow requires the itemId and userId
+                the userId must match the request maker's id
+                the itemId must match the listingId
+        E. Reject will DELETE a REQUEST
+
+        Borrow tab on Profile needs to get borrows by userId
+
+
+===========================================================
+Jackie-Monday Dec. 7
+
+User Journey (Borrowing Items)
+Simpler Approach
+
+1) From ItemDetailsPage - click REQUEST BORROW
+    available props on ItemDetailsPage:
+        id
+        owner_id
+        title
+    Borrows Model:
+    userId: INTEGER,
+    itemId: INTEGER,
+    ownerId: INTEGER,
+    isAccepted: BOOLEAN,
+    timeLimit: STRING,
+    dateAccepted: new Date()
+
+2) The REQUEST BORROW sends the borrow request to user's message page where user can either accept or reject the request
+    Maybe a boolean in the borrows model where 
+    isAccepted: true; that means the user has accepted the request and then it puts the borrowcard in the person who is borrowing and the lender's profile page. 
+    isAccepted: false; the lender has rejected the request and removes the request from messages. 
+    
+
+
+        

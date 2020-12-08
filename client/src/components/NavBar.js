@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Nav.css";
@@ -23,30 +24,37 @@ function NavBar({ authenticated, currentUser, className }) {
           <Link to="/signin">
             <li>Sign In</li>
           </Link>
+          <Link to='/landing'>
+            <li>Landing</li>
+          </Link>
         </ul>
       </nav>
     </div>
   ) : (
-    <header className={className}>
-      <div className="navbox">Welcome Back </div>
-      <nav>
-        <ul className="nav-links">
-          <Link to="/">
-            <li>Home</li>
-          </Link>
-          <Link to="/items/all">
-            <li>Browse</li>
-          </Link>
-          <Link to="/users/:user_id">
-            <li>Profile</li>
-          </Link>
-          <Link to="/">
-            <li>Sign Out</li>
-          </Link>
-        </ul>
-      </nav>
-    </header>
-  );
+      <header className={className}>
+        <div className="navbox">Welcome Back </div>
+        <nav>
+          <ul className="nav-links">
+            <Link to="/">
+              <li>Home</li>
+            </Link>
+            <Link to="/items/all">
+              <li>Browse</li>
+            </Link>
+            <Link to="/users/:user_id">
+              <li>Profile</li>
+            </Link>
+            <Link to="/">
+              <li>Sign Out</li>
+            </Link>
+            <Link to='/landing'>
+              <li>Landing</li>
+            </Link>
+          </ul>
+        </nav>
+      </header>
+    );
+
 }
 
 export default NavBar;
