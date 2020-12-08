@@ -4,11 +4,9 @@ import ItemCard from '../components/ItemCard'
 import { __GetItems } from "../services/ItemService";
 
 function BrowsePage(props) {
-    //Check to see if the data is being passed as props
-    // useEffect(() => {
-    //     setItem(item)
-    //     console.log('Check State', item)
-    //   }, [])
+
+    console.log('BP PROPS', props)
+
      const [browseItems, setBrowseItems] = useState([])
     console.log(props)
     
@@ -21,34 +19,58 @@ function BrowsePage(props) {
         }
     }
 
+    const sortAppliances = async () => {
+        setBrowseItems()
+        try{
+            // const category = await __GetItems()
+            // setBrowseItems(category)
+        } catch (error) {
+            throw error
+        }
+    }
+
     useEffect(() => {
         getBrowseItems()
     }, [])
 
     const itemList = props.item
     const history = useHistory()
-    //Fun fact: this is the same as writing "const history = props.history" (i think...)
+
     
 
     return (
         <div>
+            <div className="catButtons">
+                <button onClick={sortAppliances}>Appliances</button>
+                <button>Fitness</button>
+            </div>
+
+
+
             <h1>browse all items</h1>
+
             <div className="itemList">
                 {browseItems.map((item) => (
                     <ItemCard
                         //model attributes go here
                         key={item._id}
+                        image={item.image}
                         title={item.title}
+                        condition={item.condition}
+                        category={item.category}
+                        description={item.description}
                         onClick={() => history.push(`/items/${item.id}`, item={item})} 
                         //model attributes end here
                     />
                 ))}
             </div>
+
         </div>
     );
 }
 
 export default BrowsePage;
+
 
 
 
