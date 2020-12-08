@@ -92,6 +92,7 @@ function Router(props) {
         <h3>*</h3>
       ) : (
         <Switch>
+          <Route exact path='/landing'><LandingPage></LandingPage></Route>
           <Route
             authenticated={authenticated}
             exact

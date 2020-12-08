@@ -28,6 +28,7 @@ function SignUp(props) {
       email: tempEmail,
       password: tempPassword,
     };
+
     props.setUser(newUser);
     try {
       await __CreateUser(newUser);
@@ -37,7 +38,7 @@ function SignUp(props) {
       throw error;
     }
   };
-
+  
   return (
     <form onSubmit={handleSubmit}>
       <h1>Sign Up</h1>
@@ -68,5 +69,4 @@ function SignUp(props) {
     </form>
   );
 }
-
 export default SignUp;
