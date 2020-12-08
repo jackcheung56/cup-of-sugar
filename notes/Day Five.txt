@@ -1,1 +1,66 @@
-Huntergit 
+Hunter + Jackie - Monday Dec. 8
+
+Revising the models
+
+
+1) Users     Good to go
+
+Front end logic:
+limit integer value to 1-10
+rating a user will run a put-edit
+so we will have access to the previous rating value passed down in props
+during the edit- instead of placing the event.target.value directly into the put
+we will store it in a temp variable
+on click-function takes value Prev and value New-finds the average- and THAT is what gets sent into the back end
+
+2) Items
+
+add the following:
+
+A) Image - string
+B) Condition - ENUM
+C) Description - string
+D) Owner name - string
+
+
+3) Borrow
+
+A) duration - string
+B) accepted - boolean
+C) image - string
+D) contact info - string
+
+
+
+User Journey revision
+
+1) click on the item you want
+2) the item details page, will have a field to enter request details AND a button that sends the request
+3) Need request inbox accesible from PROFILE
+    user experience for the recipient/owner of the item:
+        needs to see some sort of notification that a request has been made
+            this can be achieved with a boolean from the borrow model (Borrow)
+                the owner needs to be able to see relevant information:
+                    - need to see the borrowers rating
+                    - need to see the duration they borrower is requesting
+                    - set boolean to accepted = true
+                    - that action needs to send the borrower a notification and update their borrows panel in PROFILE
+
+
+        
+
+
+4) 
+
+
+
+
+example:
+setBorrow( Key: value, key: value, image: 'sameurl string' )
+
+
+
+
+
+
+
