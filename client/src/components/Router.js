@@ -37,7 +37,9 @@ function Router(props) {
   const [currentUser, setCurrentUser] = useState(null);
   const [pageLoading, setPageLoading] = useState(false);
   //Functions
-
+  console.log(authenticated);
+  console.log(currentUser);
+  console.log("USER", user);
   const getAllItems = async () => {
     try {
       const data = await __GetItems();
@@ -77,10 +79,14 @@ function Router(props) {
     setAuthenticated(value);
     setCurrentUser(user);
   };
-
+  console.log(authenticated, currentUser);
   return (
     <div>
-      <Navbar user={user}></Navbar>
+      <Navbar
+        currentUser={currentUser}
+        authenticated={authenticated}
+        user={user}
+      ></Navbar>
       {pageLoading ? (
         <h3>*</h3>
       ) : (
@@ -133,9 +139,11 @@ function Router(props) {
             path="/signin"
             component={(props) => (
               <SignIn
+                setAuthenticated={setAuthenticated}
                 toggleAuthenticated={toggleAuthenticated}
                 user={user}
                 email={email}
+                setCurrentUser={setCurrentUser}
                 password={password}
                 setEmail={setEmail}
                 setPassword={setPassword}
@@ -146,7 +154,7 @@ function Router(props) {
             )}
           />
           <Route path="/signup">
-            <SignUp></SignUp>
+            <SignUp user={user} setUser={setUser}></SignUp>
           </Route>
           <Route
             exact

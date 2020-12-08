@@ -49,7 +49,10 @@ export const __CheckSession = async () => {
 export const __LoginUser = async (userData) => {
   try {
     const res = await ApiClient.post("/users/login", userData);
+    console.log(userData);
     localStorage.setItem("token", res.data.token);
+
+    console.log(userData);
     return res.data;
   } catch (error) {
     throw error;

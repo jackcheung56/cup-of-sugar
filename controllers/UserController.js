@@ -47,6 +47,7 @@ const Login = async (req, res) => {
         id: user.id,
         name: user.name,
       };
+      console.log(payload);
       let token = createToken(payload);
       return res.send({ user, token });
     }
