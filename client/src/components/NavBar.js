@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Nav.css";
@@ -47,6 +48,7 @@ function NavBar({ authenticated, currentUser, className }) {
       </nav>
     </header>
   );
+
 }
 
 export default NavBar;

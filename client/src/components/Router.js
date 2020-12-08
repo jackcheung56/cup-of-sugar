@@ -11,6 +11,7 @@ import Navbar from "./NavBar";
 import ProtectedRoute from "./ProtectedRoute";
 //Pages
 import Home from "../pages/Home";
+import LandingPage from "../pages/LandingPage";
 import Profile from "../pages/Profile";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
@@ -165,6 +166,7 @@ function Router(props) {
           />
         </Switch>
       )}
+
     </div>
   );
 }

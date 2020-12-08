@@ -1,8 +1,8 @@
 import React from 'react'
 import '../styles/Card.css'
 
-const ItemCard = ({ onClick, title}) => (
-
+const ItemCard = ({ onClick, title}) => {
+    return (
     <div className="card" onClick={onClick}>
         <div>
             {/* <img src={image}></img> */}
@@ -13,7 +13,8 @@ const ItemCard = ({ onClick, title}) => (
             <p>Condition: Good</p>
         </div>
     </div>
-)
+    )
+}
 
 export default ItemCard
 
