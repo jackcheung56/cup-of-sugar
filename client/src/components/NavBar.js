@@ -1,7 +1,7 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Nav.css";
+import Logo from '../assets/coslogo.png'
 
 function NavBar({ authenticated, currentUser, className }) {
     return !authenticated && !currentUser ? (
@@ -9,7 +9,7 @@ function NavBar({ authenticated, currentUser, className }) {
             <nav>
                 <ul className="nav-links">
                     <Link to='/'>
-                        <li>Landing</li>
+                        <img className="navLogo" src={Logo} alt="app logo"></img>
                     </Link>
 
                     <Link to="/home">
