@@ -9,7 +9,7 @@ import { __CheckSession } from "../services/UserService";
 //Components
 import Navbar from "./NavBar";
 import ProtectedRoute from "./ProtectedRoute";
-import Messenger from "./Messenger";
+// import Messenger from "./Messenger";
 //Pages
 import Home from "../pages/Home";
 import LandingPage from "../pages/LandingPage";
@@ -90,9 +90,9 @@ function Router(props) {
         <h3>*</h3>
       ) : (
         <Switch>
-          <Route path="/dms">
+          {/* <Route path="/dms">
             <Messenger />
-          </Route>
+          </Route> */}
           <Route exact path="/">
             <LandingPage></LandingPage>
           </Route>

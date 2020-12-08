@@ -12,6 +12,22 @@ const GetItemByOwner = async (req, res) => {
   }
 }
 
+
+
+
+const GetItemsByCategory = async (req, res) => {
+  try{
+    let category = req.params.category
+    let sort = await Item.findAll({where: { category: category}})
+    res.send(sort)
+  } catch (error) {
+    throw error
+  }
+}
+
+
+
+
 const GetItems = async (req, res) => {
     try {
       const items = await Item.findAll()
@@ -91,5 +107,6 @@ const DeleteItem = async (req, res) => {
   GetItems,
   CreateItem,
   GetItemById,
-  GetItemByOwner
+  GetItemByOwner,
+  GetItemsByCategory 
 }

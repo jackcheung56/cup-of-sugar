@@ -30,7 +30,9 @@ export default function Messenger() {
   };
 
   const renderChat = () => {
+
     // console.log(chat);
+
     return chat.map(({ name, message }, index) => (
       <div key={index}>
         <h3>
@@ -39,7 +41,9 @@ export default function Messenger() {
       </div>
     ));
   };
+
   // console.log(renderChat());
+
   return (
     <div>
       <form>
