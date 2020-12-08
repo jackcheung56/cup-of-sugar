@@ -51,7 +51,7 @@ function NavBar({ authenticated, currentUser, className }) {
             <li>Profile</li>
           </Link>
 
-          <Link to="/users/:user_id/dms">
+          <Link to="/dms/:user_id">
             <li>DM</li>
           </Link>
 
