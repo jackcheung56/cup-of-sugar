@@ -25,10 +25,16 @@ module.exports = {
         allowNull: false,
       },
       area: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       rating: {
         type: Sequelize.INTEGER,
+      },
+      phone: {
+        type: Sequelize.STRING,
+      },
+      picture: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,

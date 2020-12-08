@@ -54,7 +54,7 @@ Simpler Approach
     Borrows Model:
     userId: INTEGER,
     itemId: INTEGER,
-    ownerId: INTEGER,
+    
     isAccepted: BOOLEAN,
     timeLimit: STRING,
     dateAccepted: new Date()
@@ -64,6 +64,9 @@ Simpler Approach
     isAccepted: true; that means the user has accepted the request and then it puts the borrowcard in the person who is borrowing and the lender's profile page. 
     isAccepted: false; the lender has rejected the request and removes the request from messages. 
     
+
+
+
 
 
         

@@ -36,7 +36,7 @@ function NavBar({ authenticated, currentUser, className }) {
                 <nav>
                     <ul className="nav-links">
                         <Link to='/'>
-                            <li>Landing</li>
+                            <img className="navLogo" src={Logo} alt="app logo"></img>
                         </Link>
 
                         <Link to="/home">

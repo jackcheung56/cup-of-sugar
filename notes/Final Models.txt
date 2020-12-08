@@ -1,0 +1,36 @@
+
+
+USER
+
+
+picture - string
+name - string
+email - string
+password - string
+phone - string
+area - string
+rating - int
+
+
+ITEM
+
+title - string
+isBorrowed - boolean
+category - string
+ownerid - int
+image - string
+condition - enum
+description - string
+
+
+BORROW
+
+userid - int
+itemid - int
+status - enum
+duration - string
+accepted - boolean
+photo - string
+
+
+
