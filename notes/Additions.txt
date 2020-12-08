@@ -1,0 +1,74 @@
+function stringer(arr) {
+  console.log(JSON.stringify(arr, null, 4))
+}
+
+
+1) PROFILE
+
+    A) Populate profile with items the user owns
+
+    const getWhere = async () => {
+    const items = await Item.findAll({ where: { owner_id: X } })
+    stringer(items)
+    }
+
+
+    B) Populate profile with borrws the user has made
+    user_id = requester 
+
+    const getWhere = async () => {
+    const borrows = await Borrow.findAll({ where: { user_id: X } })
+    stringer(borrows)
+    }
+
+
+2) BROWSE CATEGORY ADDITION
+
+    A) categories at the top- each one ONCLICK -> run get where
+
+    const getWhere = async () => {
+    const items = await Item.findAll({ where: { category: X } })
+    stringer(items)
+    }
+
+
+3) BORROWS
+
+    STEPS:
+
+    A) add request borrow button and form to item details page
+    
+    B) form takes in duration. on click CREATE BORROW
+
+    C) borrow state is set as:
+        userID = requester id
+        itemId = item id - wel have access to that from the props on itemdetails
+        status = leave blank
+        duration = what the user enters
+        accepted = false
+        photo = item props image
+
+    D) on the owners profile page - we add a component called NOTIFICATIONS
+        notifications is going to GET all borrows where... itemid -> items -> owner
+        Logic:
+        since item details... has the ownerid... and thats where the borrow is created
+        pass the ownerid directly into a field in the borrow called contact owner_id
+
+    E) owner clicks on notifications
+        from notifications it would run an update on BORROWS
+            set the accepted to TRUE
+            set item isBorrowed to TRUE
+            set borrow contact to user's contact info
+            BONUS- option open DMs with SOCKET
+            "contact this person"
+
+    F) the requester's borrow panel on the profile page, needs to always...
+        Get all borrows where userID = pk, AND accepted = TRUE
+        so this panel will populate when the item is updated 
+        requester can see the owners contact info in the card now
+
+
+
+
+
+

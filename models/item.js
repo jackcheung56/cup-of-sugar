@@ -42,7 +42,10 @@ module.exports = (sequelize, DataTypes) => {
         model: 'users',
         key: 'id'
       }
-    }
+    },
+    image: DataTypes.STRING,
+    condition: DataTypes.ENUM('Great', 'Acceptable', 'Bad'),
+    description: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Item',

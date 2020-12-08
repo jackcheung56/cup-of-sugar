@@ -3,7 +3,11 @@ Hunter + Jackie - Monday Dec. 8
 Revising the models
 
 
-1) Users     Good to go
+1) Users     
+
+A) location - string = area
+B) phone - string
+
 
 Front end logic:
 limit integer value to 1-10
@@ -12,6 +16,7 @@ so we will have access to the previous rating value passed down in props
 during the edit- instead of placing the event.target.value directly into the put
 we will store it in a temp variable
 on click-function takes value Prev and value New-finds the average- and THAT is what gets sent into the back end
+
 
 2) Items
 
@@ -28,8 +33,7 @@ D) Owner name - string
 A) duration - string
 B) accepted - boolean
 C) image - string
-D) contact info - string
-
+D) requester - string
 
 
 User Journey revision
