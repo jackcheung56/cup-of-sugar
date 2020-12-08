@@ -1,56 +1,65 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
 
-import '../styles/Nav.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/Nav.css";
 
-function Navbar(props) {
-    // console.log('nav', props)
-
-
-    return (
-        <nav>
-            <div className="navbox">
-
-                <p>hello user</p>
-
+function NavBar({ authenticated, currentUser, className }) {
+    return !authenticated && !currentUser ? (
+        <div className="navbox">
+            <nav>
                 <ul className="nav-links">
-
-                    <Link to='/landing'>
+                    <Link to='/'>
                         <li>Landing</li>
                     </Link>
 
-                    <Link to='/'>
+                    <Link to="/home">
                         <li>Home</li>
                     </Link>
 
-                    <Link to='/users/all'>
-                        <li>User</li>
-                    </Link>
-
-                    <Link to='/items/all'>
-                        <li>Browse</li>
-                    </Link>
-
-                    <Link to='/users/:user_id'>
-                        <li>Profile</li>
-                    </Link>
-
-                    <Link to='/signup'>
+                    <Link to="/signup">
                         <li>Sign Up</li>
                     </Link>
 
-                    <Link to='/signin'>
+                    <Link to="/items/all">
+                        <li>Browse</li>
+                    </Link>
+
+                    <Link to="/login">
                         <li>Sign In</li>
                     </Link>
-
-                    <Link to='/'>
-                        <li>Sign Out</li>
-                    </Link>
                 </ul>
-            </div>
-        </nav>
-    )
+            </nav>
+        </div>
+    ) : (
+            <header className={className}>
+                <div className="navbox">Welcome Back </div>
+                <nav>
+                    <ul className="nav-links">
+                        <Link to='/'>
+                            <li>Landing</li>
+                        </Link>
+
+                        <Link to="/home">
+                            <li>Home</li>
+                        </Link>
+
+                        <Link to="/items/all">
+                            <li>Browse</li>
+                        </Link>
+
+                        <Link to="/users/:user_id">
+                            <li>Profile</li>
+                        </Link>
+
+                        <Link to="/">
+                            <li>Sign Out</li>
+                        </Link>
+
+                    </ul>
+                </nav>
+            </header>
+        );
+
 }
 
-export default Navbar
-
+export default NavBar;

@@ -3,7 +3,6 @@ import ApiClient from "./ApiClient";
 export const __GetBorrows = async () => {
   try {
     const response = await ApiClient.get("/borrows/all");
-    console.log("BORROWED ITEMS HERE", response.data);
     return response.data;
   } catch (error) {
     throw error;

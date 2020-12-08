@@ -1,48 +1,73 @@
 import React, { useState } from "react";
-import { useHistory } from 'react-router-dom';
-// import { __GetUser } from '../services/UserService'
-
-const SignIn = ({ user, setUser }) => {
-  console.log('Sign In Props', user)
+import { __LoginUser } from "../services/UserService";
 
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+const SignIn = (props) => {
+  console.log("Props", props);
+  const [tempEmail, setTempEmail] = useState("");
+  const [tempPassword, setTempPassword] = useState("");
 
-  const history = useHistory()
 
   const emailInput = (event) => {
-    setEmail(event.target.value)
-  }
+    event.preventDefault();
+    setTempEmail(event.target.value);
+  };
 
   const passwordInput = (event) => {
-    setPassword(event.target.value)
-  }
+    event.preventDefault();
+    setTempPassword(event.target.value);
+  };
 
-  const loginHandler = (event) => {
-    event.preventDefault()
-    setUser({
-      email: { email },
-      password: { password },
-    })
-    console.log('login test', user)
-    setEmail('')
-    setPassword('')
-    // history.push(`/users/${user.id}`, user={user})
-    history.push('/users/:user_id')
-  }
+  const logHandler = async (event) => {
+    event.preventDefault();
+    try {
+      const userInfo = {
+        email: tempEmail,
+        password: tempPassword,
+      };
 
+      console.log(tempPassword, tempEmail);
+      const signIn = await __LoginUser(userInfo);
+      props.toggleAuthenticated(true, signIn.user.id);
+      console.log(props.history);
+      props.setAuthenticated(true);
+      console.log(props.user);
+      props.setCurrentUser(signIn.user);
+      props.history.push(`/users/${signIn.user.id}`);
 
-  return (
-    <form>
-      <div className="block">
-        <input value={email} onChange={emailInput} type="text"></input>
-        <input value={password} onChange={passwordInput} type="text"></input>
-        <button onClick={loginHandler}>Login</button>
-      </div>
-    </form>
+      console.log(signIn.user.id);
+      console.log(props.toggleAuthenticated);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  )
-}
+  return !props.authenticated && !props.currentUser ? (
+    <div>
+      <form>
+        <h1>Sign In</h1>
+        <div className="block">
+          <input
+            placeholder={props.user.email}
+            name="email"
+            value={tempEmail}
+            onChange={emailInput}
+            type="text"
+          ></input>
+          <input
+            placeholder={props.user.password}
+            name="password"
+            value={tempPassword}
+            onChange={passwordInput}
+            type="text"
+          ></input>
+          <button onClick={logHandler}>Login</button>
+        </div>
+      </form>
+    </div>
+  ) : (
+    <h1>You're alradyt signed in</h1>
+  );
+};
 
-export default SignIn
+export default SignIn;
