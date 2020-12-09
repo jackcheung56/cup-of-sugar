@@ -14,11 +14,10 @@ function ItemDetailsPage(props) {
     const [reqToggle, setReqToggle] = useState(false)
     const loggedUser = props.currentUser.id
 
-
-
     //This data will be stored in the newly created Borrow
     //it will appear in the owner's notifications based on OwnerId
     //userId is reserved for the user who is requesting the borrow
+
     const formData = {
         user_id: loggedUser,
         contactId: detail.ownerId,
@@ -66,7 +65,6 @@ function ItemDetailsPage(props) {
 
     return (
         <div className="detailsPage">
-
 
             <Link to={{pathname: `/items/update/${detail.id}`, detail: {detail}}}><button>Edit</button></Link>
 

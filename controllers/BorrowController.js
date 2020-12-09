@@ -29,6 +29,8 @@ const GetBorrows = async (req, res) => {
       throw error
     }
   }
+
+
   const GetBorrowByUserId = async (req, res) => {
     try {
       let id = parseInt(req.params.user_id)
@@ -38,6 +40,21 @@ const GetBorrows = async (req, res) => {
       throw error
     }
   }
+
+
+//================================================================================================================
+
+  const GetBorrowRequests = async (req, res) => {
+    try {
+      let itemOwner = parseInt(req.params.contact_id)
+      let borrow = await Borrow.findAll({where: {contact_id: itemOwner}})
+      res.send(borrow)
+    } catch (error) {
+      throw error
+    }
+  }
+
+//================================================================================================================
 
 
 const UpdateBorrow = async (req, res) => {
@@ -79,5 +96,6 @@ module.exports = {
   GetBorrows,
   CreateBorrow,
   GetBorrowById,
-  GetBorrowByUserId
+  GetBorrowByUserId,
+  GetBorrowRequests
 };
