@@ -10,7 +10,7 @@ const AddItemPage = (props) => {
   const history = useHistory()
   const loggedUser = props.currentUser.id
 
-  console.log('ADD', newItem)
+
 
 
   const handleChange = ({ target }) => {
