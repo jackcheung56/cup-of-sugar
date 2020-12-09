@@ -1,3 +1,5 @@
+const { json } = require("body-parser");
+const { response } = require("express");
 const { Borrow } = require("../models");
 
 const GetBorrows = async (req, res) => {
@@ -43,34 +45,61 @@ const GetBorrows = async (req, res) => {
 
 
 //================================================================================================================
+  //ORIGINAL
 
-  const GetBorrowRequests = async (req, res) => {
-    try {
-      let itemOwner = parseInt(req.params.contact_id)
-      let borrow = await Borrow.findAll({where: {contact_id: itemOwner}})
-      res.send(borrow)
-    } catch (error) {
-      throw error
-    }
+  // const GetBorrowRequests = async (req, res) => {
+  //   try {
+  //     let itemOwner = parseInt(req.params.contact_id)
+  //     let borrow = await Borrow.findAll({where: {contact_id: itemOwner}})
+  //     res.send(borrow)
+  //   } catch (error) {
+  //     throw error
+  //   }
+  // }
+
+//================================================================================================================
+
+const GetBorrowRequests = async (req, res) => {
+  try {
+    let itemOwner = parseInt(req.params.contact_id)
+    let borrow = await Borrow.findAll({where: {contact_id: itemOwner}}, {returning: ['id']})
+    console.log('LOOOOOOOOOOOK', borrow.id)
+    res.send(borrow)
+  } catch (error) {
+    throw error
   }
+}
+
+
+
+
+//================================================================================================================
+
+  // const GetBorrowRequests = async (req, res) => {
+  //   try {
+  //     let itemOwner = parseInt(req.params.contact_id)
+  //     // let borrow = await Borrow.findAll({where: {contact_id: itemOwner}})
+  //     // let borrow = await Borrow.findAll({returning: ['id']})
+  //     console.log('LOOOOK', borrow.id)
+  //     res.send({
+  //       borrow,
+  //       data: {
+  //         test: `${borrow.id}`,
+  //       },
+  //     })
+  //   } catch (error) {
+  //     throw error
+  //   }
+  // }
+
+
+
+
 
 //================================================================================================================
 
 
-const UpdateBorrow = async (req, res) => {
-  try {
-    let borrowId = parseInt(req.params.borrow_id);
-    let updatedBorrow = await Borrow.update(req.body, {
-      where: {
-        id: borrowId,
-      },
-      returning: true,
-    });
-    res.send(updatedBorrow);
-  } catch (error) {
-    throw error;
-  }
-};
+
 
 const DeleteBorrow = async (req, res) => {
   try {
@@ -85,6 +114,21 @@ const DeleteBorrow = async (req, res) => {
         id: req.params.borrow_id,
       },
     });
+  } catch (error) {
+    throw error;
+  }
+};
+
+const UpdateBorrow = async (req, res) => {
+  try {
+    let borrowId = parseInt(req.params.borrow_id);
+    let updatedBorrow = await Borrow.update(req.body, {
+      where: {
+        id: borrowId,
+      },
+      returning: true,
+    });
+    res.send(updatedBorrow);
   } catch (error) {
     throw error;
   }

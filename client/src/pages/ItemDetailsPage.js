@@ -46,11 +46,11 @@ function ItemDetailsPage(props) {
         try {
 
             const borrowRequest = await __CreateBorrow(formData)
- 
+            // console.log(borrowRequest)
             //Need to Change state to reflect "request sent" (pop up)
             setToggle(true)
             setReqToggle(true)
-            props.history.goBack()
+            // props.history.goBack()
         } catch (error) {
             console.log(error)
         }

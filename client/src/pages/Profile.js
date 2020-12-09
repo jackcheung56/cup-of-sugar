@@ -13,8 +13,6 @@ import RequestCard from '../components/RequestCard'
 
 
 
-
-
 import '../styles/Profile.css';
 
 function Profile(props) {
@@ -28,6 +26,8 @@ function Profile(props) {
   const sortingId = props.currentUser.id
   const displayName = props.currentUser.name
 
+  const [approval, setApproval] = useState({})
+
   // console.log('User items', userItems)
   // console.log('User Borrows', userBorrows)
   // console.log('User Info', userInfo)
@@ -38,7 +38,7 @@ function Profile(props) {
   const getBorrowRequests = async () => {
     try {
       const data = await __GetBorrowRequests(sortingId)
-      console.log('PRE BOARDING CHECK', data.data)
+      console.log('FIND THE ID', data.data)
       let foo = data.data
       setRequests(foo)
     } catch (error) {
@@ -46,15 +46,31 @@ function Profile(props) {
     }
   }
 
+  //get borrow requests grabs all the requests made on a user's items
+  //before the requests populate on the requester side,
+  //the owner must click accept
+
 
 
   //on click
-  //update borrow
+  //need to update borrow
+  //the target borrow is stored in requests/setRequests
 
-  //__UpdateBorrow
+  //BACK UP 
+  //every borrow has a unique field manually entered
+  //that matches the id?
+  //how can the new field by assigned the value of the id if it never has access?
+  //add a counter to the create function-> make this value = to the new "pk"
+  //start the site again and add a model that stores the count...
+  //any time a borrow needs to be found by id, this counter value can be used
 
+
+ 
   const handleApproval = async () => {
     try{
+      setApproval({
+
+      })
       const approve = await __UpdateBorrow()
 
     } catch (error) {
@@ -75,6 +91,7 @@ function Profile(props) {
   const getUserBorrows = async () => {
     try {
       const data = await __GetBorrowByUserId(sortingId)
+      console.log('maybe here', data)
       let foo = data.data
       setUserBorrows(foo)
     } catch (error) {
@@ -185,7 +202,8 @@ function Profile(props) {
 
 
         <div className="notifications">
-          <h4>NOTIFICATIONS</h4>
+          <h4>NOTIFICATIONS (borrow requests)</h4>
+          <p>requests made by others to borrow your stuff</p>
           {requests.map((borrow) => (
             <RequestCard
               key={borrow.id}
@@ -194,12 +212,6 @@ function Profile(props) {
               status={borrow.status}
             />
           ))}
-
-
-
-
-
-
         </div>
 
       </div>
