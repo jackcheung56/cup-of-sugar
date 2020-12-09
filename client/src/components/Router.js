@@ -164,7 +164,7 @@ function Router(props) {
             exact
             path="/items/:item_id"
             render={(props) => (
-              <ItemDetailsPage location={props.location}></ItemDetailsPage>
+              <ItemDetailsPage location={props.location} currentUser={currentUser}></ItemDetailsPage>
             )}
           />
         </Switch>

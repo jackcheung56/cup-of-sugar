@@ -5,8 +5,8 @@ import { useHistory } from 'react-router-dom';
 import FormInput from '../components/FormInput'
 
 const AddItemPage = (props) => {
-  // console.log('IDIDIDIDIDID', props.currentUser.id)
   const [newItem, setNewItem] = useState({})
+  const [condition, setCondition] = useState('')
   const history = useHistory()
   const loggedUser = props.currentUser.id
 
@@ -21,9 +21,7 @@ const AddItemPage = (props) => {
     event.preventDefault()
     try {
       const post = await __CreateItem(newItem)
-
       history.push(`/users/${loggedUser}`)
-
     } catch (error) {
       console.log(error)
     }
@@ -33,9 +31,6 @@ const AddItemPage = (props) => {
     <div>
       <h1>ADD ITEM</h1>
       <form className="inputFields">
-
-
-
         <FormInput
           placeholder="item name"
           name="title"
@@ -64,39 +59,33 @@ const AddItemPage = (props) => {
           onChange={handleChange}
         />
 
-        {/* <button
-          type="button"
-          placeholder="Great"
-          name="Great"
-          value={newItem.condition = 'Great'}
-          onChange={handleChange}
-        >Great</button> */}
+        <div className="tags">
 
-        {/* <input
-          type="button"
-          placeholder="Great"
-          name="Great"
-          value={newItem.condition = 'Great'}
-          onChange={handleChange}
-        >Great</input> */}
+          <button
+            type="button"
+            placeholder="Great"
+            name="Great"
+            onClick={() => setCondition('Great')}
+          >Great</button>
 
+          <button
+            type="button"
+            placeholder="Acceptable"
+            name="Acceptable"
+            onClick={() => setCondition('Acceptable')}
 
+          >Acceptable</button>
 
-        {/* <button
-          type="button"
-          placeholder="Acceptable"
-          name="Acceptable"
-          value={newItem.condition = 'Acceptable'}
-          onChange={handleChange}
-        >Acceptable</button> */}
+          <button
+            type="button"
+            placeholder="Bad"
+            name="Bad"
+            onClick={() => setCondition('Bad')}
+          >Bad</button>
 
-        {/* <button
-          type="button"
-          placeholder="Bad"
-          name="Bad"
-          value={newItem.condition = 'Bad'}
-          onChange={handleChange}
-        >Bad</button> */}
+        </div>
+        
+        <input type="hidden" name="condition" value={newItem.condition = condition}></input>
 
         <input type="hidden" name="ownerId" value={newItem.owner_id = loggedUser}></input>
 

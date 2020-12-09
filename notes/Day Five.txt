@@ -64,6 +64,25 @@ setBorrow( Key: value, key: value, image: 'sameurl string' )
 
 
 
+add requester name to borrow model
+    how do they enter duration?
+        on click request- form turns visible.
+            type in duration
+                submit request
+
+
+from profile page
+get borrows where contact id = pk
+
+
+
+LOGIC
+
+the items a user has borrowed should populate on their profile based on IS ACCEPTED = true
+    so we can edit the get request to incorporate where { userid = id && accepted = true}
+
+
+
 
 
 

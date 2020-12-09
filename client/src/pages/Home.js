@@ -7,7 +7,7 @@ function Home({item, setItem}) {
 
     useEffect(() => {
         setItem(item)
-        console.log('state', item)
+        // console.log('state', item)
       }, [])
 
 
