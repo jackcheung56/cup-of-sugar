@@ -9,6 +9,7 @@ import { __CheckSession } from "../services/UserService";
 //Components
 import Navbar from "./NavBar";
 import ProtectedRoute from "./ProtectedRoute";
+import Chat from "./Chat";
 // import Messenger from "./Messenger";
 //Pages
 import Home from "../pages/Home";
@@ -85,6 +86,7 @@ function Router(props) {
         authenticated={authenticated}
         user={user}
       ></Navbar>
+      <Chat />
       {pageLoading ? (
         <h3>*</h3>
       ) : (
@@ -129,10 +131,15 @@ function Router(props) {
               currentUser={currentUser}
             ></Profile>
           </Route>
-          
-          <Route exact path="/items/add"><AddItemPage currentUser={currentUser}></AddItemPage></Route>
 
-          <Route path="/items/delete/:item_id" render={(props) => <DeleteItemPage {...props} />}/>
+          <Route exact path="/items/add">
+            <AddItemPage currentUser={currentUser}></AddItemPage>
+          </Route>
+
+          <Route
+            path="/items/delete/:item_id"
+            render={(props) => <DeleteItemPage {...props} />}
+          />
 
           <Route
             exact
@@ -164,7 +171,10 @@ function Router(props) {
             exact
             path="/items/:item_id"
             render={(props) => (
-              <ItemDetailsPage location={props.location} currentUser={currentUser}></ItemDetailsPage>
+              <ItemDetailsPage
+                location={props.location}
+                currentUser={currentUser}
+              ></ItemDetailsPage>
             )}
           />
         </Switch>
