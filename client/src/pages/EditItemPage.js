@@ -3,13 +3,10 @@ import '../styles/Form.css';
 
 import { __UpdateItem } from '../services/ItemService'
 
-import { useHistory } from 'react-router-dom';
 import FormInput from '../components/FormInput'
 
 const EditItemPage = (props) => {
-  // console.log('data', data)
-  // console.log('id', callId)
-  // console.log(props)
+
 
   const data = props.history.location.detail.detail
   const callId = props.history.location.detail.detail.id
@@ -19,7 +16,6 @@ const EditItemPage = (props) => {
 
   const handleChange = ({ target }) => {
     setEditItem({...editItem, [target.name]: target.value})
-    console.log('TARGET VALUE', target.value)
   }
 
   const handleSubmit = async (event) => {

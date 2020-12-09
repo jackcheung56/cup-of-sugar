@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { __CreateUser } from "../services/UserService";
-//pushing for Jackie
+
+
 function SignUp(props) {
-  console.log(props);
+
   const [name, setName] = useState("");
   const [tempEmail, setTempEmail] = useState("");
   const [tempPassword, setTempPassword] = useState("");
@@ -32,7 +33,7 @@ function SignUp(props) {
     props.setUser(newUser);
     try {
       await __CreateUser(newUser);
-      console.log(newUser);
+
       
       history.push("/login");
     } catch (error) {

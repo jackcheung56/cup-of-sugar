@@ -1,17 +1,15 @@
 import React from 'react'
 import '../styles/Card.css'
 
-const BorrowCard = ({ onClick, key, status, item_id}) => {
+const BorrowCard = ({id, accepted, contact_id, duration}) => {
 return (
-    <div className="card" onClick={onClick}>
+    <div className="card">
         <div>
             {/* <img src={image}></img> */}
         </div>
         <div>
-            <h3>borrow</h3>
-            <h3>{item_id}</h3>  
-            <h3>{status}</h3>
-            
+            <h3>{duration}</h3>
+            <h3>{id}</h3>
         </div>
     </div>
 )
