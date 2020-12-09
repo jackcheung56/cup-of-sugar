@@ -37,7 +37,7 @@ const GetBorrows = async (req, res) => {
   const GetBorrowByUserId = async (req, res) => {
     try {
       let id = parseInt(req.params.user_id)
-      let borrow = await Borrow.findAll({where: {user_id: id}})
+      let borrow = await Borrow.findAll({attributes: ['id', 'user_id', 'item_id', 'status', 'duration', 'accepted', 'photo', 'info', 'contact_id', 'createdAt'], where: {user_id: id}})
       res.send(borrow)
     } catch (error) {
       throw error
@@ -45,61 +45,15 @@ const GetBorrows = async (req, res) => {
   }
 
 
-//================================================================================================================
-  //ORIGINAL
-
-  // const GetBorrowRequests = async (req, res) => {
-  //   try {
-  //     let itemOwner = parseInt(req.params.contact_id)
-  //     let borrow = await Borrow.findAll({where: {contact_id: itemOwner}})
-  //     res.send(borrow)
-  //   } catch (error) {
-  //     throw error
-  //   }
-  // }
-
-//================================================================================================================
-
-const GetBorrowRequests = async (req, res) => {
-  try {
-    let itemOwner = parseInt(req.params.contact_id)
-    let borrow = await Borrow.findAll({where: {contact_id: itemOwner}}, {returning: ['id']})
-    console.log('LOOOOOOOOOOOK', borrow.id)
-    res.send(borrow)
-  } catch (error) {
-    throw error
+  const GetBorrowRequests = async (req, res) => {
+    try {
+      let itemOwner = parseInt(req.params.contact_id)
+      let borrow = await Borrow.findAll({attributes: ['id', 'user_id', 'item_id', 'status', 'duration', 'accepted', 'photo', 'info', 'contact_id', 'createdAt'], where: {contact_id: itemOwner}})
+      res.send(borrow)
+    } catch (error) {
+      throw error
+    }
   }
-}
-
-
-
-
-//================================================================================================================
-
-  // const GetBorrowRequests = async (req, res) => {
-  //   try {
-  //     let itemOwner = parseInt(req.params.contact_id)
-  //     // let borrow = await Borrow.findAll({where: {contact_id: itemOwner}})
-  //     // let borrow = await Borrow.findAll({returning: ['id']})
-  //     console.log('LOOOOK', borrow.id)
-  //     res.send({
-  //       borrow,
-  //       data: {
-  //         test: `${borrow.id}`,
-  //       },
-  //     })
-  //   } catch (error) {
-  //     throw error
-  //   }
-  // }
-
-
-
-
-
-//================================================================================================================
-
-
 
 
 const DeleteBorrow = async (req, res) => {

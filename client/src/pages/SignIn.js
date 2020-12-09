@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { __LoginUser } from "../services/UserService";
 
 const SignIn = (props) => {
-  console.log("Props", props);
   const [tempEmail, setTempEmail] = useState("");
   const [tempPassword, setTempPassword] = useState("");
 
