@@ -53,3 +53,24 @@ export const __GetBorrowByUserId = async (user_id) => {
     throw error
   }
 }
+
+// export const __GetBorrowRequests = async (contact_id) => {
+//   try{
+//     const response = await ApiClient.get(`/borrows/get/request/${contact_id}`)
+//     return response
+//   } catch (error){
+//     throw error
+//   }
+// }
+
+
+export const __GetBorrowRequests = async (contact_id) => {
+  try{
+    const response = await ApiClient.get(`/borrows/get/request/${contact_id}`, {returning: ['id']})
+    return response
+  } catch (error){
+    throw error
+  }
+}
+
+
