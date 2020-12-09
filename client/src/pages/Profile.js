@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import { __GetItemByOwner } from '../services/ItemService'
-import { __GetBorrows } from '../services/BorrowService'
-import {__GetUser} from '../services/UserService'
+import { __GetBorrowByUserId } from '../services/BorrowService'
+import { __GetUser } from '../services/UserService'
 import BorrowCard from '../components/BorrowCard'
 import ItemCard from '../components/ItemCard'
 import RatingCard from '../components/RatingCard'
@@ -10,32 +10,32 @@ import RatingCard from '../components/RatingCard'
 import '../styles/Profile.css';
 
 function Profile(props) {
-//console.log(props.currentUser.id)
+  // console.log(props)
   const [userBorrows, setUserBorrows] = useState([])
   const [userItems, setUserItems] = useState([])
-  const [userInfo, setUserInfo] = useState([]) 
+  const [userInfo, setUserInfo] = useState([])
   const history = useHistory()
   const sorting = props.currentUser.id
+  const displayName = props.currentUser.name
 
-  console.log('User items', userItems)
-  console.log('User Borrows', userBorrows)
-  console.log('User Info', userInfo)
-
+  // console.log('User items', userItems)
+  // console.log('User Borrows', userBorrows)
+  // console.log('User Info', userInfo)
 
   const getUserBorrows = async () => {
     try {
-      const data = await __GetBorrows()
-      setUserBorrows(data)
+      const data = await __GetBorrowByUserId(sorting)
+      let foo = data.data
+      setUserBorrows(foo)
     } catch (error) {
       console.log(error)
     }
-    
+
   }
 
   const getUserItems = async () => {
     try {
       const data = await __GetItemByOwner(sorting)
-      console.log(data)
       setUserItems(data.data)
     } catch (error) {
       console.log(error)
@@ -43,15 +43,13 @@ function Profile(props) {
   }
 
   const getUserData = async () => {
-    try{
-      const data = await __GetUser()
-      console.log("user data:", data)
-      setUserInfo([data])
+    try {
+      const data = await __GetUser(sorting)
+      setUserInfo(data)
     } catch (error) {
       throw error
     }
   }
-
 
   const handleClick = async (event) => {
     event.preventDefault()
@@ -65,9 +63,6 @@ function Profile(props) {
     }
   }
 
-
-
-
   useEffect(() => {
     getUserBorrows()
     getUserItems()
@@ -78,7 +73,7 @@ function Profile(props) {
   return (
     <div>
 
-      <h1>Your Profile</h1>
+      <h1>{displayName}</h1>
       <div className="profilePage">
 
         <div className="itemListU">
@@ -119,16 +114,10 @@ function Profile(props) {
           ))}
         </div>
         <div className="borrowListU">
-            <h4>My Rating</h4>
-            {userInfo.map((user) => (
-              <RatingCard 
-              key={user.id}
-              name={user.name}
-              rating={user.rating}
-            />
-            ))} 
-          </div> 
-       </div>
+          <h4>My Rating</h4>
+          <RatingCard key={userInfo.id} name={userInfo.name} rating={userInfo.rating}/>
+        </div>
+      </div>
     </div>
   );
 }

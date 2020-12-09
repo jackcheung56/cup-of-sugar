@@ -27,7 +27,7 @@ Router.delete('/delete/:item_id', controller.DeleteItem)
 // http://localhost:3001/api/items/delete/2
 
 Router.get('/owner/:owner_id', controller.GetItemByOwner)
-
+// http://localhost:3001/api/items/owner/:owner_id
 module.exports = Router
 
 

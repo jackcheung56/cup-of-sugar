@@ -43,7 +43,6 @@ function Router(props) {
   const getAllItems = async () => {
     try {
       const data = await __GetItems();
-      // console.log('ROUTER', data)
       setItem(data);
     } catch (error) {
       console.log(error);
@@ -130,13 +129,11 @@ function Router(props) {
               currentUser={currentUser}
             ></Profile>
           </Route>
-          <Route exact path="/items/add">
-            <AddItemPage></AddItemPage>
-          </Route>
-          <Route
-            path="/items/delete/:item_id"
-            render={(props) => <DeleteItemPage {...props} />}
-          />
+          
+          <Route exact path="/items/add"><AddItemPage currentUser={currentUser}></AddItemPage></Route>
+
+          <Route path="/items/delete/:item_id" render={(props) => <DeleteItemPage {...props} />}/>
+
           <Route
             exact
             path="/items/update/:item_id"

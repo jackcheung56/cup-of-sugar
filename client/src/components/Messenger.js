@@ -5,7 +5,7 @@ const socket = io.connect("http://localhost:3001");
 
 export default function Messenger() {
   const [state, setState] = useState({ name: "", message: "" });
-  //   const [message, setMessage] = useState({ message: "" });
+
   const [chat, setChat] = useState([]);
 
   useEffect(() => {
@@ -21,16 +21,16 @@ export default function Messenger() {
   const onMessageSubmit = (event) => {
     event.preventDefault();
     const { name, message } = state;
-    // const { message } = message;
+
     console.log(state);
     socket.emit("message", { name, message });
-    //   console.log();
+
     setState({ message: "", name });
-    // setMessage({ message: "" });
+
   };
 
   const renderChat = () => {
-    console.log(chat);
+
     return chat.map(({ name, message }, index) => (
       <div key={index}>
         <h3>
@@ -38,8 +38,8 @@ export default function Messenger() {
         </h3>
       </div>
     ));
-  };
-  console.log(renderChat());
+  }; 
+
   return (
     <div>
       <form>
