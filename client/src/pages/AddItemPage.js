@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import FormInput from '../components/FormInput'
 
 const AddItemPage = (props) => {
-  console.log('add item page', props.currentUser)
+  // console.log('IDIDIDIDIDID', props.currentUser.id)
   const [newItem, setNewItem] = useState({})
   const history = useHistory()
   const loggedUser = props.currentUser.id
@@ -32,7 +32,9 @@ const AddItemPage = (props) => {
   return (
     <div>
       <h1>ADD ITEM</h1>
-      <form className="inputFields" onSubmit={handleSubmit}>
+      <form className="inputFields">
+
+
 
         <FormInput
           placeholder="item name"
@@ -56,13 +58,6 @@ const AddItemPage = (props) => {
         />
 
         <FormInput
-          placeholder="condition"
-          name="condition"
-          value={newItem.condition}
-          onChange={handleChange}
-        />
-
-        <FormInput
           placeholder="description"
           name="description"
           value={newItem.description}
@@ -70,34 +65,42 @@ const AddItemPage = (props) => {
         />
 
         {/* <button
+          type="button"
           placeholder="Great"
           name="Great"
-          value={newItem.condition}
+          value={newItem.condition = 'Great'}
           onChange={handleChange}
-        ></button>
+        >Great</button> */}
 
-        <button
+        {/* <input
+          type="button"
+          placeholder="Great"
+          name="Great"
+          value={newItem.condition = 'Great'}
+          onChange={handleChange}
+        >Great</input> */}
+
+
+
+        {/* <button
+          type="button"
           placeholder="Acceptable"
           name="Acceptable"
-          value={newItem.condition}
+          value={newItem.condition = 'Acceptable'}
           onChange={handleChange}
-        ></button>
+        >Acceptable</button> */}
 
-        <button
+        {/* <button
+          type="button"
           placeholder="Bad"
           name="Bad"
-          value={newItem.condition}
+          value={newItem.condition = 'Bad'}
           onChange={handleChange}
-        ></button> */}
+        >Bad</button> */}
 
-        {/* <FormInput
-          placeholder="ownerId"
-          name="ownerId"
-          value={newItem.owner_id}
-          onChange={handleChange}
-        /> */}
+        <input type="hidden" name="ownerId" value={newItem.owner_id = loggedUser}></input>
 
-        <button>Submit</button>
+        <button type="submit" onClick={handleSubmit}>Submit</button>
 
       </form>
 

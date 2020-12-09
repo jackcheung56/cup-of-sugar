@@ -50,14 +50,14 @@ const SignIn = (props) => {
             name="email"
             value={tempEmail}
             onChange={emailInput}
-            type="text"
+            type="email"
           ></input>
           <input
             placeholder={props.user.password}
             name="password"
             value={tempPassword}
             onChange={passwordInput}
-            type="text"
+            type="password"
           ></input>
           <button onClick={logHandler}>Login</button>
         </div>
