@@ -34,6 +34,7 @@ function Router(props) {
   const [password, setPassword] = useState("");
   const [borrow, setBorrow] = useState([]);
   const history = useHistory();
+  const [id, setId] = useState();
   // give each data it's on state
 
   const [authenticated, setAuthenticated] = useState(false);
@@ -86,7 +87,7 @@ function Router(props) {
         authenticated={authenticated}
         user={user}
       ></Navbar>
-      <Chat />
+      <Chat onIdSubmit={setId} />
       {pageLoading ? (
         <h3>*</h3>
       ) : (
