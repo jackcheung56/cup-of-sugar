@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom'
 import '../styles/Details.css'
 
 function ItemDetailsPage(props) {
-    console.log('IDP PROPS', props)
+    console.log('IDP PROPs CHECCCCCCKKKK', props)
 
     const detailRoute = props.location.state.item.id
+
     const [detail, setDetail] = useState({})
     const [toggle, setToggle] = useState(false)
     const [reqToggle, setReqToggle] = useState(false)
+    const loggedUser = props.currentUser.id
 
 
 
@@ -18,9 +20,9 @@ function ItemDetailsPage(props) {
     //it will appear in the owner's notifications based on OwnerId
     //userId is reserved for the user who is requesting the borrow
     const formData = {
-        userId: 'borrower pk',
+        user_id: loggedUser,
         contactId: detail.ownerId,
-        itemId: detailRoute,
+        item_id: detailRoute,
         photo: detail.image,
         duration: 'user input',
         accepted: 'f',
@@ -30,6 +32,7 @@ function ItemDetailsPage(props) {
         //gets the item details for this page
         try {
             const data = await __GetItemById(detailRoute)
+            console.log('NO HERE', data)
             setDetail(data)
         } catch (error) {
             console.log(error)
@@ -42,6 +45,7 @@ function ItemDetailsPage(props) {
         //handles borrow ticket creation
         event.preventDefault()
         try {
+
             const borrowRequest = await __CreateBorrow(formData)
  
             //Need to Change state to reflect "request sent" (pop up)
