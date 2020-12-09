@@ -37,7 +37,7 @@ function ItemDetailsPage(props) {
             console.log(error)
         }
     }
-
+    
     console.log('OWNER ID', detail.ownerId)
 
     const handleClick = async (event) => {
