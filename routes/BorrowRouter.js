@@ -25,6 +25,16 @@ Router.delete('/delete/:borrow_id', controller.DeleteBorrow)
 
 Router.get('/get/:user_id', controller.GetBorrowByUserId)
 // http://localhost:3001/api/borrows/get/:user_id
+
+
+Router.get('/get/request/:contact_id', controller.GetBorrowRequests)
+// http://localhost:3001/api/borrows/get/request/:contact_id
+
+
 module.exports = Router
+
+
+
+
 
 

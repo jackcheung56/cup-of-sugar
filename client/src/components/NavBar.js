@@ -20,9 +20,6 @@ function NavBar({ authenticated, currentUser, className }) {
             <li>Sign Up</li>
           </Link>
 
-          <Link to="/items/all">
-            <li>Browse</li>
-          </Link>
 
           <Link to="/login">
             <li>Sign In</li>

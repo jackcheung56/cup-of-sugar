@@ -41,8 +41,9 @@ function stringer(arr) {
     B) form takes in duration. on click CREATE BORROW
 
     C) borrow state is set as:
-        userID = requester id
+        userID = requester id 
         itemId = item id - wel have access to that from the props on itemdetails
+        contactId = item owner
         status = leave blank
         duration = what the user enters
         accepted = false
