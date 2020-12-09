@@ -56,14 +56,14 @@ function SignUp(props) {
           name="email"
           value={tempEmail}
           onChange={emailInput}
-          type="text"
+          type="email"
         ></input>
         <input
           placeholder="Enter Password"
           name="password"
           value={tempPassword}
           onChange={passwordInput}
-          type="text"
+          type="password"
         ></input>
         <button onClick={handleSubmit}>Sign Up</button>
       </div>
