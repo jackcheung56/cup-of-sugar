@@ -10,6 +10,7 @@ return (
         <div>
             <h3>{duration}</h3>
             <h3>{id}</h3>
+            <h3>{accepted}</h3>
         </div>
     </div>
 )
