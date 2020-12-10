@@ -28,6 +28,7 @@ export const __CreateBorrow = async(formData) => {
 }
 
 export const __UpdateBorrow = async (formData, borrow_id) => {
+  console.log(formData)
   try{
     const response = await ApiClient.put(`/borrows/update/${borrow_id}`, formData)
     return response.data

@@ -11,6 +11,8 @@ import RequestCard from '../components/RequestCard'
 import '../styles/Profile.css'
 
 
+
+
 function Profile(props) {
   const [userBorrows, setUserBorrows] = useState([])
   const [userItems, setUserItems] = useState([])
@@ -22,13 +24,16 @@ function Profile(props) {
   const displayName = props.currentUser.name
   const profilePic = props.currentUser.picture
 
-  console.log('Profile', props.currentUser.picture)
+
+
+  console.log(requests)
 
 
   const getBorrowRequests = async () => {
     try {
       const data = await __GetBorrowRequests(sortingId)
       let foo = data.data
+      console.log(data)
       setRequests(foo)
     } catch (error) {
       console.log(error)
@@ -47,6 +52,9 @@ function Profile(props) {
       console.log(error)
     }
   }
+
+
+
 
   //Items
 
@@ -113,6 +121,12 @@ function Profile(props) {
               duration={borrow.duration}
               status={borrow.status}
               id={borrow.id}
+              info={borrow.info}
+              photo={borrow.photo}
+              message={borrow.message}
+              product={borrow.product}
+              history={history}
+              userInfo={userInfo}
             />
           ))}
         </div>

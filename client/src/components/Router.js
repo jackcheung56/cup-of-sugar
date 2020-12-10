@@ -54,7 +54,7 @@ function Router(props) {
     // getUser()
     verifyTokenValid();
     setPageLoading(false);
-    toggleAuthenticated();
+    // toggleAuthenticated();
   }, []);
 
   const verifyTokenValid = async () => {
