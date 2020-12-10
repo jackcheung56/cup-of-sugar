@@ -9,7 +9,7 @@ const AddItemPage = (props) => {
   const [condition, setCondition] = useState('Great')
   const history = useHistory()
   const loggedUser = props.currentUser.id
-  console.log(props)
+  // console.log(props)
 
 
 

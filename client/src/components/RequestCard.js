@@ -67,10 +67,6 @@ const RequestCard = ({ status, duration, id, history, message, product, userInfo
 
                 <div>
                     <div>
-                        {/* <img src={image}></img> */}
-                    </div>
-
-                    <div>
                         <p>{product}</p>
                         <p>{duration}</p>
                         <p>{message}</p>

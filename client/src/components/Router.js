@@ -4,12 +4,12 @@ import { useHistory } from "react-router-dom";
 
 //Services
 import { __GetItems } from "../services/ItemService";
-// import { __GetUser } from '../services/UserService'
+import { __GetUser } from '../services/UserService'
 import { __CheckSession } from "../services/UserService";
 //Components
 import Navbar from "./NavBar";
 import ProtectedRoute from "./ProtectedRoute";
-// import Messenger from "./Messenger";
+
 //Pages
 import Home from "../pages/Home";
 import LandingPage from "../pages/LandingPage";
@@ -38,7 +38,12 @@ function Router(props) {
   const [authenticated, setAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [pageLoading, setPageLoading] = useState(false);
+
+  
   //Functions
+
+  console.log('USER AUTH', authenticated)
+  console.log('Current User', currentUser)
 
   const getAllItems = async () => {
     try {
@@ -129,6 +134,7 @@ function Router(props) {
               setUser={setUser}
               history={history}
               currentUser={currentUser}
+              authenticated={authenticated}
             ></Profile>
           </Route>
           

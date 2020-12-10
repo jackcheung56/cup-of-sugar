@@ -6,12 +6,8 @@ import { __GetBorrowRequests } from '../services/BorrowService'
 import { __GetUser } from '../services/UserService'
 import BorrowCard from '../components/BorrowCard'
 import ItemCard from '../components/ItemCard'
-import RatingCard from '../components/RatingCard'
 import RequestCard from '../components/RequestCard'
 import '../styles/Profile.css'
-
-
-
 
 function Profile(props) {
   const [userBorrows, setUserBorrows] = useState([])
@@ -30,14 +26,16 @@ function Profile(props) {
 
 
 
-  console.log(requests)
+  // console.log(userBorrows)
+
+
 
 
   const getBorrowRequests = async () => {
     try {
       const data = await __GetBorrowRequests(sortingId)
       let foo = data.data
-      console.log(data)
+      // console.log(data)
       setRequests(foo)
     } catch (error) {
       console.log(error)
@@ -56,8 +54,6 @@ function Profile(props) {
       console.log(error)
     }
   }
-
-
 
 
   //Items
@@ -85,10 +81,7 @@ function Profile(props) {
   const handleClick = async (event) => {
     event.preventDefault()
     try {
-      //
       history.push(`/items/add`)
-      //push user id as an object with the path
-      //
     } catch (error) {
       console.log(error)
     }
@@ -167,7 +160,11 @@ function Profile(props) {
                   key={borrow.index}
                   duration={borrow.duration}
                   id={borrow.id}
+                  item_id={borrow.item_id}
                   accepted={borrow.accepted}
+                  photo={borrow.photo}
+                  product={borrow.product}
+                  history={history}
                 />
               )
             } else {
@@ -177,11 +174,7 @@ function Profile(props) {
         </div>
 
 
-        {/* <div className="rating"><h4>My Rating</h4><RatingCard key={userInfo.id} name={userInfo.name} rating={userInfo.rating} /></div> */}
-
-
-
-
+      
 
       </div>
     </div >

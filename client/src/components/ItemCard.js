@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/Card.css'
 
 const ItemCard = ({ onClick, title, image, condition, category, description, isBorrowed }) => {
-    console.log(isBorrowed)
+    // console.log(isBorrowed)
 
     return (
         <div className="card" onClick={onClick}>
