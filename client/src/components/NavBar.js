@@ -47,13 +47,9 @@ function NavBar({ authenticated, currentUser, className }) {
             <li>Browse</li>
           </Link>
 
-          <Link to="/users/:owner_id">
+          <Link to="/users/:user_id">
             <li>Profile</li>
           </Link>
-
-          {/* <Link to="/dms/:user_id">
-            <li>DM</li>
-          </Link> */}
 
           <Link to="/">
             <li>Sign Out</li>
