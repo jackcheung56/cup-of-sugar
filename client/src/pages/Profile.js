@@ -18,6 +18,10 @@ function Profile(props) {
   const [userItems, setUserItems] = useState([])
   const [userInfo, setUserInfo] = useState([])
   const [requests, setRequests] = useState([])
+
+  const [confirmation, setConfirmation] = useState(false)
+
+
   const history = useHistory()
 
   const sortingId = props.currentUser.id
@@ -127,6 +131,8 @@ function Profile(props) {
               product={borrow.product}
               history={history}
               userInfo={userInfo}
+              confirmation={confirmation}
+              setConfirmation={setConfirmation}
             />
           ))}
         </div>

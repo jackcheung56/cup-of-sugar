@@ -3,7 +3,7 @@ import { __UpdateBorrow } from '../services/BorrowService'
 import { __DeleteBorrow } from '../services/BorrowService'
 import '../styles/Notification.css'
 
-const RequestCard = ({ status, duration, id, history, message, product, userInfo }) => {
+const RequestCard = ({ status, duration, id, history, message, product, userInfo, confirmation, setConfirmation }) => {
 
     const userRoute = userInfo.id
 
@@ -11,7 +11,7 @@ const RequestCard = ({ status, duration, id, history, message, product, userInfo
     const [response, setResponse] = useState('')
     const [layout, setLayout] = useState(false)
 
-    const [confirmation, setConfirmation] = useState(false)
+    
 
     const handleFillout = async (event) => {
         event.preventDefault()
