@@ -100,6 +100,8 @@ const AddItemPage = (props) => {
 
         <input type="hidden" name="ownerId" value={newItem.owner_id = loggedUser}></input>
 
+        <input type="hidden" name="condition" value={newItem.isBorrowed = false}></input>
+
         <button type="submit" onClick={handleSubmit}>Submit</button>
 
       </form>

@@ -125,6 +125,7 @@ function Profile(props) {
               duration={borrow.duration}
               status={borrow.status}
               id={borrow.id}
+              item_id={borrow.item_id}
               info={borrow.info}
               photo={borrow.photo}
               message={borrow.message}
@@ -149,8 +150,9 @@ function Profile(props) {
             <ItemCard
               key={item.ownerId}
               title={item.title}
+              isBorrowed={item.isBorrowed}
               onClick={() => history.push(`/items/${item.id}`, item = { item })}
-            />
+              />
           ))}
         </div>
 
@@ -169,7 +171,7 @@ function Profile(props) {
                 />
               )
             } else {
-              // return (<p>{userBorrows.length}</p>)
+              <p>no items have been borrowed</p>
             }
           })}
         </div>

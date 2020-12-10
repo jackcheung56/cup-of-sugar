@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { __UpdateBorrow } from '../services/BorrowService'
+import { __UpdateItem  } from '../services/ItemService'
 import { __DeleteBorrow } from '../services/BorrowService'
 import '../styles/Notification.css'
 
-const RequestCard = ({ status, duration, id, history, message, product, userInfo, confirmation, setConfirmation }) => {
+
+
+const RequestCard = ({ status, duration, id, history, message, product, userInfo, confirmation, setConfirmation, item_id }) => {
 
     const userRoute = userInfo.id
-
-
     const [response, setResponse] = useState('')
     const [layout, setLayout] = useState(false)
+
+    const isBorrowed = {
+        isBorrowed: true
+    }
 
     
 
@@ -41,6 +46,9 @@ const RequestCard = ({ status, duration, id, history, message, product, userInfo
     const sendApproval = (approval, id) => {
         console.log(approval, id)
         __UpdateBorrow(approval, id)
+        console.log(isBorrowed)
+        __UpdateItem(isBorrowed, item_id)
+
     }
 
     const deleteRequest = async (event) => {
@@ -63,6 +71,7 @@ const RequestCard = ({ status, duration, id, history, message, product, userInfo
                     </div>
 
                     <div>
+                        <p>{product}</p>
                         <p>{duration}</p>
                         <p>{message}</p>
                         <p>{status}</p>
