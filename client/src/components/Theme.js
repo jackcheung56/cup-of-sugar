@@ -1,21 +1,24 @@
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import React, { useState } from "react";
+import React from "react";
+import Switch from "@material-ui/core/Switch";
 
-export default function Dashboard() {
-  const [darkState, setDarkState] = useState(false);
-  const palletType = darkState ? "dark" : "light";
-  const darkTheme = createMuiTheme({
-    palette: {
-      type: palletType,
-    },
+export default function Switches() {
+  const [state, setState] = React.useState({
+    checkedA: true,
+    checkedB: true,
   });
-  const handleThemeChange = () => {
-    setDarkState(!darkState);
+
+  const handleChange = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <div> Sample Text </div>
-    </ThemeProvider>
+    <div classname="toggle">
+      <Switch
+        checked={state.checkedA}
+        onChange={handleChange}
+        name="checkedA"
+        inputProps={{ "aria-label": "secondary checkbox" }}
+      />
+    </div>
   );
 }
