@@ -9,7 +9,7 @@ const AddItemPage = (props) => {
   const [condition, setCondition] = useState('Great')
   const history = useHistory()
   const loggedUser = props.currentUser.id
-  console.log(props)
+  // console.log(props)
 
 
 
@@ -99,6 +99,8 @@ const AddItemPage = (props) => {
         <input type="hidden" name="condition" value={newItem.condition = condition}></input>
 
         <input type="hidden" name="ownerId" value={newItem.owner_id = loggedUser}></input>
+
+        <input type="hidden" name="condition" value={newItem.isBorrowed = false}></input>
 
         <button type="submit" onClick={handleSubmit}>Submit</button>
 

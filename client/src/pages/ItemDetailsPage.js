@@ -7,8 +7,6 @@ import '../styles/Details.css'
 
 function ItemDetailsPage(props) {
     const [detail, setDetail] = useState({})
-    const [toggle, setToggle] = useState(false)
-    const [reqToggle, setReqToggle] = useState(false)
     const [admin, setAdmin] = useState(false)
     const [ownerName, setOwnerName] = useState('')
     const itemOwner = props.location.state.item.owner_id
@@ -17,14 +15,29 @@ function ItemDetailsPage(props) {
     const storedItemData = props.location.state.item
     const storedUserData = props.currentUser
 
+
+
+    const [message, setMessage] = useState('')
+    const [duration, setDuration] = useState('')
+
     //This data will be stored in the newly created Borrow
     //it will appear in the owner's notifications based on OwnerId
     //userId is reserved for the user who is requesting the borrow
+
+    const [toggle, setToggle] = useState(false)
+    const [reqToggle, setReqToggle] = useState(false)
+    const [formToggle, setFormToggle] = useState(false)
+
+
+
+
 
     //Stored user is the current user
     console.log(props)
     console.log('stored user', storedUserData)
     console.log('stored item', storedItemData)
+
+    const loremIpsum = 'words show up'
 
     const formData = {
         user_id: loggedUser,
@@ -39,9 +52,9 @@ function ItemDetailsPage(props) {
         product: storedItemData.title,
 
         accepted: 'f',
-        duration: 'user input',
-        message: '',
-        form: '',        
+        duration: duration,
+        message: message,
+        // form: form,
     }
 
 
@@ -65,6 +78,41 @@ function ItemDetailsPage(props) {
         }
     }
 
+
+    const durationInput = (event) => {
+        event.preventDefault();
+        setDuration(event.target.value);
+    };
+
+
+    const messageInput = (event) => {
+        event.preventDefault();
+        setMessage(event.target.value);
+    };
+
+
+
+
+    const handleFillout = async (event) => {
+        event.preventDefault()
+        try {
+            setFormToggle(!formToggle)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     const handleClick = async (event) => {
         //handles borrow ticket creation
         event.preventDefault()
@@ -78,9 +126,11 @@ function ItemDetailsPage(props) {
 
             setToggle(true)
             setReqToggle(true)
-            setTimeout(() => { 
-                props.history.push('/items/all');
-            }, 1500)
+            setFormToggle(!formToggle)
+            // setTimeout(() => {
+            //     props.history.push('/items/all');
+            // }, 1500)
+
         } catch (error) {
             console.log(error)
         }
@@ -104,13 +154,13 @@ function ItemDetailsPage(props) {
     const backButton = async (event) => {
         event.preventDefault()
         try {
-          props.history.goBack()
+            props.history.goBack()
         } catch (error) {
-          console.log(error)
+            console.log(error)
         }
-      }
+    }
 
- 
+
 
     return (
         <div className="detailsPage">
@@ -120,29 +170,73 @@ function ItemDetailsPage(props) {
                 <div className="adminDisplay">
                     <Link to={{ pathname: `/items/update/${detail.id}`, detail: { detail } }}><button>Edit</button></Link>
                     <Link to={{ pathname: `/items/delete/${detail.id}`, detail: { detail } }}><button>Delete</button></Link>
+
+                    <div className="detailsContainer">
+                        <img src={detail.image}></img>
+                        <h1>{detail.title}</h1>
+                        <p>Owner: {ownerName}</p>
+                        <p>Category: {detail.category}</p>
+                        <p>Condition: {detail.condition}</p>
+                        <p>Description: {detail.description}</p>
+                        <p>IS BORROWED? add logic </p>
+                    </div>
+
                 </div>
+
                 :
+
                 <div className="normalDisplay">
-                    <button className={reqToggle ? 'reqVis' : 'reqGone'} onClick={handleClick}>Request Borrow</button>
-                    <h1 className={toggle ? 'visible' : 'invisible'}>REQUEST SENT</h1>
+                    <div className="detailsContainer">
+                        <img src={detail.image}></img>
+                        <h1>{detail.title}</h1>
+                        <p>Owner: {ownerName}</p>
+                        <p>Category: {detail.category}</p>
+                        <p>Condition: {detail.condition}</p>
+                        <p>Description: {detail.description}</p>
+                        <p>IS BORROWED? add logic </p>
+                    </div>
+
+                    <div className="reqDropDown">
+
+                        <div className="borrowDrop" onClick={handleFillout}>Request Borrow</div>
+
+                        <div className={formToggle ? "reqUI" : "hideUI"}>
+
+
+                            <input
+                                className={formToggle ? "reqUI" : "hideUI"}
+                                placeholder="Enter duration of borrow"
+                                name="duration"
+                                value={duration}
+                                onChange={durationInput}
+                            ></input>
+
+
+
+                            <input
+                                className={formToggle ? "reqUI" : "hideUI"}
+                                placeholder="Message for item owner"
+                                name="duration"
+                                value={message}
+                                onChange={messageInput}
+                            ></input>
+
+                            <button className={reqToggle ? 'reqVis' : 'reqGone'} onClick={handleClick}>Confirm</button>
+
+                        </div>
+
+                            <div className={toggle ? 'visible' : 'invisible'}>
+                                <p>REQUEST SENT</p>
+                                <button className={toggle ? 'visible' : 'invisible'} onClick={backButton}>return to browse?</button>
+                            </div>
+                        
+                    </div>
+
                 </div>
             }
 
-            <h1>Item Details</h1>
-            <div className="detailsContainer">
-                <img src={detail.image}></img>
-                <h1>{detail.title}</h1>
-                <p>Owner: {ownerName}</p>
-                <p>Category: {detail.category}</p>
-                <p>Condition: {detail.condition}</p>
-                <p>Description: {detail.description}</p>
 
 
-                <p>IS BORROWED? add logic </p>
-
-
-
-            </div>
 
         </div>
     );

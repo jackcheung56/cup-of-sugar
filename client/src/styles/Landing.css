@@ -19,12 +19,21 @@
     right: 0;
     bottom: 0;
     left: 0;
+
     /* background: rgb(16,17,20);
     background: linear-gradient(0deg, rgba(16,17,20,1) 0%, rgba(32,34,40,1) 100%); */
 
     background: rgb(33,141,244);
     background: linear-gradient(180deg, rgba(33,141,244,1) 0%, rgba(17,78,188,1) 100%);
  }
+
+.lifted {
+   z-index: 10;
+   
+   align-items: center;
+   justify-content: center;
+
+}
 
  .object{
     display: flex;
@@ -40,11 +49,17 @@
     font-size: 1.85rem;
     font-family: 'sybarite', serif !important;
     color: white;
+
+    align-items: center;
+    justify-content: center;
  }
  
  .greeting{
     display: flex;
     color: white;
+
+    align-items: center;
+    justify-content: center;
 
  }
 
@@ -67,11 +82,12 @@ svg{
 }
 
 .footer{
-    position:absolute;
-    bottom:0;
-    width:100%;
-    padding: 0px;
-    margin: 0 auto;
+   z-index: 0;
+   position:absolute;
+   bottom:0;
+   width:100%;
+   padding: 0px;
+   margin: 0 auto;
 }
 
 

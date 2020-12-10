@@ -127,7 +127,6 @@ function BrowsePage(props) {
                     <button className="btns" onClick={sortInstruments}>instruments</button>
                     <button className="btns" onClick={sortPantry}>pantry</button>
                 </div>
-                
                 <hr className="greyLine"></hr>
                 
                 
