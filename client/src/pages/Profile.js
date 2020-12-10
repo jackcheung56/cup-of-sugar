@@ -36,6 +36,7 @@ function Profile(props) {
   const getUserBorrows = async () => {
     try {
       const data = await __GetBorrowByUserId(sortingId)
+      console.log('Jills', data)
 
       let list = (data.data)
 
