@@ -9,7 +9,7 @@ import { __CheckSession } from "../services/UserService";
 //Components
 import Navbar from "./NavBar";
 import ProtectedRoute from "./ProtectedRoute";
-import Chat from "./Chat";
+
 // import Messenger from "./Messenger";
 //Pages
 import Home from "../pages/Home";
@@ -87,7 +87,7 @@ function Router(props) {
         authenticated={authenticated}
         user={user}
       ></Navbar>
-      <Chat onIdSubmit={setId} />
+
       {pageLoading ? (
         <h3>*</h3>
       ) : (

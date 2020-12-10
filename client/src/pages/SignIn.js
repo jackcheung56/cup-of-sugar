@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { __LoginUser } from "../services/UserService";
 // import PropTypes from "prop-types";
 
@@ -40,6 +40,14 @@ const SignIn = (props) => {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      props.setCurrentUser(foundUser);
+    }
+  }, []);
 
   return !props.authenticated && !props.currentUser ? (
     <div>
