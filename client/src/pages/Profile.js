@@ -18,7 +18,8 @@ function Profile(props) {
   const [requests, setRequests] = useState([])
   const history = useHistory()
 
-  const sortingId = props.currentUser.id
+  console.log(props)
+  const sortingId = props.match.params.user_id
   const displayName = props.currentUser.name
   const profilePic = props.currentUser.picture
 
@@ -39,7 +40,6 @@ function Profile(props) {
   const getUserBorrows = async () => {
     try {
       const data = await __GetBorrowByUserId(sortingId)
-
       let list = (data.data)
       console.log('this is user borrows', list)
       setUserBorrows(list)

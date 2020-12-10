@@ -2,17 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from 'react-router-dom';
 import ItemCard from '../components/ItemCard'
 import { __GetItems } from "../services/ItemService";
-import { __GetItemsByCategory} from "../services/ItemService";
+import { __GetItemsByCategory } from "../services/ItemService";
+import '../styles/Browse.css'
 
 function BrowsePage(props) {
 
-
-
     const [browseItems, setBrowseItems] = useState([])
 
-    
+
     const getBrowseItems = async () => {
-        try{
+        try {
             const data = await __GetItems()
             setBrowseItems(data)
         } catch (error) {
@@ -21,7 +20,7 @@ function BrowsePage(props) {
     }
 
     const sortAppliances = async () => {
-        try{
+        try {
             const category = await __GetItemsByCategory('Appliances')
             const foo = category.data
             setBrowseItems(foo)
@@ -31,7 +30,7 @@ function BrowsePage(props) {
     }
 
     const sortFitness = async () => {
-        try{
+        try {
             const category = await __GetItemsByCategory('Fitness')
             const foo = category.data
             setBrowseItems(foo)
@@ -41,7 +40,7 @@ function BrowsePage(props) {
     }
 
     const sortClothing = async () => {
-        try{
+        try {
             const category = await __GetItemsByCategory('Clothing')
             const foo = category.data
             setBrowseItems(foo)
@@ -51,7 +50,7 @@ function BrowsePage(props) {
     }
 
     const sortEntertainment = async () => {
-        try{
+        try {
             const category = await __GetItemsByCategory('Entertainment')
             const foo = category.data
             setBrowseItems(foo)
@@ -62,7 +61,7 @@ function BrowsePage(props) {
     }
 
     const sortBooks = async () => {
-        try{
+        try {
             const category = await __GetItemsByCategory('Books')
             const foo = category.data
             setBrowseItems(foo)
@@ -72,7 +71,7 @@ function BrowsePage(props) {
     }
 
     const sortTools = async () => {
-        try{
+        try {
             const category = await __GetItemsByCategory('Tools')
             const foo = category.data
             setBrowseItems(foo)
@@ -82,7 +81,7 @@ function BrowsePage(props) {
     }
 
     const sortInstruments = async () => {
-        try{
+        try {
             const category = await __GetItemsByCategory('Instruments')
             const foo = category.data
             setBrowseItems(foo)
@@ -92,7 +91,7 @@ function BrowsePage(props) {
     }
 
     const sortPantry = async () => {
-        try{
+        try {
             const category = await __GetItemsByCategory('Pantry')
             const foo = category.data
             setBrowseItems(foo)
@@ -109,26 +108,36 @@ function BrowsePage(props) {
     const itemList = props.item
     const history = useHistory()
 
-    
+
 
     return (
-        <div>
-            <h1>browse all items</h1>
-            <div className="catButtons">
-                <button onClick={getBrowseItems}>All</button>
-                <button onClick={sortAppliances}>Appliances</button>
-                <button onClick={sortFitness}>Fitness</button>
-                <button onClick={sortClothing}>Clothing</button>
-                <button onClick={sortEntertainment}>Entertainment</button>
-                <button onClick={sortBooks}>Books</button>
-                <button onClick={sortTools}>Tools</button>
-                <button onClick={sortInstruments}>Instruments</button>
-                <button onClick={sortPantry}>Pantry</button>
+        <div className="browsePage">
+            <div className="browsePageTop">
+
+                <h1 className="pageTitle">browse all items</h1>
+                
+                <div className="catButtons">
+                    <button className="btns" onClick={getBrowseItems}>all</button>
+                    <button className="btns" onClick={sortAppliances}>appliances</button>
+                    <button className="btns" onClick={sortFitness}>fitness</button>
+                    <button className="btns" onClick={sortClothing}>clothing</button>
+                    <button className="btns" onClick={sortEntertainment}>entertainment</button>
+                    <button className="btns" onClick={sortBooks}>books</button>
+                    <button className="btns" onClick={sortTools}>tools</button>
+                    <button className="btns" onClick={sortInstruments}>instruments</button>
+                    <button className="btns" onClick={sortPantry}>pantry</button>
+                </div>
+                
+                <hr className="greyLine"></hr>
+                
+                
             </div>
 
 
 
-            
+
+
+
 
             <div className="itemList">
                 {browseItems.map((item) => (
@@ -140,8 +149,8 @@ function BrowsePage(props) {
                         condition={item.condition}
                         category={item.category}
                         description={item.description}
-                        onClick={() => history.push(`/items/${item.id}`, item={item})} 
-                        //model attributes end here
+                        onClick={() => history.push(`/items/${item.id}`, item = { item })}
+                    //model attributes end here
                     />
                 ))}
             </div>

@@ -1,17 +1,13 @@
-import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import { Link, useParams } from "react-router-dom";
 import "../styles/Nav.css";
 import Logo from "../assets/coslogo.png";
 
 
-function NavBar({ authenticated, currentUser, className }) {
 
-  const [logout, setLogout] = useState('false')
+function NavBar({ authenticated, currentUser, className, logout }) {
 
-  const signOut = () => {
-    localStorage.clear('token')
-    setLogout('true')
-  }
+
 
   return !authenticated && !currentUser ? (
     <div className="navbox">
@@ -52,7 +48,7 @@ function NavBar({ authenticated, currentUser, className }) {
             <li>Browse</li>
           </Link>
 
-          <Link to="/users/:owner_id">
+          <Link to="/users/user_id">
             <li>Profile</li>
           </Link>
 
@@ -60,7 +56,8 @@ function NavBar({ authenticated, currentUser, className }) {
             <li>DM</li>
           </Link> */}
 
-          <Link to="/">
+          <Link 
+          to='/'>
             <li>Sign Out</li>
           </Link>
         </ul>

@@ -19,11 +19,11 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgb(16,17,20);
-    background: linear-gradient(0deg, rgba(16,17,20,1) 0%, rgba(32,34,40,1) 100%);
+    /* background: rgb(16,17,20);
+    background: linear-gradient(0deg, rgba(16,17,20,1) 0%, rgba(32,34,40,1) 100%); */
 
-    /* background: rgb(33,141,244);
-    background: linear-gradient(180deg, rgba(33,141,244,1) 0%, rgba(17,78,188,1) 100%); */
+    background: rgb(33,141,244);
+    background: linear-gradient(180deg, rgba(33,141,244,1) 0%, rgba(17,78,188,1) 100%);
  }
 
  .object{

@@ -49,14 +49,7 @@ function Router(props) {
     }
   };
 
-  useEffect(() => {
-    getAllItems();
-    // getUser()
-    verifyTokenValid();
-    setPageLoading(false);
-    toggleAuthenticated();
-  }, []);
-
+  
   const verifyTokenValid = async () => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -64,20 +57,30 @@ function Router(props) {
         const session = await __CheckSession();
         setAuthenticated(true);
         setCurrentUser(session.user);
-        props.history.push("/users/:user_id");
+        props.history.push(`/users/${session.user.id}`);
       } catch (error) {
         setCurrentUser(null);
         setAuthenticated(false);
-        localStorage.clear();
+        localStorage.clear(); 
       }
     }
   };
-
+  
   const toggleAuthenticated = (value, user, done) => {
     setAuthenticated(value);
     setCurrentUser(user);
+    
   };
 
+  useEffect(() => {
+    getAllItems();
+    //getUser()
+    verifyTokenValid();
+    setPageLoading(false);
+    //toggleAuthenticated();
+
+  }, [currentUser]);
+console.log(currentUser)
   return (
     <div>
       <Navbar
@@ -85,15 +88,10 @@ function Router(props) {
         authenticated={authenticated}
         user={user}
       ></Navbar>
-      {pageLoading ? (
+      { pageLoading ? (
         <h3>*</h3>
       ) : (
         <Switch>
-
-          {/* <Route path="/dms">
-            <Messenger />
-          </Route> */}
-
           <Route exact path="/">
             <LandingPage></LandingPage>
           </Route>
@@ -121,16 +119,22 @@ function Router(props) {
               ></BrowsePage>
             )}
           />
-          <Route path="/users/:user_id">
-            <Profile
-              borrow={borrow}
-              setBorrow={setBorrow}
-              user={user}
-              setUser={setUser}
-              history={history}
-              currentUser={currentUser}
-            ></Profile>
-          </Route>
+          {currentUser ?
+          <Route
+            path="/users/:user_id"
+            component={(props) => (
+              <Profile
+                {...props}
+                authenticated={authenticated}
+                borrow={borrow}
+                setBorrow={setBorrow}
+                user={user}
+                setUser={setUser}
+                history={history}
+                currentUser={currentUser}
+              ></Profile>
+            )}
+          />:  null} 
           
           <Route exact path="/items/add"><AddItemPage currentUser={currentUser} history={history}></AddItemPage></Route>
 
