@@ -44,13 +44,6 @@ function ItemDetailsPage(props) {
     }
 
 
-    console.log(formData)
-
-
-
-
-    //get user by id
-
     const getItemOwnerName = async () => {
         try {
             const data = await __GetUser(itemOwner)
@@ -61,9 +54,6 @@ function ItemDetailsPage(props) {
         }
     }
 
-    
-
-
     const getDetails = async () => {
         //gets the item details for this page
         try {
@@ -73,8 +63,6 @@ function ItemDetailsPage(props) {
             console.log(error)
         }
     }
-
-    console.log('OWNER ID', detail.ownerId)
 
     const handleClick = async (event) => {
         //handles borrow ticket creation
@@ -90,7 +78,6 @@ function ItemDetailsPage(props) {
             console.log(error)
         }
     }
-
 
     const adminToggle = () => {
         if (itemOwner === loggedUser) {

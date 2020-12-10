@@ -20,6 +20,9 @@ function Profile(props) {
 
   const sortingId = props.currentUser.id
   const displayName = props.currentUser.name
+  const profilePic = props.currentUser.picture
+
+  console.log('Profile', props.currentUser.picture)
 
 
   const getBorrowRequests = async () => {
@@ -36,7 +39,6 @@ function Profile(props) {
   const getUserBorrows = async () => {
     try {
       const data = await __GetBorrowByUserId(sortingId)
-      console.log('Jills', data)
 
       let list = (data.data)
 
@@ -81,7 +83,7 @@ function Profile(props) {
   }
 
 
-  console.log(userBorrows)
+ 
 
 
   useEffect(() => {
@@ -96,6 +98,8 @@ function Profile(props) {
     <div>
 
       <h1>{displayName}</h1>
+
+      <img className="profilePic" src={profilePic}></img>
 
       <div className="profilePage">
 

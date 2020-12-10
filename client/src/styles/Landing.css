@@ -2,8 +2,6 @@ body{
     background: rgb(16,17,20);
     background: linear-gradient(0deg, rgba(16,17,20,1) 0%, rgba(32,34,40,1) 100%);
     color: white;
-
-
 }
 
 /* body{
@@ -12,15 +10,40 @@ body{
     color: white;
 } */
 
+
+
+
 .branding {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 75vh;
-
-    
  }
+
+
+
+ /* .branding {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(16,17,20);
+    background: linear-gradient(0deg, rgba(16,17,20,1) 0%, rgba(32,34,40,1) 100%);
+ } */
+
+
+
+
 
  .object{
     display: flex;
