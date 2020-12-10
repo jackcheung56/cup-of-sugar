@@ -54,13 +54,7 @@ function Router(props) {
     }
   };
 
-  useEffect(() => {
-    getAllItems();
-    // getUser()
-    verifyTokenValid();
-    setPageLoading(false);
-    // toggleAuthenticated();
-  }, []);
+
 
   const verifyTokenValid = async () => {
     const token = localStorage.getItem("token");
@@ -71,21 +65,45 @@ function Router(props) {
         setCurrentUser(session.user);
         props.history.push(`/users/${session.user.id}`);
       } catch (error) {
-        setCurrentUser(null);
-        setAuthenticated(false);
+        throw error
+        // setCurrentUser(null);
+        // setAuthenticated(false);
         localStorage.clear();
       }
     }
   };
 
+     const getUserBackup = async () => {
+       if (currentUser) {
+        try {
+          const user = await __GetUser(currentUser.id)
+          console.log(currentUser.id)
+          setUser(currentUser)
+          } catch {
+            console.log('no user yet')
+          }
+        }
+    }
+
+    const toggleAuthenticated = (value, user, done) => {
+      setAuthenticated(value);
+      setCurrentUser(user);
+    };
+  
+
+    useEffect(() => {
+      getAllItems();
+      // getUser()
+      verifyTokenValid();
+      setPageLoading(false);
+      // toggleAuthenticated();
+      getUserBackup()
+    }, []);
 
 
-  const toggleAuthenticated = (value, user, done) => {
-    setAuthenticated(value);
-    setCurrentUser(user);
-  };
 
-  // console.log(currentUser.id)
+ 
+
 
   return (
     <div>
@@ -116,7 +134,7 @@ function Router(props) {
             <Route
               exact
               path="/items/all"
-              component={() =>
+              component={(props) =>
                 (<BrowsePage
                   item={item}
                   setItem={setItem}
@@ -126,6 +144,7 @@ function Router(props) {
                   history={history}
                   currentUser={currentUser}
                   authenticated={authenticated}
+                  {...props}
                 ></BrowsePage>
                 )}
             />

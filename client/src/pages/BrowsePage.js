@@ -7,7 +7,17 @@ import '../styles/Browse.css'
 
 function BrowsePage(props) {
 
+
+
+    console.log(props)
     const [browseItems, setBrowseItems] = useState([])
+
+
+    // const getUserBackup = async () => {
+    //     try {
+    //         const data = await __GetUser()
+    //     }
+    // }
 
 
     const getBrowseItems = async () => {
@@ -106,7 +116,7 @@ function BrowsePage(props) {
     }, [])
 
     const itemList = props.item
-    const history = useHistory()
+ 
 
 
 
@@ -148,7 +158,7 @@ function BrowsePage(props) {
                         condition={item.condition}
                         category={item.category}
                         description={item.description}
-                        onClick={() => history.push(`/items/${item.id}`, item = { item })}
+                        onClick={() => props.history.push(`/items/${item.id}`, item = { item })}
                     //model attributes end here
                     />
                 ))}

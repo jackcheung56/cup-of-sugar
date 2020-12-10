@@ -19,6 +19,10 @@ function Profile(props) {
 
   console.log('TRACK USER ID', props.currentUser.id)
 
+  console.log('TRACK USER', props.user)
+
+  
+
 
   // const history = useHistory()
 
@@ -116,7 +120,7 @@ function Profile(props) {
               photo={borrow.photo}
               message={borrow.message}
               product={borrow.product}
-              history={history}
+              history={props.history}
               userInfo={userInfo}
               confirmation={confirmation}
               setConfirmation={setConfirmation}
