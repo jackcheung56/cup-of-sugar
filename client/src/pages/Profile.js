@@ -83,7 +83,7 @@ function Profile(props) {
   }
 
 
- 
+
 
 
   useEffect(() => {
@@ -97,11 +97,30 @@ function Profile(props) {
   return (
     <div>
 
-      <h1>{displayName}</h1>
+      <div className="topDisplay">
+        <div className="userDisplay">
+          <img className="profilePic" src={profilePic}></img>
+          <h4 className="username">{displayName}</h4>
+        </div>
 
-      <img className="profilePic" src={profilePic}></img>
+        <div className="notifications">
+          <h5>NOTIFICATIONS</h5>
+          <p></p>
+          {requests.map((borrow) => (
+            <RequestCard
+              key={borrow.id}
+              name={borrow.itemId}
+              duration={borrow.duration}
+              status={borrow.status}
+              id={borrow.id}
+            />
+          ))}
+        </div>
+      </div>
 
-      <div className="profilePage">
+
+
+      <div className="interface">
 
         <div className="itemListU">
           <h4>your items</h4>
@@ -118,6 +137,7 @@ function Profile(props) {
 
         <div className="borrowListU">
           <h4>items you have borrowed</h4>
+          <p>no borrows</p>
           {userBorrows.map((borrow) => {
             if (borrow.accepted === true) {
               return (
@@ -135,22 +155,11 @@ function Profile(props) {
         </div>
 
 
-        <div className="rating"><h4>My Rating</h4><RatingCard key={userInfo.id} name={userInfo.name} rating={userInfo.rating} /></div>
+        {/* <div className="rating"><h4>My Rating</h4><RatingCard key={userInfo.id} name={userInfo.name} rating={userInfo.rating} /></div> */}
 
 
-        <div className="notifications">
-          <h4>NOTIFICATIONS (borrow requests)</h4>
-          <p>requests made by others to borrow your stuff</p>
-          {requests.map((borrow) => (
-            <RequestCard
-              key={borrow.id}
-              name={borrow.itemId}
-              duration={borrow.duration}
-              status={borrow.status}
-              id={borrow.id}
-            />
-          ))}
-        </div>
+
+
 
       </div>
     </div >

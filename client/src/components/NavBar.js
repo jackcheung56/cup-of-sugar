@@ -12,14 +12,13 @@ function NavBar({ authenticated, currentUser, className }) {
             <img className="navLogo" src={Logo} alt="app logo"></img>
           </Link>
 
-          <Link to="/home">
+          {/* <Link to="/home">
             <li>Home</li>
-          </Link>
+          </Link> */}
 
           <Link to="/signup">
             <li>Sign Up</li>
           </Link>
-
 
           <Link to="/login">
             <li>Sign In</li>
@@ -28,8 +27,8 @@ function NavBar({ authenticated, currentUser, className }) {
       </nav>
     </div>
   ) : (
-    <header className={className}>
-      <div className="navbox">Welcome Back </div>
+    
+      <div className="navbox">
       <nav>
         <ul className="nav-links">
           <Link to="/">
@@ -48,16 +47,17 @@ function NavBar({ authenticated, currentUser, className }) {
             <li>Profile</li>
           </Link>
 
-          <Link to="/dms/:user_id">
+          {/* <Link to="/dms/:user_id">
             <li>DM</li>
-          </Link>
+          </Link> */}
 
           <Link to="/">
             <li>Sign Out</li>
           </Link>
         </ul>
       </nav>
-    </header>
+      </div>
+    
   );
 }
 

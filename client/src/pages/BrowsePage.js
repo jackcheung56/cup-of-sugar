@@ -113,6 +113,7 @@ function BrowsePage(props) {
 
     return (
         <div>
+            <h1>browse all items</h1>
             <div className="catButtons">
                 <button onClick={getBrowseItems}>All</button>
                 <button onClick={sortAppliances}>Appliances</button>
@@ -127,7 +128,7 @@ function BrowsePage(props) {
 
 
 
-            <h1>browse all items</h1>
+            
 
             <div className="itemList">
                 {browseItems.map((item) => (

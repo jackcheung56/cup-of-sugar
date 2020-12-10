@@ -22,6 +22,7 @@ function ItemDetailsPage(props) {
     //userId is reserved for the user who is requesting the borrow
 
     //Stored user is the current user
+    console.log(props)
     console.log('stored user', storedUserData)
     console.log('stored item', storedItemData)
 
@@ -71,9 +72,15 @@ function ItemDetailsPage(props) {
             const borrowRequest = await __CreateBorrow(formData)
             console.log(borrowRequest)
             //Need to Change state to reflect "request sent" (pop up)
+
+            //maybe better to send to a request send page... redirect timer
+
+
             setToggle(true)
             setReqToggle(true)
-            // props.history.goBack()
+            setTimeout(() => { 
+                props.history.push('/items/all');
+            }, 1500)
         } catch (error) {
             console.log(error)
         }
@@ -94,10 +101,20 @@ function ItemDetailsPage(props) {
         getItemOwnerName()
     }, [])
 
+    const backButton = async (event) => {
+        event.preventDefault()
+        try {
+          props.history.goBack()
+        } catch (error) {
+          console.log(error)
+        }
+      }
+
  
 
     return (
         <div className="detailsPage">
+            <button onClick={backButton}>back</button>
 
             {admin === true ?
                 <div className="adminDisplay">
@@ -107,17 +124,24 @@ function ItemDetailsPage(props) {
                 :
                 <div className="normalDisplay">
                     <button className={reqToggle ? 'reqVis' : 'reqGone'} onClick={handleClick}>Request Borrow</button>
+                    <h1 className={toggle ? 'visible' : 'invisible'}>REQUEST SENT</h1>
                 </div>
             }
 
             <h1>Item Details</h1>
-            <img src={detail.image}></img>
             <div className="detailsContainer">
-                <h1 className={toggle ? 'visible' : 'invisible'}>REQUEST SENT</h1>
+                <img src={detail.image}></img>
                 <h1>{detail.title}</h1>
+                <p>Owner: {ownerName}</p>
                 <p>Category: {detail.category}</p>
                 <p>Condition: {detail.condition}</p>
                 <p>Description: {detail.description}</p>
+
+
+                <p>IS BORROWED? add logic </p>
+
+
+
             </div>
 
         </div>

@@ -66,6 +66,6 @@ const SignIn = (props) => {
   ) : (
     <h1>You're already signed in</h1>
   );
-};
+}
 
 export default SignIn;
