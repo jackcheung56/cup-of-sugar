@@ -22,13 +22,7 @@ function Profile(props) {
   const displayName = props.currentUser.name
 
 
-
-
-
-
-
   const getBorrowRequests = async () => {
-    //DONT TOUCH THIS- IT WORKS/ HUNTER THIS IS NOT THE ONE YOU WANT TO CHANGE
     try {
       const data = await __GetBorrowRequests(sortingId)
       let foo = data.data
@@ -37,21 +31,6 @@ function Profile(props) {
       console.log(error)
     }
   }
-
-  //===============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   const getUserBorrows = async () => {
@@ -66,16 +45,6 @@ function Profile(props) {
     }
   }
 
-
-
-
-
-
-
-
-
-
-
   //Items
 
   const getUserItems = async () => {
@@ -86,8 +55,6 @@ function Profile(props) {
       console.log(error)
     }
   }
-
-
 
   //User
 
@@ -112,6 +79,8 @@ function Profile(props) {
     }
   }
 
+
+  console.log(userBorrows)
 
 
   useEffect(() => {
@@ -142,68 +111,23 @@ function Profile(props) {
         </div>
 
 
-        {/* <div>
-          {userBorrows.accepted === true ?
-            <div>
-              {userBorrows.length ? (
-                userBorrows.map((borrow) => (
-                  <div key={borrow.index}>
-                    <BorrowCard
-                      key={borrow.index}
-                      duration={borrow.duration}
-                    />
-                  </div>
-                ))
-              ) : (
-                  <div></div>
-                )}
-            </div>
-            :
-            <div></div>
-          }
-        </div> */}
-
-        {/* <div className="borrowListU">
+        <div className="borrowListU">
           <h4>items you have borrowed</h4>
           {userBorrows.map((borrow) => {
-            if (borrow.accepted === 'true'){
-              <BorrowCard
-                key={borrow.id}
-                name={borrow.itemId}  
-                status={borrow.status}
-              />
-            } else {
-              <p>No borrows have been made</p>
-            }
-          })}
-        </div> */}
-
-        <div>
-          {userBorrows.length ?  (
-            userBorrows.map((borrow) => {
-              if (borrow.accepted === 'true')
+            if (borrow.accepted === true) {
               return (
-              <div key={borrow.index}>
                 <BorrowCard
                   key={borrow.index}
                   duration={borrow.duration}
                   id={borrow.id}
+                  accepted={borrow.accepted}
                 />
-              </div>
-            )})
-          ) : (
-              <div>No borrows</div>
-            )}
+              )
+            } else {
+              // return (<p>{userBorrows.length}</p>)
+            }
+          })}
         </div>
-
-
-
-
-
-
-
-
-
 
 
         <div className="rating"><h4>My Rating</h4><RatingCard key={userInfo.id} name={userInfo.name} rating={userInfo.rating} /></div>
@@ -221,7 +145,6 @@ function Profile(props) {
               id={borrow.id}
             />
           ))}
-
         </div>
 
       </div>

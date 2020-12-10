@@ -13,7 +13,6 @@ function ItemDetailsPage(props) {
     const itemOwner = props.location.state.item.owner_id
     const detailRoute = props.location.state.item.id
 
-
     //This data will be stored in the newly created Borrow
     //it will appear in the owner's notifications based on OwnerId
     //userId is reserved for the user who is requesting the borrow
@@ -25,6 +24,9 @@ function ItemDetailsPage(props) {
         photo: detail.image,
         duration: 'user input',
         accepted: 'f',
+
+
+
     }
 
     const getDetails = async () => {
@@ -72,8 +74,6 @@ function ItemDetailsPage(props) {
 
     return (
         <div className="detailsPage">
-
-
 
             {admin === true ?
                 <div className="adminDisplay">
