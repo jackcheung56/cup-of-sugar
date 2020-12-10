@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { __LoginUser } from "../services/UserService";
+import '../styles/Form.css'
 
 const SignIn = (props) => {
   const [tempEmail, setTempEmail] = useState("");
@@ -40,8 +41,8 @@ const SignIn = (props) => {
   };
 
   return !props.authenticated && !props.currentUser ? (
-    <div>
-      <form>
+    <div className="template">
+      <form className="outerForm">
         <h1>Sign In</h1>
         <div className="block">
           <input
@@ -63,8 +64,8 @@ const SignIn = (props) => {
       </form>
     </div>
   ) : (
-    <h1>You're alradyt signed in</h1>
+    <h1>You're already signed in</h1>
   );
-};
+}
 
 export default SignIn;

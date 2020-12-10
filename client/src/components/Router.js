@@ -89,9 +89,11 @@ function Router(props) {
         <h3>*</h3>
       ) : (
         <Switch>
+
           {/* <Route path="/dms">
             <Messenger />
           </Route> */}
+
           <Route exact path="/">
             <LandingPage></LandingPage>
           </Route>
@@ -130,7 +132,7 @@ function Router(props) {
             ></Profile>
           </Route>
           
-          <Route exact path="/items/add"><AddItemPage currentUser={currentUser}></AddItemPage></Route>
+          <Route exact path="/items/add"><AddItemPage currentUser={currentUser} history={history}></AddItemPage></Route>
 
           <Route path="/items/delete/:item_id" render={(props) => <DeleteItemPage {...props} />}/>
 
@@ -164,7 +166,7 @@ function Router(props) {
             exact
             path="/items/:item_id"
             render={(props) => (
-              <ItemDetailsPage location={props.location} currentUser={currentUser}></ItemDetailsPage>
+              <ItemDetailsPage location={props.location} currentUser={currentUser} history={history}></ItemDetailsPage>
             )}
           />
         </Switch>

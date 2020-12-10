@@ -1,25 +1,29 @@
-body{
-    background: rgb(16,17,20);
-    background: linear-gradient(0deg, rgba(16,17,20,1) 0%, rgba(32,34,40,1) 100%);
-    color: white;
-
-
-}
-
+  
 /* body{
-    background: rgb(33,141,244);
-    background: linear-gradient(180deg, rgba(33,141,244,1) 0%, rgba(17,78,188,1) 100%);
-    color: white;
-} */
+   position:absolute;
 
-.branding {
+   width:100%;
+
+
+} */
+ 
+ .branding {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 75vh;
 
-    
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(16,17,20);
+    background: linear-gradient(0deg, rgba(16,17,20,1) 0%, rgba(32,34,40,1) 100%);
+
+    /* background: rgb(33,141,244);
+    background: linear-gradient(180deg, rgba(33,141,244,1) 0%, rgba(17,78,188,1) 100%); */
  }
 
  .object{
@@ -38,6 +42,17 @@ body{
     color: white;
  }
  
+ .greeting{
+    display: flex;
+    color: white;
+
+ }
+
+ .landingLink {
+     margin: 20px;
+     margin-top: 0;
+     margin-bottom: 0;
+ }
 
  img {
     display: flex;
@@ -46,11 +61,17 @@ body{
 
 }
 
+svg{
+   position:absolute;
+   bottom:0;
+}
+
 .footer{
-    width: 100%;
     position:absolute;
     bottom:0;
     width:100%;
+    padding: 0px;
+    margin: 0 auto;
 }
 
 
