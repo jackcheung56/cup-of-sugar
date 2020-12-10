@@ -11,22 +11,23 @@ export default () => {
     return (
         <div className="branding">
 
+            <div className="lifted">
+                <div className="object">
+                    <img src={Logo} alt="app logo"></img>
+                    <div className="welcome"><h2>cup of sugar</h2></div>
+                </div>
 
-            <div className="object">
-                <img src={Logo} alt="app logo"></img>
-                <div className="welcome"><h2>cup of sugar</h2></div>
-            </div>
+                <div className="greeting">
 
-            <div className="greeting">
-                
-                <Link to="/login">
-                    <p className="landingLink">Sign In</p>
-                </Link>
+                    <Link to="/login">
+                        <p className="landingLink">Sign In</p>
+                    </Link>
 
-                <Link to="/signup">
-                    <p className="landingLink">Sign Up</p>
-                </Link>
+                    <Link to="/signup">
+                        <p className="landingLink">Sign Up</p>
+                    </Link>
 
+                </div>
             </div>
 
 

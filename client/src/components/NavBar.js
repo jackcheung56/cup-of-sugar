@@ -3,12 +3,11 @@ import { Link, useParams } from "react-router-dom";
 import "../styles/Nav.css";
 import Logo from "../assets/coslogo.png";
 
+function NavBar({ authenticated, currentUser, className }) {
 
 
-function NavBar({ authenticated, currentUser, className, logout }) {
-
-
-
+  console.log(currentUser)
+  
   return !authenticated && !currentUser ? (
     <div className="navbox">
       <nav>

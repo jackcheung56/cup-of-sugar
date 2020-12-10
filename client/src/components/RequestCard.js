@@ -1,54 +1,106 @@
 import React, { useState, useEffect } from 'react'
 import { __UpdateBorrow } from '../services/BorrowService'
-import '../styles/Card.css'
+import { __UpdateItem  } from '../services/ItemService'
+import { __DeleteBorrow } from '../services/BorrowService'
+import '../styles/Notification.css'
 
-const RequestCard = ({ onClick, status, item_id, duration, id }) => {
 
-    const [approval, setApproval] = useState({})
 
-    const handleApproval = async (event) => {
-        let idValue = event.target.value
-        console.log('yea dummy you can do it like this', idValue)
+const RequestCard = ({ status, duration, id, history, message, product, userInfo, confirmation, setConfirmation, item_id }) => {
+
+    const userRoute = userInfo.id
+    const [response, setResponse] = useState('')
+    const [layout, setLayout] = useState(false)
+
+    const isBorrowed = {
+        isBorrowed: true
+    }
+
+    
+
+    const handleFillout = async (event) => {
+        event.preventDefault()
         try {
-            setApproval({
-                accepted: true
-            })
-            const approve = await __UpdateBorrow(approval, idValue)
-            console.log('yea dummy you can do it like this')
-
+            setLayout(!layout)
         } catch (error) {
             console.log(error)
         }
     }
 
-    //structure
-    // (attribute being updated, id)
 
-    //on click
-    //need to update borrow
-    //the target borrow is stored in requests/setRequests
+    const responseInput = (event) => {
+        setResponse(event.target.value);
+    };
 
-    //approval gets set to key value pair
-    //accepted: t
-    //where does the id come from?
-    //the id is stored in each card
+    const handleApproval = (event) => {
+        event.preventDefault()
+        const approval = {
+            accepted: true,
+            form: response
+        }
+        sendApproval(approval, id)
+        setResponse('')
+        setConfirmation(true)
+    }
+
+    const sendApproval = (approval, id) => {
+        console.log(approval, id)
+        __UpdateBorrow(approval, id)
+        console.log(isBorrowed)
+        __UpdateItem(isBorrowed, item_id)
+
+    }
+
+    const deleteRequest = async (event) => {
+        event.preventDefault()
+        try {
+            const del = await __DeleteBorrow(id)
+            history.push(`/users/${userRoute}`)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return (
-        <div className="card">
-            <div>
-                {/* <img src={image}></img> */}
-            </div>
+        <div className="container">
+            {!layout ?
 
-            <div>
-                <h3>request</h3>
-                <h3>{duration}</h3>
-                <h3>{status}</h3>
-                <p>{id}</p>
-            </div>
-            <div className="ticketBtns">
-                <button value={id} onClick={handleApproval}>Accept</button>
-                <button>Decline</button>
-            </div>
+                <div>
+                    <div>
+                        <p>{product}</p>
+                        <p>{duration}</p>
+                        <p>{message}</p>
+                        <p>{status}</p>
+                        <p>{id}</p>
+                    </div>
+                    <div className="ticketBtns">
+                        <button onClick={handleFillout}>Accept</button>
+                        <button onClick={deleteRequest}>Decline</button>
+                    </div>
+                </div>
+
+                :
+
+                <div className="confirmation">
+                    {!confirmation ?
+                        <div>
+                            <input
+                                placeholder="message for requester"
+                                name="response"
+                                value={response}
+                                onChange={responseInput}
+                            ></input>
+
+                            <button onClick={(event) => { handleApproval(event); }}>Confirm</button>
+
+                            <button onClick={deleteRequest}>Decline</button>
+                        </div>
+                        :
+                        <div>
+                        </div>
+                    }
+                </div>
+            }
         </div>
     )
 }
