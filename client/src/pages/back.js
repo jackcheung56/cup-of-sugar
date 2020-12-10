@@ -20,7 +20,7 @@ function Profile(props) {
   console.log('TRACK USER ID', props.currentUser.id)
 
 
-  // const history = useHistory()
+  const history = useHistory()
 
   const sortingId = props.currentUser.id
   const displayName = props.currentUser.name
@@ -77,7 +77,7 @@ function Profile(props) {
   const handleClick = async (event) => {
     event.preventDefault()
     try {
-      props.history.push(`/items/add`)
+      history.push(`/items/add`)
     } catch (error) {
       console.log(error)
     }
@@ -135,7 +135,7 @@ function Profile(props) {
               key={item.ownerId}
               title={item.title}
               isBorrowed={item.isBorrowed}
-              onClick={() => props.history.push(`/items/${item.id}`, item = { item })}
+              onClick={() => history.push(`/items/${item.id}`, item = { item })}
               />
           ))}
         </div>
@@ -155,7 +155,7 @@ function Profile(props) {
                   accepted={borrow.accepted}
                   photo={borrow.photo}
                   product={borrow.product}
-                  history={props.history}
+                  history={history}
                 />
               )
             } else {
@@ -173,8 +173,5 @@ function Profile(props) {
 }
 
 export default Profile;
-
-
-
 
 

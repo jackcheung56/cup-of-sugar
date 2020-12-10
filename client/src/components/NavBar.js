@@ -4,6 +4,10 @@ import "../styles/Nav.css";
 import Logo from "../assets/coslogo.png";
 
 function NavBar({ authenticated, currentUser, className }) {
+
+
+  console.log(currentUser)
+  
   return !authenticated && !currentUser ? (
     <div className="navbox">
       <nav>
