@@ -6,9 +6,10 @@ import FormInput from '../components/FormInput'
 
 const AddItemPage = (props) => {
   const [newItem, setNewItem] = useState({})
-  const [condition, setCondition] = useState('')
+  const [condition, setCondition] = useState('Great')
   const history = useHistory()
   const loggedUser = props.currentUser.id
+  console.log(props)
 
 
 
@@ -27,8 +28,18 @@ const AddItemPage = (props) => {
     }
   }
 
+  const backButton = async (event) => {
+    event.preventDefault()
+    try {
+      props.history.goBack()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div>
+      <button onClick={backButton}>cancel</button>
       <h1>ADD ITEM</h1>
       <form className="inputFields">
         <FormInput

@@ -24,11 +24,28 @@ const GetUserById = async (req, res) => {
   }
 };
 
+//Original
+
+// const CreateUser = async (req, res) => {
+//   try {
+//     const { name, email, password } = req.body;
+//     const passwordDigest = await hashPassword(password);
+//     const user = await User.create({ name, email, passwordDigest });
+//     console.log(user.id);
+//     res.send(user);
+//   } catch (error) {
+//     throw error;
+//   }
+// };
+
+
+//Update
+
 const CreateUser = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, picture, phone } = req.body;
     const passwordDigest = await hashPassword(password);
-    const user = await User.create({ name, email, passwordDigest });
+    const user = await User.create({ name, email, passwordDigest, picture, phone });
     console.log(user.id);
     res.send(user);
   } catch (error) {
