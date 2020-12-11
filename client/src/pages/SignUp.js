@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { __CreateUser } from "../services/UserService";
-import '../styles/Form.css'
-
+import "../styles/Form.css";
 
 function SignUp(props) {
-
   const [name, setName] = useState("");
   const [tempEmail, setTempEmail] = useState("");
   const [tempPassword, setTempPassword] = useState("");
@@ -47,9 +45,8 @@ function SignUp(props) {
 
       phone: tempPhone,
       picture: tempPicture,
-
     };
-    console.log('inputs', newUser)
+    console.log("inputs", newUser);
     props.setUser(newUser);
     try {
       await __CreateUser(newUser);

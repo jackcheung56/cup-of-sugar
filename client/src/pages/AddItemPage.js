@@ -3,21 +3,14 @@ import '../styles/Form.css';
 import { __CreateItem } from '../services/ItemService'
 import { useHistory } from 'react-router-dom';
 import FormInput from '../components/FormInput'
-
 const AddItemPage = (props) => {
   const [newItem, setNewItem] = useState({})
   const [condition, setCondition] = useState('Great')
   const history = useHistory()
   const loggedUser = props.currentUser.id
-  // console.log(props)
-
-
-
-
   const handleChange = ({ target }) => {
     setNewItem({ ...newItem, [target.name]: target.value })
   }
-
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
@@ -27,7 +20,6 @@ const AddItemPage = (props) => {
       console.log(error)
     }
   }
-
   const backButton = async (event) => {
     event.preventDefault()
     try {
@@ -36,7 +28,6 @@ const AddItemPage = (props) => {
       console.log(error)
     }
   }
-
   return (
     <div>
       <button onClick={backButton}>cancel</button>
@@ -49,7 +40,6 @@ const AddItemPage = (props) => {
           value={newItem.title}
           onChange={handleChange}
         />
-
         <FormInput
           className="fI"
           placeholder="category"
@@ -57,7 +47,6 @@ const AddItemPage = (props) => {
           value={newItem.category}
           onChange={handleChange}
         />
-
         <FormInput
           className="fI"
           placeholder="image"
@@ -65,7 +54,6 @@ const AddItemPage = (props) => {
           value={newItem.image}
           onChange={handleChange}
         />
-
         <FormInput
           className="fI"
           placeholder="description"
@@ -73,9 +61,7 @@ const AddItemPage = (props) => {
           value={newItem.description}
           onChange={handleChange}
         />
-
         <div className="tags">
-
           <button
             className="conTags"
             type="button"
@@ -83,16 +69,13 @@ const AddItemPage = (props) => {
             name="Great"
             onClick={() => setCondition('Great')}
           >Great</button>
-
           <button
             className="conTags"
             type="button"
             placeholder="Acceptable"
             name="Acceptable"
             onClick={() => setCondition('Acceptable')}
-
           >Acceptable</button>
-
           <button
             className="conTags"
             type="button"
@@ -100,22 +83,13 @@ const AddItemPage = (props) => {
             name="Bad"
             onClick={() => setCondition('Bad')}
           >Bad</button>
-
         </div>
-        
         <input type="hidden" name="condition" value={newItem.condition = condition}></input>
-
         <input type="hidden" name="ownerId" value={newItem.owner_id = loggedUser}></input>
-
         <input type="hidden" name="condition" value={newItem.isBorrowed = false}></input>
-
         <button className="styleButton" type="submit" onClick={handleSubmit}>Submit</button>
-
       </form>
-
     </div>
-
   )
 }
-
 export default AddItemPage

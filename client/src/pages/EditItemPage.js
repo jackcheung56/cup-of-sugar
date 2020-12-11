@@ -1,52 +1,47 @@
-import React, { useState, useEffect } from "react";
-import '../styles/Form.css';
+import React, { useState } from "react";
+import "../styles/Form.css";
 
-import { __UpdateItem } from '../services/ItemService'
+import { __UpdateItem } from "../services/ItemService";
 
-import FormInput from '../components/FormInput'
+import FormInput from "../components/FormInput";
 
 const EditItemPage = (props) => {
+  const [condition, setCondition] = useState(``);
+  const data = props.history.location.detail.detail;
+  const callId = props.history.location.detail.detail.id;
+  const [editItem, setEditItem] = useState({});
 
-  const [condition, setCondition] = useState(``)
-  const data = props.history.location.detail.detail
-  const callId = props.history.location.detail.detail.id
-  const [editItem, setEditItem] = useState({})
-
-  console.log(data)
-
+  console.log(data);
 
   const handleChange = ({ target }) => {
-    setEditItem({ ...editItem, [target.name]: target.value })
-  }
+    setEditItem({ ...editItem, [target.name]: target.value });
+  };
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
     try {
-      const update = await __UpdateItem(editItem, callId)
+      const update = await __UpdateItem(editItem, callId);
 
-      props.history.goBack()
-
+      props.history.goBack();
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   const backButton = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
     try {
-      props.history.goBack()
+      props.history.goBack();
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
-
+  };
 
   return (
     <div>
       <button onClick={backButton}>cancel</button>
       <h1>EDIT ITEM</h1>
       <form className="inputFields">
-
         <FormInput
           placeholder={data.title}
           name="title"
@@ -76,45 +71,43 @@ const EditItemPage = (props) => {
         />
 
         <div className="tags">
-
           <button
             className="condiTag"
             type="button"
             placeholder="Great"
             name="Great"
-            onClick={() => setCondition('Great')}
-          >Great</button>
+            onClick={() => setCondition("Great")}
+          >
+            Great
+          </button>
 
           <button
             className="condiTag"
             type="button"
             placeholder="Acceptable"
             name="Acceptable"
-            onClick={() => setCondition('Acceptable')}
-          >Acceptable</button>
+            onClick={() => setCondition("Acceptable")}
+          >
+            Acceptable
+          </button>
 
           <button
             className="condiTag"
             type="button"
             placeholder="Bad"
             name="Bad"
-            onClick={() => setCondition('Bad')}
-          >Bad</button>
-
+            onClick={() => setCondition("Bad")}
+          >
+            Bad
+          </button>
         </div>
 
-
-
-
-        <button type="submit" onClick={handleSubmit}>Submit</button>
-
+        <button type="submit" onClick={handleSubmit}>
+          Submit
+        </button>
       </form>
-
-
     </div>
+  );
+};
 
-  )
-}
-
-export default EditItemPage
-
+export default EditItemPage;
