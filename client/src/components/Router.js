@@ -67,6 +67,7 @@ function Router(props) {
     if (token) {
       try {
         const session = await __CheckSession();
+        console.log('THIS IS SESSION', session)
         setAuthenticated(true);
         setCurrentUser(session.user);
         props.history.push(`/users/${session.user.id}`);

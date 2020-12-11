@@ -18,9 +18,8 @@ function Profile(props) {
   const [confirmation, setConfirmation] = useState(false)
 
   console.log('TRACK USER ID', props.currentUser.id)
-
-
-  // const history = useHistory()
+  
+ const history = useHistory()
 
   console.log(props)
   const sortingId = props.match.params.user_id
