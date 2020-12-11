@@ -7,7 +7,6 @@ import BorrowCard from '../components/BorrowCard'
 import ProfileItemCard from '../components/ProfileItemCard'
 import RequestCard from '../components/RequestCard'
 import '../styles/Profile.css'
-
 function Profile(props) {
   const [userBorrows, setUserBorrows] = useState([])
   const [userItems, setUserItems] = useState([])
@@ -15,22 +14,14 @@ function Profile(props) {
   const [requests, setRequests] = useState([])
   const [confirmation, setConfirmation] = useState(false)
   const [navTab, setNavTab] = useState(false)
-
-
   const sortingId = props.currentUser.id
   const displayName = props.currentUser.name
   const profilePic = props.currentUser.picture
   const profileEmail = props.currentUser.email
-
- 
-
-
+  
   const switchDisplay = () => {
     setNavTab(!navTab)
   }
-
-
-
   const getBorrowRequests = async () => {
     try {
       const data = await __GetBorrowRequests(sortingId)
@@ -40,22 +31,16 @@ function Profile(props) {
       console.log(error)
     }
   }
-
   const getUserBorrows = async () => {
     try {
       const data = await __GetBorrowByUserId(sortingId)
-
       let list = (data.data)
-
       setUserBorrows(list)
     } catch (error) {
       console.log(error)
     }
   }
-
-
   //Items
-
   const getUserItems = async () => {
     try {
       const data = await __GetItemByOwner(sortingId)
@@ -66,10 +51,7 @@ function Profile(props) {
     }
   }
 
-
-  
   //User
-
   const getUserData = async () => {
     try {
       const data = await __GetUser(sortingId)
@@ -78,7 +60,6 @@ function Profile(props) {
       throw error
     }
   }
-
   const handleClick = async (event) => {
     event.preventDefault()
     try {
@@ -87,34 +68,23 @@ function Profile(props) {
       console.log(error)
     }
   }
-
-
   useEffect(() => {
     getUserBorrows()
     getUserItems()
     getUserData()
     getBorrowRequests()
   }, [])
-
-
   return (
     <div className="profBackground">
-
       <div className="grid-containerC">
-
         <div className="userDisplay">
-
           <div className="photoCon">
-
             <img className="proPic" src={profilePic}></img>
-
             <div className="proInfo">
               <h4 className="userName">{displayName}</h4>
               <p className="emailSub">{profileEmail}</p>
               <button className="addBtn" onClick={handleClick}>Add Item</button>
             </div>
-
-
             <div className="notifiCon">
               <h5 className="notiTitle">Notifications</h5>
               {requests.map((borrow, index) => {
@@ -144,12 +114,8 @@ function Profile(props) {
                 }
               })}
             </div>
-
           </div>
         </div>
-
-
-
         <div className="itemCol">
           <div className="naviBox">
             <div className="navi">
@@ -161,8 +127,6 @@ function Profile(props) {
               </div>
             </div>
           </div>
-
-
           <div className="bxBox">
             {!navTab ?
               <div className="thingOne">
@@ -202,17 +166,9 @@ function Profile(props) {
               </div>
             }
           </div>
-
-
         </div>
       </div>
     </div >
   );
 }
-
 export default Profile;
-
-
-
-
-

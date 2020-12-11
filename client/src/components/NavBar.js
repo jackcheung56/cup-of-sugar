@@ -1,13 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import { Link, useParams } from "react-router-dom";
 import "../styles/Nav.css";
 import Logo from "../assets/coslogo.png";
 
-function NavBar({ authenticated, currentUser, logout}) {
-
-
-  console.log(currentUser)
-  
+function NavBar({ authenticated, currentUser, logout }) {
   return !authenticated && !currentUser ? (
     <div className="navbox">
       <nav>
@@ -15,8 +11,6 @@ function NavBar({ authenticated, currentUser, logout}) {
           <Link to="/">
             <img className="navLogo" src={Logo} alt="app logo"></img>
           </Link>
-
-  
 
           <Link to="/signup">
             <li>Sign Up</li>
@@ -29,15 +23,12 @@ function NavBar({ authenticated, currentUser, logout}) {
       </nav>
     </div>
   ) : (
-    
-      <div className="navbox">
+    <div className="navbox">
       <nav>
         <ul className="nav-links">
           <Link to="/">
             <img className="navLogo" src={Logo} alt="app logo"></img>
           </Link>
-
-  
 
           <Link to="/items/all">
             <li>Browse</li>
@@ -52,8 +43,7 @@ function NavBar({ authenticated, currentUser, logout}) {
           </Link>
         </ul>
       </nav>
-      </div>
-    
+    </div>
   );
 }
 

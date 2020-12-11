@@ -4,54 +4,39 @@ import { __CreateBorrow } from '../services/BorrowService'
 import { __GetUser } from "../services/UserService";
 import { Link } from 'react-router-dom'
 import '../styles/Details.css'
-
 function ItemDetailsPage(props) {
     const [detail, setDetail] = useState({})
     const [admin, setAdmin] = useState(false)
     const [ownerName, setOwnerName] = useState('')
     const itemOwner = props.location.state.item.owner_id
-
     const loggedUser = props.currentUser.id
     const detailRoute = props.location.state.item.id
     const storedItemData = props.location.state.item
     const storedUserData = props.currentUser
-
-
     const [message, setMessage] = useState('')
     const [duration, setDuration] = useState('')
-
     //This data will be stored in the newly created Borrow
     //it will appear in the owner's notifications based on OwnerId
     //userId is reserved for the user who is requesting the borrow
-
     const [toggle, setToggle] = useState(false)
     const [reqToggle, setReqToggle] = useState(false)
     const [formToggle, setFormToggle] = useState(false)
-
-
-
-
-
     //Stored user is the current user
-   
+    
     const formData = {
         user_id: loggedUser,
         contactId: detail.ownerId,
         item_id: detailRoute,
         photo: detail.image,
-
         holder: ownerName,
         info: storedUserData.email,
         number: storedUserData.phone,
         requester: storedUserData.name,
         product: storedItemData.title,
-
         accepted: 'f',
         duration: duration,
         message: message,
     }
-
-
     const getItemOwnerName = async () => {
         try {
             const data = await __GetUser(itemOwner)
@@ -61,7 +46,6 @@ function ItemDetailsPage(props) {
             console.log(error)
         }
     }
-
     const getDetails = async () => {
         //gets the item details for this page
         try {
@@ -71,22 +55,14 @@ function ItemDetailsPage(props) {
             console.log(error)
         }
     }
-
-
     const durationInput = (event) => {
         event.preventDefault();
         setDuration(event.target.value);
     };
-
-
     const messageInput = (event) => {
         event.preventDefault();
         setMessage(event.target.value);
     };
-
-
-
-
     const handleFillout = async (event) => {
         event.preventDefault()
         try {
@@ -95,36 +71,19 @@ function ItemDetailsPage(props) {
             console.log(error)
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
     const handleClick = async (event) => {
         //handles borrow ticket creation
         event.preventDefault()
         try {
             const borrowRequest = await __CreateBorrow(formData)
             console.log(borrowRequest)
-
-
             setToggle(true)
             setReqToggle(true)
             setFormToggle(!formToggle)
-
-
         } catch (error) {
             console.log(error)
         }
     }
-
     const adminToggle = () => {
         if (itemOwner === loggedUser) {
             setAdmin(true)
@@ -132,14 +91,11 @@ function ItemDetailsPage(props) {
             return
         }
     };
-
-
     useEffect(() => {
         getDetails()
         adminToggle()
         getItemOwnerName()
     }, [])
-
     const backButton = async (event) => {
         event.preventDefault()
         try {
@@ -148,18 +104,13 @@ function ItemDetailsPage(props) {
             console.log(error)
         }
     }
-
-
-
     return (
         <div className="detailsPage">
             <button className="bTn" onClick={backButton}>back</button>
-
             {admin === true ?
                 <div className="adminDisplay">
                     <Link to={{ pathname: `/items/update/${detail.id}`, detail: { detail } }}><button className="bTn">Edit</button></Link>
                     <Link to={{ pathname: `/items/delete/${detail.id}`, detail: { detail } }}><button className="bTn">Delete</button></Link>
-
                     <div className="detailsContainer">
                         <img src={detail.image}></img>
                         <h1>{detail.title}</h1>
@@ -174,13 +125,9 @@ function ItemDetailsPage(props) {
                                 <p>availabile</p>
                             }
                         </div>
-
                     </div>
-
                 </div>
-
                 :
-
                 <div className="normalDisplay">
                     <div className="detailsContainer">
                         <img src={detail.image}></img>
@@ -196,9 +143,7 @@ function ItemDetailsPage(props) {
                                 <p>availabile</p>
                             }
                         </div>
-
                     </div>
-
                     {!detail.isBorrowed === true ?
                         <div className="reqDropDown">
                             <div className="borrowDrop" onClick={handleFillout}>Request Borrow</div>
@@ -227,20 +172,9 @@ function ItemDetailsPage(props) {
                         :
                         <div></div>
                     }
-
-
-
-
                 </div>
             }
-
-
-
-
         </div>
     );
 }
-
 export default ItemDetailsPage;
-
-

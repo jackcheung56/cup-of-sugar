@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-
 //Services
 import { __GetItems } from "../services/ItemService";
 import { __GetUser } from '../services/UserService'
 import { __CheckSession } from "../services/UserService";
 //Components
 import Navbar from "./NavBar";
-
-
 //Pages
 import Home from "../pages/Home";
 import LandingPage from "../pages/LandingPage";
@@ -18,13 +15,10 @@ import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import BrowsePage from "../pages/BrowsePage";
 import UserList from "../pages/UserList";
-
 import AddItemPage from "../pages/AddItemPage";
 import EditItemPage from "../pages/EditItemPage";
 import DeleteItemPage from "../pages/DeleteItemPage";
-
 import ItemDetailsPage from "../pages/ItemDetailsPage";
-
 function Router(props) {
   //State
   const [item, setItem] = useState([]);
@@ -34,16 +28,9 @@ function Router(props) {
   const [borrow, setBorrow] = useState([]);
   const history = useHistory();
   // give each data it's on state
-
   const [authenticated, setAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [pageLoading, setPageLoading] = useState(false);
-
-
-  //Functions
-
-
-
   const getAllItems = async () => {
     try {
       const data = await __GetItems();
@@ -52,9 +39,6 @@ function Router(props) {
       console.log(error);
     }
   };
-
-
-
   const verifyTokenValid = async () => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -69,7 +53,6 @@ function Router(props) {
       }
     }
   };
-
      const getUserBackup = async () => {
        if (currentUser) {
         try {
@@ -81,13 +64,11 @@ function Router(props) {
           }
         }
     }
-
     const toggleAuthenticated = (value, user, currentUser) => {
       setAuthenticated(value);
       setCurrentUser(user);
       setUser(currentUser)
     };
-
     const handleLogout = () => {   
       setCurrentUser(null)
       setEmail('')
@@ -95,22 +76,12 @@ function Router(props) {
       setAuthenticated(false)
       localStorage.clear()
     } 
-  
-
     useEffect(() => {
       getAllItems();
-      
       verifyTokenValid();
       setPageLoading(false);
-      
       getUserBackup()
     }, []);
-
-
-
- 
-
-
   return (
     <div>
       <Navbar
@@ -123,9 +94,7 @@ function Router(props) {
         <h3>*</h3>
       ) : (
           <Switch>
-
             <Route exact path="/" component={() => (<LandingPage></LandingPage>)}></Route>
-
             <Route
               authenticated={authenticated}
               exact
@@ -134,7 +103,6 @@ function Router(props) {
                 <Home {...props} item={item} setItem={setItem}></Home>
               )}
             />
-
             <Route exact path="/users/all">
               <UserList></UserList>
             </Route>
@@ -171,7 +139,6 @@ function Router(props) {
                   ></Profile>
                 )}
               /> : null}
-
             <Route
               exact path="/items/add"
               component={(props) => (
@@ -181,9 +148,7 @@ function Router(props) {
                 ></AddItemPage>
               )}
             />
-
             <Route path="/items/delete/:item_id" render={(props) => <DeleteItemPage {...props} />} />
-
             <Route
               exact
               path="/items/update/:item_id"
@@ -207,9 +172,7 @@ function Router(props) {
                 ></SignIn>
               )}
             />
-
             <Route path="/signup" component={(props) => (<SignUp user={user} setUser={setUser}></SignUp> )}/>
-
             <Route
               exact
               path="/items/:item_id"
@@ -222,5 +185,4 @@ function Router(props) {
     </div>
   );
 }
-
 export default Router;
