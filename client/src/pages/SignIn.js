@@ -24,17 +24,15 @@ const SignIn = (props) => {
         password: tempPassword,
       };
 
-      // console.log(tempPassword, tempEmail);
       const signIn = await __LoginUser(userInfo);
       props.toggleAuthenticated(true, signIn.user.id);
-      // console.log(props.history);
+
       props.setAuthenticated(true);
-      // console.log(props.user);
+
       props.setCurrentUser(signIn.user);
       props.history.push(`/users/${signIn.user.id}`);
 
-      // console.log(signIn.user.id);
-      // console.log(props.toggleAuthenticated);
+
     } catch (error) {
       console.log(error);
     }

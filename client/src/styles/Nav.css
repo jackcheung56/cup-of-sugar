@@ -46,6 +46,7 @@ html {
     justify-content: space-around;
     align-items: center;
     list-style: none;
+    opacity: 0.25;
     
   }
 
@@ -66,12 +67,10 @@ html {
   }
   
   a {
-    /* width: 605px; */
     justify-content: center;
     list-style: none;
     text-decoration: none;
     color: white;
-    opacity: 0.25;
 
   }
 

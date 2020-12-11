@@ -10,14 +10,11 @@ function ItemDetailsPage(props) {
     const [admin, setAdmin] = useState(false)
     const [ownerName, setOwnerName] = useState('')
     const itemOwner = props.location.state.item.owner_id
+
     const loggedUser = props.currentUser.id
     const detailRoute = props.location.state.item.id
     const storedItemData = props.location.state.item
     const storedUserData = props.currentUser
-
-
-    console.log('is borrowed', detail.isBorrowed)
-
 
 
     const [message, setMessage] = useState('')
@@ -36,14 +33,7 @@ function ItemDetailsPage(props) {
 
 
     //Stored user is the current user
-    console.log(props)
-    console.log('stored user', storedUserData)
-    console.log('stored item', storedItemData)
-
-
-
-
-
+   
     const formData = {
         user_id: loggedUser,
         contactId: detail.ownerId,
@@ -201,7 +191,7 @@ function ItemDetailsPage(props) {
                         <p>Description: {detail.description}</p>
                         <div className="item status">
                             {detail.isBorrowed === true ?
-                                <p>unavailabile </p>
+                                <p className="avail">unavailabile </p>
                                 :
                                 <p>availabile</p>
                             }

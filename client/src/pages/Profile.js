@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-
 import { __GetItemByOwner } from '../services/ItemService'
 import { __GetBorrowByUserId } from '../services/BorrowService'
 import { __GetBorrowRequests } from '../services/BorrowService'
@@ -15,14 +14,7 @@ function Profile(props) {
   const [userInfo, setUserInfo] = useState([])
   const [requests, setRequests] = useState([])
   const [confirmation, setConfirmation] = useState(false)
-
   const [navTab, setNavTab] = useState(false)
-
-  // console.log('TRACK CURRENT USER', props.currentUser)
-  // console.log('TRACK USER', props.user)
-  // console.log('PARAMS', props.match.params.user_id)
-  // const history = useHistory()
-
 
 
   const sortingId = props.currentUser.id
@@ -30,7 +22,7 @@ function Profile(props) {
   const profilePic = props.currentUser.picture
   const profileEmail = props.currentUser.email
 
-  console.log(props.currentUser.email)
+ 
 
 
   const switchDisplay = () => {
@@ -75,7 +67,7 @@ function Profile(props) {
   }
 
 
-  console.log(userItems)
+  
   //User
 
   const getUserData = async () => {
@@ -160,7 +152,6 @@ function Profile(props) {
 
         <div className="itemCol">
           <div className="naviBox">
-            {/* <div className="blank"></div> */}
             <div className="navi">
               <div className="bor">
                 <button className="borrowButton" onClick={switchDisplay}>Your Borrows</button>
@@ -189,8 +180,6 @@ function Profile(props) {
               </div>
               :
               <div className="thingOne">
-                {/* <h4>items you have borrowed</h4>
-                <p>no borrows</p> */}
                 {userBorrows.map((borrow, index) => {
                   if (borrow.accepted === true) {
                     return (

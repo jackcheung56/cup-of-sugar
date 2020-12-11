@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import '../styles/Form.css';
 
 import { __UpdateItem } from '../services/ItemService'
@@ -78,7 +78,7 @@ const EditItemPage = (props) => {
         <div className="tags">
 
           <button
-            className="condiTag"
+            className="condiTags"
             type="button"
             placeholder="Great"
             name="Great"
@@ -86,7 +86,7 @@ const EditItemPage = (props) => {
           >Great</button>
 
           <button
-            className="condiTag"
+            className="condiTags"
             type="button"
             placeholder="Acceptable"
             name="Acceptable"
@@ -94,7 +94,7 @@ const EditItemPage = (props) => {
           >Acceptable</button>
 
           <button
-            className="condiTag"
+            className="condiTags"
             type="button"
             placeholder="Bad"
             name="Bad"

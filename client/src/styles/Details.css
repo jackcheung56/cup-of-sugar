@@ -90,6 +90,7 @@
   color:white;
   background-color: rgb(32,137,240);
   opacity: 100%;
+  margin: 2px;
 
 }
 
@@ -113,7 +114,14 @@
   margin-top: 20px;
   margin-bottom: 5px;
 
+}
 
+.avail {
+  padding: 10px;
+  background: lightgrey;
+  width: 100px;
+  color: white;
+  border-radius: 10px;
 }
   
 

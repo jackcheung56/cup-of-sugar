@@ -70,9 +70,30 @@ form input, form button{
 
   }
 
+  .fI:hover{
+    margin: 5px;
+    padding: 10px;
+    width: 136px;
+    background-color: #8375FA;
+
+  }
+
   .condiTags{
     margin: 5px;
     padding: 10px;
     width: 136px;
+  }
+
+  .conTags{
+    margin: 5px;
+    padding: 10px;
+    width: 136px;
+  }
+
+  .condiTags:hover, .conTags:hover{
+    margin: 5px;
+    padding: 10px;
+    width: 136px;
+    background-color: #8375FA;
   }
 

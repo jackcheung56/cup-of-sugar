@@ -8,7 +8,7 @@ import { __GetUser } from '../services/UserService'
 import { __CheckSession } from "../services/UserService";
 //Components
 import Navbar from "./NavBar";
-import ProtectedRoute from "./ProtectedRoute";
+
 
 //Pages
 import Home from "../pages/Home";
@@ -42,8 +42,7 @@ function Router(props) {
 
   //Functions
 
-  console.log('USER AUTH', authenticated)
-  console.log('Current User', currentUser)
+
 
   const getAllItems = async () => {
     try {
@@ -67,9 +66,6 @@ function Router(props) {
         history.push(`/users/${session.user.id}`);
       } catch (error) {
         throw error
-        // setCurrentUser(null);
-        // setAuthenticated(false);
-        // localStorage.clear();
       }
     }
   };
@@ -103,10 +99,10 @@ function Router(props) {
 
     useEffect(() => {
       getAllItems();
-      // getUser()
+      
       verifyTokenValid();
       setPageLoading(false);
-      // toggleAuthenticated();
+      
       getUserBackup()
     }, []);
 
