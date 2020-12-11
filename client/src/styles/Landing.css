@@ -1,9 +1,6 @@
 /* body{
    position:absolute;
-
    width:100%;
-
-
 } */
 
 .branding {
@@ -72,12 +69,6 @@ img {
   width: 25%;
   height: 25;
 }
-.object {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
 svg {
   position: absolute;
@@ -91,17 +82,4 @@ svg {
   width: 100%;
   padding: 0px;
   margin: 0 auto;
-}
-
-img {
-  display: flex;
-  width: 25%;
-  height: 25;
-}
-
-.footer {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }

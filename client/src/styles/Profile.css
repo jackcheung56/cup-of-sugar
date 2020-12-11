@@ -1,27 +1,22 @@
-.topDisplay{
+.topDisplay {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
-
-.userDisplay{
+.userDisplay {
   justify-content: center;
   align-items: center;
-
 }
 
-.profilePic{
+.profilePic {
   width: 60px;
   height: 60px;
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid white;
   box-shadow: 1px 1px 8px 1px #e0e0e0;
-
-
 }
 
 .interface {
@@ -33,7 +28,6 @@
   align-items: center;
 }
 
-
 .itemListU {
   width: 50%;
   height: 60vh;
@@ -43,11 +37,9 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 1px solid black;
-
-   
 }
 
-.borrowListU{
+.borrowListU {
   width: 50%;
   height: 60vh;
   padding: 20px;
@@ -55,14 +47,11 @@
   table-layout: fixed;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border: 1px solid black;  
+  border: 1px solid black;
 }
 
-
-.notifications{
+.notifications {
   margin: 20px;
   padding: 20px;
   border: 1px solid white;
 }
-
-

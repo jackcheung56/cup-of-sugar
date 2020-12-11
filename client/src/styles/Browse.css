@@ -1,63 +1,57 @@
-.browsePage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.browsePage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.browsePageTop{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 90%;
+.browsePageTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
 }
 
-.pageTitle{
-    margin: 10px;
+.pageTitle {
+  margin: 10px;
 }
 
 .catButtons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    all: unset;
-    color: blue;
-    border: none;
-    cursor: pointer
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  all: unset;
+  color: blue;
+  border: none;
+  cursor: pointer;
+}
 
-.btns{
-    
-    background:rgba(33,141,244);
-    border: none;
-    border-radius: 6px;
-    color: white;
-    opacity: 75%;
-    padding: 7px;
-    margin: 3px;
+.btns {
+  background: rgba(33, 141, 244);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  opacity: 75%;
+  padding: 7px;
+  margin: 3px;
 }
 
 .itemList {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-
-.card{
-    cursor: pointer;
+.card {
+  cursor: pointer;
 }
-
-
 
 .greyLine {
-
-    border: 0;
-    height: 5px;
-    width: 100%;
-    border: 0;
-    height: 1px;
-    background: rgb(203, 207, 210);
-    margin: 30px;
-
+  border: 0;
+  height: 5px;
+  width: 100%;
+  border: 0;
+  height: 1px;
+  background: rgb(203, 207, 210);
+  margin: 30px;
 }
