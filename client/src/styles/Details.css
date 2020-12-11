@@ -10,6 +10,8 @@
   
   .reqGone {
       color: black;
+      border-radius: 10px;
+      width: 200px;
   }
 
   .reqVis{
@@ -29,16 +31,42 @@
   }
 
   .borrowDrop{
-    background: rgba(33,141,244,1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    font: inherit;
     cursor: pointer;
+    outline: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(32,137,240);
+    color:#ffffff;
+    border-radius: 30px;
+    cursor:pointer;
+    font-size:17px;
+    text-decoration:none;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 8px 1px #e0e0e0;
 
   }
 
-  .reqUI {
+  .reqUI input {
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 5px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background: rgb(226, 229, 231);
+    margin: 5px
   }
 
   .hideUI{
@@ -57,13 +85,35 @@
 
   }
 
-  .detailButton {
-    background:rgba(33,141,244);
-    border: none;
-    border-radius: 6px;
-    color: white;
-    opacity: 75%;
-    padding: 7px;
-    margin: 3px;
-  }
+.bTn{
+  border: none;
+  color:white;
+  background-color: rgb(32,137,240);
+  opacity: 100%;
+
+}
+
+.requestButton {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  border-radius: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+	background-color: rgb(32,137,240);
+	color:#ffffff;
+	border-radius: 30px;
+	cursor:pointer;
+	font-size:17px;
+  text-decoration:none;
+  margin-top: 20px;
+  margin-bottom: 5px;
+
+
+}
   
+

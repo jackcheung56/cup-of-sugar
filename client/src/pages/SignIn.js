@@ -43,9 +43,10 @@ const SignIn = (props) => {
   return !props.authenticated && !props.currentUser ? (
     <div className="template">
       <form className="outerForm">
-        <h1>Sign In</h1>
+        <h1 className="uxTitle">Sign In</h1>
         <div className="block">
           <input
+            className="styleInput"
             placeholder='Email'
             name="email"
             value={tempEmail}
@@ -53,13 +54,14 @@ const SignIn = (props) => {
             type="email"
           ></input>
           <input
+            className="styleInput"
             placeholder='Password'
             name="password"
             value={tempPassword}
             onChange={passwordInput}
             type="password"
           ></input>
-          <button onClick={logHandler}>Login</button>
+          <button className="styleButton" onClick={logHandler}>Login</button>
         </div>
       </form>
     </div>

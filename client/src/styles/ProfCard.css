@@ -1,113 +1,26 @@
-/* .card{
-    display: flex;
-    flex-direction: column;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    align-items: center;
-    margin: 20px;
-    border-radius: 10px;
-
-}
-
-
-.itemStatus {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    border-radius: 0 0px 10px 10px;
-}
-
-.itemStatus p {
-    opacity: 75%;
-    font-size: 12px;
-
-}
-
-.stat {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.itemPhoto{
-    background-color: white;
-    flex: 1;
-    width: 200px;
-    width: 150;
-    border-radius: 10px 10px 0px 0;
-}
-
-
-.itemInfo {
-    display: flex;
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-} 
-
-.itemTitle {
-    margin: 5px;
-}
-
-.details {
-    background: rgb(227, 228, 230);
-    padding-right: 8px;
-    padding-left: 8px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border-radius: 15px;
-    font-size: 10px;
-    margin: 5px;
-    display: flex;
-    justify-content: space-around;
-}
-
-
-  */
-
-
-  /* .grid-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1.7fr 0.3fr;
-    grid-template-rows: 0.7fr 1.3fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "proItemCon ."
-      ". .";
-
-  }
-  
   .proItemCon {
-    width: 100%;
-    background: red;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "itemPic itemDets";
-    grid-area: proItemCon;
-
+      padding: 20px;
+      max-width: 50%;
+      
   }
-  
+
   .itemPic { 
-    display: flex; 
-    grid-area: itemPic;
-    margin:  0 auto;
+      grid-area: itemPic; 
+    }
+  .itemDets { 
+      grid-area: itemDets; 
+    }
 
+
+
+    .pic{
+        width: 100%;
+        height: 100%;
+        border-radius: 20px 0px 0px 20px;
+        margin: 0 auto;
     }
   
-  .itemDets { 
-    list-style-type: none;
-    grid-area: itemDets; 
-    display: flex;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .itemDets {
+      border-radius: 20px;
+ 
     }
-   */
-
