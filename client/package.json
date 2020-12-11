@@ -21,7 +21,7 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all  && cd client && rm -rf build && npm install && npm run build"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
