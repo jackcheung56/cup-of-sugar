@@ -17,22 +17,29 @@
 
 //   const [confirmation, setConfirmation] = useState(false)
 
-//   console.log('TRACK USER ID', props.currentUser.id)
+//   // console.log('TRACK CURRENT USER', props.currentUser)
+
+//   // console.log('TRACK USER', props.user)
+
+//   // console.log('PARAMS', props.match.params.user_id)
+
+//   // const history = useHistory()
 
 
-//   const history = useHistory()
 
 //   const sortingId = props.currentUser.id
 //   const displayName = props.currentUser.name
 //   const profilePic = props.currentUser.picture
+//   const profileEmail = props.currentUser.email
 
-//   // console.log(userBorrows)
+//   console.log(props.currentUser.email)
+
+
 
 //   const getBorrowRequests = async () => {
 //     try {
 //       const data = await __GetBorrowRequests(sortingId)
 //       let foo = data.data
-//       // console.log(data)
 //       setRequests(foo)
 //     } catch (error) {
 //       console.log(error)
@@ -58,11 +65,14 @@
 //     try {
 //       const data = await __GetItemByOwner(sortingId)
 //       setUserItems(data.data)
+//       console.log(data.data)
 //     } catch (error) {
 //       console.log(error)
 //     }
 //   }
 
+
+//   console.log(userItems)
 //   //User
 
 //   const getUserData = async () => {
@@ -77,7 +87,7 @@
 //   const handleClick = async (event) => {
 //     event.preventDefault()
 //     try {
-//       history.push(`/items/add`)
+//       props.history.push(`/items/add`)
 //     } catch (error) {
 //       console.log(error)
 //     }
@@ -93,36 +103,50 @@
 
 
 //   return (
-//     <div>
+//     <div className="profBackground">
 
 //       <div className="topDisplay">
 //         <div className="userDisplay">
 //           <img className="profilePic" src={profilePic}></img>
-//           <h4 className="username">{displayName}</h4>
+//           <h4 className="userName">{displayName}</h4>
+//           <p className="emailSub">{profileEmail}</p>
+
+
+//           <div className="notifications">
+//             <h5 className="notiTitle">Notifications</h5>
+//             <p></p>
+//             {requests.map((borrow, index) => {
+//               if (!borrow.accepted === true) {
+//                 return (
+//                   <div className="notificationBox">
+
+//                     <RequestCard
+//                       key={index}
+//                       name={borrow.itemId}
+//                       duration={borrow.duration}
+//                       status={borrow.status}
+//                       id={borrow.id}
+//                       item_id={borrow.item_id}
+//                       info={borrow.info}
+//                       photo={borrow.photo}
+//                       message={borrow.message}
+//                       product={borrow.product}
+//                       history={props.history}
+//                       userInfo={userInfo}
+//                       confirmation={confirmation}
+//                       setConfirmation={setConfirmation}
+//                     />
+
+//                   </div>
+
+//                 )
+//               } else {
+//                 <div></div>
+//               }
+//             })}
+//           </div>
 //         </div>
 
-//         <div className="notifications">
-//           <h5>NOTIFICATIONS</h5>
-//           <p></p>
-//           {requests.map((borrow) => (
-//             <RequestCard
-//               key={borrow.id}
-//               name={borrow.itemId}
-//               duration={borrow.duration}
-//               status={borrow.status}
-//               id={borrow.id}
-//               item_id={borrow.item_id}
-//               info={borrow.info}
-//               photo={borrow.photo}
-//               message={borrow.message}
-//               product={borrow.product}
-//               history={history}
-//               userInfo={userInfo}
-//               confirmation={confirmation}
-//               setConfirmation={setConfirmation}
-//             />
-//           ))}
-//         </div>
 //       </div>
 
 //       <div className="interface">
@@ -135,8 +159,9 @@
 //               key={item.ownerId}
 //               title={item.title}
 //               isBorrowed={item.isBorrowed}
-//               onClick={() => history.push(`/items/${item.id}`, item = { item })}
-//               />
+//               image={item.image}
+//               onClick={() => props.history.push(`/items/${item.id}`, item = { item })}
+//             />
 //           ))}
 //         </div>
 
@@ -144,18 +169,18 @@
 //         <div className="borrowListU">
 //           <h4>items you have borrowed</h4>
 //           <p>no borrows</p>
-//           {userBorrows.map((borrow) => {
+//           {userBorrows.map((borrow, index) => {
 //             if (borrow.accepted === true) {
 //               return (
 //                 <BorrowCard
-//                   key={borrow.index}
+//                   key={index}
 //                   duration={borrow.duration}
 //                   id={borrow.id}
 //                   item_id={borrow.item_id}
 //                   accepted={borrow.accepted}
 //                   photo={borrow.photo}
 //                   product={borrow.product}
-//                   history={history}
+//                   history={props.history}
 //                 />
 //               )
 //             } else {
@@ -165,7 +190,7 @@
 //         </div>
 
 
-      
+
 
 //       </div>
 //     </div >
@@ -173,5 +198,8 @@
 // }
 
 // export default Profile;
+
+
+
 
 

@@ -64,6 +64,7 @@ function Router(props) {
         console.log('THIS IS SESSION', session)
         setAuthenticated(true);
         setCurrentUser(session.user);
+        console.log(session.user)
         history.push(`/users/${session.user.id}`);
       } catch (error) {
         throw error
@@ -113,6 +114,7 @@ function Router(props) {
   return (
     <div>
       <Navbar
+        logout={handleLogout}
         currentUser={currentUser}
         authenticated={authenticated}
         user={user}
@@ -212,8 +214,8 @@ function Router(props) {
             <Route
               exact
               path="/items/:item_id"
-              render={(props) => (
-                <ItemDetailsPage location={props.location} currentUser={currentUser} history={history}></ItemDetailsPage>
+              component={(props) => (
+                <ItemDetailsPage  location={props.location} currentUser={currentUser} history={history}></ItemDetailsPage>
               )}
             />
           </Switch>

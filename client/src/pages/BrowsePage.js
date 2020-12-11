@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from 'react-router-dom';
 import ItemCard from '../components/ItemCard'
 import { __GetItems } from "../services/ItemService";
 import { __GetItemsByCategory } from "../services/ItemService";
@@ -7,18 +6,7 @@ import '../styles/Browse.css'
 
 function BrowsePage(props) {
 
-
-
-    console.log(props)
     const [browseItems, setBrowseItems] = useState([])
-
-
-    // const getUserBackup = async () => {
-    //     try {
-    //         const data = await __GetUser()
-    //     }
-    // }
-
 
     const getBrowseItems = async () => {
         try {
@@ -124,7 +112,7 @@ function BrowsePage(props) {
         <div className="browsePage">
             <div className="browsePageTop">
 
-                <h1 className="pageTitle">browse all items</h1>
+                <h1 className="pageTitle">browse</h1>
                 
                 <div className="catButtons">
                     <button className="btns" onClick={getBrowseItems}>all</button>
@@ -149,10 +137,11 @@ function BrowsePage(props) {
 
 
             <div className="itemList">
-                {browseItems.map((item) => (
+                {browseItems.map((item, idx) => (
                     <ItemCard
-                        //model attributes go here
-                        key={item._id}
+                    //model attributes go here
+                        id={item.id}
+                        key={idx}
                         image={item.image}
                         title={item.title}
                         condition={item.condition}

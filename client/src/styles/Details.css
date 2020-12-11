@@ -56,4 +56,14 @@
     border: 0;
 
   }
+
+  .detailButton {
+    background:rgba(33,141,244);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    opacity: 75%;
+    padding: 7px;
+    margin: 3px;
+  }
   

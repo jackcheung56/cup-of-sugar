@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import "../styles/Nav.css";
 import Logo from "../assets/coslogo.png";
 
-function NavBar({ authenticated, currentUser, className, logout }) {
+function NavBar({ authenticated, currentUser, logout}) {
 
 
   console.log(currentUser)
@@ -16,9 +16,7 @@ function NavBar({ authenticated, currentUser, className, logout }) {
             <img className="navLogo" src={Logo} alt="app logo"></img>
           </Link>
 
-          {/* <Link to="/home">
-            <li>Home</li>
-          </Link> */}
+  
 
           <Link to="/signup">
             <li>Sign Up</li>
@@ -39,9 +37,7 @@ function NavBar({ authenticated, currentUser, className, logout }) {
             <img className="navLogo" src={Logo} alt="app logo"></img>
           </Link>
 
-          <Link to="/home">
-            <li>Home</li>
-          </Link>
+  
 
           <Link to="/items/all">
             <li>Browse</li>
@@ -51,9 +47,7 @@ function NavBar({ authenticated, currentUser, className, logout }) {
             <li>Profile</li>
           </Link>
 
-          <Link 
-          to="/"
-          onClick={(event) => logout(event)}>
+          <Link to="/" onClick={(event) => logout(event)}>
             <li>Sign Out</li>
           </Link>
         </ul>

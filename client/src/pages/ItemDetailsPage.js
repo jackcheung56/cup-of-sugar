@@ -5,15 +5,22 @@ import { __GetUser } from "../services/UserService";
 import { Link } from 'react-router-dom'
 import '../styles/Details.css'
 function ItemDetailsPage(props) {
+
     const [detail, setDetail] = useState({})
     const [admin, setAdmin] = useState(false)
     const [ownerName, setOwnerName] = useState('')
     const itemOwner = props.location.state.item.owner_id
     const loggedUser = props.currentUser.id
+    console.log(props)
     const detailRoute = props.location.state.item.id
     const storedItemData = props.location.state.item
     const storedUserData = props.currentUser
-    console.log(detail.isBorrowed)
+
+
+    //console.log('is borrowed', detail.isBorrowed)
+
+
+
     const [message, setMessage] = useState('')
     const [duration, setDuration] = useState('')
     //This data will be stored in the newly created Borrow
@@ -23,10 +30,10 @@ function ItemDetailsPage(props) {
     const [reqToggle, setReqToggle] = useState(false)
     const [formToggle, setFormToggle] = useState(false)
     //Stored user is the current user
-    console.log(props)
-    console.log('stored user', storedUserData)
-    console.log('stored item', storedItemData)
-    const loremIpsum = 'words show up'
+    // console.log(props)
+    // console.log('stored user', storedUserData)
+    // console.log('stored item', storedItemData)
+
     const formData = {
         user_id: loggedUser,
         contactId: detail.ownerId,
@@ -40,7 +47,6 @@ function ItemDetailsPage(props) {
         accepted: 'f',
         duration: duration,
         message: message,
-        // form: form,
     }
     const getItemOwnerName = async () => {
         try {
@@ -82,8 +88,8 @@ function ItemDetailsPage(props) {
         try {
             const borrowRequest = await __CreateBorrow(formData)
             console.log(borrowRequest)
-            //Need to Change state to reflect "request sent" (pop up)
-            //maybe better to send to a request send page... redirect timer
+
+
             setToggle(true)
             setReqToggle(true)
             setFormToggle(!formToggle)
@@ -106,6 +112,7 @@ function ItemDetailsPage(props) {
         adminToggle()
         getItemOwnerName()
     }, [])
+
     const backButton = async (event) => {
         event.preventDefault()
         try {
@@ -116,11 +123,11 @@ function ItemDetailsPage(props) {
     }
     return (
         <div className="detailsPage">
-            <button onClick={backButton}>back</button>
+            <button className="detailButton" onClick={backButton}>back</button>
             {admin === true ?
                 <div className="adminDisplay">
-                    <Link to={{ pathname: `/items/update/${detail.id}`, detail: { detail } }}><button>Edit</button></Link>
-                    <Link to={{ pathname: `/items/delete/${detail.id}`, detail: { detail } }}><button>Delete</button></Link>
+                    <Link to={{ pathname: `/items/update/${detail.id}`, detail: { detail } }}><button className="detailButton">Edit</button></Link>
+                    <Link to={{ pathname: `/items/delete/${detail.id}`, detail: { detail } }}><button className="detailButton">Delete</button></Link>
                     <div className="detailsContainer">
                         <img src={detail.image}></img>
                         <h1>{detail.title}</h1>
@@ -148,36 +155,42 @@ function ItemDetailsPage(props) {
                         <p>Description: {detail.description}</p>
                         <div className="item status">
                             {detail.isBorrowed === true ?
-                                <p>item unavailabile </p>
+                                <p>unavailabile </p>
                                 :
                                 <p>availabile</p>
                             }
                         </div>
+
                     </div>
-                    <div className="reqDropDown">
-                        <div className="borrowDrop" onClick={handleFillout}>Request Borrow</div>
-                        <div className={formToggle ? "reqUI" : "hideUI"}>
-                            <input
-                                className={formToggle ? "reqUI" : "hideUI"}
-                                placeholder="Enter duration of borrow"
-                                name="duration"
-                                value={duration}
-                                onChange={durationInput}
-                            ></input>
-                            <input
-                                className={formToggle ? "reqUI" : "hideUI"}
-                                placeholder="Message for item owner"
-                                name="duration"
-                                value={message}
-                                onChange={messageInput}
-                            ></input>
-                            <button className={reqToggle ? 'reqVis' : 'reqGone'} onClick={handleClick}>Confirm</button>
+
+                    {!detail.isBorrowed === true ?
+                        <div className="reqDropDown">
+                            <div className="borrowDrop" onClick={handleFillout}>Request Borrow</div>
+                            <div className={formToggle ? "reqUI" : "hideUI"}>
+                                <input
+                                    className={formToggle ? "reqUI" : "hideUI"}
+                                    placeholder="Enter duration of borrow"
+                                    name="duration"
+                                    value={duration}
+                                    onChange={durationInput}
+                                ></input>
+                                <input
+                                    className={formToggle ? "reqUI" : "hideUI"}
+                                    placeholder="Message for item owner"
+                                    name="duration"
+                                    value={message}
+                                    onChange={messageInput}
+                                ></input>
+                                <button className={reqToggle ? 'reqVis' : 'reqGone'} onClick={handleClick}>Confirm</button>
+                            </div>
+                            <div className={toggle ? 'visible' : 'invisible'}>
+                                <p>REQUEST SENT</p>
+                                <button className={toggle ? 'visible' : 'invisible'} onClick={backButton}>return to browse?</button>
+                            </div>
                         </div>
-                        <div className={toggle ? 'visible' : 'invisible'}>
-                            <p>REQUEST SENT</p>
-                            <button className={toggle ? 'visible' : 'invisible'} onClick={backButton}>return to browse?</button>
-                        </div>
-                    </div>
+                        :
+                        <div></div>
+                    }
                 </div>
             }
         </div>

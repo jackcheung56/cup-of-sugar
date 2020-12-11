@@ -88,7 +88,7 @@ function SignUp(props) {
 
           <input
             placeholder="Add Profile Picture"
-            name="photo"
+            name="picture"
             value={tempPicture}
             onChange={pictureInput}
             type="photo"
