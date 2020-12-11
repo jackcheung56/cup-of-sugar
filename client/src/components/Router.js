@@ -63,12 +63,12 @@ function Router(props) {
         const session = await __CheckSession();
         setAuthenticated(true);
         setCurrentUser(session.user);
-        props.history.push(`/users/${session.user.id}`);
+        history.push(`/users/${session.user.id}`);
       } catch (error) {
         throw error
         // setCurrentUser(null);
         // setAuthenticated(false);
-        localStorage.clear();
+        // localStorage.clear();
       }
     }
   };
@@ -78,16 +78,17 @@ function Router(props) {
         try {
           const user = await __GetUser(currentUser.id)
           console.log(currentUser.id)
-          setUser(currentUser)
+          setUser(user)
           } catch {
             console.log('no user yet')
           }
         }
     }
 
-    const toggleAuthenticated = (value, user, done) => {
+    const toggleAuthenticated = (value, user, currentUser) => {
       setAuthenticated(value);
       setCurrentUser(user);
+      setUser(currentUser)
     };
   
 
@@ -150,7 +151,7 @@ function Router(props) {
             />
             {currentUser ?
               <Route
-                path="/users/:user_id"
+                path="/users/:currentUser_id"
                 component={(props) => (
                   <Profile
                     {...props}
