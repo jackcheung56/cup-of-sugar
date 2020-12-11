@@ -2,17 +2,17 @@
 
 ## Created By:
 
-Jackie Cheung
+**Jackie Cheung**
 
-[GitHub](https://github.com/jackcheung56)
+[_GitHub_](https://github.com/jackcheung56)
 
-TaeVon Lewis
+**TaeVon Lewis**
 
-[GitHub](https://github.com/lewist13)
+[_GitHub_](https://github.com/lewist13)
 
-William Hunter Long
+**William Hunter Long**
 
-[GitHub](https://github.com/whlong1)
+[_GitHub_](https://github.com/whlong1)
 
 ---
 
@@ -56,10 +56,10 @@ You can track the progress of Cup of Sugar [here](https://trello.com/b/BRWvHTLO/
 
 ---
 
-### Wireframes
+### Wireframe
 
-User Profile
-![mockup](https://i.imgur.com/AoIOBCh.png)
+**User Profile**
+![mockup](https://i.imgur.com/U3M0m4b.png)
 
 ---
 
@@ -77,8 +77,8 @@ User Profile
 
 ### Credits
 
-[Jackie Cheung LinkedIn](https://www.linkedin.com/in/jackiecheung/)
+[**Jackie Cheung _LinkedIn_**](https://www.linkedin.com/in/jackiecheung/)
 
-[Hunter Long LinkedIn](https://www.linkedin.com/in/william-hunter-long/)
+[**Hunter Long _LinkedIn_**](https://www.linkedin.com/in/william-hunter-long/)
 
-[TaeVon Lewis LinkedIn](https://www.linkedin.com/in/taevonlewis/)
+[**TaeVon Lewis _LinkedIn_**](https://www.linkedin.com/in/taevonlewis/)

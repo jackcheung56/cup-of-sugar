@@ -25,7 +25,7 @@ function Profile(props) {
 
   console.log("PARAMS", props.match.params.user_id);
 
-  const history = useHistory();
+  // const history = useHistory();
 
   const sortingId = props.currentUser.id;
   const displayName = props.currentUser.name;

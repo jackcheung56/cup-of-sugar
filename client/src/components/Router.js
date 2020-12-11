@@ -90,23 +90,6 @@ function Router(props) {
     setUser(currentUser);
   };
 
-  const handleLogout = () => {
-    setCurrentUser(null);
-    setEmail("");
-    setPassword("");
-    setAuthenticated(false);
-    localStorage.clear();
-  };
-
-  useEffect(() => {
-    getAllItems();
-    // getUser()
-    verifyTokenValid();
-    setPageLoading(false);
-    // toggleAuthenticated();
-    getUserBackup();
-  }, []);
-
   useEffect(() => {
     getAllItems();
     // getUser()

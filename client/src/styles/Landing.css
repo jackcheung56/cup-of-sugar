@@ -1,94 +1,94 @@
-body{
-   width:100%;
-   /* overflow-x: hidden !important; */
+body {
+  width: 100%;
+  /* overflow-x: hidden !important; */
 }
- 
-.branding {
+
+/* .branding {
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
-
+} */
 .branding {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-   position: absolute;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
-   /* background: rgb(16,17,20);
+  /* background: rgb(16,17,20);
    background: linear-gradient(0deg, rgba(16,17,20,1) 0%, rgba(32,34,40,1) 100%); */
 
-   background: rgb(33,141,244);
-   background: linear-gradient(180deg, rgba(33,141,244,1) 0%, rgba(17,78,188,1) 100%);
+  background: rgb(33, 141, 244);
+  background: linear-gradient(
+    180deg,
+    rgba(33, 141, 244, 1) 0%,
+    rgba(17, 78, 188, 1) 100%
+  );
 }
 
 .lifted {
   z-index: 10;
-  
+
   align-items: center;
   justify-content: center;
-
 }
 
-.object{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
+.object {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+.welcome {
+  display: flex;
+  font-size: 1.85rem;
+  font-family: "sybarite", serif !important;
+  color: white;
 
-
-.welcome{
-   display: flex;
-   font-size: 1.85rem;
-   font-family: 'sybarite', serif !important;
-   color: white;
-
-   align-items: center;
-   justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.greeting{
-   display: flex;
-   color: white;
+.greeting {
+  display: flex;
+  color: white;
 
-   align-items: center;
-   justify-content: center;
-
+  align-items: center;
+  justify-content: center;
 }
 
 .landingLink {
-    margin: 20px;
-    margin-top: 0;
-    margin-bottom: 0;
+  margin: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 img {
-   display: flex;
-   width: 25%;
-   height: 25;
+  display: flex;
+  width: 25%;
+  height: 25;
 
   align-items: center;
   justify-content: center;
 }
 
-svg{
-  position:absolute;
-  bottom:0;
+svg {
+  position: absolute;
+  bottom: 0;
 }
 
-.footer{
+.footer {
   z-index: 0;
-  position:absolute;
-  bottom:0;
-  width:100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   padding: 0px;
   margin: 0 auto;
 }

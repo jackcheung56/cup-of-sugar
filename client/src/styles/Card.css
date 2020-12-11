@@ -8,26 +8,13 @@
 }
 
 .itemStatus {
-<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
   justify-content: center;
   color: white;
-
-  background: rgb(33, 141, 244);
-
-  border-radius: 0 px 10px 10px;
-=======
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    border-radius: 0 0px 10px 10px;
->>>>>>> 5a9dc8c9a6aa83bf2dab595e51ce60193af69516
+  border-radius: 0 0px 10px 10px;
 }
 
 .itemStatus p {
@@ -36,42 +23,39 @@
 }
 
 .stat {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.itemPhoto{
-    background-color: white;
-    flex: 1;
-    width: 200px;
-    width: 150;
-    border-radius: 10px 10px 0px 0;
+.itemPhoto {
+  background-color: white;
+  flex: 1;
+  width: 200px;
+  width: 150;
+  border-radius: 10px 10px 0px 0;
 }
 
 .itemInfo {
-    display: flex;
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-} 
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .itemTitle {
-    margin: 5px;
+  margin: 5px;
 }
 
 .details {
-    background: rgb(227, 228, 230);
-    padding-right: 8px;
-    padding-left: 8px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border-radius: 15px;
-    font-size: 10px;
-    margin: 5px;
-    display: flex;
-    justify-content: space-around;
+  background: rgb(227, 228, 230);
+  padding-right: 8px;
+  padding-left: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 15px;
+  font-size: 10px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-around;
 }
-
-
- 
