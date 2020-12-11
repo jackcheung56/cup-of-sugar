@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 //Services
 import { __GetItems } from "../services/ItemService";
-// import { __GetUser } from '../services/UserService'
+// import { __GetUser } from "../services/UserService";
 import { __CheckSession } from "../services/UserService";
 //Components
 import Navbar from "./NavBar";
@@ -34,7 +34,6 @@ function Router(props) {
   const [password, setPassword] = useState("");
   const [borrow, setBorrow] = useState([]);
   const history = useHistory();
-  const [id, setId] = useState();
   // give each data it's on state
 
   const [authenticated, setAuthenticated] = useState(false);
@@ -52,11 +51,12 @@ function Router(props) {
   };
 
   useEffect(() => {
-    getAllItems();
-    // getUser()
-    verifyTokenValid();
     setPageLoading(false);
-    toggleAuthenticated();
+    verifyTokenValid();
+    getAllItems();
+    // __GetUser();
+
+    // toggleAuthenticated();
   }, []);
 
   const verifyTokenValid = async () => {
@@ -64,15 +64,18 @@ function Router(props) {
     if (token) {
       try {
         const session = await __CheckSession();
-        setAuthenticated(true);
+        console.log("SESSION", session);
         setCurrentUser(session.user);
-        props.history.push("/users/:user_id");
+        setAuthenticated(true);
+        props.history.push(`/users/${session.user.id}`);
       } catch (error) {
         setCurrentUser(null);
         setAuthenticated(false);
         localStorage.clear();
       }
     }
+    console.log(currentUser);
+    console.log(authenticated);
   };
 
   const toggleAuthenticated = (value, user, done) => {
@@ -100,6 +103,7 @@ function Router(props) {
           </Route>
 
           <Route
+            currentUser={currentUser}
             authenticated={authenticated}
             exact
             path="/home"
@@ -111,7 +115,7 @@ function Router(props) {
           <Route exact path="/users/all">
             <UserList></UserList>
           </Route>
-          <Route
+          <ProtectedRoute
             exact
             path="/items/all"
             component={() => (
@@ -122,17 +126,23 @@ function Router(props) {
               ></BrowsePage>
             )}
           />
-          <Route path="/users/:user_id">
-            <Profile
-              borrow={borrow}
-              setBorrow={setBorrow}
-              user={user}
-              setUser={setUser}
-              history={history}
-              currentUser={currentUser}
-            ></Profile>
-          </Route>
-
+          {currentUser ? (
+            <Route
+              path="/users/:user_id"
+              component={(props) => (
+                <Profile
+                  authenticated={authenticated}
+                  borrow={borrow}
+                  setBorrow={setBorrow}
+                  user={user}
+                  setUser={setUser}
+                  history={history}
+                  currentUser={currentUser}
+                  {...props}
+                ></Profile>
+              )}
+            />
+          ) : null}
           <Route exact path="/items/add">
             <AddItemPage currentUser={currentUser}></AddItemPage>
           </Route>

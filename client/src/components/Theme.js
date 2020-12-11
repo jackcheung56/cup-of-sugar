@@ -1,9 +1,10 @@
 import React from "react";
 import Switch from "@material-ui/core/Switch";
+import "../styles/Theme.css";
 
 export default function Switches() {
   const [state, setState] = React.useState({
-    checkedA: true,
+    checkedA: false,
     checkedB: true,
   });
 
@@ -12,7 +13,7 @@ export default function Switches() {
   };
 
   return (
-    <div classname="toggle">
+    <div>
       <Switch
         checked={state.checkedA}
         onChange={handleChange}

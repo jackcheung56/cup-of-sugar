@@ -11,56 +11,54 @@ export const __GetItems = async () => {
 
 export const __GetItemById = async (item_id) => {
   try {
-    const response = await ApiClient.get(`/items/${item_id}`)
-    return response.data
+    const response = await ApiClient.get(`/items/${item_id}`);
+    return response.data;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 export const __CreateItem = async (formData) => {
-  try{
-    const response = await ApiClient.post('/items/add', formData)
-    return response.data
+  try {
+    const response = await ApiClient.post("/items/add", formData);
+    return response.data;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 export const __UpdateItem = async (formData, item_id) => {
-  try{
-    const response = await ApiClient.put(`/items/update/${item_id}`, formData)
-    return response.data
+  try {
+    const response = await ApiClient.put(`/items/update/${item_id}`, formData);
+    return response.data;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 export const __DeleteItem = async (item_id) => {
-  try{
-    const response = await ApiClient.delete(`/items/delete/${item_id}`)
-    return response
+  try {
+    const response = await ApiClient.delete(`/items/delete/${item_id}`);
+    return response;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 export const __GetItemByOwner = async (owner_id) => {
-  try{
-    const response = await ApiClient.get(`/items/owner/${owner_id}`)
-    return response
+  try {
+    const response = await ApiClient.get(`/items/owner/${owner_id}`);
+    return response;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
-
-//========
+};
 
 export const __GetItemsByCategory = async (category) => {
-  try{
-    const response = await ApiClient.get(`/items/sort/${category}`)
-    return response
+  try {
+    const response = await ApiClient.get(`/items/sort/${category}`);
+    return response;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};

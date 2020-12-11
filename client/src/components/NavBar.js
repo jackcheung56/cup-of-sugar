@@ -20,7 +20,6 @@ function NavBar({ authenticated, currentUser, className }) {
             <li>Sign Up</li>
           </Link>
 
-
           <Link to="/login">
             <li>Sign In</li>
           </Link>
@@ -44,7 +43,7 @@ function NavBar({ authenticated, currentUser, className }) {
             <li>Browse</li>
           </Link>
 
-          <Link to="/users/:owner_id">
+          <Link to="/users/:user_id">
             <li>Profile</li>
           </Link>
 

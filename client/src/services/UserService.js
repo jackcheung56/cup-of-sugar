@@ -18,7 +18,7 @@ export const __GetUser = async (user_id) => {
   }
 };
 
-export const __GetAllUsers = async (user_id) => {
+export const __GetAllUsers = async () => {
   try {
     const response = await ApiClient.get(`/users/all`);
     return response.data;
@@ -39,6 +39,8 @@ export const __GetUserByEmail = async (user_email) => {
 export const __CheckSession = async () => {
   try {
     const res = await ApiClient.get("/users/refresh/session");
+    console.log("RES HERE", res.data);
+    return res.data;
   } catch (error) {
     throw error;
   }
