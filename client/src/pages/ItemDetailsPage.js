@@ -16,6 +16,9 @@ function ItemDetailsPage(props) {
     const storedUserData = props.currentUser
 
 
+    console.log(detail.isBorrowed)
+
+
 
     const [message, setMessage] = useState('')
     const [duration, setDuration] = useState('')
@@ -178,7 +181,14 @@ function ItemDetailsPage(props) {
                         <p>Category: {detail.category}</p>
                         <p>Condition: {detail.condition}</p>
                         <p>Description: {detail.description}</p>
-                        <p>IS BORROWED? add logic </p>
+                        <div className="item status">
+                            {detail.isBorrowed === true ?
+                                <p>item unavailabile </p>
+                                :
+                                <p>availabile</p>
+                            }
+                        </div>
+
                     </div>
 
                 </div>
@@ -193,7 +203,16 @@ function ItemDetailsPage(props) {
                         <p>Category: {detail.category}</p>
                         <p>Condition: {detail.condition}</p>
                         <p>Description: {detail.description}</p>
-                        <p>IS BORROWED? add logic </p>
+                        <div className="item status">
+                            {detail.isBorrowed === true ?
+                                <p>item unavailabile </p>
+                                :
+                                <p>availabile</p>
+                            }
+                        </div>
+
+
+
                     </div>
 
                     <div className="reqDropDown">
@@ -225,11 +244,11 @@ function ItemDetailsPage(props) {
 
                         </div>
 
-                            <div className={toggle ? 'visible' : 'invisible'}>
-                                <p>REQUEST SENT</p>
-                                <button className={toggle ? 'visible' : 'invisible'} onClick={backButton}>return to browse?</button>
-                            </div>
-                        
+                        <div className={toggle ? 'visible' : 'invisible'}>
+                            <p>REQUEST SENT</p>
+                            <button className={toggle ? 'visible' : 'invisible'} onClick={backButton}>return to browse?</button>
+                        </div>
+
                     </div>
 
                 </div>
