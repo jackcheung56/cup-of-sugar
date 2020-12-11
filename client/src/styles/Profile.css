@@ -216,9 +216,27 @@
 .thingOne {
   box-shadow: 1px 1px 8px 1px #e0e0e0;
   grid-area: thingOne;
+  border-radius: 20px;
+  width: auto;
 }
 
 .thingTwo {
   box-shadow: 1px 1px 8px 1px #e0e0e0;
-  grid-area: thingOne;
+  grid-area: thingTwo;
+  border-radius: 20px;
+  width: auto;
+}
+
+.thingThree {
+  box-shadow: 1px 1px 8px 1px #e0e0e0;
+  grid-area: thingThree;
+  border-radius: 20px;
+  width: auto;
+}
+
+.thingFour {
+  box-shadow: 1px 1px 8px 1px #e0e0e0;
+  grid-area: thingFour;
+  border-radius: 20px;
+  width: auto;
 }

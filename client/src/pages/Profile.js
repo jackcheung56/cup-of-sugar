@@ -189,6 +189,7 @@ function Profile(props) {
                   if (borrow.accepted === true) {
                     return (
                       <BorrowCard
+                        className="bCard"
                         key={index}
                         duration={borrow.duration}
                         id={borrow.id}

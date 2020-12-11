@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function FormInput(props) {
+export default (props) =>
   props.fieldType === "textfield" ? (
-    <FormInput
+    <textarea
       type={props.type}
       name={props.name}
       value={props.value}
@@ -10,7 +10,8 @@ export default function FormInput(props) {
       placeholder={props.placeholder}
     />
   ) : (
-    <FormInput
+    <input
+      className="styleInput"
       type={props.type}
       name={props.name}
       value={props.value}
@@ -19,4 +20,3 @@ export default function FormInput(props) {
       autoComplete="false"
     />
   );
-}
