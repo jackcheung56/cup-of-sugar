@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { __LoginUser } from "../services/UserService";
+<<<<<<< HEAD
 // import PropTypes from "prop-types";
+=======
+import '../styles/Form.css'
+>>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
 
 const SignIn = (props) => {
-  console.log("Props", props);
   const [tempEmail, setTempEmail] = useState("");
   const [tempPassword, setTempPassword] = useState("");
 
@@ -43,19 +46,19 @@ const SignIn = (props) => {
   }, []);
 
   return !props.authenticated && !props.currentUser ? (
-    <div>
-      <form>
+    <div className="template">
+      <form className="outerForm">
         <h1>Sign In</h1>
         <div className="block">
           <input
-            placeholder={props.user.email}
+            placeholder='Email'
             name="email"
             value={tempEmail}
             onChange={emailInput}
             type="email"
           ></input>
           <input
-            placeholder={props.user.password}
+            placeholder='Password'
             name="password"
             value={tempPassword}
             onChange={passwordInput}
@@ -66,8 +69,8 @@ const SignIn = (props) => {
       </form>
     </div>
   ) : (
-    <h1>You're alradyt signed in</h1>
+    <h1>You're already signed in</h1>
   );
-};
+}
 
 export default SignIn;

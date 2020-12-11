@@ -1,21 +1,23 @@
 import React from 'react'
 import '../styles/Card.css'
 
-const BorrowCard = ({ onClick, key, status, item_id}) => {
+const BorrowCard = ({id, accepted, duration, photo, product, item_id, history}) => {
 return (
-    <div className="card" onClick={onClick}>
+    <div className="card">
         <div>
-            {/* <img src={image}></img> */}
+            <img src={photo}></img>
         </div>
         <div>
-            <h3>borrow</h3>
-            <h3>{item_id}</h3>  
-            <h3>{status}</h3>
-            
+            <h3>{product}</h3>
+            <h3>{duration}</h3>
+            <h3>{id}</h3>
+            <h3>{accepted}</h3>
         </div>
     </div>
 )
 }
 export default BorrowCard
+
+// onClick={() => history.push(`/items/${item_id}` item = { item })}
 
 

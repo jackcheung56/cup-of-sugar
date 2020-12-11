@@ -52,7 +52,11 @@ export const __GetItemByOwner = async (owner_id) => {
   } catch (error) {
     throw error;
   }
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
 
 export const __GetItemsByCategory = async (category) => {
   try {

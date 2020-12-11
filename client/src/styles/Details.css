@@ -1,10 +1,11 @@
-  
   .visible {
-    color:  white;
+    color: black;
   }
   
   .invisible{
     color: transparent;
+    background-color: transparent;
+    border: 0;
   }
   
   .reqGone {
@@ -16,5 +17,43 @@
     border-style: none;
     color: transparent;
     border: 0;
+  }
+
+
+  .reqDropDown{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .borrowDrop{
+    background: rgba(33,141,244,1);
+    cursor: pointer;
+
+  }
+
+  .reqUI {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hideUI{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-style: none;
+
+    background-color: transparent;
+
+    border-style: none;
+    color: transparent;
+    opacity: 0;
+    border: 0;
+
   }
   

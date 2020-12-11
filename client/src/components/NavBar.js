@@ -4,6 +4,10 @@ import "../styles/Nav.css";
 import Logo from "../assets/coslogo.png";
 
 function NavBar({ authenticated, currentUser, className }) {
+
+
+  console.log(currentUser)
+  
   return !authenticated && !currentUser ? (
     <div className="navbox">
       <nav>
@@ -12,9 +16,9 @@ function NavBar({ authenticated, currentUser, className }) {
             <img className="navLogo" src={Logo} alt="app logo"></img>
           </Link>
 
-          <Link to="/home">
+          {/* <Link to="/home">
             <li>Home</li>
-          </Link>
+          </Link> */}
 
           <Link to="/signup">
             <li>Sign Up</li>
@@ -27,8 +31,8 @@ function NavBar({ authenticated, currentUser, className }) {
       </nav>
     </div>
   ) : (
-    <header className={className}>
-      <div className="navbox">Welcome Back </div>
+    
+      <div className="navbox">
       <nav>
         <ul className="nav-links">
           <Link to="/">
@@ -43,12 +47,12 @@ function NavBar({ authenticated, currentUser, className }) {
             <li>Browse</li>
           </Link>
 
+<<<<<<< HEAD
           <Link to="/users/:user_id">
+=======
+          <Link to="/users/:currentUser_id">
+>>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
             <li>Profile</li>
-          </Link>
-
-          <Link to="/dms/:user_id">
-            <li>DM</li>
           </Link>
 
           <Link to="/">
@@ -56,7 +60,8 @@ function NavBar({ authenticated, currentUser, className }) {
           </Link>
         </ul>
       </nav>
-    </header>
+      </div>
+    
   );
 }
 

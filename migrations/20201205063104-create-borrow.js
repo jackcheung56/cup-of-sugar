@@ -43,6 +43,24 @@ module.exports = {
         type: Sequelize.INTEGER,
         field: 'contact_id'
       },
+      product: {
+        type: Sequelize.STRING
+      },
+      requester: {
+        type: Sequelize.STRING
+      },
+      message: {
+        type: Sequelize.STRING
+      },
+      form: {
+        type: Sequelize.STRING
+      },
+      holder: {
+        type: Sequelize.STRING
+      },
+      number: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

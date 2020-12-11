@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       // define association here
-
       // end association here
     }
   };
@@ -37,6 +36,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       field: 'contact_id'
     },
+    product: DataTypes.STRING,
+    requester: DataTypes.STRING,
+    message: DataTypes.STRING,
+    form: DataTypes.STRING,
+    holder: DataTypes.STRING,
+    number: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Borrow',

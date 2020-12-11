@@ -28,12 +28,19 @@ export const __CreateBorrow = async (formData) => {
 };
 
 export const __UpdateBorrow = async (formData, borrow_id) => {
+<<<<<<< HEAD
   try {
     const response = await ApiClient.put(
       `/borrows/update/${borrow_id}`,
       formData
     );
     return response.data;
+=======
+  console.log(formData)
+  try{
+    const response = await ApiClient.put(`/borrows/update/${borrow_id}`, formData)
+    return response.data
+>>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
   } catch (error) {
     throw error;
   }
@@ -55,6 +62,7 @@ export const __GetBorrowByUserId = async (user_id) => {
   } catch (error) {
     throw error;
   }
+<<<<<<< HEAD
 };
 
 export const __GetBorrowRequests = async (contact_id) => {
@@ -67,3 +75,16 @@ export const __GetBorrowRequests = async (contact_id) => {
     throw error;
   }
 };
+=======
+}
+
+export const __GetBorrowRequests = async (contact_id) => {
+  try{
+    const response = await ApiClient.get(`/borrows/get/request/${contact_id}`)
+    return response
+  } catch (error){
+    throw error
+  }
+}
+
+>>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8

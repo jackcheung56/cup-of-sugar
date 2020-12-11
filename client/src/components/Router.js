@@ -4,13 +4,21 @@ import { useHistory } from "react-router-dom";
 
 //Services
 import { __GetItems } from "../services/ItemService";
+<<<<<<< HEAD
 // import { __GetUser } from "../services/UserService";
+=======
+import { __GetUser } from '../services/UserService'
+>>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
 import { __CheckSession } from "../services/UserService";
 //Components
 import Navbar from "./NavBar";
 import ProtectedRoute from "./ProtectedRoute";
+<<<<<<< HEAD
 import Theme from "./Theme";
 // import Messenger from "./Messenger";
+=======
+
+>>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
 //Pages
 import Home from "../pages/Home";
 import LandingPage from "../pages/LandingPage";
@@ -39,7 +47,12 @@ function Router(props) {
   const [authenticated, setAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [pageLoading, setPageLoading] = useState(false);
+
+
   //Functions
+
+  console.log('USER AUTH', authenticated)
+  console.log('Current User', currentUser)
 
   const getAllItems = async () => {
     try {
@@ -50,6 +63,7 @@ function Router(props) {
     }
   };
 
+<<<<<<< HEAD
   useEffect(() => {
     setPageLoading(false);
     verifyTokenValid();
@@ -58,6 +72,9 @@ function Router(props) {
 
     // toggleAuthenticated();
   }, []);
+=======
+
+>>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
 
   const verifyTokenValid = async () => {
     const token = localStorage.getItem("token");
@@ -66,22 +83,55 @@ function Router(props) {
         const session = await __CheckSession();
         console.log("SESSION", session);
         setCurrentUser(session.user);
+<<<<<<< HEAD
         setAuthenticated(true);
         props.history.push(`/users/${session.user.id}`);
+=======
+        history.push(`/users/${session.user.id}`);
+>>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
       } catch (error) {
-        setCurrentUser(null);
-        setAuthenticated(false);
-        localStorage.clear();
+        throw error
+        // setCurrentUser(null);
+        // setAuthenticated(false);
+        // localStorage.clear();
       }
     }
     console.log(currentUser);
     console.log(authenticated);
   };
 
-  const toggleAuthenticated = (value, user, done) => {
-    setAuthenticated(value);
-    setCurrentUser(user);
-  };
+     const getUserBackup = async () => {
+       if (currentUser) {
+        try {
+          const user = await __GetUser(currentUser.id)
+          console.log(currentUser.id)
+          setUser(user)
+          } catch {
+            console.log('no user yet')
+          }
+        }
+    }
+
+    const toggleAuthenticated = (value, user, currentUser) => {
+      setAuthenticated(value);
+      setCurrentUser(user);
+      setUser(currentUser)
+    };
+  
+
+    useEffect(() => {
+      getAllItems();
+      // getUser()
+      verifyTokenValid();
+      setPageLoading(false);
+      // toggleAuthenticated();
+      getUserBackup()
+    }, []);
+
+
+
+ 
+
 
   return (
     <div>
@@ -94,6 +144,7 @@ function Router(props) {
       {pageLoading ? (
         <h3>*</h3>
       ) : (
+<<<<<<< HEAD
         <Switch>
           {/* <Route path="/dms">
             <Messenger />
@@ -133,11 +184,37 @@ function Router(props) {
                 <Profile
                   authenticated={authenticated}
                   borrow={borrow}
+=======
+          <Switch>
+
+            <Route exact path="/" component={() => (<LandingPage></LandingPage>)}></Route>
+
+            <Route
+              authenticated={authenticated}
+              exact
+              path="/home"
+              component={(props) => (
+                <Home {...props} item={item} setItem={setItem}></Home>
+              )}
+            />
+
+            <Route exact path="/users/all">
+              <UserList></UserList>
+            </Route>
+            <Route
+              exact
+              path="/items/all"
+              component={(props) =>
+                (<BrowsePage
+                  item={item}
+                  setItem={setItem}
+>>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
                   setBorrow={setBorrow}
                   user={user}
                   setUser={setUser}
                   history={history}
                   currentUser={currentUser}
+<<<<<<< HEAD
                   {...props}
                 ></Profile>
               )}
@@ -190,6 +267,77 @@ function Router(props) {
           />
         </Switch>
       )}
+=======
+                  authenticated={authenticated}
+                  {...props}
+                ></BrowsePage>
+                )}
+            />
+            {currentUser ?
+              <Route
+                path="/users/:currentUser_id"
+                component={(props) => (
+                  <Profile
+                    {...props}
+                    authenticated={authenticated}
+                    borrow={borrow}
+                    setBorrow={setBorrow}
+                    user={user}
+                    setUser={setUser}
+                    history={history}
+                    currentUser={currentUser}
+                  ></Profile>
+                )}
+              /> : null}
+
+            <Route
+              exact path="/items/add"
+              component={(props) => (
+                <AddItemPage
+                  currentUser={currentUser}
+                  history={history}
+                ></AddItemPage>
+              )}
+            />
+
+            <Route path="/items/delete/:item_id" render={(props) => <DeleteItemPage {...props} />} />
+
+            <Route
+              exact
+              path="/items/update/:item_id"
+              render={(props) => <EditItemPage {...props} />}
+            />
+            <Route
+              path="/login"
+              component={(props) => (
+                <SignIn
+                  setAuthenticated={setAuthenticated}
+                  toggleAuthenticated={toggleAuthenticated}
+                  user={user}
+                  email={email}
+                  setCurrentUser={setCurrentUser}
+                  password={password}
+                  setEmail={setEmail}
+                  setPassword={setPassword}
+                  setUser={setUser}
+                  history={history}
+                  {...props}
+                ></SignIn>
+              )}
+            />
+
+            <Route path="/signup" component={(props) => (<SignUp user={user} setUser={setUser}></SignUp> )}/>
+
+            <Route
+              exact
+              path="/items/:item_id"
+              render={(props) => (
+                <ItemDetailsPage location={props.location} currentUser={currentUser} history={history}></ItemDetailsPage>
+              )}
+            />
+          </Switch>
+        )}
+>>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
     </div>
   );
 }
