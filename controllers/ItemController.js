@@ -5,7 +5,7 @@ const { Op, literal, fn, col } = require('sequelize')
 const GetItemByOwner = async (req, res) => {
   try{
     let id = parseInt(req.params.owner_id)
-    let owner = await Item.findAll({where: {  ownerId: id }})
+    let owner = await Item.findAll({where: {  owner_id: id }})
     res.send(owner)
   } catch (error) {
     throw error

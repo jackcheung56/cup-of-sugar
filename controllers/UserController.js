@@ -66,6 +66,7 @@ const Login = async (req, res) => {
       };
       console.log(payload);
       let token = createToken(payload);
+      console.log(user, token)
       return res.send({ user, token });
     }
   } catch (error) {

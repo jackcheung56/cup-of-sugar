@@ -54,13 +54,7 @@ function Router(props) {
     }
   };
 
-  useEffect(() => {
-    getAllItems();
-    // getUser()
-    verifyTokenValid();
-    setPageLoading(false);
-    // toggleAuthenticated();
-  }, []);
+
 
   const verifyTokenValid = async () => {
     const token = localStorage.getItem("token");
@@ -70,24 +64,51 @@ function Router(props) {
         console.log('THIS IS SESSION', session)
         setAuthenticated(true);
         setCurrentUser(session.user);
-        props.history.push(`/users/${session.user.id}`);
+        history.push(`/users/${session.user.id}`);
       } catch (error) {
-        setCurrentUser(null);
-        setAuthenticated(false);
-        localStorage.clear(); 
+        throw error
+        // setCurrentUser(null);
+        // setAuthenticated(false);
+        // localStorage.clear();
       }
     }
   };
 
+     const getUserBackup = async () => {
+       if (currentUser) {
+        try {
+          const user = await __GetUser(currentUser.id)
+          console.log(currentUser.id)
+          setUser(user)
+          } catch {
+            console.log('no user yet')
+          }
+        }
+    }
 
+    const toggleAuthenticated = (value, user, currentUser) => {
+      setAuthenticated(value);
+      setCurrentUser(user);
+      setUser(currentUser)
+    };
 
-  const toggleAuthenticated = (value, user, done) => {
-    setAuthenticated(value);
-    setCurrentUser(user);
-    
-  };
+    const handleLogout = () => {   
+      setCurrentUser(null)
+      setEmail('')
+      setPassword('')
+      setAuthenticated(false)
+      localStorage.clear()
+    } 
+  
 
-  // console.log(currentUser.id)
+    useEffect(() => {
+      getAllItems();
+      // getUser()
+      verifyTokenValid();
+      setPageLoading(false);
+      // toggleAuthenticated();
+      getUserBackup()
+    }, []);
 
   return (
     <div>
@@ -95,6 +116,7 @@ function Router(props) {
         currentUser={currentUser}
         authenticated={authenticated}
         user={user}
+        logout={handleLogout}
       ></Navbar>
       { pageLoading ? (
         <h3>*</h3>
@@ -118,7 +140,7 @@ function Router(props) {
             <Route
               exact
               path="/items/all"
-              component={() =>
+              component={(props) =>
                 (<BrowsePage
                   item={item}
                   setItem={setItem}
@@ -128,12 +150,13 @@ function Router(props) {
                   history={history}
                   currentUser={currentUser}
                   authenticated={authenticated}
+                  {...props}
                 ></BrowsePage>
                 )}
             />
             {currentUser ?
               <Route
-                path="/users/:user_id"
+                path="/users/:currentUser_id"
                 component={(props) => (
                   <Profile
                     {...props}

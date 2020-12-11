@@ -17,16 +17,9 @@ function Profile(props) {
 
   const [confirmation, setConfirmation] = useState(false)
 
-  console.log('TRACK USER ID', props.currentUser.id)
-  
- const history = useHistory()
-
-  console.log(props)
   const sortingId = props.match.params.user_id
   const displayName = props.currentUser.name
   const profilePic = props.currentUser.picture
-
-  // console.log(userBorrows)
 
   const getBorrowRequests = async () => {
     try {
@@ -115,7 +108,7 @@ function Profile(props) {
               photo={borrow.photo}
               message={borrow.message}
               product={borrow.product}
-              history={history}
+              history={props.history}
               userInfo={userInfo}
               confirmation={confirmation}
               setConfirmation={setConfirmation}
@@ -162,10 +155,6 @@ function Profile(props) {
             }
           })}
         </div>
-
-
-      
-
       </div>
     </div >
   );

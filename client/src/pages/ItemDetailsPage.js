@@ -15,7 +15,7 @@ function ItemDetailsPage(props) {
     const storedItemData = props.location.state.item
     const storedUserData = props.currentUser
 
-
+    console.log('item owner', itemOwner)
 
     const [message, setMessage] = useState('')
     const [duration, setDuration] = useState('')
@@ -220,28 +220,17 @@ function ItemDetailsPage(props) {
                                 value={message}
                                 onChange={messageInput}
                             ></input>
-
                             <button className={reqToggle ? 'reqVis' : 'reqGone'} onClick={handleClick}>Confirm</button>
-
                         </div>
-
                             <div className={toggle ? 'visible' : 'invisible'}>
                                 <p>REQUEST SENT</p>
                                 <button className={toggle ? 'visible' : 'invisible'} onClick={backButton}>return to browse?</button>
-                            </div>
-                        
+                            </div>                       
                     </div>
-
                 </div>
             }
-
-
-
-
         </div>
     );
 }
 
 export default ItemDetailsPage;
-
-
