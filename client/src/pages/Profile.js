@@ -32,6 +32,8 @@ function Profile(props) {
   const displayName = props.currentUser.name
   const profilePic = props.currentUser.picture
 
+  console.log(props)
+
   // console.log(userBorrows)
 
   const getBorrowRequests = async () => {
@@ -113,11 +115,11 @@ function Profile(props) {
         <div className="notifications">
           <h5>NOTIFICATIONS</h5>
           <p></p>
-          {requests.map((borrow) => {
+          {requests.map((borrow, index) => {
             if (!borrow.accepted === true) {
               return (
                 <RequestCard
-                  key={borrow.id}
+                  key={index}
                   name={borrow.itemId}
                   duration={borrow.duration}
                   status={borrow.status}
@@ -160,11 +162,11 @@ function Profile(props) {
         <div className="borrowListU">
           <h4>items you have borrowed</h4>
           <p>no borrows</p>
-          {userBorrows.map((borrow) => {
+          {userBorrows.map((borrow, index) => {
             if (borrow.accepted === true) {
               return (
                 <BorrowCard
-                  key={borrow.index}
+                  key={index}
                   duration={borrow.duration}
                   id={borrow.id}
                   item_id={borrow.item_id}

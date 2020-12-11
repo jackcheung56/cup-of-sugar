@@ -9,7 +9,7 @@ function BrowsePage(props) {
 
 
 
-    console.log(props)
+    console.log('BROWSE', props)
     const [browseItems, setBrowseItems] = useState([])
 
 
@@ -124,7 +124,7 @@ function BrowsePage(props) {
         <div className="browsePage">
             <div className="browsePageTop">
 
-                <h1 className="pageTitle">browse all items</h1>
+                <h1 className="pageTitle">browse</h1>
                 
                 <div className="catButtons">
                     <button className="btns" onClick={getBrowseItems}>all</button>
@@ -149,10 +149,11 @@ function BrowsePage(props) {
 
 
             <div className="itemList">
-                {browseItems.map((item) => (
+                {browseItems.map((item, idx) => (
                     <ItemCard
-                        //model attributes go here
-                        key={item._id}
+                    //model attributes go here
+                        id={item.id}
+                        key={idx}
                         image={item.image}
                         title={item.title}
                         condition={item.condition}

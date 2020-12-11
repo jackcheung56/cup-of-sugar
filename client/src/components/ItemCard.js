@@ -19,10 +19,13 @@ const ItemCard = ({ onClick, title, image, condition, category, description, isB
 
             <div className="itemInfo">
             </div>
-                <h4>{title}</h4>
-                <p>Condition: {condition}</p>
-                <p>{category}</p>
-                {/* <p>{description}</p> */}
+            <p className="details">{category}</p>
+            <h4 className="itemTitle">{title}</h4>
+            <div>
+
+                {/* <p className="details">Condition: {condition}</p> */}
+            </div>
+            {/* <p>{description}</p> */}
 
             <div className="itemStatus">
                 {isBorrowed === true ?

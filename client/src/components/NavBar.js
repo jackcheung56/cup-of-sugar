@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/Nav.css";
 import Logo from "../assets/coslogo.png";
 
-function NavBar({ authenticated, currentUser, className }) {
+function NavBar({ authenticated, currentUser, logout}) {
 
 
   console.log(currentUser)
@@ -51,7 +51,7 @@ function NavBar({ authenticated, currentUser, className }) {
             <li>Profile</li>
           </Link>
 
-          <Link to="/">
+          <Link to="/" onClick={(event) => logout(event)}>
             <li>Sign Out</li>
           </Link>
         </ul>
