@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import "../styles/Nav.css";
 import Logo from "../assets/coslogo.png";
 
-function NavBar({ authenticated, currentUser, className }) {
+function NavBar({ authenticated, currentUser, logout }) {
+  console.log(currentUser);
 
-
-  console.log(currentUser)
-  
   return !authenticated && !currentUser ? (
     <div className="navbox">
       <nav>
@@ -31,8 +29,7 @@ function NavBar({ authenticated, currentUser, className }) {
       </nav>
     </div>
   ) : (
-    
-      <div className="navbox">
+    <div className="navbox">
       <nav>
         <ul className="nav-links">
           <Link to="/">
@@ -47,21 +44,16 @@ function NavBar({ authenticated, currentUser, className }) {
             <li>Browse</li>
           </Link>
 
-<<<<<<< HEAD
-          <Link to="/users/:user_id">
-=======
           <Link to="/users/:currentUser_id">
->>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
             <li>Profile</li>
           </Link>
 
-          <Link to="/">
+          <Link to="/" onClick={() => logout}>
             <li>Sign Out</li>
           </Link>
         </ul>
       </nav>
-      </div>
-    
+    </div>
   );
 }
 

@@ -12,7 +12,7 @@ export const __CreateUser = async (formData) => {
 export const __GetUser = async (user_id) => {
   try {
     const response = await ApiClient.get(`/users/${user_id}`);
-    console.log('GET USER', user_id)
+    console.log("GET USER", user_id);
     return response.data;
   } catch (error) {
     throw error;
@@ -39,14 +39,8 @@ export const __GetUserByEmail = async (user_email) => {
 
 export const __CheckSession = async () => {
   try {
-<<<<<<< HEAD
-    const res = await ApiClient.get("/users/refresh/session");
-    console.log("RES HERE", res.data);
-    return res.data;
-=======
     const res = await ApiClient.get("/users/session");
-    return res.data
->>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
+    return res.data;
   } catch (error) {
     throw error;
   }

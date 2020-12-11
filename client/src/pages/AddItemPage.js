@@ -5,20 +5,11 @@ import { useHistory } from "react-router-dom";
 import FormInput from "../components/FormInput";
 
 const AddItemPage = (props) => {
-<<<<<<< HEAD
   const [newItem, setNewItem] = useState({});
-  const [condition, setCondition] = useState("");
+  const [condition, setCondition] = useState("Great");
   const history = useHistory();
   const loggedUser = props.currentUser.id;
-=======
-  const [newItem, setNewItem] = useState({})
-  const [condition, setCondition] = useState('Great')
-  const history = useHistory()
-  const loggedUser = props.currentUser.id
   // console.log(props)
-
-
->>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
 
   console.log("ADD", newItem);
 
@@ -37,13 +28,13 @@ const AddItemPage = (props) => {
   };
 
   const backButton = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
     try {
-      props.history.goBack()
+      props.history.goBack();
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   return (
     <div>
@@ -106,17 +97,28 @@ const AddItemPage = (props) => {
             Bad
           </button>
         </div>
-<<<<<<< HEAD
-=======
-        
-        <input type="hidden" name="condition" value={newItem.condition = condition}></input>
 
-        <input type="hidden" name="ownerId" value={newItem.owner_id = loggedUser}></input>
+        <input
+          type="hidden"
+          name="condition"
+          value={(newItem.condition = condition)}
+        ></input>
 
-        <input type="hidden" name="condition" value={newItem.isBorrowed = false}></input>
+        <input
+          type="hidden"
+          name="ownerId"
+          value={(newItem.owner_id = loggedUser)}
+        ></input>
 
-        <button type="submit" onClick={handleSubmit}>Submit</button>
->>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
+        <input
+          type="hidden"
+          name="condition"
+          value={(newItem.isBorrowed = false)}
+        ></input>
+
+        <button type="submit" onClick={handleSubmit}>
+          Submit
+        </button>
 
         <input
           type="hidden"

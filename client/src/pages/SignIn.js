@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { __LoginUser } from "../services/UserService";
-<<<<<<< HEAD
-// import PropTypes from "prop-types";
-=======
-import '../styles/Form.css'
->>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
+import "../styles/Form.css";
 
 const SignIn = (props) => {
   const [tempEmail, setTempEmail] = useState("");
@@ -51,14 +47,14 @@ const SignIn = (props) => {
         <h1>Sign In</h1>
         <div className="block">
           <input
-            placeholder='Email'
+            placeholder="Email"
             name="email"
             value={tempEmail}
             onChange={emailInput}
             type="email"
           ></input>
           <input
-            placeholder='Password'
+            placeholder="Password"
             name="password"
             value={tempPassword}
             onChange={passwordInput}
@@ -71,6 +67,6 @@ const SignIn = (props) => {
   ) : (
     <h1>You're already signed in</h1>
   );
-}
+};
 
 export default SignIn;

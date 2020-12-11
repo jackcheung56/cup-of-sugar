@@ -1,101 +1,40 @@
-<<<<<<< HEAD
-body {
-  background: rgb(16, 17, 20);
-  background: linear-gradient(
-    0deg,
-    rgba(16, 17, 20, 1) 0%,
-    rgba(32, 34, 40, 1) 100%
-  );
-  color: white;
-}
-=======
-  
 /* body{
    position:absolute;
 
    width:100%;
 
->>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
 
 } */
-<<<<<<< HEAD
 
 .branding {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 75vh;
-}
-=======
- 
- .branding {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    /* background: rgb(16,17,20);
+  /* background: rgb(16,17,20);
     background: linear-gradient(0deg, rgba(16,17,20,1) 0%, rgba(32,34,40,1) 100%); */
 
-    background: rgb(33,141,244);
-    background: linear-gradient(180deg, rgba(33,141,244,1) 0%, rgba(17,78,188,1) 100%);
- }
-
-.lifted {
-   z-index: 10;
-   
-   align-items: center;
-   justify-content: center;
-
+  background: rgb(33, 141, 244);
+  background: linear-gradient(
+    180deg,
+    rgba(33, 141, 244, 1) 0%,
+    rgba(17, 78, 188, 1) 100%
+  );
 }
 
- .object{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
- }
- 
+.lifted {
+  z-index: 10;
 
- 
- .welcome{
-    display: flex;
-    font-size: 1.85rem;
-    font-family: 'sybarite', serif !important;
-    color: white;
-
-    align-items: center;
-    justify-content: center;
- }
- 
- .greeting{
-    display: flex;
-    color: white;
-
-    align-items: center;
-    justify-content: center;
-
- }
-
- .landingLink {
-     margin: 20px;
-     margin-top: 0;
-     margin-bottom: 0;
- }
-
- img {
-    display: flex;
-    width: 25%;
-    height: 25;
->>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
+  align-items: center;
+  justify-content: center;
+}
 
 .object {
   display: flex;
@@ -104,26 +43,54 @@ body {
   justify-content: center;
 }
 
-<<<<<<< HEAD
 .welcome {
   display: flex;
   font-size: 1.85rem;
   font-family: "sybarite", serif !important;
   color: white;
-=======
-svg{
-   position:absolute;
-   bottom:0;
+
+  align-items: center;
+  justify-content: center;
 }
 
-.footer{
-   z-index: 0;
-   position:absolute;
-   bottom:0;
-   width:100%;
-   padding: 0px;
-   margin: 0 auto;
->>>>>>> e8af2464ea84b367edb82562e38520bc9e45b5f8
+.greeting {
+  display: flex;
+  color: white;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.landingLink {
+  margin: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  display: flex;
+  width: 25%;
+  height: 25;
+}
+.object {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+}
+
+.footer {
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0px;
+  margin: 0 auto;
 }
 
 img {
