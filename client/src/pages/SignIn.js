@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { __LoginUser } from "../services/UserService";
 import "../styles/Form.css";
-
 const SignIn = (props) => {
   const [tempEmail, setTempEmail] = useState("");
   const [tempPassword, setTempPassword] = useState("");
-
   const emailInput = (event) => {
     event.preventDefault();
     setTempEmail(event.target.value);
   };
-
   const passwordInput = (event) => {
     event.preventDefault();
     setTempPassword(event.target.value);
   };
-
   const logHandler = async (event) => {
     event.preventDefault();
     try {
@@ -32,15 +28,6 @@ const SignIn = (props) => {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    const loggedInUser = localStorage.getItem("user");
-    if (loggedInUser) {
-      const foundUser = JSON.parse(loggedInUser);
-      props.setCurrentUser(foundUser);
-    }
-  }, []);
-
   return !props.authenticated && !props.currentUser ? (
     <div className="template">
       <form className="outerForm">
@@ -72,5 +59,4 @@ const SignIn = (props) => {
     <h1>You're already signed in</h1>
   );
 };
-
 export default SignIn;

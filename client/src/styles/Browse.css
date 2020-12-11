@@ -4,7 +4,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .browsePageTop {
   display: flex;
   align-items: center;
@@ -12,11 +11,9 @@
   flex-direction: column;
   width: 90%;
 }
-
 .pageTitle {
   margin: 10px;
 }
-
 .catButtons {
   display: flex;
   align-items: center;
@@ -26,7 +23,6 @@
   border: none;
   cursor: pointer;
 }
-
 .btns {
   background: rgba(33, 141, 244);
   border: none;
@@ -36,15 +32,12 @@
   padding: 7px;
   margin: 3px;
 }
-
 .itemList {
   height: 50vh;
 }
-
 .card {
   cursor: pointer;
 }
-
 .greyLine {
   border: 0;
   height: 5px;

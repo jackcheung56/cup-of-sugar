@@ -13,7 +13,6 @@ function ItemDetailsPage(props) {
   const detailRoute = props.location.state.item.id;
   const storedItemData = props.location.state.item;
   const storedUserData = props.currentUser;
-  console.log("is borrowed", detail.isBorrowed);
   const [message, setMessage] = useState("");
   const [duration, setDuration] = useState("");
   //This data will be stored in the newly created Borrow
@@ -23,9 +22,6 @@ function ItemDetailsPage(props) {
   const [reqToggle, setReqToggle] = useState(false);
   const [formToggle, setFormToggle] = useState(false);
   //Stored user is the current user
-  console.log(props);
-  console.log("stored user", storedUserData);
-  console.log("stored item", storedItemData);
   const formData = {
     user_id: loggedUser,
     contactId: detail.ownerId,
