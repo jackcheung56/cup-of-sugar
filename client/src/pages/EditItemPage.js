@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import "../styles/Form.css";
-
+import '../styles/Form.css';
 import { __UpdateItem } from "../services/ItemService";
-
 import FormInput from "../components/FormInput";
 
 const EditItemPage = (props) => {
@@ -10,9 +8,6 @@ const EditItemPage = (props) => {
   const data = props.history.location.detail.detail;
   const callId = props.history.location.detail.detail.id;
   const [editItem, setEditItem] = useState({});
-
-  console.log(data);
-
   const handleChange = ({ target }) => {
     setEditItem({ ...editItem, [target.name]: target.value });
   };
@@ -72,7 +67,7 @@ const EditItemPage = (props) => {
 
         <div className="tags">
           <button
-            className="condiTag"
+            className="condiTags"
             type="button"
             placeholder="Great"
             name="Great"
@@ -82,7 +77,7 @@ const EditItemPage = (props) => {
           </button>
 
           <button
-            className="condiTag"
+            className="condiTags"
             type="button"
             placeholder="Acceptable"
             name="Acceptable"
@@ -92,7 +87,7 @@ const EditItemPage = (props) => {
           </button>
 
           <button
-            className="condiTag"
+            className="condiTags"
             type="button"
             placeholder="Bad"
             name="Bad"

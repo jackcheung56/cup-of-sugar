@@ -32,6 +32,7 @@ button {
   font: inherit;
   cursor: pointer;
   outline: none;
+<<<<<<< HEAD
   margin: 10px;
 }
 form input,
@@ -52,3 +53,50 @@ form button {
   padding: 10px;
   width: 136px;
 }
+=======
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+form input, form button{
+    font-size: 1rem;
+    padding: 18px;
+    border-radius: 5px;
+  }
+  .fI {
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    margin: 10px;
+  }
+
+  .fI:hover{
+    margin: 5px;
+    padding: 10px;
+    width: 136px;
+    background-color: #8375FA;
+  }
+
+  .condiTags{
+    margin: 5px;
+    padding: 10px;
+    width: 136px;
+  }
+
+  .conTags{
+    margin: 5px;
+    padding: 10px;
+    width: 136px;
+  }
+
+  .condiTags:hover, .conTags:hover{
+    margin: 5px;
+    padding: 10px;
+    width: 136px;
+    background-color: #8375FA;
+  }
+
+
+>>>>>>> b8e99a2f2021ffff9b95e5d06d19b0df4c0f39c2

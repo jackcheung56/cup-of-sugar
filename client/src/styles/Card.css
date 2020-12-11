@@ -13,9 +13,16 @@
   justify-content: center;
   color: white;
 }
+<<<<<<< HEAD
 .itemStatus p {
   opacity: 75%;
   font-size: 12px;
+=======
+
+.itemStatus  {
+    opacity: 75%;
+    font-size: 12px;
+>>>>>>> b8e99a2f2021ffff9b95e5d06d19b0df4c0f39c2
 }
 .stat {
   margin-left: auto;

@@ -5,6 +5,7 @@ import { __GetUser } from "../services/UserService";
 import { Link } from "react-router-dom";
 import "../styles/Details.css";
 function ItemDetailsPage(props) {
+<<<<<<< HEAD
   const [detail, setDetail] = useState({});
   const [admin, setAdmin] = useState(false);
   const [ownerName, setOwnerName] = useState("");
@@ -43,6 +44,39 @@ function ItemDetailsPage(props) {
       setOwnerName(foo);
     } catch (error) {
       console.log(error);
+=======
+    const [detail, setDetail] = useState({})
+    const [admin, setAdmin] = useState(false)
+    const [ownerName, setOwnerName] = useState('')
+    const itemOwner = props.location.state.item.owner_id
+    const loggedUser = props.currentUser.id
+    const detailRoute = props.location.state.item.id
+    const storedItemData = props.location.state.item
+    const storedUserData = props.currentUser
+    const [message, setMessage] = useState('')
+    const [duration, setDuration] = useState('')
+    //This data will be stored in the newly created Borrow
+    //it will appear in the owner's notifications based on OwnerId
+    //userId is reserved for the user who is requesting the borrow
+    const [toggle, setToggle] = useState(false)
+    const [reqToggle, setReqToggle] = useState(false)
+    const [formToggle, setFormToggle] = useState(false)
+    //Stored user is the current user
+    
+    const formData = {
+        user_id: loggedUser,
+        contactId: detail.ownerId,
+        item_id: detailRoute,
+        photo: detail.image,
+        holder: ownerName,
+        info: storedUserData.email,
+        number: storedUserData.phone,
+        requester: storedUserData.name,
+        product: storedItemData.title,
+        accepted: 'f',
+        duration: duration,
+        message: message,
+>>>>>>> b8e99a2f2021ffff9b95e5d06d19b0df4c0f39c2
     }
   };
   const getDetails = async () => {
