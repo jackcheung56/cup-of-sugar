@@ -18,6 +18,7 @@ function Profile(props) {
   const displayName = props.currentUser.name
   const profilePic = props.currentUser.picture
   const profileEmail = props.currentUser.email
+  
   const switchDisplay = () => {
     setNavTab(!navTab)
   }
@@ -49,6 +50,7 @@ function Profile(props) {
       console.log(error)
     }
   }
+
   //User
   const getUserData = async () => {
     try {

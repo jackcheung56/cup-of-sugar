@@ -31,7 +31,6 @@ function Router(props) {
   const [authenticated, setAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [pageLoading, setPageLoading] = useState(false);
-  //Functions
   const getAllItems = async () => {
     try {
       const data = await __GetItems();

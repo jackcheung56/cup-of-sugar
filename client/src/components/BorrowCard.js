@@ -16,6 +16,5 @@ const BorrowCard = ({ id, accepted, duration, photo, product, item_id, history }
 }
 export default BorrowCard
 
-// onClick={() => history.push(`/items/${item_id}` item = { item })}
 
 

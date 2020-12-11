@@ -13,7 +13,8 @@
     justify-content: center;
     color: white;
 }
-.itemStatus p {
+
+.itemStatus  {
     opacity: 75%;
     font-size: 12px;
 }

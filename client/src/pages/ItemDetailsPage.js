@@ -22,6 +22,7 @@ function ItemDetailsPage(props) {
     const [reqToggle, setReqToggle] = useState(false)
     const [formToggle, setFormToggle] = useState(false)
     //Stored user is the current user
+    
     const formData = {
         user_id: loggedUser,
         contactId: detail.ownerId,
