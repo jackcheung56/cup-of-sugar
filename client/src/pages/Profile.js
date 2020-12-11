@@ -23,7 +23,7 @@ function Profile(props) {
 
   console.log('PARAMS', props.match.params.user_id)
 
-  
+
 
 
   // const history = useHistory()
@@ -110,24 +110,30 @@ function Profile(props) {
         <div className="notifications">
           <h5>NOTIFICATIONS</h5>
           <p></p>
-          {requests.map((borrow) => (
-            <RequestCard
-              key={borrow.id}
-              name={borrow.itemId}
-              duration={borrow.duration}
-              status={borrow.status}
-              id={borrow.id}
-              item_id={borrow.item_id}
-              info={borrow.info}
-              photo={borrow.photo}
-              message={borrow.message}
-              product={borrow.product}
-              history={props.history}
-              userInfo={userInfo}
-              confirmation={confirmation}
-              setConfirmation={setConfirmation}
-            />
-          ))}
+          {requests.map((borrow) => {
+            if (!borrow.accepted === true) {
+              return (
+                <RequestCard
+                  key={borrow.id}
+                  name={borrow.itemId}
+                  duration={borrow.duration}
+                  status={borrow.status}
+                  id={borrow.id}
+                  item_id={borrow.item_id}
+                  info={borrow.info}
+                  photo={borrow.photo}
+                  message={borrow.message}
+                  product={borrow.product}
+                  history={props.history}
+                  userInfo={userInfo}
+                  confirmation={confirmation}
+                  setConfirmation={setConfirmation}
+                />
+              )
+            } else {
+              <div></div>
+            }
+          })}
         </div>
       </div>
 
@@ -142,7 +148,7 @@ function Profile(props) {
               title={item.title}
               isBorrowed={item.isBorrowed}
               onClick={() => props.history.push(`/items/${item.id}`, item = { item })}
-              />
+            />
           ))}
         </div>
 
@@ -171,7 +177,7 @@ function Profile(props) {
         </div>
 
 
-      
+
 
       </div>
     </div >
