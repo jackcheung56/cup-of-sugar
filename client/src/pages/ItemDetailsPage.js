@@ -128,9 +128,7 @@ function ItemDetailsPage(props) {
             setToggle(true)
             setReqToggle(true)
             setFormToggle(!formToggle)
-            // setTimeout(() => {
-            //     props.history.push('/items/all');
-            // }, 1500)
+
 
         } catch (error) {
             console.log(error)
@@ -165,12 +163,12 @@ function ItemDetailsPage(props) {
 
     return (
         <div className="detailsPage">
-            <button onClick={backButton}>back</button>
+            <button className="bTn" onClick={backButton}>back</button>
 
             {admin === true ?
                 <div className="adminDisplay">
-                    <Link to={{ pathname: `/items/update/${detail.id}`, detail: { detail } }}><button>Edit</button></Link>
-                    <Link to={{ pathname: `/items/delete/${detail.id}`, detail: { detail } }}><button>Delete</button></Link>
+                    <Link to={{ pathname: `/items/update/${detail.id}`, detail: { detail } }}><button className="bTn">Edit</button></Link>
+                    <Link to={{ pathname: `/items/delete/${detail.id}`, detail: { detail } }}><button className="bTn">Delete</button></Link>
 
                     <div className="detailsContainer">
                         <img src={detail.image}></img>
@@ -232,7 +230,7 @@ function ItemDetailsPage(props) {
                                 <button className={reqToggle ? 'reqVis' : 'reqGone'} onClick={handleClick}>Confirm</button>
                             </div>
                             <div className={toggle ? 'visible' : 'invisible'}>
-                                <p>REQUEST SENT</p>
+                                <p className="response">REQUEST SENT</p>
                                 <button className={toggle ? 'visible' : 'invisible'} onClick={backButton}>return to browse?</button>
                             </div>
                         </div>
