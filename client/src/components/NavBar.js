@@ -53,7 +53,7 @@ function NavBar({ authenticated, currentUser, className, logout }) {
 
           <Link 
           to="/"
-          onClick={logout}>
+          onClick={(event) => logout(event)}>
             <li>Sign Out</li>
           </Link>
         </ul>

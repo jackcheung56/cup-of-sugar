@@ -48,6 +48,7 @@ export const __DeleteItem = async (item_id) => {
 export const __GetItemByOwner = async (owner_id) => {
   try{
     const response = await ApiClient.get(`/items/owner/${owner_id}`)
+    console.log(response.data)
     return response.data
   } catch (error) {
     throw error
