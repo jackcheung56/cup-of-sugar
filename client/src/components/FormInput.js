@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default (props) =>
   props.fieldType === 'textfield' ? (
     <textarea
@@ -11,6 +12,7 @@ export default (props) =>
     />
   ) : (
     <input
+      className="styleInput"
       type={props.type}
       name={props.name}
       value={props.value}

@@ -43,6 +43,7 @@ const AddItemPage = (props) => {
       <h1>ADD ITEM</h1>
       <form className="inputFields">
         <FormInput
+          className="styleInput"
           placeholder="item name"
           name="title"
           value={newItem.title}
@@ -50,6 +51,7 @@ const AddItemPage = (props) => {
         />
 
         <FormInput
+          className="fI"
           placeholder="category"
           name="category"
           value={newItem.category}
@@ -57,6 +59,7 @@ const AddItemPage = (props) => {
         />
 
         <FormInput
+          className="fI"
           placeholder="image"
           name="image"
           value={newItem.image}
@@ -64,6 +67,7 @@ const AddItemPage = (props) => {
         />
 
         <FormInput
+          className="fI"
           placeholder="description"
           name="description"
           value={newItem.description}
@@ -73,6 +77,7 @@ const AddItemPage = (props) => {
         <div className="tags">
 
           <button
+            className="conTags"
             type="button"
             placeholder="Great"
             name="Great"
@@ -80,6 +85,7 @@ const AddItemPage = (props) => {
           >Great</button>
 
           <button
+            className="conTags"
             type="button"
             placeholder="Acceptable"
             name="Acceptable"
@@ -88,6 +94,7 @@ const AddItemPage = (props) => {
           >Acceptable</button>
 
           <button
+            className="conTags"
             type="button"
             placeholder="Bad"
             name="Bad"
@@ -102,7 +109,7 @@ const AddItemPage = (props) => {
 
         <input type="hidden" name="condition" value={newItem.isBorrowed = false}></input>
 
-        <button type="submit" onClick={handleSubmit}>Submit</button>
+        <button className="styleButton" type="submit" onClick={handleSubmit}>Submit</button>
 
       </form>
 
