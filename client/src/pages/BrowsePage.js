@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from 'react-router-dom';
 import ItemCard from '../components/ItemCard'
 import { __GetItems } from "../services/ItemService";
 import { __GetItemsByCategory } from "../services/ItemService";
@@ -7,18 +6,7 @@ import '../styles/Browse.css'
 
 function BrowsePage(props) {
 
-
-
-    console.log('BROWSE', props)
     const [browseItems, setBrowseItems] = useState([])
-
-
-    // const getUserBackup = async () => {
-    //     try {
-    //         const data = await __GetUser()
-    //     }
-    // }
-
 
     const getBrowseItems = async () => {
         try {

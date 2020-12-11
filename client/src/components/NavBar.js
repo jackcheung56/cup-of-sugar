@@ -16,9 +16,7 @@ function NavBar({ authenticated, currentUser, logout}) {
             <img className="navLogo" src={Logo} alt="app logo"></img>
           </Link>
 
-          {/* <Link to="/home">
-            <li>Home</li>
-          </Link> */}
+  
 
           <Link to="/signup">
             <li>Sign Up</li>
@@ -39,9 +37,7 @@ function NavBar({ authenticated, currentUser, logout}) {
             <img className="navLogo" src={Logo} alt="app logo"></img>
           </Link>
 
-          <Link to="/home">
-            <li>Home</li>
-          </Link>
+  
 
           <Link to="/items/all">
             <li>Browse</li>
