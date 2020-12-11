@@ -152,7 +152,7 @@ function BrowsePage(props) {
                     />
                 ))}
             </div>
-
+                    
         </div>
     );
 }

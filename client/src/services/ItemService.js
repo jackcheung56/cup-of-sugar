@@ -39,7 +39,7 @@ export const __UpdateItem = async (formData, item_id) => {
 export const __DeleteItem = async (item_id) => {
   try{
     const response = await ApiClient.delete(`/items/delete/${item_id}`)
-    return response
+    return response.data
   } catch (error) {
     throw error
   }
@@ -48,7 +48,8 @@ export const __DeleteItem = async (item_id) => {
 export const __GetItemByOwner = async (owner_id) => {
   try{
     const response = await ApiClient.get(`/items/owner/${owner_id}`)
-    return response
+    console.log(response.data)
+    return response.data
   } catch (error) {
     throw error
   }
@@ -57,7 +58,7 @@ export const __GetItemByOwner = async (owner_id) => {
 export const __GetItemsByCategory = async (category) => {
   try{
     const response = await ApiClient.get(`/items/sort/${category}`)
-    return response
+    return response.data
   } catch (error) {
     throw error
   }

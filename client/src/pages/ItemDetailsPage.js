@@ -4,64 +4,50 @@ import { __CreateBorrow } from '../services/BorrowService'
 import { __GetUser } from "../services/UserService";
 import { Link } from 'react-router-dom'
 import '../styles/Details.css'
-
 function ItemDetailsPage(props) {
+
     const [detail, setDetail] = useState({})
     const [admin, setAdmin] = useState(false)
     const [ownerName, setOwnerName] = useState('')
     const itemOwner = props.location.state.item.owner_id
     const loggedUser = props.currentUser.id
+    console.log(props)
     const detailRoute = props.location.state.item.id
     const storedItemData = props.location.state.item
     const storedUserData = props.currentUser
 
 
-    console.log('is borrowed', detail.isBorrowed)
+    //console.log('is borrowed', detail.isBorrowed)
 
 
 
     const [message, setMessage] = useState('')
     const [duration, setDuration] = useState('')
-
     //This data will be stored in the newly created Borrow
     //it will appear in the owner's notifications based on OwnerId
     //userId is reserved for the user who is requesting the borrow
-
     const [toggle, setToggle] = useState(false)
     const [reqToggle, setReqToggle] = useState(false)
     const [formToggle, setFormToggle] = useState(false)
-
-
-
-
-
     //Stored user is the current user
-    console.log(props)
-    console.log('stored user', storedUserData)
-    console.log('stored item', storedItemData)
-
-
-
-
+    // console.log(props)
+    // console.log('stored user', storedUserData)
+    // console.log('stored item', storedItemData)
 
     const formData = {
         user_id: loggedUser,
         contactId: detail.ownerId,
         item_id: detailRoute,
         photo: detail.image,
-
         holder: ownerName,
         info: storedUserData.email,
         number: storedUserData.phone,
         requester: storedUserData.name,
         product: storedItemData.title,
-
         accepted: 'f',
         duration: duration,
         message: message,
     }
-
-
     const getItemOwnerName = async () => {
         try {
             const data = await __GetUser(itemOwner)
@@ -71,7 +57,6 @@ function ItemDetailsPage(props) {
             console.log(error)
         }
     }
-
     const getDetails = async () => {
         //gets the item details for this page
         try {
@@ -81,22 +66,14 @@ function ItemDetailsPage(props) {
             console.log(error)
         }
     }
-
-
     const durationInput = (event) => {
         event.preventDefault();
         setDuration(event.target.value);
     };
-
-
     const messageInput = (event) => {
         event.preventDefault();
         setMessage(event.target.value);
     };
-
-
-
-
     const handleFillout = async (event) => {
         event.preventDefault()
         try {
@@ -105,18 +82,6 @@ function ItemDetailsPage(props) {
             console.log(error)
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
     const handleClick = async (event) => {
         //handles borrow ticket creation
         event.preventDefault()
@@ -134,7 +99,6 @@ function ItemDetailsPage(props) {
             console.log(error)
         }
     }
-
     const adminToggle = () => {
         if (itemOwner === loggedUser) {
             setAdmin(true)
@@ -142,8 +106,6 @@ function ItemDetailsPage(props) {
             return
         }
     };
-
-
     useEffect(() => {
         getDetails()
         adminToggle()
@@ -158,9 +120,6 @@ function ItemDetailsPage(props) {
             console.log(error)
         }
     }
-
-
-
     return (
         <div className="detailsPage">
             <button className="bTn" onClick={backButton}>back</button>
@@ -184,13 +143,9 @@ function ItemDetailsPage(props) {
                                 <p>availabile</p>
                             }
                         </div>
-
                     </div>
-
                 </div>
-
                 :
-
                 <div className="normalDisplay">
                     <div className="detailsContainer">
                         <img src={detail.image}></img>
@@ -237,20 +192,9 @@ function ItemDetailsPage(props) {
                         :
                         <div></div>
                     }
-
-
-
-
                 </div>
             }
-
-
-
-
         </div>
     );
 }
-
 export default ItemDetailsPage;
-
-

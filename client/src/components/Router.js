@@ -61,6 +61,7 @@ function Router(props) {
     if (token) {
       try {
         const session = await __CheckSession();
+        console.log('THIS IS SESSION', session)
         setAuthenticated(true);
         setCurrentUser(session.user);
         console.log(session.user)
@@ -110,11 +111,6 @@ function Router(props) {
       getUserBackup()
     }, []);
 
-
-
- 
-
-
   return (
     <div>
       <Navbar
@@ -122,8 +118,9 @@ function Router(props) {
         currentUser={currentUser}
         authenticated={authenticated}
         user={user}
+        logout={handleLogout}
       ></Navbar>
-      {pageLoading ? (
+      { pageLoading ? (
         <h3>*</h3>
       ) : (
           <Switch>
@@ -217,8 +214,8 @@ function Router(props) {
             <Route
               exact
               path="/items/:item_id"
-              render={(props) => (
-                <ItemDetailsPage location={props.location} currentUser={currentUser} history={history}></ItemDetailsPage>
+              component={(props) => (
+                <ItemDetailsPage  location={props.location} currentUser={currentUser} history={history}></ItemDetailsPage>
               )}
             />
           </Switch>

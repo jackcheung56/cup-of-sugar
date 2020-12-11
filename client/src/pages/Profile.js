@@ -38,7 +38,6 @@ function Profile(props) {
   }
 
 
-
   const getBorrowRequests = async () => {
     try {
       const data = await __GetBorrowRequests(sortingId)
@@ -52,9 +51,8 @@ function Profile(props) {
   const getUserBorrows = async () => {
     try {
       const data = await __GetBorrowByUserId(sortingId)
-
       let list = (data.data)
-
+      console.log('this is user borrows', list)
       setUserBorrows(list)
     } catch (error) {
       console.log(error)
@@ -67,8 +65,8 @@ function Profile(props) {
   const getUserItems = async () => {
     try {
       const data = await __GetItemByOwner(sortingId)
-      setUserItems(data.data)
-      console.log(data.data)
+      console.log(data)
+      setUserItems(data)
     } catch (error) {
       console.log(error)
     }
