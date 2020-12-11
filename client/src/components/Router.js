@@ -59,6 +59,7 @@ function Router(props) {
         const session = await __CheckSession();
         console.log("SESSION", session);
         setCurrentUser(session.user);
+        console.log(session.user);
         history.push(`/users/${session.user.id}`);
       } catch (error) {
         throw error;
@@ -88,6 +89,23 @@ function Router(props) {
     setCurrentUser(user);
     setUser(currentUser);
   };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    setEmail("");
+    setPassword("");
+    setAuthenticated(false);
+    localStorage.clear();
+  };
+
+  useEffect(() => {
+    getAllItems();
+    // getUser()
+    verifyTokenValid();
+    setPageLoading(false);
+    // toggleAuthenticated();
+    getUserBackup();
+  }, []);
 
   useEffect(() => {
     getAllItems();

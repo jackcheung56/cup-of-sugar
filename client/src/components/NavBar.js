@@ -4,8 +4,6 @@ import "../styles/Nav.css";
 import Logo from "../assets/coslogo.png";
 
 function NavBar({ authenticated, currentUser, logout }) {
-  console.log(currentUser);
-
   return !authenticated && !currentUser ? (
     <div className="navbox">
       <nav>
@@ -13,10 +11,6 @@ function NavBar({ authenticated, currentUser, logout }) {
           <Link to="/">
             <img className="navLogo" src={Logo} alt="app logo"></img>
           </Link>
-
-          {/* <Link to="/home">
-            <li>Home</li>
-          </Link> */}
 
           <Link to="/signup">
             <li>Sign Up</li>
@@ -36,10 +30,6 @@ function NavBar({ authenticated, currentUser, logout }) {
             <img className="navLogo" src={Logo} alt="app logo"></img>
           </Link>
 
-          <Link to="/home">
-            <li>Home</li>
-          </Link>
-
           <Link to="/items/all">
             <li>Browse</li>
           </Link>
@@ -48,7 +38,7 @@ function NavBar({ authenticated, currentUser, logout }) {
             <li>Profile</li>
           </Link>
 
-          <Link to="/" onClick={() => logout}>
+          <Link to="/" onClick={(event) => logout(event)}>
             <li>Sign Out</li>
           </Link>
         </ul>

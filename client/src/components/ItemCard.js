@@ -2,27 +2,23 @@ import React from 'react'
 import '../styles/Card.css'
 
 const ItemCard = ({ onClick, title, image, condition, category, description, isBorrowed }) => {
-    // console.log(isBorrowed)
-    console.log(category)
 
     return (
         <div className="card" onClick={onClick}>
 
-
             <div>
-
                 <div>
                     <img className="itemPhoto" src={image}></img>
                 </div>
-
             </div>
 
             <div className="itemInfo">
             </div>
-                <h4>{title}</h4>
-                <p>Condition: {condition}</p>
-                <p>{category}</p>
-                {/* <p>{description}</p> */}
+            <h4 className="itemTitle">{title}</h4>
+            <p className="details">{category}</p>
+            <div>
+                <p className="description">{description}</p>
+            </div>
 
             <div className="itemStatus">
                 {isBorrowed === true ?

@@ -1,11 +1,244 @@
+.grid-container {
+  width: 400px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas: "container";
+}
+
 .container {
+  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "iCon list";
+  grid-area: container;
+  box-shadow: 1px 1px 8px 1px #e0e0e0;
+}
+
+.iCon {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  border-radius: 15%;
+  background-color: #ffffff;
+  margin-right: 10px;
+}
 
-  margin: 15px;
+.circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  grid-area: circle;
+  border-radius: 50%;
+  background-color: #a5abbd;
+}
 
-  position: relative;
-  text-align: center;
+.num {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.1fr 1.1fr 1.1fr 0.7fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "liOne"
+    "liTwo"
+    "liThree"
+    "ticketBtns";
+  grid-area: list;
+  list-style: none;
+}
+
+.liOne {
+  padding-left: 5px;
+  font-weight: 600;
+  grid-area: liOne;
+  font-size: 12px;
+}
+
+.liTwo {
+  padding-left: 5px;
+  grid-area: liTwo;
+  font-size: 12px;
+}
+
+.liThree {
+  padding-left: 5px;
+  grid-area: liThree;
+  font-size: 12px;
+}
+
+.ticketBtns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "btnOne btnTwo";
+  grid-area: ticketBtns;
+}
+
+.btnTwo,
+.btnOne {
+  margin: 3px;
+  display: inline-block;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+
+  color: #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.btnOne {
+  background-color: rgb(77, 158, 240);
+}
+
+.btnOne:hover {
+  background-color: rgb(32, 137, 240);
+}
+
+.btnTwo {
+  background-color: #ec517b;
+}
+
+.btnTwo:hover {
+  background-color: #ee3768;
+}
+
+.grid-containerB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas: "container";
+}
+
+.containerB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 0.9fr;
+  grid-template-rows: 1.6fr 0.4fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "textMsg"
+    "ticketBtns";
+  grid-area: container;
+  box-shadow: 1px 1px 8px 1px #e0e0e0;
+}
+
+.ticketBtnsB {
+  padding-top: 10px;
+  width: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "btnOne btnTwo";
+  grid-area: ticketBtns;
+}
+
+.textMsg {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "cardName"
+    "text";
+  grid-area: textMsg;
+}
+
+.btnTwoB,
+.btnOneB {
+  padding: 20px;
+  margin: 3px;
+  display: inline-block;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  color: #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.btnOneB {
+  background-color: rgb(77, 158, 240);
+}
+
+.btnOneB:hover {
+  background-color: rgb(32, 137, 240);
+}
+
+.btnTwoB {
+  background-color: #ec517b;
+}
+
+.btnTwoB:hover {
+  background-color: #ee3768;
+}
+
+.textMsg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-bottom: 10px;
+  width: 100%;
+  height: 40px;
+  grid-area: textMsg;
+  border: none;
+  box-shadow: none;
+  background: #e9ebee;
+  outline: none;
+  border-radius: 5px;
+}
+
+.cardName {
+  grid-area: cardName;
+}
+.text {
+  grid-area: text;
+}
+
+.reply {
+  margin: 0 auto;
+  font-size: 12px;
+  margin-bottom: 7px;
 }

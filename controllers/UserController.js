@@ -63,6 +63,7 @@ const Login = async (req, res) => {
       let payload = {
         id: user.id,
         name: user.name,
+        picture: user.picture
       };
       console.log(payload);
       let token = createToken(payload);
@@ -108,7 +109,7 @@ const SessionStatus = async (req, res) => {
   try {
     const { token } = res.locals;
     const user = await User.findByPk(token.id, {
-      attributes: ["id", "name", "email"],
+      attributes: ["id", "name", "email", "picture"],
     });
     res.send({ user, status: "OK" });
   } catch (error) {

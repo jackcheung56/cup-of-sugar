@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { __UpdateBorrow } from "../services/BorrowService";
 import { __UpdateItem } from "../services/ItemService";
 import { __DeleteBorrow } from "../services/BorrowService";
 import "../styles/Notification.css";
+
 const RequestCard = ({
   status,
   duration,
@@ -18,9 +19,11 @@ const RequestCard = ({
   const userRoute = userInfo.id;
   const [response, setResponse] = useState("");
   const [layout, setLayout] = useState(false);
+
   const isBorrowed = {
     isBorrowed: true,
   };
+
   const handleFillout = async (event) => {
     event.preventDefault();
     try {
@@ -29,9 +32,11 @@ const RequestCard = ({
       console.log(error);
     }
   };
+
   const responseInput = (event) => {
     setResponse(event.target.value);
   };
+
   const handleApproval = (event) => {
     event.preventDefault();
     const approval = {
@@ -42,12 +47,12 @@ const RequestCard = ({
     setResponse("");
     setConfirmation(true);
   };
+
   const sendApproval = (approval, id) => {
-    console.log(approval, id);
     __UpdateBorrow(approval, id);
-    console.log(isBorrowed);
     __UpdateItem(isBorrowed, item_id);
   };
+
   const deleteRequest = async (event) => {
     event.preventDefault();
     try {
@@ -57,40 +62,69 @@ const RequestCard = ({
       console.log(error);
     }
   };
+
   return (
-    <div className="container">
+    <div className="requestBox">
       {!layout ? (
-        <div>
-          <div>
-            <p>{product}</p>
-            <p>{duration}</p>
-            <p>{message}</p>
-            <p>{status}</p>
-            <p>{id}</p>
-          </div>
-          <div className="ticketBtns">
-            <button onClick={handleFillout}>Accept</button>
-            <button onClick={deleteRequest}>Decline</button>
+        <div className="grid-container">
+          <div className="container">
+            <div className="iCon">
+              <div className="circle">
+                <p className="num">{id}</p>
+              </div>
+            </div>
+            <ul className="list">
+              <li className="liOne">{product}</li>
+              <li className="liTwo">Duration: {duration}</li>
+              <li className="liThree">Contact: {message}</li>
+              <div className="ticketBtns">
+                <button
+                  placeholder="Accept"
+                  className="btnOne"
+                  onClick={handleFillout}
+                >
+                  Accept
+                </button>
+                <button
+                  placeholder="Decline"
+                  className="btnTwo"
+                  onClick={deleteRequest}
+                >
+                  Decline
+                </button>
+              </div>
+            </ul>
           </div>
         </div>
       ) : (
-        <div className="confirmation">
+        <div className="grid-containerB">
           {!confirmation ? (
-            <div>
-              <input
-                placeholder="message for requester"
-                name="response"
-                value={response}
-                onChange={responseInput}
-              ></input>
-              <button
-                onClick={(event) => {
-                  handleApproval(event);
-                }}
-              >
-                Confirm
-              </button>
-              <button onClick={deleteRequest}>Decline</button>
+            <div className="containerB">
+              <div className="ticketBtnsB">
+                <button
+                  className="btnOneB"
+                  onClick={(event) => {
+                    handleApproval(event);
+                  }}
+                >
+                  Confirm
+                </button>
+                <button className="btnTwoB" onClick={deleteRequest}>
+                  Decline
+                </button>
+              </div>
+              <div className="formBox">
+                <div className="cardName">
+                  <p className="reply">Message</p>
+                </div>
+                <input
+                  className="textMsg"
+                  placeholder="message for requester"
+                  name="response"
+                  value={response}
+                  onChange={responseInput}
+                ></input>
+              </div>
             </div>
           ) : (
             <div></div>
@@ -100,4 +134,5 @@ const RequestCard = ({
     </div>
   );
 };
+
 export default RequestCard;

@@ -1,20 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import ItemCard from "../components/ItemCard";
 import { __GetItems } from "../services/ItemService";
 import { __GetItemsByCategory } from "../services/ItemService";
 import "../styles/Browse.css";
-
 function BrowsePage(props) {
-  console.log(props);
   const [browseItems, setBrowseItems] = useState([]);
-
-  // const getUserBackup = async () => {
-  //     try {
-  //         const data = await __GetUser()
-  //     }
-  // }
-
   const getBrowseItems = async () => {
     try {
       const data = await __GetItems();
@@ -23,7 +13,6 @@ function BrowsePage(props) {
       throw error;
     }
   };
-
   const sortAppliances = async () => {
     try {
       const category = await __GetItemsByCategory("Appliances");
@@ -33,7 +22,6 @@ function BrowsePage(props) {
       throw error;
     }
   };
-
   const sortFitness = async () => {
     try {
       const category = await __GetItemsByCategory("Fitness");
@@ -43,7 +31,6 @@ function BrowsePage(props) {
       throw error;
     }
   };
-
   const sortClothing = async () => {
     try {
       const category = await __GetItemsByCategory("Clothing");
@@ -53,7 +40,6 @@ function BrowsePage(props) {
       throw error;
     }
   };
-
   const sortEntertainment = async () => {
     try {
       const category = await __GetItemsByCategory("Entertainment");
@@ -63,7 +49,6 @@ function BrowsePage(props) {
       throw error;
     }
   };
-
   const sortBooks = async () => {
     try {
       const category = await __GetItemsByCategory("Books");
@@ -73,7 +58,6 @@ function BrowsePage(props) {
       throw error;
     }
   };
-
   const sortTools = async () => {
     try {
       const category = await __GetItemsByCategory("Tools");
@@ -83,7 +67,6 @@ function BrowsePage(props) {
       throw error;
     }
   };
-
   const sortInstruments = async () => {
     try {
       const category = await __GetItemsByCategory("Instruments");
@@ -93,7 +76,6 @@ function BrowsePage(props) {
       throw error;
     }
   };
-
   const sortPantry = async () => {
     try {
       const category = await __GetItemsByCategory("Pantry");
@@ -103,18 +85,14 @@ function BrowsePage(props) {
       throw error;
     }
   };
-
   useEffect(() => {
     getBrowseItems();
   }, []);
-
   const itemList = props.item;
-
   return (
     <div className="browsePage">
       <div className="browsePageTop">
-        <h1 className="pageTitle">browse all items</h1>
-
+        <h1 className="pageTitle">browse</h1>
         <div className="catButtons">
           <button className="btns" onClick={getBrowseItems}>
             all
@@ -146,12 +124,12 @@ function BrowsePage(props) {
         </div>
         <hr className="greyLine"></hr>
       </div>
-
       <div className="itemList">
-        {browseItems.map((item) => (
+        {browseItems.map((item, idx) => (
           <ItemCard
             //model attributes go here
-            key={item._id}
+            id={item.id}
+            key={idx}
             image={item.image}
             title={item.title}
             condition={item.condition}
@@ -167,5 +145,4 @@ function BrowsePage(props) {
     </div>
   );
 }
-
 export default BrowsePage;

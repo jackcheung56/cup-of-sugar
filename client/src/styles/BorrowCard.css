@@ -1,25 +1,15 @@
-.card {
-  display: flex;
-  flex-direction: column;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  align-items: center;
-  margin: 20px;
-  border-radius: 10px;
+.card{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    margin: 20px;
+    border-radius: 10px;
+
 }
 
+
 .itemStatus {
-<<<<<<< HEAD
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  color: white;
-
-  background: rgb(33, 141, 244);
-
-  border-radius: 0 px 10px 10px;
-=======
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -27,12 +17,12 @@
     justify-content: center;
     color: white;
     border-radius: 0 0px 10px 10px;
->>>>>>> 5a9dc8c9a6aa83bf2dab595e51ce60193af69516
 }
 
 .itemStatus p {
-  opacity: 75%;
-  font-size: 12px;
+    opacity: 75%;
+    font-size: 12px;
+
 }
 
 .stat {
@@ -47,6 +37,7 @@
     width: 150;
     border-radius: 10px 10px 0px 0;
 }
+
 
 .itemInfo {
     display: flex;
@@ -74,4 +65,6 @@
 }
 
 
- 
+img {
+    margin: 0 auto;
+}
