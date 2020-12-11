@@ -69,6 +69,8 @@ function Profile(props) {
     }
   }
 
+
+  console.log(userItems)
   //User
 
   const getUserData = async () => {
@@ -147,6 +149,7 @@ function Profile(props) {
               key={item.ownerId}
               title={item.title}
               isBorrowed={item.isBorrowed}
+              image={item.image}
               onClick={() => props.history.push(`/items/${item.id}`, item = { item })}
             />
           ))}
