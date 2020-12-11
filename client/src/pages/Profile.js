@@ -17,9 +17,11 @@ function Profile(props) {
 
   const [confirmation, setConfirmation] = useState(false)
 
-  console.log('TRACK USER ID', props.currentUser.id)
+  console.log('TRACK CURRENT USER', props.currentUser)
 
   console.log('TRACK USER', props.user)
+
+  console.log('PARAMS', props.match.params.user_id)
 
   
 

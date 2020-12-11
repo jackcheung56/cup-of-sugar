@@ -46,14 +46,14 @@ const SignIn = (props) => {
         <h1>Sign In</h1>
         <div className="block">
           <input
-            placeholder={props.user.email}
+            placeholder='Email'
             name="email"
             value={tempEmail}
             onChange={emailInput}
             type="email"
           ></input>
           <input
-            placeholder={props.user.password}
+            placeholder='Password'
             name="password"
             value={tempPassword}
             onChange={passwordInput}
