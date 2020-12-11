@@ -72,6 +72,7 @@ const EditItemPage = (props) => {
 
         <div className="tags">
           <button
+            className="condiTag"
             type="button"
             placeholder="Great"
             name="Great"
@@ -81,6 +82,7 @@ const EditItemPage = (props) => {
           </button>
 
           <button
+            className="condiTag"
             type="button"
             placeholder="Acceptable"
             name="Acceptable"
@@ -90,6 +92,7 @@ const EditItemPage = (props) => {
           </button>
 
           <button
+            className="condiTag"
             type="button"
             placeholder="Bad"
             name="Bad"

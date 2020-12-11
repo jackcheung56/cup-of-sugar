@@ -3,7 +3,7 @@ import '../styles/Card.css'
 
 const BorrowCard = ({ id, accepted, duration, photo, product, item_id, history }) => {
     return (
-        <div className="card">
+        <div className="bCard">
             <img src={photo}></img>
             <div>
                 <h3>{product}</h3>

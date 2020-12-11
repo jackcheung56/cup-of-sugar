@@ -1,31 +1,56 @@
-/* body{
-  background: white;
+button {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+.styleInput {
+  margin: 5px;
+  border: none;
+  background: #e0e0e0;;
+  width: auto;
+}
+.styleButton {
+  background: rgb(32,137,240);
+  width: 200px;
   color: white;
-} 
-  */
-
-.outerForm {
+  margin: 10px;
+}
+.uxTitle{
+  margin-bottom: 10px;
+}
+.outerForm{
   display: flex;
   flex-direction: column;
-}
-
-.block {
+ }
+ .block{
   display: flex;
   flex-direction: column;
+ }
+ .inputFields {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
 }
-
-.inputFields {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  /* background: transparent; */
-}
-
-form input,
-form button {
-  font-size: 1rem;
-  padding: 18px;
-  /* background-color: rgba(255,255,255,0.15); */
-  /* border: 1px solid rgba(255, 255, 255, 0.1); */
-  border-radius: 5px;
-}
+form input, form button{
+    font-size: 1rem;
+    padding: 18px;
+    border-radius: 5px;
+  }
+  .fI {
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    margin: 10px;
+  }
+  .condiTags{
+    margin: 5px;
+    padding: 10px;
+    width: 136px;
+  }

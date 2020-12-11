@@ -59,9 +59,11 @@ function SignUp(props) {
   return (
     <div className="template">
       <form className="outerForm" onSubmit={handleSubmit}>
-        <h1>Sign Up</h1>
+        <h1 className="uxTitle">Sign Up</h1>
         <div className="block">
           <input
+            className="styleInput"
+          
             placeholder="Enter Name"
             name="name"
             value={name}
@@ -69,6 +71,7 @@ function SignUp(props) {
             type="text"
           ></input>
           <input
+            className="styleInput"
             placeholder="Enter Email"
             name="email"
             value={tempEmail}
@@ -76,6 +79,7 @@ function SignUp(props) {
             type="email"
           ></input>
           <input
+            className="styleInput"
             placeholder="Enter Password"
             name="password"
             value={tempPassword}
@@ -84,6 +88,7 @@ function SignUp(props) {
           ></input>
 
           <input
+            className="styleInput"
             placeholder="Add Profile Picture"
             name="picture"
             value={tempPicture}
@@ -92,6 +97,7 @@ function SignUp(props) {
           ></input>
 
           <input
+            className="styleInput"
             placeholder="Enter phone number"
             name="phone"
             value={tempPhone}
@@ -99,7 +105,7 @@ function SignUp(props) {
             type="phone"
           ></input>
 
-          <button onClick={handleSubmit}>Sign Up</button>
+          <button className="styleButton" onClick={handleSubmit}>Sign Up</button>
         </div>
       </form>
     </div>

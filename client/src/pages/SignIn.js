@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { __LoginUser } from "../services/UserService";
-import "../styles/Form.css";
-
+import '../styles/Form.css'
 const SignIn = (props) => {
   const [tempEmail, setTempEmail] = useState("");
   const [tempPassword, setTempPassword] = useState("");
-
   const emailInput = (event) => {
     event.preventDefault();
     setTempEmail(event.target.value);
   };
-
   const passwordInput = (event) => {
     event.preventDefault();
     setTempPassword(event.target.value);
   };
-
   const logHandler = async (event) => {
     event.preventDefault();
     try {
@@ -32,41 +28,33 @@ const SignIn = (props) => {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    const loggedInUser = localStorage.getItem("user");
-    if (loggedInUser) {
-      const foundUser = JSON.parse(loggedInUser);
-      props.setCurrentUser(foundUser);
-    }
-  }, []);
-
   return !props.authenticated && !props.currentUser ? (
     <div className="template">
       <form className="outerForm">
-        <h1>Sign In</h1>
+        <h1 className="uxTitle">Sign In</h1>
         <div className="block">
           <input
-            placeholder="Email"
+            className="styleInput"
+            placeholder='Email'
             name="email"
             value={tempEmail}
             onChange={emailInput}
             type="email"
           ></input>
           <input
-            placeholder="Password"
+            className="styleInput"
+            placeholder='Password'
             name="password"
             value={tempPassword}
             onChange={passwordInput}
             type="password"
           ></input>
-          <button onClick={logHandler}>Login</button>
+          <button className="styleButton" onClick={logHandler}>Login</button>
         </div>
       </form>
     </div>
   ) : (
     <h1>You're already signed in</h1>
   );
-};
-
+}
 export default SignIn;

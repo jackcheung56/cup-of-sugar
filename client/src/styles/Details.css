@@ -1,54 +1,106 @@
-.visible {
-  color: black;
+  .visible {
+    color: black;
+  }
+  .invisible{
+    color: transparent;
+    background-color: transparent;
+    border: 0;
+  }
+  .reqGone {
+      color: black;
+      border-radius: 10px;
+      width: 200px;
+  }
+  .reqVis{
+    background-color: transparent;
+    border-style: none;
+    color: transparent;
+    border: 0;
+  }
+  .reqDropDown{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .borrowDrop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(32,137,240);
+    color:#ffffff;
+    border-radius: 30px;
+    cursor:pointer;
+    font-size:17px;
+    text-decoration:none;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 8px 1px #e0e0e0;
+  }
+  .reqUI input {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background: rgb(226, 229, 231);
+    margin: 5px
+  }
+  .hideUI{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-style: none;
+    background-color: transparent;
+    border-style: none;
+    color: transparent;
+    opacity: 0;
+    border: 0;
+  }
+.bTn{
+  border: none;
+  color:white;
+  background-color: rgb(32,137,240);
+  opacity: 100%;
 }
-
-.invisible {
-  color: transparent;
-  background-color: transparent;
-  border: 0;
-}
-
-.reqGone {
-  color: black;
-}
-
-.reqVis {
-  background-color: transparent;
-  border-style: none;
-  color: transparent;
-  border: 0;
-}
-
-.reqDropDown {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.borrowDrop {
-  background: rgba(33, 141, 244, 1);
+.requestButton {
+  border: none;
+  font: inherit;
   cursor: pointer;
-}
-
-.reqUI {
+  outline: inherit;
+  border-radius: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+	background-color: rgb(32,137,240);
+	color:#ffffff;
+	border-radius: 30px;
+	cursor:pointer;
+	font-size:17px;
+  text-decoration:none;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
-
-.hideUI {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-style: none;
-
-  background-color: transparent;
-
-  border-style: none;
-  color: transparent;
-  opacity: 0;
-  border: 0;
+.avail {
+  padding: 10px;
+  background: lightgrey;
+  width: 100px;
+  color: white;
+  border-radius: 10px;
 }

@@ -14,20 +14,7 @@ const ItemCard = ({ onClick, title, image, condition, category, description, isB
 
             <div className="itemInfo">
             </div>
-            <h4 className="itemTitle">{title}</h4>
-            <p className="details">{category}</p>
-            <div>
-                <p className="description">{description}</p>
-            </div>
-
-            <div className="itemStatus">
-                {isBorrowed === true ?
-                    <p className="stat">item unavailabile </p>
-                    :
-                    <p className="stat">availabile</p>
-                }
-            </div>
-
+            <h5 className="itemTitle">{title}</h5>
         </div>
     )
 }

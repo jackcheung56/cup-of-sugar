@@ -4,11 +4,9 @@
   grid-template-rows: 1fr;
   gap: 0px 0px;
 }
-
-.sectionOne {
-  grid-area: 1 / 1 / 2 / 2;
+.sectionOne { 
+  grid-area: 1 / 1 / 2 / 2; 
 }
-
 .userDisplay {
   width: 35vw;
   display: grid;
@@ -17,21 +15,18 @@
   grid-template-columns: 1fr;
   grid-template-rows: 0.7fr 1.3fr;
   gap: 0px 0px;
-
   grid-template-areas:
     "photoCon"
     "notifiCon";
   grid-area: 1 / 1 / 2 / 2;
 }
-
 .photoCon {
   padding-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.proPic {
+.proPic { 
   grid-area: 1 / 1 / 3 / 2;
   margin: 0 auto;
   width: 200px;
@@ -40,27 +35,23 @@
   border-radius: 50%;
   border: 5px solid white;
 }
-
-.proInfo {
+.proInfo { 
   padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .userName {
   font-weight: 550;
   font-style: normal;
   font-size: 20px;
   margin: 0 auto;
 }
-
 .emailSub {
   opacity: 45%;
   margin: 0 auto;
   font-size: 16px;
 }
-
 .addBtn {
   border: none;
   font: inherit;
@@ -72,29 +63,26 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(32, 137, 240);
-  color: #ffffff;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 17px;
-  text-decoration: none;
+	background-color: rgb(32,137,240);
+	color:#ffffff;
+	border-radius: 30px;
+	cursor:pointer;
+	font-size:17px;
+  text-decoration:none;
   margin-top: 20px;
   margin-bottom: 5px;
 }
-
-.addBtn:hover {
-  background-color: #8375fa;
+.addBtn:hover{
+  background-color: #8375FA;
 }
-
-.notifiCon {
+.notifiCon { 
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   margin-bottom: 10px;
 }
-
-.notiTitle {
+.notiTitle{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,34 +90,32 @@
   position: static;
   width: 100%;
   height: 25px;
-  background-color: #e8f0fe;
+  background-color: #E8F0FE;
 }
-
 .itemCol {
   padding: 20px;
   padding-right: 32px;
 }
-
 .naviBox {
-  height: 150px;
+  height: 150px ;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas: "navi blank";
+  grid-template-areas:
+    "navi blank";
   grid-area: naviBox;
 }
-
 .navi {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas: "ite bor";
+  grid-template-areas:
+    "ite bor";
   grid-area: navi;
 }
-
-.bor {
+.bor { 
   height: 160px;
   display: grid;
   grid-template-columns: 1fr;
@@ -140,31 +126,7 @@
     "borrowButton";
   grid-area: bor;
 }
-
-.itemButton {
-  max-height: 27px;
-  z-index: 5;
-  grid-area: borrowButton;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-
-  border-radius: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-  background-color: rgb(32, 137, 240);
-  color: white;
-
-  cursor: pointer;
-  font-size: 17px;
-  text-decoration: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 10px;
-}
-
-.borrowButton {
+.itemButton{
   max-height: 27px;
   z-index: 5;
   grid-area: borrowButton;
@@ -175,17 +137,36 @@
   border-radius: 10px;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: rgb(32, 137, 240);
+  background-color: rgb(32,137,240);
   color: white;
-  cursor: pointer;
-  font-size: 17px;
-  text-decoration: none;
+	cursor:pointer;
+	font-size:17px;
+  text-decoration:none;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 10px;
 }
-
-.ite {
+.borrowButton { 
+  max-height: 27px;
+  z-index: 5;
+  grid-area: borrowButton;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  border-radius: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: rgb(32,137,240);
+  color: white;
+	cursor:pointer;
+	font-size:17px;
+  text-decoration:none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+.ite { 
   height: 160px;
   display: grid;
   grid-template-columns: 1fr;
@@ -196,10 +177,7 @@
     "itemButton";
   grid-area: ite;
 }
-.itemButton {
-  grid-area: itemButton;
-}
-
+.itemButton { grid-area: itemButton; }
 .bxBox {
   display: grid;
   grid-template-columns: 1fr;
@@ -212,13 +190,27 @@
     "thingFour";
   grid-area: bxBox;
 }
-
-.thingOne {
+.thingOne { 
   box-shadow: 1px 1px 8px 1px #e0e0e0;
   grid-area: thingOne;
+  border-radius: 20px;
+  width: auto;
 }
-
-.thingTwo {
+.thingTwo { 
   box-shadow: 1px 1px 8px 1px #e0e0e0;
-  grid-area: thingOne;
+  grid-area: thingTwo;
+  border-radius: 20px;
+  width: auto;
+}
+.thingThree { 
+  box-shadow: 1px 1px 8px 1px #e0e0e0;
+  grid-area: thingThree;
+  border-radius: 20px;
+  width: auto;
+}
+.thingFour { 
+  box-shadow: 1px 1px 8px 1px #e0e0e0;
+  grid-area: thingFour;
+  border-radius: 20px;
+  width: auto;
 }
