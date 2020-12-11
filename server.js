@@ -1,4 +1,4 @@
-const app = require("express")();
+const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const logger = require("morgan");
@@ -8,7 +8,7 @@ const io = require("socket.io")(http);
 const path = require('path')
 
 const PORT = process.env.PORT || 3001;
-
+const app = express()
 io.on("connection", (socket) => {
   console.log("USER CONNECTED");
   socket.on("message", ({ name, message }) => {
