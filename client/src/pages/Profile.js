@@ -64,6 +64,7 @@ function Profile(props) {
     try {
       const data = await __GetItemByOwner(sortingId)
       setUserItems(data.data)
+      console.log(data.data)
     } catch (error) {
       console.log(error)
     }
