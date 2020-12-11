@@ -1,4 +1,4 @@
-.card{
+/* .card{
     display: flex;
     flex-direction: column;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -65,4 +65,49 @@
 }
 
 
- 
+  */
+
+
+  /* .grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.7fr 0.3fr;
+    grid-template-rows: 0.7fr 1.3fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "proItemCon ."
+      ". .";
+
+  }
+  
+  .proItemCon {
+    width: 100%;
+    background: red;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "itemPic itemDets";
+    grid-area: proItemCon;
+
+  }
+  
+  .itemPic { 
+    display: flex; 
+    grid-area: itemPic;
+    margin:  0 auto;
+
+    }
+  
+  .itemDets { 
+    list-style-type: none;
+    grid-area: itemDets; 
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+   */
+

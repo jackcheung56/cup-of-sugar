@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+
 import { __GetItemByOwner } from '../services/ItemService'
 import { __GetBorrowByUserId } from '../services/BorrowService'
 import { __GetBorrowRequests } from '../services/BorrowService'
 import { __GetUser } from '../services/UserService'
 import BorrowCard from '../components/BorrowCard'
-import ItemCard from '../components/ItemCard'
+import ProfileItemCard from '../components/ProfileItemCard'
 import RequestCard from '../components/RequestCard'
 import '../styles/Profile.css'
 
@@ -14,31 +14,35 @@ function Profile(props) {
   const [userItems, setUserItems] = useState([])
   const [userInfo, setUserInfo] = useState([])
   const [requests, setRequests] = useState([])
-
   const [confirmation, setConfirmation] = useState(false)
 
-  console.log('TRACK CURRENT USER', props.currentUser)
+  const [navTab, setNavTab] = useState(false)
 
-  console.log('TRACK USER', props.user)
-
-  console.log('PARAMS', props.match.params.user_id)
-
-
-
-
+  // console.log('TRACK CURRENT USER', props.currentUser)
+  // console.log('TRACK USER', props.user)
+  // console.log('PARAMS', props.match.params.user_id)
   // const history = useHistory()
+
+
 
   const sortingId = props.currentUser.id
   const displayName = props.currentUser.name
   const profilePic = props.currentUser.picture
+  const profileEmail = props.currentUser.email
 
-  // console.log(userBorrows)
+  console.log(props.currentUser.email)
+
+
+  const switchDisplay = () => {
+    setNavTab(!navTab)
+  }
+
+
 
   const getBorrowRequests = async () => {
     try {
       const data = await __GetBorrowRequests(sortingId)
       let foo = data.data
-      // console.log(data)
       setRequests(foo)
     } catch (error) {
       console.log(error)
@@ -102,87 +106,115 @@ function Profile(props) {
 
 
   return (
-    <div>
+    <div className="profBackground">
 
-      <div className="topDisplay">
+      <div className="grid-containerC">
+
         <div className="userDisplay">
-          <img className="profilePic" src={profilePic}></img>
-          <h4 className="username">{displayName}</h4>
+
+          <div className="photoCon">
+
+            <img className="proPic" src={profilePic}></img>
+
+            <div className="proInfo">
+              <h4 className="userName">{displayName}</h4>
+              <p className="emailSub">{profileEmail}</p>
+              <button className="addBtn" onClick={handleClick}>Add Item</button>
+            </div>
+
+
+            <div className="notifiCon">
+              <h5 className="notiTitle">Notifications</h5>
+              {requests.map((borrow, index) => {
+                if (!borrow.accepted === true) {
+                  return (
+                    <div className="notificationBox">
+                      <RequestCard
+                        key={index}
+                        name={borrow.itemId}
+                        duration={borrow.duration}
+                        status={borrow.status}
+                        id={borrow.id}
+                        item_id={borrow.item_id}
+                        info={borrow.info}
+                        photo={borrow.photo}
+                        message={borrow.message}
+                        product={borrow.product}
+                        history={props.history}
+                        userInfo={userInfo}
+                        confirmation={confirmation}
+                        setConfirmation={setConfirmation}
+                      />
+                    </div>
+                  )
+                } else {
+                  <div></div>
+                }
+              })}
+            </div>
+
+          </div>
         </div>
 
-        <div className="notifications">
-          <h5>NOTIFICATIONS</h5>
-          <p></p>
-          {requests.map((borrow) => {
-            if (!borrow.accepted === true) {
-              return (
-                <RequestCard
-                  key={borrow.id}
-                  name={borrow.itemId}
-                  duration={borrow.duration}
-                  status={borrow.status}
-                  id={borrow.id}
-                  item_id={borrow.item_id}
-                  info={borrow.info}
-                  photo={borrow.photo}
-                  message={borrow.message}
-                  product={borrow.product}
-                  history={props.history}
-                  userInfo={userInfo}
-                  confirmation={confirmation}
-                  setConfirmation={setConfirmation}
-                />
-              )
-            } else {
-              <div></div>
+
+
+        <div className="itemCol">
+          <div className="naviBox">
+            {/* <div className="blank"></div> */}
+            <div className="navi">
+              <div className="bor">
+                <button className="borrowButton" onClick={switchDisplay}>Your Borrows</button>
+              </div>
+              <div className="ite">
+                <button className="itemButton" onClick={switchDisplay}>Your Stuff</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div className="bxBox">
+            {!navTab ?
+              <div className="thingOne">
+                {userItems.map((item) => (
+                  <ProfileItemCard
+                    key={item.ownerId}
+                    title={item.title}
+                    isBorrowed={item.isBorrowed}
+                    description={item.description}
+                    category={item.category}
+                    image={item.image}
+                    onClick={() => props.history.push(`/items/${item.id}`, item = { item })}
+                  />
+                ))}
+              </div>
+              :
+              <div className="thingOne">
+                {/* <h4>items you have borrowed</h4>
+                <p>no borrows</p> */}
+                {userBorrows.map((borrow, index) => {
+                  if (borrow.accepted === true) {
+                    return (
+                      <BorrowCard
+                        key={index}
+                        duration={borrow.duration}
+                        id={borrow.id}
+                        item_id={borrow.item_id}
+                        accepted={borrow.accepted}
+                        photo={borrow.photo}
+                        product={borrow.product}
+                        history={props.history}
+                      />
+                    )
+                  } else {
+                    <p></p>
+                  }
+                })}
+              </div>
             }
-          })}
+          </div>
+
+
         </div>
-      </div>
-
-      <div className="interface">
-
-        <div className="itemListU">
-          <h4>your items</h4>
-          <button onClick={handleClick}>Add Item</button>
-          {userItems.map((item) => (
-            <ItemCard
-              key={item.ownerId}
-              title={item.title}
-              isBorrowed={item.isBorrowed}
-              image={item.image}
-              onClick={() => props.history.push(`/items/${item.id}`, item = { item })}
-            />
-          ))}
-        </div>
-
-
-        <div className="borrowListU">
-          <h4>items you have borrowed</h4>
-          <p>no borrows</p>
-          {userBorrows.map((borrow) => {
-            if (borrow.accepted === true) {
-              return (
-                <BorrowCard
-                  key={borrow.index}
-                  duration={borrow.duration}
-                  id={borrow.id}
-                  item_id={borrow.item_id}
-                  accepted={borrow.accepted}
-                  photo={borrow.photo}
-                  product={borrow.product}
-                  history={props.history}
-                />
-              )
-            } else {
-              <p>no items have been borrowed</p>
-            }
-          })}
-        </div>
-
-
-
-
       </div>
     </div >
   );

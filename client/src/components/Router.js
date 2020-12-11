@@ -63,6 +63,7 @@ function Router(props) {
         const session = await __CheckSession();
         setAuthenticated(true);
         setCurrentUser(session.user);
+        console.log(session.user)
         history.push(`/users/${session.user.id}`);
       } catch (error) {
         throw error
@@ -90,6 +91,14 @@ function Router(props) {
       setCurrentUser(user);
       setUser(currentUser)
     };
+
+    const handleLogout = () => {   
+      setCurrentUser(null)
+      setEmail('')
+      setPassword('')
+      setAuthenticated(false)
+      localStorage.clear()
+    } 
   
 
     useEffect(() => {
@@ -109,6 +118,7 @@ function Router(props) {
   return (
     <div>
       <Navbar
+        logout={handleLogout}
         currentUser={currentUser}
         authenticated={authenticated}
         user={user}

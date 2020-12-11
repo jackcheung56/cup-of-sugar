@@ -16,7 +16,7 @@ function ItemDetailsPage(props) {
     const storedUserData = props.currentUser
 
 
-    console.log(detail.isBorrowed)
+    console.log('is borrowed', detail.isBorrowed)
 
 
 
@@ -40,7 +40,9 @@ function ItemDetailsPage(props) {
     console.log('stored user', storedUserData)
     console.log('stored item', storedItemData)
 
-    const loremIpsum = 'words show up'
+
+
+
 
     const formData = {
         user_id: loggedUser,
@@ -57,7 +59,6 @@ function ItemDetailsPage(props) {
         accepted: 'f',
         duration: duration,
         message: message,
-        // form: form,
     }
 
 
@@ -122,9 +123,6 @@ function ItemDetailsPage(props) {
         try {
             const borrowRequest = await __CreateBorrow(formData)
             console.log(borrowRequest)
-            //Need to Change state to reflect "request sent" (pop up)
-
-            //maybe better to send to a request send page... redirect timer
 
 
             setToggle(true)
@@ -205,51 +203,45 @@ function ItemDetailsPage(props) {
                         <p>Description: {detail.description}</p>
                         <div className="item status">
                             {detail.isBorrowed === true ?
-                                <p>item unavailabile </p>
+                                <p>unavailabile </p>
                                 :
                                 <p>availabile</p>
                             }
                         </div>
 
-
-
                     </div>
 
-                    <div className="reqDropDown">
-
-                        <div className="borrowDrop" onClick={handleFillout}>Request Borrow</div>
-
-                        <div className={formToggle ? "reqUI" : "hideUI"}>
-
-
-                            <input
-                                className={formToggle ? "reqUI" : "hideUI"}
-                                placeholder="Enter duration of borrow"
-                                name="duration"
-                                value={duration}
-                                onChange={durationInput}
-                            ></input>
-
-
-
-                            <input
-                                className={formToggle ? "reqUI" : "hideUI"}
-                                placeholder="Message for item owner"
-                                name="duration"
-                                value={message}
-                                onChange={messageInput}
-                            ></input>
-
-                            <button className={reqToggle ? 'reqVis' : 'reqGone'} onClick={handleClick}>Confirm</button>
-
+                    {!detail.isBorrowed === true ?
+                        <div className="reqDropDown">
+                            <div className="borrowDrop" onClick={handleFillout}>Request Borrow</div>
+                            <div className={formToggle ? "reqUI" : "hideUI"}>
+                                <input
+                                    className={formToggle ? "reqUI" : "hideUI"}
+                                    placeholder="Enter duration of borrow"
+                                    name="duration"
+                                    value={duration}
+                                    onChange={durationInput}
+                                ></input>
+                                <input
+                                    className={formToggle ? "reqUI" : "hideUI"}
+                                    placeholder="Message for item owner"
+                                    name="duration"
+                                    value={message}
+                                    onChange={messageInput}
+                                ></input>
+                                <button className={reqToggle ? 'reqVis' : 'reqGone'} onClick={handleClick}>Confirm</button>
+                            </div>
+                            <div className={toggle ? 'visible' : 'invisible'}>
+                                <p>REQUEST SENT</p>
+                                <button className={toggle ? 'visible' : 'invisible'} onClick={backButton}>return to browse?</button>
+                            </div>
                         </div>
+                        :
+                        <div></div>
+                    }
 
-                        <div className={toggle ? 'visible' : 'invisible'}>
-                            <p>REQUEST SENT</p>
-                            <button className={toggle ? 'visible' : 'invisible'} onClick={backButton}>return to browse?</button>
-                        </div>
 
-                    </div>
+
 
                 </div>
             }
