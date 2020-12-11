@@ -5,22 +5,14 @@ import { __GetUser } from "../services/UserService";
 import { Link } from 'react-router-dom'
 import '../styles/Details.css'
 function ItemDetailsPage(props) {
-
     const [detail, setDetail] = useState({})
     const [admin, setAdmin] = useState(false)
     const [ownerName, setOwnerName] = useState('')
     const itemOwner = props.location.state.item.owner_id
     const loggedUser = props.currentUser.id
-    console.log(props)
     const detailRoute = props.location.state.item.id
     const storedItemData = props.location.state.item
     const storedUserData = props.currentUser
-
-
-    //console.log('is borrowed', detail.isBorrowed)
-
-
-
     const [message, setMessage] = useState('')
     const [duration, setDuration] = useState('')
     //This data will be stored in the newly created Borrow
@@ -30,10 +22,6 @@ function ItemDetailsPage(props) {
     const [reqToggle, setReqToggle] = useState(false)
     const [formToggle, setFormToggle] = useState(false)
     //Stored user is the current user
-    // console.log(props)
-    // console.log('stored user', storedUserData)
-    // console.log('stored item', storedItemData)
-
     const formData = {
         user_id: loggedUser,
         contactId: detail.ownerId,
@@ -88,13 +76,9 @@ function ItemDetailsPage(props) {
         try {
             const borrowRequest = await __CreateBorrow(formData)
             console.log(borrowRequest)
-
-
             setToggle(true)
             setReqToggle(true)
             setFormToggle(!formToggle)
-
-
         } catch (error) {
             console.log(error)
         }
@@ -111,7 +95,6 @@ function ItemDetailsPage(props) {
         adminToggle()
         getItemOwnerName()
     }, [])
-
     const backButton = async (event) => {
         event.preventDefault()
         try {
@@ -123,12 +106,10 @@ function ItemDetailsPage(props) {
     return (
         <div className="detailsPage">
             <button className="bTn" onClick={backButton}>back</button>
-
             {admin === true ?
                 <div className="adminDisplay">
                     <Link to={{ pathname: `/items/update/${detail.id}`, detail: { detail } }}><button className="bTn">Edit</button></Link>
                     <Link to={{ pathname: `/items/delete/${detail.id}`, detail: { detail } }}><button className="bTn">Delete</button></Link>
-
                     <div className="detailsContainer">
                         <img src={detail.image}></img>
                         <h1>{detail.title}</h1>
@@ -156,14 +137,12 @@ function ItemDetailsPage(props) {
                         <p>Description: {detail.description}</p>
                         <div className="item status">
                             {detail.isBorrowed === true ?
-                                <p>unavailabile </p>
+                                <p className="avail">unavailabile </p>
                                 :
                                 <p>availabile</p>
                             }
                         </div>
-
                     </div>
-
                     {!detail.isBorrowed === true ?
                         <div className="reqDropDown">
                             <div className="borrowDrop" onClick={handleFillout}>Request Borrow</div>

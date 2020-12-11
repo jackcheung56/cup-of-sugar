@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-
 import { __GetItemByOwner } from '../services/ItemService'
 import { __GetBorrowByUserId } from '../services/BorrowService'
 import { __GetBorrowRequests } from '../services/BorrowService'
@@ -8,36 +7,20 @@ import BorrowCard from '../components/BorrowCard'
 import ProfileItemCard from '../components/ProfileItemCard'
 import RequestCard from '../components/RequestCard'
 import '../styles/Profile.css'
-
 function Profile(props) {
   const [userBorrows, setUserBorrows] = useState([])
   const [userItems, setUserItems] = useState([])
   const [userInfo, setUserInfo] = useState([])
   const [requests, setRequests] = useState([])
   const [confirmation, setConfirmation] = useState(false)
-
   const [navTab, setNavTab] = useState(false)
-
-  // console.log('TRACK CURRENT USER', props.currentUser)
-  // console.log('TRACK USER', props.user)
-  // console.log('PARAMS', props.match.params.user_id)
-  // const history = useHistory()
-
-
-
   const sortingId = props.currentUser.id
   const displayName = props.currentUser.name
   const profilePic = props.currentUser.picture
   const profileEmail = props.currentUser.email
-
-  console.log(props.currentUser.email)
-
-
   const switchDisplay = () => {
     setNavTab(!navTab)
   }
-
-
   const getBorrowRequests = async () => {
     try {
       const data = await __GetBorrowRequests(sortingId)
@@ -47,35 +30,26 @@ function Profile(props) {
       console.log(error)
     }
   }
-
   const getUserBorrows = async () => {
     try {
       const data = await __GetBorrowByUserId(sortingId)
       let list = (data.data)
-      console.log('this is user borrows', list)
       setUserBorrows(list)
     } catch (error) {
       console.log(error)
     }
   }
-
-
   //Items
-
   const getUserItems = async () => {
     try {
       const data = await __GetItemByOwner(sortingId)
-      console.log(data)
-      setUserItems(data)
+      setUserItems(data.data)
+      console.log(data.data)
     } catch (error) {
       console.log(error)
     }
   }
-
-
-  console.log(userItems)
   //User
-
   const getUserData = async () => {
     try {
       const data = await __GetUser(sortingId)
@@ -84,7 +58,6 @@ function Profile(props) {
       throw error
     }
   }
-
   const handleClick = async (event) => {
     event.preventDefault()
     try {
@@ -93,34 +66,23 @@ function Profile(props) {
       console.log(error)
     }
   }
-
-
   useEffect(() => {
     getUserBorrows()
     getUserItems()
     getUserData()
     getBorrowRequests()
   }, [])
-
-
   return (
     <div className="profBackground">
-
       <div className="grid-containerC">
-
         <div className="userDisplay">
-
           <div className="photoCon">
-
             <img className="proPic" src={profilePic}></img>
-
             <div className="proInfo">
               <h4 className="userName">{displayName}</h4>
               <p className="emailSub">{profileEmail}</p>
               <button className="addBtn" onClick={handleClick}>Add Item</button>
             </div>
-
-
             <div className="notifiCon">
               <h5 className="notiTitle">Notifications</h5>
               {requests.map((borrow, index) => {
@@ -150,15 +112,10 @@ function Profile(props) {
                 }
               })}
             </div>
-
           </div>
         </div>
-
-
-
         <div className="itemCol">
           <div className="naviBox">
-            {/* <div className="blank"></div> */}
             <div className="navi">
               <div className="bor">
                 <button className="borrowButton" onClick={switchDisplay}>Your Borrows</button>
@@ -168,8 +125,6 @@ function Profile(props) {
               </div>
             </div>
           </div>
-
-
           <div className="bxBox">
             {!navTab ?
               <div className="thingOne">
@@ -187,8 +142,6 @@ function Profile(props) {
               </div>
               :
               <div className="thingOne">
-                {/* <h4>items you have borrowed</h4>
-                <p>no borrows</p> */}
                 {userBorrows.map((borrow, index) => {
                   if (borrow.accepted === true) {
                     return (
@@ -211,17 +164,9 @@ function Profile(props) {
               </div>
             }
           </div>
-
-
         </div>
       </div>
     </div >
   );
 }
-
 export default Profile;
-
-
-
-
-

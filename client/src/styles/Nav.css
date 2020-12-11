@@ -1,86 +1,87 @@
 html {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    width: 100%;
-    max-height: 100vh;
-    margin-top: 60px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    
-  }
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 100%;
+  max-height: 100vh;
+  margin-top: 60px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 
-  head{
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
+head {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 
-  .navbox{
-    z-index: 10;
-  
-    justify-content: space-around;
+.navbox {
+  z-index: 10;
 
-    position: fixed;
-    display: inline-block;
-    align-items: center;
+  justify-content: space-around;
 
-    
-    width: 100%;
-    top: 0;
-    left: 0;
+  position: fixed;
+  display: inline-block;
+  align-items: center;
 
-    background: rgb(32,137,240);
-    
-    height: 60px;
+  width: 100%;
+  top: 0;
+  left: 0;
 
+  background: rgb(32, 137, 240);
 
-    overflow: hidden;
-    
-  }
+  height: 60px;
 
+  overflow: hidden;
+}
+.nav-links {
+  padding-top: 15px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
 
-  .nav-links{
-    padding-top: 15px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-    
-  }
+ul {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
 
-  ul{
-    margin: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
 
+a {
+  /* width: 605px; */
+  justify-content: center;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  opacity: 0.25;
+}
 
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
 
-  
-  .block{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-  }
-  
-  a {
-    /* width: 605px; */
-    justify-content: center;
-    list-style: none;
-    text-decoration: none;
-    color: white;
-    opacity: 0.25;
+a {
+  /* width: 605px; */
+  justify-content: center;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  opacity: 0.25;
+}
 
-  }
-
-  .navLogo{
-    padding-right: 40vw;
-    width: 30px;
-    height: 30px;
-    
-    
-
-
-  }
+.navLogo {
+  padding-right: 40vw;
+  width: 30px;
+  height: 30px;
+}

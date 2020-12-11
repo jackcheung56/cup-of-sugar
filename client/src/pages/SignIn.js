@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import { __LoginUser } from "../services/UserService";
 import '../styles/Form.css'
-
 const SignIn = (props) => {
   const [tempEmail, setTempEmail] = useState("");
   const [tempPassword, setTempPassword] = useState("");
-
   const emailInput = (event) => {
     event.preventDefault();
     setTempEmail(event.target.value);
   };
-
   const passwordInput = (event) => {
     event.preventDefault();
     setTempPassword(event.target.value);
   };
-
   const logHandler = async (event) => {
     event.preventDefault();
     try {
@@ -23,23 +19,15 @@ const SignIn = (props) => {
         email: tempEmail,
         password: tempPassword,
       };
-
-      // console.log(tempPassword, tempEmail);
       const signIn = await __LoginUser(userInfo);
       props.toggleAuthenticated(true, signIn.user.id);
-      // console.log(props.history);
       props.setAuthenticated(true);
-      // console.log(props.user);
       props.setCurrentUser(signIn.user);
       props.history.push(`/users/${signIn.user.id}`);
-
-      // console.log(signIn.user.id);
-      // console.log(props.toggleAuthenticated);
     } catch (error) {
       console.log(error);
     }
   };
-
   return !props.authenticated && !props.currentUser ? (
     <div className="template">
       <form className="outerForm">
@@ -69,5 +57,4 @@ const SignIn = (props) => {
     <h1>You're already signed in</h1>
   );
 }
-
 export default SignIn;
