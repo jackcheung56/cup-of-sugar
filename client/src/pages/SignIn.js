@@ -19,15 +19,7 @@ const SignIn = (props) => {
         email: tempEmail,
         password: tempPassword,
       };
-      
-      const signIn = await __LoginUser(userInfo);
-      props.toggleAuthenticated(true, signIn.user.id);
-
-      props.setAuthenticated(true);
-
-      props.setCurrentUser(signIn.user);
-      props.history.push(`/users/${signIn.user.id}`);
-
+           
       const signIn = await __LoginUser(userInfo);
       props.toggleAuthenticated(true, signIn.user.id);
       props.setAuthenticated(true);
