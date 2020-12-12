@@ -120,9 +120,9 @@ function ItemDetailsPage(props) {
                         <p>Description: {detail.description}</p>
                         <div className="item status">
                             {detail.isBorrowed === true ?
-                                <p>item unavailabile </p>
+                                <p className="avail">item unavailabile </p>
                                 :
-                                <p>availabile</p>
+                                <p className="avail">availabile</p>
                             }
                         </div>
                     </div>
@@ -140,7 +140,7 @@ function ItemDetailsPage(props) {
                             {detail.isBorrowed === true ?
                                 <p className="avail">unavailabile </p>
                                 :
-                                <p>availabile</p>
+                                <p className="avail">availabile</p>
                             }
                         </div>
                     </div>
