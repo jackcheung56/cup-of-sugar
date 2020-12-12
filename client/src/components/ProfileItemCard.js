@@ -16,13 +16,6 @@ const ProfileItemCard = ({ onClick, title, image, condition, category, descripti
                     <p className="tagDetails">{category}</p>
                     <h3 className="itemTitle">{title}</h3>
                     <p className="itemDescription">{description}</p>
-                    {/* <div className="itemStatus">
-                            {isBorrowed === true ?
-                                <p className="stat">Unavailabile </p>
-                                :
-                                <p className="stat">Availabile</p>
-                            }
-                        </div> */}
                 </ul>
 
             </div>
