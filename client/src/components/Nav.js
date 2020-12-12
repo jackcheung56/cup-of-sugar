@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/Nav.css";
 import Logo from "../assets/coslogo.png";
 
-function NavBar({ authenticated, currentUser, logout }) {
+function Nav({ authenticated, currentUser, logout }) {
   return !authenticated && !currentUser ? (
     <div className="navbox">
       <nav>
@@ -47,4 +47,4 @@ function NavBar({ authenticated, currentUser, logout }) {
   );
 }
 
-export default NavBar;
+export default Nav;
