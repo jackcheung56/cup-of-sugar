@@ -6,7 +6,7 @@ import { __GetItems } from "../services/ItemService";
 import { __GetUser } from '../services/UserService'
 import { __CheckSession } from "../services/UserService";
 //Components
-import Navbar from "./NavBar";
+import Nav from "./Nav";
 //Pages
 import Home from "../pages/Home";
 import LandingPage from "../pages/LandingPage";
@@ -84,12 +84,12 @@ function Router(props) {
     }, []);
   return (
     <div>
-      <Navbar
+      <Nav
         logout={handleLogout}
         currentUser={currentUser}
         authenticated={authenticated}
         user={user}
-      ></Navbar>
+      ></Nav>
       {pageLoading ? (
         <h3>*</h3>
       ) : (
