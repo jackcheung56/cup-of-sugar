@@ -39,7 +39,7 @@ function Nav({ authenticated, currentUser, logout }) {
           </Link>
 
           <Link to="/" onClick={(event) => logout(event)}>
-            <li>Sign Out</li>
+            <li>Logout</li>
           </Link>
         </ul>
       </nav>
