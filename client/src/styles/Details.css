@@ -76,7 +76,7 @@
   border: none;
   color:white;
   background-color: rgb(32,137,240);
-  opacity: 100% !important;
+  /* opacity: 100% !important; */
   margin: 2px;
 }
 
