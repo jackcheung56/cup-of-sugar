@@ -8,10 +8,13 @@ html {
     overflow-y: scroll;
     overflow-x: hidden;
   }
+
   head{
     overflow-y: scroll;
     overflow-x: hidden;
   }
+
+  
   .navbox{
     z-index: 10;
     justify-content: space-around;
@@ -25,6 +28,8 @@ html {
     height: 60px;
     overflow: hidden;
   }
+
+
   .nav-links{
     padding-top: 15px;
     margin: 0 auto;
@@ -32,25 +37,34 @@ html {
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    opacity: 0.25;
+    opacity: 25%;
+
   }
+
+
   ul{
     margin: 0;
     padding-left: 0;
     padding-right: 0;
   }
+
+
   .block{
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
   }
+  
   a {
     justify-content: center;
     list-style: none;
     text-decoration: none;
     color: white;
   }
+
+
+
   .navLogo{
     padding-right: 40vw;
     width: 30px;

@@ -5,7 +5,6 @@ const UserCard = ({ onClick, name}) => (
 
     <div className="card" onClick={onClick}>
         <div>
-            {/* <img src={image}></img> */}
         </div>
         <div>
             <h3>{name}</h3>
