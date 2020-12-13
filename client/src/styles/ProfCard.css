@@ -81,7 +81,7 @@
       display: flex;
       justify-content: center;
       align-items: right;
-      font-size: 14px;
+      font-size: 13px;
       background:  rgb(226, 229, 231);
       border-radius: 30px;
       margin: 0;
@@ -119,6 +119,7 @@
       list-style: none;
       font-size: 1.75vw;
       font-weight: 600;
+      margin-top: 10px;
       margin-bottom: 6px;
     }
     
