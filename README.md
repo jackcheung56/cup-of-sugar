@@ -58,8 +58,11 @@ You can track the progress of Cup of Sugar [here](https://trello.com/b/BRWvHTLO/
 
 ### Wireframe
 
+**Landing Page**
+![mockup](https://i.imgur.com/bXlU5Mp.png)
+
 **User Profile**
-![mockup](https://i.imgur.com/U3M0m4b.png)
+![mockup](https://i.imgur.com/tvqyEaw.png)
 
 ---
 
