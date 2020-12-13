@@ -46,7 +46,6 @@ function Router(props) {
         const session = await __CheckSession();
         setAuthenticated(true);
         setCurrentUser(session.user);
-        console.log(session.user)
         history.push(`/users/${session.user.id}`);
       } catch (error) {
         throw error

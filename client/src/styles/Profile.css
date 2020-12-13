@@ -94,7 +94,7 @@
 }
 .itemCol {
   padding: 20px;
-  padding-right: 32px;
+  padding-right: 35px;
 }
 .naviBox {
   height: 150px ;
@@ -146,26 +146,7 @@
   margin-bottom: 20px;
   margin-right: 10px;
 }
-.borrowButton { 
-  max-height: 27px;
-  z-index: 5;
-  grid-area: borrowButton;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-  border-radius: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-  background-color: rgb(32,137,240);
-  color: white;
-	cursor:pointer;
-	font-size:17px;
-  text-decoration:none;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 10px;
-}
+
 .ite { 
   height: 160px;
   display: grid;
@@ -177,7 +158,7 @@
     "itemButton";
   grid-area: ite;
 }
-.itemButton { grid-area: itemButton; }
+
 .bxBox {
   display: grid;
   grid-template-columns: 1fr;
@@ -189,28 +170,47 @@
     "thingThree"
     "thingFour";
   grid-area: bxBox;
+
+  width: 100%;
 }
+
+.itemButton { 
+  grid-area: itemButton; 
+  background-color: rgb(218, 227, 236);
+}
+
+.borrowButton { 
+  max-height: 27px;
+  z-index: 5;
+  grid-area: borrowButton;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  border-radius: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: rgb(218, 227, 236);
+  color: white;
+	cursor:pointer;
+	font-size:17px;
+  text-decoration:none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
 .thingOne { 
-  box-shadow: 1px 1px 8px 1px #e0e0e0;
   grid-area: thingOne;
-  border-radius: 20px;
-  width: auto;
+
 }
 .thingTwo { 
-  box-shadow: 1px 1px 8px 1px #e0e0e0;
   grid-area: thingTwo;
-  border-radius: 20px;
-  width: auto;
 }
 .thingThree { 
-  box-shadow: 1px 1px 8px 1px #e0e0e0;
   grid-area: thingThree;
-  border-radius: 20px;
-  width: auto;
+
 }
 .thingFour { 
-  box-shadow: 1px 1px 8px 1px #e0e0e0;
   grid-area: thingFour;
-  border-radius: 20px;
-  width: auto;
 }

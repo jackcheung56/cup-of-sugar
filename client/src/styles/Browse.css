@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .browsePageTop{
     display: flex;
     align-items: center;
@@ -11,9 +12,11 @@
     flex-direction: column;
     width: 90%;
 }
+
 .pageTitle{
     margin: 10px;
 }
+
 .catButtons {
     display: flex;
     align-items: center;
@@ -23,6 +26,7 @@
     border: none;
     cursor: pointer
   }
+  
 .btns{
     background:rgba(33,141,244);
     border: none;
@@ -31,13 +35,13 @@
     padding: 7px;
     margin: 3px;
 }
-.itemList {
-    height: 50vh;
-}
+
 .card{
     cursor: pointer;
     margin: 30px;
+    width: 220px;
 }
+
 .greyLine {
     border: 0;
     height: 5px;
@@ -47,3 +51,18 @@
     background: rgb(203, 207, 210);
     margin: 30px;
 }
+
+
+.itemList  {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "sqOne sqTwo sqThree"
+      "sqFour sqFive sqSix"
+      "sqSeven sqEight sqNine";
+  }
+  
+
+

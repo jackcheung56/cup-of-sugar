@@ -4,18 +4,8 @@ import { __UpdateItem } from "../services/ItemService";
 import { __DeleteBorrow } from "../services/BorrowService";
 import "../styles/Notification.css";
 
-const RequestCard = ({
-  status,
-  duration,
-  id,
-  history,
-  message,
-  product,
-  userInfo,
-  confirmation,
-  setConfirmation,
-  item_id,
-}) => {
+const RequestCard = ({ duration, id, history, message, product, userInfo, confirmation, setConfirmation, item_id,}) => {
+  
   const userRoute = userInfo.id;
   const [response, setResponse] = useState("");
   const [layout, setLayout] = useState(false);
@@ -57,6 +47,7 @@ const RequestCard = ({
     event.preventDefault();
     try {
       const del = await __DeleteBorrow(id);
+
       history.push(`/users/${userRoute}`);
     } catch (error) {
       console.log(error);
