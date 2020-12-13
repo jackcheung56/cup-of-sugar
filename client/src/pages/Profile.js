@@ -45,7 +45,6 @@ function Profile(props) {
     try {
       const data = await __GetItemByOwner(sortingId)
       setUserItems(data.data)
-      console.log(data.data)
     } catch (error) {
       console.log(error)
     }
@@ -138,6 +137,8 @@ function Profile(props) {
                     description={item.description}
                     category={item.category}
                     image={item.image}
+                    condition={item.condition}
+                    ownerId={item.ownerId}
                     onClick={() => props.history.push(`/items/${item.id}`, item = { item })}
                   />
                 ))}

@@ -110,6 +110,7 @@ function BrowsePage(props) {
                 {browseItems.map((item, idx) => (
                     <ItemCard
                     //model attributes go here
+                        className="sq"
                         id={item.id}
                         key={idx}
                         image={item.image}

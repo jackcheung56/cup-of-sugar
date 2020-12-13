@@ -8,7 +8,7 @@ const ItemCard = ({ onClick, title, image, condition, category, description, isB
 
             <div>
                 <div>
-                    <img className="itemPhoto" src={image}></img>
+                    <img className="itemPhoto" src={image} alt="item"></img>
                 </div>
             </div>
 

@@ -1,26 +1,148 @@
-  .proItemCon {
-      padding: 20px;
-      max-width: 50%;
+    .grid-container-profile {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        "item-container";
+      box-shadow: 1px 1px 8px 1px #e0e0e0;
+      margin-top: 12px;
+    }
+    
+    .item-container {
+      display: grid;
+      grid-template-columns: .5fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        "leftSide rightSide";
+      grid-area: item-container;
+      padding: 15px;
+    }
+    
+    .leftSide { 
+      grid-area: leftSide; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .itemImage{
+      width: 100%;
+      border-radius: 10px;
+    }
+    
+    .rightSide {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.3fr 2fr 0.5fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        "top"
+        "text"
+        "bottom";
+      grid-area: rightSide;
+      padding-left: 20px;
+    }
+    
+    .top {
+      display: grid;
+      grid-template-columns: 6fr .75fr;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        "quadOne quadTwo";
+      grid-area: top;
+      height: 25px;
+    }
+
+    .quadOne { 
+      grid-area: quadOne; 
+      margin: 0;
+      width: auto;
+      display: flex;
+      justify-content:flex-end;
+      align-items: right;
+    }
+
+    
+    .quadTwo { 
+      grid-area: quadTwo; 
+      margin: 0;
+      width: auto;
+      margin-left: 10px;
+      display: flex;
+      justify-content:flex-end;
+      align-items: right;
+    }
+
+
+    .categoryTag {
+      display: flex;
+      justify-content: center;
+      align-items: right;
+      font-size: 14px;
+      background:  rgb(226, 229, 231);
+      border-radius: 30px;
+      margin: 0;
+      padding: 5px 10px 5px 10px ;
+    }
+    
+    .tagText{
+      margin: 0;
+    }
+
+    .bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        "quadThree quadFour";
+      grid-area: bottom;
+    }
+    
+    .quadFour { 
+      grid-area: quadFour;
+    }
+    
+    .quadThree { 
+      grid-area: quadThree; 
+    }
+    
+    .text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .tOne { 
+      list-style: none;
+      font-size: 1.75vw;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    
+    .tTwo { 
+      list-style: none;
+      color: rgb(167, 177, 183);
+      font-size: 14px;
+      font-weight: 300;
+      margin-top: 6px;
       
-  }
-
-  .itemPic { 
-      grid-area: itemPic; 
     }
-  .itemDets { 
-      grid-area: itemDets; 
+    
+    .tThree { 
+      list-style: none;
+      font-size: 14px;
+      margin-top: 1px;
+      color: rgb(118, 125, 130);
     }
 
-
-
-    .pic{
-        width: 100%;
-        height: 100%;
-        border-radius: 20px 0px 0px 20px;
-        margin: 0 auto;
+    .tFour { 
+      list-style: none;
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      color: rgb(118, 125, 130);
     }
-  
-  .itemDets {
-      border-radius: 20px;
- 
-    }
+    
