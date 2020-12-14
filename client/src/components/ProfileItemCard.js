@@ -24,7 +24,7 @@ const ProfileItemCard = ({ onClick, title, image, condition, category, descripti
 
 
 
-            <div className="item-container">
+            <div className="item-containerP">
                 <div className="leftSide"><img className="itemImage" src={image} alt="item"></img></div>
 
                 <div className="rightSide">

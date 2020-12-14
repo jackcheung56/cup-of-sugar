@@ -1,15 +1,9 @@
     .grid-container-profile {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-      gap: 0px 0px;
-      grid-template-areas:
-        "item-container";
       box-shadow: 1px 1px 8px 1px #e0e0e0;
       margin-top: 12px;
     }
     
-    .item-container {
+    .item-containerP {
       display: grid;
       grid-template-columns: .5fr 1fr;
       grid-template-rows: 1fr;
@@ -28,8 +22,13 @@
     }
 
     .itemImage{
-      width: 100%;
-      border-radius: 10px;
+      background: 50% 50% no-repeat;
+      object-fit:cover;
+      background-size:cover;
+      background-position:center;
+      overflow: hidden;
+      width: 20vw;
+      height: 20vw;
     }
     
     .rightSide {
