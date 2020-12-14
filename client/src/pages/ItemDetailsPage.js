@@ -113,7 +113,6 @@ function ItemDetailsPage(props) {
                         <div className="adminUIButtons">
                             <Link to={{ pathname: `/items/update/${detail.id}`, detail: { detail } }}><button className="adminBtn">Edit</button></Link>
                             <Link to={{ pathname: `/items/delete/${detail.id}`, detail: { detail } }}><button className="adminBtn">Delete</button></Link>
-
                         </div>
                     </div>
                     <div className="detailsContainer">
@@ -135,7 +134,7 @@ function ItemDetailsPage(props) {
                 :
                 <div className="normalDisplay">
                     <div className="uiDisplayButtons">
-                        <button className="bTn" onClick={backButton}>back</button>
+                        <button className="backBtn" onClick={backButton}>back</button>
                     </div>
                     <div className="detailsContainer">
                         <img className="detailsPhoto" src={detail.image}></img>
