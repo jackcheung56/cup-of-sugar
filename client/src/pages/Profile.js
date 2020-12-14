@@ -128,7 +128,7 @@ function Profile(props) {
           </div>
           <div className="bxBox">
             {!navTab ?
-              <div className="thingOne">
+              <div className="itemsDisplay">
                 {userItems.map((item) => (
                   <ProfileItemCard
                     key={item.ownerId}
@@ -144,7 +144,7 @@ function Profile(props) {
                 ))}
               </div>
               :
-              <div className="thingOne">
+              <div className="borrowsDisplay">
                 {userBorrows.map((borrow, index) => {
                   if (borrow.accepted === true) {
                     return (
@@ -161,7 +161,7 @@ function Profile(props) {
                       />
                     )
                   } else {
-                    <p></p>
+                    <p>no borrows</p>
                   }
                 })}
               </div>

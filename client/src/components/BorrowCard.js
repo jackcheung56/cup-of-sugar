@@ -5,23 +5,23 @@ const BorrowCard = ({ id, accepted, duration, photo, product }) => {
     return (
         <div className="grid-container-borrows">
 
-            <div className="item-container">
+            <div className="item-containerB">
                 <div className="leftSide"><img className="itemImage" src={photo} alt="borrow item"></img></div>
 
 
 
                 <div className="rightSide">
-                    <div className="top">
-                        <div className="quadTwo">
-                            <div className="categoryTag">
-                                <p className="tagText">Borrowed</p>
+                    <div className="topB">
+                        <div className="quadTwoB">
+                            <div className="categoryTagB">
+                                <p className="tagTextB">Borrowed</p>
                             </div>
 
                         </div>
-                        <div className="quadOne"></div>
+                        <div className="quadOneB"></div>
                     </div>
 
-                    <div className="bottom"></div>
+                    <div className="bottomB"></div>
 
                     <ul className="text">
                         <li className="tOneB">{product}</li>
@@ -42,14 +42,5 @@ const BorrowCard = ({ id, accepted, duration, photo, product }) => {
     )
 }
 export default BorrowCard
-
-
-// <div>
-// <h3>{product}</h3>
-// <h3>{duration}</h3>
-// <h3>{id}</h3>
-// <h3>{accepted}</h3>
-// </div>
-
 
 

@@ -22,7 +22,7 @@ function ItemDetailsPage(props) {
     const [reqToggle, setReqToggle] = useState(false)
     const [formToggle, setFormToggle] = useState(false)
     //Stored user is the current user
-    
+
     const formData = {
         user_id: loggedUser,
         contactId: detail.ownerId,
@@ -106,13 +106,18 @@ function ItemDetailsPage(props) {
     }
     return (
         <div className="detailsPage">
-            <button className="bTn" onClick={backButton}>back</button>
             {admin === true ?
                 <div className="adminDisplay">
-                    <Link to={{ pathname: `/items/update/${detail.id}`, detail: { detail } }}><button className="bTn">Edit</button></Link>
-                    <Link to={{ pathname: `/items/delete/${detail.id}`, detail: { detail } }}><button className="bTn">Delete</button></Link>
+                    <div className="uiDisplayButtons">
+                        <button className="backBtn" onClick={backButton}>back</button>
+                        <div className="adminUIButtons">
+                            <Link to={{ pathname: `/items/update/${detail.id}`, detail: { detail } }}><button className="adminBtn">Edit</button></Link>
+                            <Link to={{ pathname: `/items/delete/${detail.id}`, detail: { detail } }}><button className="adminBtn">Delete</button></Link>
+
+                        </div>
+                    </div>
                     <div className="detailsContainer">
-                        <img src={detail.image}></img>
+                        <img className="detailsPhoto" src={detail.image}></img>
                         <h1>{detail.title}</h1>
                         <p>Owner: {ownerName}</p>
                         <p>Category: {detail.category}</p>
@@ -129,8 +134,11 @@ function ItemDetailsPage(props) {
                 </div>
                 :
                 <div className="normalDisplay">
+                    <div className="uiDisplayButtons">
+                        <button className="bTn" onClick={backButton}>back</button>
+                    </div>
                     <div className="detailsContainer">
-                        <img src={detail.image}></img>
+                        <img className="detailsPhoto" src={detail.image}></img>
                         <h1>{detail.title}</h1>
                         <p>Owner: {ownerName}</p>
                         <p>Category: {detail.category}</p>

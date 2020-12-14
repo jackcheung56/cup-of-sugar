@@ -95,6 +95,7 @@
 .itemCol {
   padding: 20px;
   padding-right: 35px;
+  height: auto;
 }
 .naviBox {
   height: 150px ;
@@ -160,18 +161,8 @@
 }
 
 .bxBox {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.6fr 0.6fr 0.6fr 0.6fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "thingOne"
-    "thingTwo"
-    "thingThree"
-    "thingFour";
-  grid-area: bxBox;
-
   width: 100%;
+  height: auto;
 }
 
 .itemButton { 
@@ -200,17 +191,3 @@
   margin-right: 10px;
 }
 
-.thingOne { 
-  grid-area: thingOne;
-
-}
-.thingTwo { 
-  grid-area: thingTwo;
-}
-.thingThree { 
-  grid-area: thingThree;
-
-}
-.thingFour { 
-  grid-area: thingFour;
-}
