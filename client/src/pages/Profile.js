@@ -18,7 +18,7 @@ function Profile(props) {
   const displayName = props.currentUser.name
   const profilePic = props.currentUser.picture
   const profileEmail = props.currentUser.email
-  
+
   const switchDisplay = () => {
     setNavTab(!navTab)
   }
@@ -128,42 +128,49 @@ function Profile(props) {
           </div>
           <div className="bxBox">
             {!navTab ?
-              <div className="itemsDisplay">
-                {userItems.map((item) => (
-                  <ProfileItemCard
-                    key={item.ownerId}
-                    title={item.title}
-                    isBorrowed={item.isBorrowed}
-                    description={item.description}
-                    category={item.category}
-                    image={item.image}
-                    condition={item.condition}
-                    ownerId={item.ownerId}
-                    onClick={() => props.history.push(`/items/${item.id}`, item = { item })}
-                  />
-                ))}
+              <div>
+                <div className="itemsDisplay">
+                  {userItems.map((item) => (
+                    <ProfileItemCard
+                      key={item.ownerId}
+                      title={item.title}
+                      isBorrowed={item.isBorrowed}
+                      description={item.description}
+                      category={item.category}
+                      image={item.image}
+                      condition={item.condition}
+                      ownerId={item.ownerId}
+                      onClick={() => props.history.push(`/items/${item.id}`, item = { item })}
+                    />
+                  ))}
+                </div>
+                <div className="borrowsDisplay"></div>
               </div>
+
               :
-              <div className="borrowsDisplay">
-                {userBorrows.map((borrow, index) => {
-                  if (borrow.accepted === true) {
-                    return (
-                      <BorrowCard
-                        className="bCard"
-                        key={index}
-                        duration={borrow.duration}
-                        id={borrow.id}
-                        item_id={borrow.item_id}
-                        accepted={borrow.accepted}
-                        photo={borrow.photo}
-                        product={borrow.product}
-                        history={props.history}
-                      />
-                    )
-                  } else {
-                    <p>no borrows</p>
-                  }
-                })}
+              <div>
+                <div className="itemsDisplay"></div>
+                <div className="borrowsDisplay">
+                  {userBorrows.map((borrow, index) => {
+                    if (borrow.accepted === true) {
+                      return (
+                        <BorrowCard
+                          className="bCard"
+                          key={index}
+                          duration={borrow.duration}
+                          id={borrow.id}
+                          item_id={borrow.item_id}
+                          accepted={borrow.accepted}
+                          photo={borrow.photo}
+                          product={borrow.product}
+                          history={props.history}
+                        />
+                      )
+                    } else {
+                      <p>no borrows</p>
+                    }
+                  })}
+                </div>
               </div>
             }
           </div>
