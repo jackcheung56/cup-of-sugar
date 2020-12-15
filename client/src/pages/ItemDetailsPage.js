@@ -4,6 +4,7 @@ import { __CreateBorrow } from '../services/BorrowService'
 import { __GetUser } from "../services/UserService";
 import { Link } from 'react-router-dom'
 import '../styles/Details.css'
+
 function ItemDetailsPage(props) {
     const [detail, setDetail] = useState({})
     const [admin, setAdmin] = useState(false)
@@ -173,8 +174,8 @@ function ItemDetailsPage(props) {
                                 <button className={reqToggle ? 'reqVis' : 'reqGone'} onClick={handleClick}>Confirm</button>
                             </div>
                             <div className={toggle ? 'visible' : 'invisible'}>
-                                <p className="responseMsg">REQUEST SENT</p>
-                                <button className={toggle ? 'visible' : 'invisible'} onClick={backButton}>return to browse?</button>
+                                <p className="responseMsg">Request Sent!</p>
+                                <button className={toggle ? 'visible' : 'invisible'} onClick={backButton}>Return to Browse?</button>
                             </div>
                         </div>
                         :

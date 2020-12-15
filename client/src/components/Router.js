@@ -19,6 +19,7 @@ import AddItemPage from "../pages/AddItemPage";
 import EditItemPage from "../pages/EditItemPage";
 import DeleteItemPage from "../pages/DeleteItemPage";
 import ItemDetailsPage from "../pages/ItemDetailsPage";
+
 function Router(props) {
   //State
   const [item, setItem] = useState([]);
@@ -27,10 +28,10 @@ function Router(props) {
   const [password, setPassword] = useState("");
   const [borrow, setBorrow] = useState([]);
   const history = useHistory();
-  // give each data it's on state
   const [authenticated, setAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [pageLoading, setPageLoading] = useState(false);
+
   const getAllItems = async () => {
     try {
       const data = await __GetItems();
@@ -39,6 +40,7 @@ function Router(props) {
       console.log(error);
     }
   };
+
   const verifyTokenValid = async () => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -52,6 +54,7 @@ function Router(props) {
       }
     }
   };
+
   const getUserBackup = async () => {
     if (currentUser) {
       try {
@@ -62,11 +65,13 @@ function Router(props) {
       }
     }
   }
+
   const toggleAuthenticated = (value, user, currentUser) => {
     setAuthenticated(value);
     setCurrentUser(user);
     setUser(currentUser)
   };
+
   const handleLogout = () => {
     setCurrentUser(null)
     setEmail('')
@@ -74,12 +79,14 @@ function Router(props) {
     setAuthenticated(false)
     localStorage.clear()
   }
+
   useEffect(() => {
     getAllItems();
     verifyTokenValid();
     setPageLoading(false);
     getUserBackup()
   }, []);
+  
   return (
     <div>
       <Nav

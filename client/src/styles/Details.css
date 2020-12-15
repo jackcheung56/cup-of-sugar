@@ -26,10 +26,8 @@
   margin: 0 auto;
   height: auto;
   border-top: 1px solid lightgrey;
-
 }
  
-
  .detailsPhoto{
    margin-top: 20px;
    margin-bottom: 20px;
@@ -42,11 +40,18 @@
     padding-left: 10px;
     border-radius: 20px;
   }
+
+  button.visible{
+    background-color: rgb(32,137,240);
+    color: white;
+
+  }
   .invisible{
     color: transparent;
     background-color: transparent;
     border: 0;
   }
+
   .reqGone {
       color: black;
       border-radius: 10px;
@@ -70,6 +75,7 @@
     font-size: 14px;
     margin-left: 0;
     margin-right: 0;
+    font-size: 14pt;
   }
  
   .borrowDrop{
@@ -92,6 +98,7 @@
     margin-bottom: 5px;
     box-shadow: 1px 1px 8px 1px #e0e0e0;
     width: 600px;
+    border-radius: 30px;
   }
 
   .reqUI input {
@@ -105,12 +112,12 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    background: rgb(226, 229, 231);
+    background: rgb(233, 237, 239);
     margin: 5px;
     width: 600px;
     height: 50px;
-
   }
+
   .hideUI{
     display: flex;
     flex-direction: column;
