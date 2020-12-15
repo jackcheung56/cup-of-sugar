@@ -1,7 +1,33 @@
  .detailsPage{
    padding-right: 12px;
    padding-left: 12px;
+   display: flex;
+   flex-direction: column;
  }
+
+ .normalDisplay{
+   display: flex;
+   flex-direction: column;
+ }
+
+ .detailsContainer{
+   width: 50%;
+   height: 100%;
+   margin-right: 0;
+   margin-left: 0;
+ }
+
+ .reqDropDown{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: auto;
+  border-top: 1px solid lightgrey;
+
+}
  
 
  .detailsPhoto{
@@ -11,6 +37,10 @@
  
  .visible {
     color: black;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 20px;
   }
   .invisible{
     color: transparent;
@@ -21,6 +51,9 @@
       color: black;
       border-radius: 10px;
       width: 200px;
+      background-color: rgb(32,137,240);
+      color: white;
+      width: 100%;
   }
   .reqVis{
     background-color: transparent;
@@ -28,12 +61,16 @@
     color: transparent;
     border: 0;
   }
-  .reqDropDown{
+
+  .responseMsg{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    font-size: 14px;
+    margin-left: 0;
+    margin-right: 0;
   }
+ 
   .borrowDrop{
     display: flex;
     align-items: center;
@@ -46,16 +83,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgb(32,137,240);
-    color:#ffffff;
-    border-radius: 30px;
+    color:rgb(32,137,240);
     cursor:pointer;
     font-size:17px;
     text-decoration:none;
     margin-top: 20px;
     margin-bottom: 5px;
     box-shadow: 1px 1px 8px 1px #e0e0e0;
+    width: 490px;
   }
+
   .reqUI input {
     border-radius: 10px;
     display: flex;
@@ -68,7 +105,9 @@
     cursor: pointer;
     outline: inherit;
     background: rgb(226, 229, 231);
-    margin: 5px
+    margin: 5px;
+    width: 500px;
+    height: 50px;
   }
   .hideUI{
     display: flex;
@@ -103,6 +142,7 @@
   text-decoration:none;
   margin-top: 20px;
   margin-bottom: 5px;
+  
 }
 
 .avail {
@@ -150,3 +190,6 @@
   color:white;
   
 }
+
+
+

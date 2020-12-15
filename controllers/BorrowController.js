@@ -15,7 +15,6 @@ const GetBorrows = async (req, res) => {
   const CreateBorrow = async (req, res) => {
     try {
       const borrow = await Borrow.create(req.body, {returning: ['id']})
-      console.log('here', borrow.id)
       res.send({borrow: borrow.id})
     } catch (error) {
       throw error
@@ -75,7 +74,6 @@ const DeleteBorrow = async (req, res) => {
 };
 
 const UpdateBorrow = async (req, res) => {
-  console.log('HERE', req.body)
   let borrowId = parseInt(req.params.borrow_id);
   try {
     let updatedBorrow = await Borrow.update({

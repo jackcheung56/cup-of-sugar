@@ -46,7 +46,6 @@ function SignUp(props) {
       phone: tempPhone,
       picture: tempPicture,
     };
-    console.log("inputs", newUser);
     props.setUser(newUser);
     try {
       await __CreateUser(newUser);

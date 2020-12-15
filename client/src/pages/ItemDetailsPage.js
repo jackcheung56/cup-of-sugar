@@ -76,7 +76,6 @@ function ItemDetailsPage(props) {
         event.preventDefault()
         try {
             const borrowRequest = await __CreateBorrow(formData)
-            console.log(borrowRequest)
             setToggle(true)
             setReqToggle(true)
             setFormToggle(!formToggle)
@@ -151,6 +150,8 @@ function ItemDetailsPage(props) {
                             }
                         </div>
                     </div>
+
+
                     {!detail.isBorrowed === true ?
                         <div className="reqDropDown">
                             <div className="borrowDrop" onClick={handleFillout}>Request Borrow</div>
@@ -172,7 +173,7 @@ function ItemDetailsPage(props) {
                                 <button className={reqToggle ? 'reqVis' : 'reqGone'} onClick={handleClick}>Confirm</button>
                             </div>
                             <div className={toggle ? 'visible' : 'invisible'}>
-                                <p className="response">REQUEST SENT</p>
+                                <p className="responseMsg">REQUEST SENT</p>
                                 <button className={toggle ? 'visible' : 'invisible'} onClick={backButton}>return to browse?</button>
                             </div>
                         </div>

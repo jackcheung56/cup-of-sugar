@@ -30,7 +30,7 @@ const AddItemPage = (props) => {
   }
   return (
     <div>
-      <button onClick={backButton}>cancel</button>
+      <button className="backBtn" onClick={backButton}>cancel</button>
       <h1>ADD ITEM</h1>
       <form className="inputFields">
         <FormInput

@@ -34,7 +34,7 @@ const EditItemPage = (props) => {
 
   return (
     <div>
-      <button onClick={backButton}>cancel</button>
+      <button className="backBtn" onClick={backButton}>cancel</button>
       <h1>EDIT ITEM</h1>
       <form className="inputFields">
         <FormInput
@@ -97,7 +97,7 @@ const EditItemPage = (props) => {
           </button>
         </div>
 
-        <button type="submit" onClick={handleSubmit}>
+        <button className="submitButton" type="submit" onClick={handleSubmit}>
           Submit
         </button>
       </form>

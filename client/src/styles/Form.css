@@ -33,10 +33,10 @@ button {
   font: inherit;
   cursor: pointer;
   outline: none;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    background: transparent;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
 }
 form input, form button{
     font-size: 1rem;
@@ -75,6 +75,32 @@ form input, form button{
     padding: 10px;
     width: 136px;
     background-color: #8375FA;
+  }
+
+  .submitButton {
+    background: rgb(32,137,240);
+    color: white;
+
+  }
+
+  .confirmationBtn{
+    background: rgb(32,137,240);
+    margin: 5px;
+    padding: 5px;
+    width: 136px;
+    border-radius: 20px;
+    color: white;
+
+  }
+
+  .cancelBtn{
+    background: rgb(32,137,240);
+    margin: 5px;
+    padding: 5px;
+    width: 136px;
+    border-radius: 20px;
+    color: white;
+
   }
 
 
