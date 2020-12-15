@@ -18,16 +18,17 @@
 
 ### Overview
 
-Cup of Sugar is a site where you can sign up to join a community of others in a friendly web of exchanging items.
+Cup of Sugar is an online application that facilitates the sharing of items. 
 
-With Cup of Sugar, users can borrow items from people in their area. At launch, Cup of Sugar will rely on the honor system for returning items, but a user rating system is currently in the works. .
+With Cup of Sugar, users can post items they would like to share, and borrow items from people in their area. 
+At launch, Cup of Sugar will rely on the honor system for returning items, but a user rating system is currently in the works. .
 
 ---
 
 ### User Stories
 
-- Users can: create an account through sign up
-- Users can login and post items for others to borrow w/images, condition details, and a description
+- Users can create an account through sign up.
+- Users can login and post items for others to borrow w/images, condition details, and a description.
 - Users can edit and delete items they have posted. 
 - Users can send a request to borrow items from other users
 - Users will recieve request notifications when a borrow is made. 
