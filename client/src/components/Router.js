@@ -56,7 +56,6 @@ function Router(props) {
        if (currentUser) {
         try {
           const user = await __GetUser(currentUser.id)
-          console.log(currentUser.id)
           setUser(user)
           } catch {
             console.log('no user yet')

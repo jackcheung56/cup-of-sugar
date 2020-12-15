@@ -39,8 +39,8 @@ const DeleteItemPage = (props) => {
         <div>
             <p>Are you sure you want to remove this item?</p>
             <p>Item: {data.id}</p>
-            <button className="confirmation" onClick={handleSubmit}>CONFIRM</button>
-            <button className="cancel" onClick={cancelSubmit}>CANCEL</button>
+            <button className="confirmationBtn" onClick={handleSubmit}>CONFIRM</button>
+            <button className="cancelBtn" onClick={cancelSubmit}>CANCEL</button>
         </div>
 
     )
