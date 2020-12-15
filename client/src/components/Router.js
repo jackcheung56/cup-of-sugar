@@ -52,34 +52,34 @@ function Router(props) {
       }
     }
   };
-     const getUserBackup = async () => {
-       if (currentUser) {
-        try {
-          const user = await __GetUser(currentUser.id)
-          setUser(user)
-          } catch {
-            console.log('no user yet')
-          }
-        }
+  const getUserBackup = async () => {
+    if (currentUser) {
+      try {
+        const user = await __GetUser(currentUser.id)
+        setUser(user)
+      } catch {
+        console.log('no user yet')
+      }
     }
-    const toggleAuthenticated = (value, user, currentUser) => {
-      setAuthenticated(value);
-      setCurrentUser(user);
-      setUser(currentUser)
-    };
-    const handleLogout = () => {   
-      setCurrentUser(null)
-      setEmail('')
-      setPassword('')
-      setAuthenticated(false)
-      localStorage.clear()
-    } 
-    useEffect(() => {
-      getAllItems();
-      verifyTokenValid();
-      setPageLoading(false);
-      getUserBackup()
-    }, []);
+  }
+  const toggleAuthenticated = (value, user, currentUser) => {
+    setAuthenticated(value);
+    setCurrentUser(user);
+    setUser(currentUser)
+  };
+  const handleLogout = () => {
+    setCurrentUser(null)
+    setEmail('')
+    setPassword('')
+    setAuthenticated(false)
+    localStorage.clear()
+  }
+  useEffect(() => {
+    getAllItems();
+    verifyTokenValid();
+    setPageLoading(false);
+    getUserBackup()
+  }, []);
   return (
     <div>
       <Nav
@@ -93,33 +93,24 @@ function Router(props) {
       ) : (
           <Switch>
             <Route exact path="/" component={() => (<LandingPage></LandingPage>)}></Route>
-            <Route
-              authenticated={authenticated}
-              exact
-              path="/home"
-              component={(props) => (
-                <Home {...props} item={item} setItem={setItem}></Home>
-              )}
-            />
-            <Route exact path="/users/all">
-              <UserList></UserList>
-            </Route>
+            <Route authenticated={authenticated} exact path="/home" component={(props) => (<Home {...props} item={item} setItem={setItem}></Home>)} />
+            <Route exact path="/users/all"><UserList></UserList></Route>
             <Route
               exact
               path="/items/all"
               component={(props) =>
-                (<BrowsePage
-                  item={item}
-                  setItem={setItem}
-                  setBorrow={setBorrow}
-                  user={user}
-                  setUser={setUser}
-                  history={history}
-                  currentUser={currentUser}
-                  authenticated={authenticated}
-                  {...props}
-                ></BrowsePage>
-                )}
+              (<BrowsePage
+                item={item}
+                setItem={setItem}
+                setBorrow={setBorrow}
+                user={user}
+                setUser={setUser}
+                history={history}
+                currentUser={currentUser}
+                authenticated={authenticated}
+                {...props}
+              ></BrowsePage>
+              )}
             />
             {currentUser ?
               <Route
@@ -147,11 +138,7 @@ function Router(props) {
               )}
             />
             <Route path="/items/delete/:item_id" render={(props) => <DeleteItemPage {...props} />} />
-            <Route
-              exact
-              path="/items/update/:item_id"
-              render={(props) => <EditItemPage {...props} />}
-            />
+            <Route exact path="/items/update/:item_id" render={(props) => <EditItemPage {...props} />} />
             <Route
               path="/login"
               component={(props) => (
@@ -170,12 +157,16 @@ function Router(props) {
                 ></SignIn>
               )}
             />
-            <Route path="/signup" component={(props) => (<SignUp user={user} setUser={setUser}></SignUp> )}/>
+            <Route path="/signup" component={(props) => (<SignUp user={user} setUser={setUser}></SignUp>)} />
             <Route
               exact
               path="/items/:item_id"
               render={(props) => (
-                <ItemDetailsPage location={props.location} currentUser={currentUser} history={history}></ItemDetailsPage>
+                <ItemDetailsPage
+                  location={props.location}
+                  currentUser={currentUser}
+                  history={history}
+                ></ItemDetailsPage>
               )}
             />
           </Switch>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/Card.css";
 
 const RatingCard = ({ name, rating }) => {
+  //to be implemented post mvp-will take advantage of user rating attribute
   const [rate, setRating] = useState("\u2615");
 
   return (

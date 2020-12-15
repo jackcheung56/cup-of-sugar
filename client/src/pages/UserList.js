@@ -3,11 +3,11 @@ import UserCard from "../components/UserCard";
 import { __GetAllUsers } from "../services/UserService";
 
 function UserList() {
+  //to be implemented with post mvp browse by user feature
   const [allUsers, setAllUsers] = useState({});
   const getUsers = async () => {
     try {
       const data = await __GetAllUsers();
-      console.log("userlist", data);
       let scrubTest = data[0];
       setAllUsers(scrubTest);
     } catch (error) {

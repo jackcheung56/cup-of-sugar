@@ -47,7 +47,6 @@ const RequestCard = ({ duration, id, history, message, product, userInfo, confir
     event.preventDefault();
     try {
       const del = await __DeleteBorrow(id);
-
       history.push(`/users/${userRoute}`);
     } catch (error) {
       console.log(error);
