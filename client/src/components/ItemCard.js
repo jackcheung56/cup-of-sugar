@@ -5,7 +5,6 @@ const ItemCard = ({ onClick, title, image, condition, category, description, isB
 
     return (
         <div className="card" onClick={onClick}>
-
             <div>
                 <div>
                     <img className="itemPhoto" src={image} alt="item"></img>

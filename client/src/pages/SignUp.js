@@ -26,8 +26,6 @@ function SignUp(props) {
     setName(event.target.value);
   };
 
-  //==============================
-
   const pictureInput = (event) => {
     setTempPicture(event.target.value);
   };

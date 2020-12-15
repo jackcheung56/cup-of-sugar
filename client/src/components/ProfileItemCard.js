@@ -21,12 +21,8 @@ const ProfileItemCard = ({ onClick, title, image, condition, category, descripti
 
     return (
         <div className="grid-container-profile" onClick={onClick}>
-
-
-
             <div className="item-containerP">
                 <div className="leftSide"><img className="itemImage" src={image} alt="item"></img></div>
-
                 <div className="rightSide">
                     <div className="top">
                         <div className="quadTwo">
@@ -44,24 +40,15 @@ const ProfileItemCard = ({ onClick, title, image, condition, category, descripti
                             </div>
                         </div>
                     </div>
-
                     <div className="bottom"></div>
-
                     <ul className="text">
                         <li className="tOne">{title}</li>
                         <li className="tThree">Posted by: {userName}</li>
                         <li className="tFour">{condition} Condition</li>
                         <li className="tTwo">{description}</li>
                     </ul>
-
                 </div>
-
-
-
-
             </div>
-
-
         </div>
     )
 }
