@@ -7,6 +7,7 @@ import BorrowCard from '../components/BorrowCard'
 import ProfileItemCard from '../components/ProfileItemCard'
 import RequestCard from '../components/RequestCard'
 import '../styles/Profile.css'
+
 function Profile(props) {
   const [userBorrows, setUserBorrows] = useState([])
   const [userItems, setUserItems] = useState([])
@@ -146,7 +147,6 @@ function Profile(props) {
                 </div>
                 <div className="borrowsDisplay"></div>
               </div>
-
               :
               <div>
                 <div className="itemsDisplay"></div>

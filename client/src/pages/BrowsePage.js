@@ -94,15 +94,15 @@ function BrowsePage(props) {
             <div className="browsePageTop">
                 <h1 className="pageTitle">browse</h1>
                 <div className="catButtons">
-                    <button className="btns" onClick={getBrowseItems}>all</button>
-                    <button className="btns" onClick={sortAppliances}>appliances</button>
-                    <button className="btns" onClick={sortFitness}>fitness</button>
-                    <button className="btns" onClick={sortClothing}>clothing</button>
-                    <button className="btns" onClick={sortEntertainment}>entertainment</button>
-                    <button className="btns" onClick={sortBooks}>books</button>
-                    <button className="btns" onClick={sortTools}>tools</button>
-                    <button className="btns" onClick={sortInstruments}>instruments</button>
-                    <button className="btns" onClick={sortPantry}>pantry</button>
+                    <button className="btnsBrowse" onClick={getBrowseItems}>all</button>
+                    <button className="btnsBrowse" onClick={sortAppliances}>appliances</button>
+                    <button className="btnsBrowse" onClick={sortFitness}>fitness</button>
+                    <button className="btnsBrowse" onClick={sortClothing}>clothing</button>
+                    <button className="btnsBrowse" onClick={sortEntertainment}>entertainment</button>
+                    <button className="btnsBrowse" onClick={sortBooks}>books</button>
+                    <button className="btnsBrowse" onClick={sortTools}>tools</button>
+                    <button className="btnsBrowse" onClick={sortInstruments}>instruments</button>
+                    <button className="btnsBrowse" onClick={sortPantry}>pantry</button>
                 </div>
                 <hr className="greyLine"></hr>
             </div>

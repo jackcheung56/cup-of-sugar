@@ -13,8 +13,6 @@ const GetItemByOwner = async (req, res) => {
 }
 
 
-
-
 const GetItemsByCategory = async (req, res) => {
   try{
     let category = req.params.category
@@ -24,8 +22,6 @@ const GetItemsByCategory = async (req, res) => {
     throw error
   }
 }
-
-
 
 
 const GetItems = async (req, res) => {
@@ -49,8 +45,6 @@ const GetItems = async (req, res) => {
     }
   }
   
-
-
 
   const CreateItem = async (req, res) => {
     try {
@@ -77,8 +71,6 @@ const UpdateItem = async (req, res) => {
     throw error
   }
 }
-
-
 
 
 const DeleteItem = async (req, res) => {

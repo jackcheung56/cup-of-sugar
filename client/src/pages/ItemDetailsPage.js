@@ -115,19 +115,25 @@ function ItemDetailsPage(props) {
                             <Link to={{ pathname: `/items/delete/${detail.id}`, detail: { detail } }}><button className="adminBtn">Delete</button></Link>
                         </div>
                     </div>
-                    <div className="detailsContainer">
-                        <img className="detailsPhoto" src={detail.image}></img>
-                        <h1>{detail.title}</h1>
-                        <p>Owner: {ownerName}</p>
-                        <p>Category: {detail.category}</p>
-                        <p>Condition: {detail.condition}</p>
-                        <p>Description: {detail.description}</p>
-                        <div className="item status">
-                            {detail.isBorrowed === true ?
-                                <p className="avail">item unavailabile </p>
-                                :
-                                <p className="avail">availabile</p>
-                            }
+                    <div className="grid-containerID">
+                        <div className="detailsContainer">
+                            <div className="detailsPhotoContainer">
+                                <img className="detailsPhoto" src={detail.image}></img>
+                            </div>
+                            <div className="detailsText">
+                                <h1 className="dText">{detail.title}</h1>
+                                <p className="dBulletPoint">Owner: {ownerName}</p>
+                                <p className="dBulletPoint">Category: {detail.category}</p>
+                                <p className="dBulletPoint">Condition: {detail.condition}</p>
+                                <p className="dBulletPoint">Description: {detail.description}</p>
+                                <div className="itemStatusDet">
+                                    {detail.isBorrowed === true ?
+                                        <p className="availStatus">item unavailabile </p>
+                                        :
+                                        <p className="availStatus">availabile</p>
+                                    }
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -136,22 +142,27 @@ function ItemDetailsPage(props) {
                     <div className="uiDisplayButtons">
                         <button className="backBtn" onClick={backButton}>back</button>
                     </div>
-                    <div className="detailsContainer">
-                        <img className="detailsPhoto" src={detail.image}></img>
-                        <h1>{detail.title}</h1>
-                        <p>Owner: {ownerName}</p>
-                        <p>Category: {detail.category}</p>
-                        <p>Condition: {detail.condition}</p>
-                        <p>Description: {detail.description}</p>
-                        <div className="item status">
-                            {detail.isBorrowed === true ?
-                                <p className="avail">unavailabile </p>
-                                :
-                                <p className="avail">availabile</p>
-                            }
+                    <div className="grid-containerID">
+                        <div className="detailsContainer">
+                            <div className="detailsPhotoContainer">
+                                <img className="detailsPhoto" src={detail.image}></img>
+                            </div>
+                            <div className="detailsText">
+                                <h1 className="dText">{detail.title}</h1>
+                                <p className="dBulletPoint">Owner: {ownerName}</p>
+                                <p className="dBulletPoint">Category: {detail.category}</p>
+                                <p className="dBulletPoint">Condition: {detail.condition}</p>
+                                <p className="dBulletPoint">Description: {detail.description}</p>
+                                <div className="itemStatusDet">
+                                    {detail.isBorrowed === true ?
+                                        <p className="availStatus">unavailabile </p>
+                                        :
+                                        <p className="availStatus">availabile</p>
+                                    }
+                                </div>
+                            </div>
                         </div>
                     </div>
-
 
                     {!detail.isBorrowed === true ?
                         <div className="reqDropDown">

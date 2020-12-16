@@ -24,8 +24,6 @@ const GetUserById = async (req, res) => {
   }
 };
 
-
-
 //Update
 
 const CreateUser = async (req, res) => {

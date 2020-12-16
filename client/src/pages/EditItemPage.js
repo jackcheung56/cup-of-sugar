@@ -35,6 +35,7 @@ const EditItemPage = (props) => {
   return (
     <div>
       <button className="backBtn" onClick={backButton}>cancel</button>
+    <div className="formPageLayout">
       <h1>EDIT ITEM</h1>
       <form className="inputFields">
         <FormInput
@@ -65,7 +66,7 @@ const EditItemPage = (props) => {
           onChange={handleChange}
         />
 
-        <div className="tags">
+        <div className="tagsContainer">
           <button
             className="condiTags"
             type="button"
@@ -101,6 +102,7 @@ const EditItemPage = (props) => {
           Submit
         </button>
       </form>
+    </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@
    padding-left: 12px;
    display: flex;
    flex-direction: column;
+   
  }
 
  .normalDisplay{
@@ -10,12 +11,86 @@
    flex-direction: column;
  }
 
- .detailsContainer{
-   width: 50%;
-   height: 100%;
-   margin-right: 0;
-   margin-left: 0;
- }
+
+ .grid-containerID {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.detailsPhotoContainer { 
+  grid-area: 
+  detailsPhotoContainer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 310px;
+  height: 310px;
+  background-color: white;
+  object-fit:cover;
+  background-size:cover;
+  background-position:center;
+
+}
+
+.detailsPhoto{
+  background-color: white;
+  flex: 1;
+  width: 310px;
+  height: 310px;
+  padding: 10px;
+  object-fit:cover;
+  background-size:cover;
+  background-position:center;
+  box-shadow: 1px 1px 8px 1px #e0e0e0;
+}
+
+.detailsText {
+  width: 100%; 
+  height: 100%;
+  padding: 20px;
+  margin-left: 25px;
+}
+
+
+.dText{
+  font-size: 18pt;
+}
+
+.dBulletPoint{
+  font-size: 11.5pt;
+
+}
+
+.itemStatusDet {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+
+.availStatus {
+  padding: 3px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 16px;
+  background: lightgrey;
+  color: white;
+  border-radius: 30px;
+}
+
 
  .reqDropDown{
   width: 100%;
@@ -25,13 +100,10 @@
   justify-content: center;
   margin: 0 auto;
   height: auto;
-  border-top: 1px solid lightgrey;
+  margin-top: 25px;
 }
  
- .detailsPhoto{
-   margin-top: 20px;
-   margin-bottom: 20px;
- }
+
  
  .visible {
     color: black;
@@ -53,14 +125,19 @@
   }
 
   .reqGone {
-      color: black;
-      border-radius: 10px;
-      width: 200px;
-      background-color: rgb(32,137,240);
-      color: white;
-      width: 100%;
-      height: 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border-radius: 10px;
+    background-color: rgb(32,137,240);
+    color: white;
+    width: 540px;
+    height: 50px;
   }
+  
   .reqVis{
     background-color: transparent;
     border-style: none;
@@ -97,12 +174,10 @@
     margin-top: 20px;
     margin-bottom: 5px;
     box-shadow: 1px 1px 8px 1px #e0e0e0;
-    width: 600px;
-    border-radius: 30px;
+    width: 520px;
   }
 
   .reqUI input {
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,8 +188,8 @@
     cursor: pointer;
     outline: inherit;
     background: rgb(233, 237, 239);
-    margin: 5px;
-    width: 600px;
+    margin: 25px;
+    width: 520px;
     height: 50px;
   }
 
@@ -154,13 +229,7 @@
   
 }
 
-.avail {
-  padding: 15px;
-  background: lightgrey;
-  width: 100px;
-  color: white;
-  border-radius: 10px;
-}
+
 
 
 .uiDisplayButtons {
