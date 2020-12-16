@@ -17,23 +17,21 @@
     margin: 10px;
 }
 
-.catButtons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    all: unset;
-    color: blue;
-    border: none;
-    cursor: pointer
-  }
+
+.catButtons{
+    margin-top: 5px;
+}
   
-.btns{
-    background:rgba(33,141,244);
+.btnsBrowse{
+    background:rgb(77, 163, 244);
     border: none;
     border-radius: 6px;
     color: white;
-    padding: 7px;
-    margin: 3px;
+    padding: 4px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 4px;
+    font-size: 11.5pt;
 }
 
 .card{

@@ -1,3 +1,11 @@
+.formPageLayout{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
 button {
   border: none;
   font: inherit;
@@ -5,9 +13,9 @@ button {
   outline: none;
 }
 .styleInput {
-  margin: 5px;
+  margin: 8px;
   border: none;
-  background: #e0e0e0;;
+  background: #eceeef;;
   width: auto;
 }
 .styleButton {
@@ -29,6 +37,7 @@ button {
   flex-direction: column;
  }
  .inputFields {
+  margin-top: 10px;
   border: none;
   font: inherit;
   cursor: pointer;
@@ -37,8 +46,10 @@ button {
   display: flex;
   flex-direction: column;
   background: transparent;
+  
 }
 form input, form button{
+  
     font-size: 1rem;
     padding: 18px;
     border-radius: 5px;
@@ -58,28 +69,46 @@ form input, form button{
     background-color: #8375FA;
   }
 
+  .tagsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  
+
+  }
+
   .condiTags{
     margin: 5px;
     padding: 10px;
-    width: 136px;
+    width: 100%;
   }
 
   .conTags{
     margin: 5px;
     padding: 10px;
-    width: 136px;
+    width: 100%;
   }
 
   .condiTags:hover, .conTags:hover{
     margin: 5px;
     padding: 10px;
-    width: 136px;
+    width: 100%;
     background-color: #8375FA;
   }
 
   .submitButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: rgb(32,137,240);
     color: white;
+    margin-top: 5px;
+    border: 6px solid white;
+    border-radius: 15px;
+   
+    
 
   }
 
@@ -87,7 +116,7 @@ form input, form button{
     background: rgb(32,137,240);
     margin: 5px;
     padding: 5px;
-    width: 136px;
+    width: 165px;
     border-radius: 20px;
     color: white;
 
@@ -97,7 +126,7 @@ form input, form button{
     background: rgb(32,137,240);
     margin: 5px;
     padding: 5px;
-    width: 136px;
+    width: 165px;
     border-radius: 20px;
     color: white;
 

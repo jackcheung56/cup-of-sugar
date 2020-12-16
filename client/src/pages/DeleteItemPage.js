@@ -8,8 +8,6 @@ const DeleteItemPage = (props) => {
     const callId = props.history.location.detail.detail.id
     const [removeItem, setRemoveItem] = useState({})
 
-
-
     const handleSubmit = async (event) => {
         event.preventDefault()
         try {
@@ -19,8 +17,6 @@ const DeleteItemPage = (props) => {
             console.log(error)
         }
     }
-
-
 
     const cancelSubmit = async (event) => {
         event.preventDefault()
