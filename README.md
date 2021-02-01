@@ -1,18 +1,8 @@
 # Cup of Sugar
 
-## Created By:
+**Website**
 
-**Jackie Cheung**
-
-[_GitHub_](https://github.com/jackcheung56)
-
-**TaeVon Lewis**
-
-[_GitHub_](https://github.com/lewist13)
-
-**William Hunter Long**
-
-[_GitHub_](https://github.com/whlong1)
+https://cup-of-sugar-app.herokuapp.com/
 
 ---
 
